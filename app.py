@@ -20,7 +20,7 @@ from matplotlib.collections import LineCollection
 from matplotlib import cm
 
 
-fastf1.Cache.enable_cache('./cache')  
+# fastf1.Cache.enable_cache('./cache')  
 
 
 # default subroutines
@@ -775,7 +775,8 @@ if __name__ == '__main__':
 
 
     # Categories -- Change Order to, About, Current Season, Previous Season, The F1 Glossary
-    category = st.sidebar.selectbox('Select', ['Previous Seasons','Current Season', 'About', 'The F1 Glossary',])
+    # category = st.sidebar.selectbox('Select', ['Current Season', 'Previous Seasons', 'About', 'The F1 Glossary'])
+    category = st.sidebar.selectbox('Select Timeline', ['Current Season', 'Previous Seasons'])
     
 
     if category == 'Previous Seasons':
