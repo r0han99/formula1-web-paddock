@@ -226,16 +226,16 @@ def display_schedule(year, circuit_cdf, circuits_rdf):
         current_date = datetime.now()
         if current_date > package['EventDate']:
             
-            st.markdown(f'''<p style="font-size:30px; font-weight:bold; font-family:Formula1"> <img src="https://countryflagsapi.com/png/{package["Country"]}" width="50">  <u>{package["EventName"]}</u>  |  <span style="font-size:23px;">{date_modifier(package["EventDate"])} <br>{circuit}, {locality} <img src='data:image/png;base64,{img_to_bytes('./assets/checkered-flag.png')}' class='img-fluid' width=50 ></span> </p>''',unsafe_allow_html=True)
+            st.markdown(f'''<p style="font-size:30px; font-weight:bold; font-family:formula1, syne;"> <img src="https://countryflagsapi.com/png/{package["Country"]}" width="50">  <u>{package["EventName"]}</u>  |  <span style="font-size:23px;">{date_modifier(package["EventDate"])} <br>{circuit}, {locality} <img src='data:image/png;base64,{img_to_bytes('./assets/checkered-flag.png')}' class='img-fluid' width=50 ></span> </p>''',unsafe_allow_html=True)
         
         else:
-            st.markdown(f'''<p style="font-size:30px; font-weight:bold; font-family:Formula1"> <img src="https://countryflagsapi.com/png/{package["Country"]}" width="50">  <u>{package["EventName"]}</u>  |  <span style="font-size:23px;">{date_modifier(package["EventDate"])} <br>{circuit}, {locality} </span></p>''',unsafe_allow_html=True)
+            st.markdown(f'''<p style="font-size:30px; font-weight:bold; font-family:formula1, syne;"> <img src="https://countryflagsapi.com/png/{package["Country"]}" width="50">  <u>{package["EventName"]}</u>  |  <span style="font-size:23px;">{date_modifier(package["EventDate"])} <br>{circuit}, {locality} </span></p>''',unsafe_allow_html=True)
 
 
         cols = st.columns(len(sessions_list))
         for i, session_name in enumerate(sessions_list, start=0) :
-            cols[i].markdown('> <p style="font-size:17px; font-weight:bold; font-family:Formula1"><u>{}</u><p>'.format(session_name),unsafe_allow_html=True)
-            cols[i].markdown('> <p style="font-size:13px; font-weight:bold; font-family:Formula1">{}<p>'.format(date_modifier(package['Session'+str(i+1)+"Date"])),unsafe_allow_html=True)
+            cols[i].markdown('> <p style="font-size:17px; font-weight:bold; font-family:formula1, syne;"><u>{}</u><p>'.format(session_name),unsafe_allow_html=True)
+            cols[i].markdown('> <p style="font-size:13px; font-weight:bold; font-family:formula1, syne;">{}<p>'.format(date_modifier(package['Session'+str(i+1)+"Date"])),unsafe_allow_html=True)
         
         st.markdown('***')
 
@@ -364,7 +364,7 @@ def qualifying(summarised_results, year):
 
     if preference == 'Summarise':
 
-        st.markdown(f'''<h6 style="font-family:formula1">{session_select} Summary</h6>''',unsafe_allow_html=True)
+        st.markdown(f'''<h6 style="font-family:formula1, syne;">{session_select} Summary</h6>''',unsafe_allow_html=True)
         select_choice = st.selectbox('Data Summary', ['Summarise?','Q1 Grid-Positions', 'Q2 Grid-Positions', 'Q3 Grid-Positions', 'Knocked Out', 'Final Grid-Positions'])
             
 
@@ -390,25 +390,25 @@ def qualifying(summarised_results, year):
                 
 
                 if knocked_q1 == None:
-                    st.markdown(f'''> <h5 style="font-family:formula1">Everyone Qualified Q1</h5>''',unsafe_allow_html=True)
+                    st.markdown(f'''> <h5 style="font-family:formula1, syne;">Everyone Qualified Q1</h5>''',unsafe_allow_html=True)
                 else:
-                    st.markdown(f'''> <h5 style="font-family:formula1"><u>Q1 Knockouts</u></h5>''',unsafe_allow_html=True)
+                    st.markdown(f'''> <h5 style="font-family:formula1, syne;"><u>Q1 Knockouts</u></h5>''',unsafe_allow_html=True)
                     display_qualifying_summary(knocked_q1, mode='Knocked')
                 
                 
                 
                 if knocked_q2 == None:
-                    st.markdown(f'''<h5 style="font-family:formula1">Everyone Qualified Q2</h5>''',unsafe_allow_html=True)
+                    st.markdown(f'''<h5 style="font-family:formula1, syne;">Everyone Qualified Q2</h5>''',unsafe_allow_html=True)
                 else:
-                    st.markdown(f'''> <h5 style="font-family:formula1"><u>Q2 Knockouts</u></h5>''',unsafe_allow_html=True)
+                    st.markdown(f'''> <h5 style="font-family:formula1, syne;"><u>Q2 Knockouts</u></h5>''',unsafe_allow_html=True)
                     display_qualifying_summary(tq2, mode='Knocked')
                     
                 
 
                 if knocked_q3 == None:
-                    st.markdown(f'''<h5 style="font-family:formula1">Everyone Qualified Q3</h5>''',unsafe_allow_html=True)
+                    st.markdown(f'''<h5 style="font-family:formula1, syne;">Everyone Qualified Q3</h5>''',unsafe_allow_html=True)
                 else:
-                    st.markdown(f'''> <h5 style="font-family:formula1"><u>Q3 Knockouts</u></h5>''',unsafe_allow_html=True)
+                    st.markdown(f'''> <h5 style="font-family:formula1, syne;"><u>Q3 Knockouts</u></h5>''',unsafe_allow_html=True)
                     display_qualifying_summary(tq3,mode='Knocked')
                     
 
@@ -434,7 +434,7 @@ def qualifying(summarised_results, year):
                 display_qualifying_summary(q1_grid, mode='Q3 Grid-Positions')
 
     else: 
-        st.markdown(f'''<h6 style="font-family:formula1">{session_select} Comprehensive Analysis</h6>''',unsafe_allow_html=True)
+        st.markdown(f'''<h6 style="font-family:formula1, syne;">{session_select} Comprehensive Analysis</h6>''',unsafe_allow_html=True)
 
         cols = st.columns([6,3])
         placeholder = cols[1].empty()
@@ -462,10 +462,10 @@ def qualifying(summarised_results, year):
                     fastest_driver = list(driver_dict.keys())[0]
 
                     st.markdown('***')
-                    st.markdown(f'''<h6 style="font-family:formula1;"><u> Driver Performance Investigation</u></h6>''',unsafe_allow_html=True)
+                    st.markdown(f'''<h6 style="font-family:formula1, syne;"><u> Driver Performance Investigation</u></h6>''',unsafe_allow_html=True)
                     AB, BN, TN, TC  = driver_dict[driver]
-                    st.markdown(f'''<h6 style="font-family:formula1">Fastest Lap Analysis</h6>''',unsafe_allow_html=True)
-                    st.markdown(f'''<h4 style="font-family:formula1">{BN} ({AB})<sub style='color:#{TC}'>{TN}</sub></h4>''',unsafe_allow_html=True)
+                    st.markdown(f'''<h6 style="font-family:formula1, syne;">Fastest Lap Analysis</h6>''',unsafe_allow_html=True)
+                    st.markdown(f'''<h4 style="font-family:formula1, syne;">{BN} ({AB})<sub style='color:#{TC}'>{TN}</sub></h4>''',unsafe_allow_html=True)
             
                     
                     # session data 
@@ -499,12 +499,12 @@ def qualifying(summarised_results, year):
 
                         
 
-                        compound = driver_data['Compound']
+                        compound = driver_data['Compound'].lower()
             
                     
                         # fastest time in that session
                         fastest = joined.pick_fastest()
-                        fcompound = fastest['Compound'] 
+                        fcompound = fastest['Compound'].lower() 
                         # st.write(fastest)
 
 
@@ -518,46 +518,46 @@ def qualifying(summarised_results, year):
                         # st.write(delta_dict)                                         
                         
                         if driver_data['IsPersonalBest']:
-                            st.markdown(f'''> <h5 style="font-family:formula1; color:purple;">Lap Time - {timedelta_conversion(driver_data['LapTime'])} <sub style='color:black;'>Personal Best</sub></h5>''',unsafe_allow_html=True)
+                            st.markdown(f'''> <h5 style="font-family:formula1, syne; color:purple;">Lap Time - {timedelta_conversion(driver_data['LapTime'])} <sub style='color:black;'>Personal Best</sub></h5>''',unsafe_allow_html=True)
                         else:
-                            st.markdown(f'''> <h5 style="font-family:formula1; color:purple;">Lap Time - {timedelta_conversion(driver_data['LapTime'])}</h5>''',unsafe_allow_html=True)
+                            st.markdown(f'''> <h5 style="font-family:formula1, syne; color:purple;">Lap Time - {timedelta_conversion(driver_data['LapTime'])}</h5>''',unsafe_allow_html=True)
                             
                                                         
-                        st.markdown(f'''<h6 style="font-family:formula1"><u>Sector Times</u></h6>''',unsafe_allow_html=True)
+                        st.markdown(f'''<h6 style="font-family:formula1, syne;"><u>Sector Times</u></h6>''',unsafe_allow_html=True)
                         for i,item in enumerate(delta_required[1:],1):
-                            st.markdown(f'''<h6 style="font-family:formula1; ">S{i} - {timedelta_conversion(driver_data[item])} <sub>{delta_dict[item]} ({fastest['Driver']})</sub></h6>''',unsafe_allow_html=True)
+                            st.markdown(f'''<h6 style="font-family:formula1, syne; ">S{i} - {timedelta_conversion(driver_data[item])} <sub>{delta_dict[item]} ({fastest['Driver']})</sub></h6>''',unsafe_allow_html=True)
 
                         st.markdown('***')
                         # compound 
-                        st.markdown(f'''<h6 style="font-family:formula1"><u>Compounds Used</u></h6>''',unsafe_allow_html=True)                                                                                
-                        st.markdown(f'''<h6 style="font-family:formula1; "><img src='data:image/png;base64,{img_to_bytes(f'./assets/{compound}.png')}' class='img-fluid' width=50 ><sub style='padding-left:10px;'>{compound} Compound, </sub> Tyre Life <span style='font-size:28px'>{driver_data['TyreLife']}</span> Laps</h6>''',unsafe_allow_html=True)
+                        st.markdown(f'''<h6 style="font-family:formula1, syne"><u>Compounds Used</u></h6>''',unsafe_allow_html=True)                                                                                
+                        st.markdown(f'''<h6 style="font-family:formula1, syne; "><img src='data:image/png;base64,{img_to_bytes(f'./assets/{compound}.png')}' class='img-fluid' width=50 ><sub style='padding-left:10px;'>{compound} Compound, </sub> Tyre Life <span style='font-size:28px'>{driver_data['TyreLife']}</span> Laps</h6>''',unsafe_allow_html=True)
                         st.markdown('***')
                         # Speed Traps
-                        st.markdown(f'''<h6 style="font-family:formula1"><u>Speed Traps</u></h6>''',unsafe_allow_html=True)
-                        st.markdown(f'''<h6 style="font-family:formula1; ">Sector1 Speed - <span style='font-size:28px'>{driver_data['SpeedI1']}<sup>km/h</sup></span> <sub>{fastest['SpeedI1']} km/h ({fastest['Driver']}) <img src='data:image/png;base64,{img_to_bytes(f'./assets/{fcompound}.png')}' class='img-fluid' width=40></sub></h6>''',unsafe_allow_html=True)
-                        st.markdown(f'''<h6 style="font-family:formula1; ">Sector2 Speed - <span style='font-size:28px'>{driver_data['SpeedI2']} <sup>km/h</sup></span> <sub>{fastest['SpeedI2']} km/h ({fastest['Driver']}) <img src='data:image/png;base64,{img_to_bytes(f'./assets/{fcompound}.png')}' class='img-fluid' width=40></sub></h6>''',unsafe_allow_html=True)
-                        st.markdown(f'''<h6 style="font-family:formula1; ">Finish Line Speed - <span style='font-size:28px'>{driver_data['SpeedFL']} <sup>km/h</sup></span> <sub>{fastest['SpeedFL']} km/h ({fastest['Driver']}) <img src='data:image/png;base64,{img_to_bytes(f'./assets/{fcompound}.png')}' class='img-fluid' width=40></sub></h6>''',unsafe_allow_html=True)
-                        st.markdown(f'''<h6 style="font-family:formula1; ">Longest Straight Speed - <span style='font-size:28px'>{driver_data['SpeedST']} <sup>km/h</sup></span> <sub>{fastest['SpeedST']} km/h ({fastest['Driver']}) <img src='data:image/png;base64,{img_to_bytes(f'./assets/{fcompound}.png')}' class='img-fluid' width=40></sub></h6>''',unsafe_allow_html=True)
+                        st.markdown(f'''<h6 style="font-family:formula1, syne;"><u>Speed Traps</u></h6>''',unsafe_allow_html=True)
+                        st.markdown(f'''<h6 style="font-family:formula1, syne; ">Sector1 Speed - <span style='font-size:28px'>{driver_data['SpeedI1']}<sup>km/h</sup></span> <sub>{fastest['SpeedI1']} km/h ({fastest['Driver']}) <img src='data:image/png;base64,{img_to_bytes(f'./assets/{fcompound}.png')}' class='img-fluid' width=40></sub></h6>''',unsafe_allow_html=True)
+                        st.markdown(f'''<h6 style="font-family:formula1, syne; ">Sector2 Speed - <span style='font-size:28px'>{driver_data['SpeedI2']} <sup>km/h</sup></span> <sub>{fastest['SpeedI2']} km/h ({fastest['Driver']}) <img src='data:image/png;base64,{img_to_bytes(f'./assets/{fcompound}.png')}' class='img-fluid' width=40></sub></h6>''',unsafe_allow_html=True)
+                        st.markdown(f'''<h6 style="font-family:formula1, syne; ">Finish Line Speed - <span style='font-size:28px'>{driver_data['SpeedFL']} <sup>km/h</sup></span> <sub>{fastest['SpeedFL']} km/h ({fastest['Driver']}) <img src='data:image/png;base64,{img_to_bytes(f'./assets/{fcompound}.png')}' class='img-fluid' width=40></sub></h6>''',unsafe_allow_html=True)
+                        st.markdown(f'''<h6 style="font-family:formula1, syne; ">Longest Straight Speed - <span style='font-size:28px'>{driver_data['SpeedST']} <sup>km/h</sup></span> <sub>{fastest['SpeedST']} km/h ({fastest['Driver']}) <img src='data:image/png;base64,{img_to_bytes(f'./assets/{fcompound}.png')}' class='img-fluid' width=40></sub></h6>''',unsafe_allow_html=True)
 
                         st.markdown('***')
                         
-                        st.markdown(f'''<h6 style="font-family:formula1"><u>Weather Data</u></h6>''',unsafe_allow_html=True) 
-                        st.markdown(f'''<h6 style="font-family:formula1;">Air Temperature - {driver_data['AirTemp']} °C</h6>''',unsafe_allow_html=True)            
-                        st.markdown(f'''<h6 style="font-family:formula1;">Track Temperature - {driver_data['TrackTemp']} °C</h6>''',unsafe_allow_html=True)     
-                        st.markdown(f'''<h6 style="font-family:formula1;">Humidity - {driver_data['Humidity']}</h6>''',unsafe_allow_html=True)       
-                        st.markdown(f'''<h6 style="font-family:formula1;">Pressure - {driver_data['Pressure']}</h6>''',unsafe_allow_html=True)                                                                                                                                                     
-                        st.markdown(f'''<h6 style="font-family:formula1;">Wind Direction - {driver_data['WindDirection']}</h6>''',unsafe_allow_html=True)
-                        st.markdown(f'''<h6 style="font-family:formula1;">Wind Speed - {driver_data['WindSpeed']}</h6>''',unsafe_allow_html=True)
+                        st.markdown(f'''<h6 style="font-family:formula1, syne;"><u>Weather Data</u></h6>''',unsafe_allow_html=True) 
+                        st.markdown(f'''<h6 style="font-family:formula1, syne;">Air Temperature - {driver_data['AirTemp']} °C</h6>''',unsafe_allow_html=True)            
+                        st.markdown(f'''<h6 style="font-family:formula1, syne;">Track Temperature - {driver_data['TrackTemp']} °C</h6>''',unsafe_allow_html=True)     
+                        st.markdown(f'''<h6 style="font-family:formula1, syne;">Humidity - {driver_data['Humidity']}</h6>''',unsafe_allow_html=True)       
+                        st.markdown(f'''<h6 style="font-family:formula1, syne;">Pressure - {driver_data['Pressure']}</h6>''',unsafe_allow_html=True)                                                                                                                                                     
+                        st.markdown(f'''<h6 style="font-family:formula1, syne;">Wind Direction - {driver_data['WindDirection']}</h6>''',unsafe_allow_html=True)
+                        st.markdown(f'''<h6 style="font-family:formula1, syne;">Wind Speed - {driver_data['WindSpeed']}</h6>''',unsafe_allow_html=True)
                         if driver_data['Rainfall']:
-                            st.markdown(f'''<h6 style="font-family:formula1;"> Rainfall - <img src='data:image/png;base64, {img_to_bytes('./assets/rain.png')}' class='img-fluid', width=35> </h6>''',unsafe_allow_html=True)
+                            st.markdown(f'''<h6 style="font-family:formula1, syne;"> Rainfall - <img src='data:image/png;base64, {img_to_bytes('./assets/rain.png')}' class='img-fluid', width=35> </h6>''',unsafe_allow_html=True)
                         else:
-                            st.markdown(f'''<h6 style="font-family:formula1;"> Rainfall - <img src='data:image/png;base64, {img_to_bytes('./assets/no-rain.png')}' class='img-fluid', width=35> </h6>''',unsafe_allow_html=True)
+                            st.markdown(f'''<h6 style="font-family:formula1, syne;"> Rainfall - <img src='data:image/png;base64, {img_to_bytes('./assets/no-rain.png')}' class='img-fluid', width=35> </h6>''',unsafe_allow_html=True)
 
                         
                         st.markdown('***')
 
-                        st.markdown(f'''<h6 style="font-family:formula1"><u>Speed Chart</u></h6>''',unsafe_allow_html=True)
-                        st.markdown(f'''<h6 style="font-family:formula1">Speed Vs Distance Visualisation , <br> {driver} - {event} {year}</h6>''',unsafe_allow_html=True)
+                        st.markdown(f'''<h6 style="font-family:formula1, syne;"><u>Speed Chart</u></h6>''',unsafe_allow_html=True)
+                        st.markdown(f'''<h6 style="font-family:formula1, syne;">Speed Vs Distance Visualisation , <br> {driver} - {event} {year}</h6>''',unsafe_allow_html=True)
                         
                         if driver == fastest_driver:
                             driver_lap = session.laps.pick_driver(AB).pick_fastest()
@@ -597,14 +597,14 @@ def qualifying(summarised_results, year):
                             st.plotly_chart(fig)
 
 
-                        st.markdown(f'''<h6 style="font-family:formula1"><u>Gear Shifts</u></h6>''',unsafe_allow_html=True)
+                        st.markdown(f'''<h6 style="font-family:formula1, syne;"><u>Gear Shifts</u></h6>''',unsafe_allow_html=True)
 
                         try:
                             lap = session.laps.pick_driver(AB).pick_fastest()
                             tel = lap.get_telemetry()
                             x = np.array(tel['X'].values)
                             y = np.array(tel['Y'].values)   
-                            st.markdown(f'''<h6 style="font-family:formula1">Lap Gear Shift Visualization, <br> {driver} - {event} {current_year}</h6>''',unsafe_allow_html=True)
+                            st.markdown(f'''<h6 style="font-family:formula1, syne;">Lap Gear Shift Visualization, <br> {driver} - {event} {current_year}</h6>''',unsafe_allow_html=True)
                     
                             gear_heatmap(x,y,tel,driver,event,current_year)
                         
@@ -657,8 +657,8 @@ def display_qualifying_summary(data, mode):
         for dn, bn, ab, tn, tc, p, qt in zip(driver_numbers, broadcast_names, abbreviations, team_names, team_colors, positions, Q_times):
 
             cols = st.columns([4,2])
-            cols[0].markdown(f'''<h5 style="font-family:formula1"><span style="font-size:37px; background-color: #{tc}; border: 2px solid black; color:black; ">{dn}</span> {bn} ({ab}) <sub style=''>{tn}</sub></h5>''',unsafe_allow_html=True)
-            cols[1].markdown(f'''<h6 style="font-family:formula1">P{int(p)} - {timedelta_conversion(qt)}</h6>''',unsafe_allow_html=True)
+            cols[0].markdown(f'''<h5 style="font-family:formula1, syne;"><span style="font-size:37px; background-color: #{tc}; border: 2px solid black; color:black; ">{dn}</span> {bn} ({ab}) <sub style=''>{tn}</sub></h5>''',unsafe_allow_html=True)
+            cols[1].markdown(f'''<h6 style="font-family:formula1, syne;">P{int(p)} - {timedelta_conversion(qt)}</h6>''',unsafe_allow_html=True)
 
     elif mode in ['Final Grid-Positions', 'Q1 Grid-Positions', 'Q2 Grid-Positions', 'Q3 Grid-Positions']:
 
@@ -666,7 +666,7 @@ def display_qualifying_summary(data, mode):
         Q_times = data['Times']
         
         st.markdown('***')
-        st.markdown(f'''<center><h5 style="font-family:formula1">{mode} <img src='data:image/png;base64,{img_to_bytes('./assets/grid.png')}' class='img-fluid' width=35> </h5></center>''',unsafe_allow_html=True)
+        st.markdown(f'''<center><h5 style="font-family:formula1, syne;">{mode} <img src='data:image/png;base64,{img_to_bytes('./assets/grid.png')}' class='img-fluid' width=35> </h5></center>''',unsafe_allow_html=True)
         st.markdown('***')
         st.markdown('')
         cols = st.columns([5,5])
@@ -676,15 +676,15 @@ def display_qualifying_summary(data, mode):
             
             if x%2==0:
                 if x == 0:
-                    cols[0].markdown(f'''<center><h5 style="font-family:formula1; border: 2px solid black;"> {dn} <u>{bn}</u> <span style='font-size:16px;'>({ab})</span> <p style='font-size:16px; font-weight:bold; color: #{tc}; background-color:slategray;'>{tn}</p> <p style='background-color:purple; color:white;'>{timedelta_conversion(qt)}</p> </h5></center>''',unsafe_allow_html=True)
-                    cols[0].markdown(f'''<h6 style="font-family:formula1">P{int(p)}</h6>''',unsafe_allow_html=True)
+                    cols[0].markdown(f'''<center><h5 style="font-family:formula1, syne; border: 2px solid black;"> {dn} <u>{bn}</u> <span style='font-size:16px;'>({ab})</span> <p style='font-size:16px; font-weight:bold; color: #{tc}; background-color:slategray;'>{tn}</p> <p style='background-color:purple; color:white;'>{timedelta_conversion(qt)}</p> </h5></center>''',unsafe_allow_html=True)
+                    cols[0].markdown(f'''<h6 style="font-family:formula1, syne;">P{int(p)}</h6>''',unsafe_allow_html=True)
                     cols[1].markdown('')
                     cols[1].markdown('')
                     cols[1].markdown('')
                     cols[1].markdown('')
                 else:
-                    cols[0].markdown(f'''<center><h5 style="font-family:formula1; border: 2px solid black;"> {dn} <u>{bn}</u> <span style='font-size:16px;'>({ab})</span> <p style='font-size:16px; font-weight:bold; color: #{tc}; background-color:slategray;'>{tn}</p> <p>{timedelta_conversion(qt)}</p> </h5></center>''',unsafe_allow_html=True)
-                    cols[0].markdown(f'''<h6 style="font-family:formula1">P{int(p)}</h6>''',unsafe_allow_html=True)
+                    cols[0].markdown(f'''<center><h5 style="font-family:formula1, syne; border: 2px solid black;"> {dn} <u>{bn}</u> <span style='font-size:16px;'>({ab})</span> <p style='font-size:16px; font-weight:bold; color: #{tc}; background-color:slategray;'>{tn}</p> <p>{timedelta_conversion(qt)}</p> </h5></center>''',unsafe_allow_html=True)
+                    cols[0].markdown(f'''<h6 style="font-family:formula1, syne;">P{int(p)}</h6>''',unsafe_allow_html=True)
                     cols[1].markdown('')
                     cols[1].markdown('')
                     cols[1].markdown('')
@@ -694,8 +694,9 @@ def display_qualifying_summary(data, mode):
                 cols[0].markdown('')
                 cols[0].markdown('')
                 cols[0].markdown('')
-                cols[1].markdown(f'''<center><h5 style="font-family:formula1; border: 2px solid black;"> {dn} <u>{bn}</u> <span style='font-size:16px;'>({ab})</span> <p style='font-size:16px; font-weight:bold; color: #{tc}; background-color:slategray;'>{tn}</p> <p>{timedelta_conversion(qt)}</p> </h5></center>''',unsafe_allow_html=True)
-                cols[1].markdown(f'''<h6 style="font-family:formula1">P{int(p)}</h6>''',unsafe_allow_html=True)
+                cols[1].markdown(f'''<center><h5 style="font-family:formula1, syne; border: 2px solid black;"> {dn} <u>{bn}</u> <span style='font-size:16px;'>({ab})</span> <p style='font-size:16px; font-weight:bold; color: #{tc}; background-color:slategray;'>{tn}</p> <p>{timedelta_conversion(qt)}</p> </h5></center>''',unsafe_allow_html=True)
+                cols[1].markdown(f'''<h6 style="font-family:formula1, syne;">P{int(p)}</h6>''',unsafe_allow_html=True)
+                
 
         st.markdown('***')
 
@@ -719,6 +720,16 @@ if __name__ == '__main__':
 
     with open('./assets/formula1-black-base64.txt', 'r') as f:
         black = f.read()
+
+
+    # font-style
+    font_url = '''
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700&display=swap" rel="stylesheet">
+
+    '''
+    st.markdown(f"{font_url}",unsafe_allow_html=True)
 
     # fonts-style preset
     style = '''
@@ -758,12 +769,12 @@ if __name__ == '__main__':
     
 
     # Sidebar title 
-    st.sidebar.markdown(f'''<h2 style="font-family:formula1;font-weight:bold; font-size:27px;">The Control Deck <img src='data:image/png;base64,{img_to_bytes('./assets/steering-1.png')}' class='img-fluid' width=50 ></h2>''',unsafe_allow_html=True)
+    st.sidebar.markdown(f'''<h2 style="font-family:formula1, syne;font-weight:bold; font-size:27px;">The Control Deck <img src='data:image/png;base64,{img_to_bytes('./assets/steering-1.png')}' class='img-fluid' width=50 ></h2>''',unsafe_allow_html=True)
     st.sidebar.markdown('***')
 
 
     # title 
-    st.markdown(f'''<center><h1 style='font-family:formula1; font-size:40px;'>The Formula-1 Web-Paddock <img src='data:image/png;base64,{img_to_bytes('./assets/f1-car.png')}' class='img-fluid' width=80></h1></center>''',unsafe_allow_html=True)
+    st.markdown(f'''<center><h1 style='font-family:formula1, syne; font-size:40px;'>The Formula-1 Web-Paddock <img src='data:image/png;base64,{img_to_bytes('./assets/f1-car.png')}' class='img-fluid' width=80></h1></center>''',unsafe_allow_html=True)
     st.markdown('***')
 
 
@@ -801,7 +812,7 @@ if __name__ == '__main__':
 
         if radios == 'Schedule':
 
-            st.markdown(f'''<p style="font-size:30px; font-weight:bold; font-family:Formula1"> <span style='color:darkblue;'>{year}</span> Race Schedule | Grand Prix List </p>''',unsafe_allow_html=True)
+            st.markdown(f'''<p style="font-size:30px; font-weight:bold; font-family:formula1, syne;"> <span style='color:darkblue;'>{year}</span> Race Schedule | Grand Prix List </p>''',unsafe_allow_html=True)
             st.markdown('***')
 
             # Events for the year 
@@ -837,36 +848,36 @@ if __name__ == '__main__':
                 if summary_type == 'Weekend Analysis':
 
                     # title
-                    st.markdown(f'''<center><h4 style="font-family:formula1">{summary_type}</h4></center>''',unsafe_allow_html=True)
+                    st.markdown(f'''<center><h4 style="font-family:formula1, syne;">{summary_type}</h4></center>''',unsafe_allow_html=True)
                     st.markdown('***')
 
                     # Grand Prix Title
-                    st.markdown(f'''<p style="font-size:30px; font-weight:bold; font-family:Formula1"> <img src="https://countryflagsapi.com/png/{package["Country"]}" width="50">  <u>{package["EventName"]}</u>  |  <span style="font-size:23px;">{date_modifier(package["EventDate"])}</span></p>''',unsafe_allow_html=True)
+                    st.markdown(f'''<p style="font-size:30px; font-weight:bold; font-family:formula1, syne;"> <img src="https://countryflagsapi.com/png/{package["Country"]}" width="50">  <u>{package["EventName"]}</u>  |  <span style="font-size:23px;">{date_modifier(package["EventDate"])}</span></p>''',unsafe_allow_html=True)
                 
                 
                     # Race Type
-                    st.markdown(f'<p style="font-size:22px;font-family:Formula1;">Race Format - {package["EventFormat"].capitalize()}</p>',unsafe_allow_html=True)
+                    st.markdown(f'<p style="font-size:22px;font-family:formula1, syne;">Race Format - {package["EventFormat"].capitalize()}</p>',unsafe_allow_html=True)
 
                     # Sessions
                     cols = st.columns(len(sessions_list))
                     for i, session_name in enumerate(sessions_list, start=0) :
-                        cols[i].markdown('> <p style="font-size:17px; font-weight:bold; font-family:Formula1"><u>{}</u><p>'.format(session_name),unsafe_allow_html=True)
-                        cols[i].markdown('> <p style="font-size:13px; font-weight:bold; font-family:Formula1">{}<p>'.format(date_modifier(package['Session'+str(i+1)+"Date"])),unsafe_allow_html=True)
+                        cols[i].markdown('> <p style="font-size:17px; font-weight:bold; font-family:formula1, syne;"><u>{}</u><p>'.format(session_name),unsafe_allow_html=True)
+                        cols[i].markdown('> <p style="font-size:13px; font-weight:bold; font-family:formula1, syne;">{}<p>'.format(date_modifier(package['Session'+str(i+1)+"Date"])),unsafe_allow_html=True)
                     
                     st.markdown('***')
 
 
                 else:
                     # title
-                    st.markdown(f'''<center><h4 style="font-family:formula1">{summary_type}</h4></center>''',unsafe_allow_html=True)
+                    st.markdown(f'''<center><h4 style="font-family:formula1, syne;">{summary_type}</h4></center>''',unsafe_allow_html=True)
                     st.markdown('***')
 
                     # Grand Prix Title
-                    st.markdown(f'''<p style="font-size:28px; font-weight:bold; font-family:Formula1"> <img src="https://countryflagsapi.com/png/{package["Country"]}" width="50">  <u>{package["EventName"]}</u>  |  <span style="font-size:23px;">{date_modifier(package["EventDate"])}</span></p>''',unsafe_allow_html=True)
+                    st.markdown(f'''<p style="font-size:28px; font-weight:bold; font-family:formula1, syne;"> <img src="https://countryflagsapi.com/png/{package["Country"]}" width="50">  <u>{package["EventName"]}</u>  |  <span style="font-size:23px;">{date_modifier(package["EventDate"])}</span></p>''',unsafe_allow_html=True)
                 
 
 
-                    st.markdown(f'<p style="font-size:15px;font-family:Formula1; font-weight:bold;">Race Format - {package["EventFormat"].capitalize()}</p>',unsafe_allow_html=True)
+                    st.markdown(f'<p style="font-size:15px;font-family:formula1, syne; font-weight:bold;">Race Format - {package["EventFormat"].capitalize()}</p>',unsafe_allow_html=True)
                     sessions_list.insert(0,'Select Session')
                     session_select = st.selectbox('Select Session', sessions_list, key='sessions')
                     st.markdown('***')
@@ -903,7 +914,7 @@ if __name__ == '__main__':
         st.sidebar.markdown('***')
 
         current_year = datetime.now().strftime('%Y')
-        st.markdown(f'''<p style="font-size:30px; font-weight:bold; font-family:Formula1"> <span style='color:darkblue;'>{current_year}</span> Race Schedule | Grand Prix List </p>''',unsafe_allow_html=True)
+        st.markdown(f'''<p style="font-size:30px; font-weight:bold; font-family:formula1, syne;"> <span style='color:darkblue;'>{current_year}</span> Race Schedule | Grand Prix List </p>''',unsafe_allow_html=True)
         st.markdown("***")
 
         circuits_cdf, circuits_rdf = fetch_circuits_data(current_year)
@@ -942,12 +953,12 @@ if __name__ == '__main__':
 
                 sessions_list = [package[x] for x in ['Session'+str(i) for i in range(1,6)]]
 
-                st.markdown(f'''<center><h4 style="font-family:formula1">Session Analysis</h4></center>''',unsafe_allow_html=True)
+                st.markdown(f'''<center><h4 style="font-family:formula1, syne;">Session Analysis</h4></center>''',unsafe_allow_html=True)
                 st.markdown('***')
 
                 # Grand Prix Title
-                st.markdown(f'''<p style="font-size:28px; font-weight:bold; font-family:Formula1"> <img src="https://countryflagsapi.com/png/{package["Country"]}" width="50">  <u>{package["EventName"]}</u>  |  <span style="font-size:23px;">{date_modifier(package["EventDate"])}</span></p>''',unsafe_allow_html=True)
-                st.markdown(f'<p style="font-size:15px;font-family:Formula1; font-weight:bold;">Race Format - {package["EventFormat"].capitalize()}</p>',unsafe_allow_html=True)
+                st.markdown(f'''<p style="font-size:28px; font-weight:bold; font-family:formula1, syne;"> <img src="https://countryflagsapi.com/png/{package["Country"]}" width="50">  <u>{package["EventName"]}</u>  |  <span style="font-size:23px;">{date_modifier(package["EventDate"])}</span></p>''',unsafe_allow_html=True)
+                st.markdown(f'<p style="font-size:15px;font-family:formula1, syne; font-weight:bold;">Race Format - {package["EventFormat"].capitalize()}</p>',unsafe_allow_html=True)
 
                 # session select
                 sessions_list.insert(0,'Select Session')
@@ -991,5 +1002,5 @@ if __name__ == '__main__':
 
     st.sidebar.markdown('***')
     
-    st.sidebar.markdown(f'''<h4 style='font-family:formula1'><span style='font-weight:normal;'>Engineered by</span> <u style='font-size:25px'>r0han</u> <a href='https://github.com/r0han99'> <img src='data:image/png;base64,{img_to_bytes('./assets/github.png')}' class='img-fluid' width=35> </a></h4>''',unsafe_allow_html=True)
+    st.sidebar.markdown(f'''<h4 style='font-family:formula1, syne;'><span style='font-weight:normal;'>Engineered by</span> <u style='font-size:25px'>r0han</u> <a href='https://github.com/r0han99'> <img src='data:image/png;base64,{img_to_bytes('./assets/github.png')}' class='img-fluid' width=35> </a></h4>''',unsafe_allow_html=True)
     
