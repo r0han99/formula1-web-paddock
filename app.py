@@ -726,8 +726,7 @@ if __name__ == '__main__':
     font_url = '''
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&display=swap" rel="stylesheet">
     '''
     st.markdown(f"{font_url}",unsafe_allow_html=True)
 
@@ -743,7 +742,7 @@ if __name__ == '__main__':
     }
 
     html, body, [class*="css"]  {
-    font-family: 'formula1';
+    font-family: 'syne';
     }
     
 
