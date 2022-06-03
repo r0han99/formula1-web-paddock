@@ -724,7 +724,7 @@ if __name__ == '__main__':
     style = '''
     <style>
     @font-face {
-    font-family: 'formula1-regular';'''+f'''
+    font-family: 'formula1';'''+f'''
     src: url(data:application/x-font-woff;charset=utf-8;base64,{regular} )'''+''' format('woff');
     font-weight: normal;
     font-style: normal;
@@ -737,14 +737,14 @@ if __name__ == '__main__':
     
 
     @font-face {
-    font-family: 'formula1-bold';'''+f'''
+    font-family: 'formula1';'''+f'''
     src: url(data:application/x-font-woff;charset=utf-8;base64,{bold} )'''+''' format('woff');
     font-weight: normal;
     font-style: normal;
     }
 
     @font-face {
-    font-family: 'formula1-black';'''+f'''
+    font-family: 'formula1';'''+f'''
     src: url(data:application/x-font-woff;charset=utf-8;base64,{black} )'''+''' format('woff');
     font-weight: normal;
     font-style: normal;
