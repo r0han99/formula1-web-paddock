@@ -163,7 +163,7 @@ def load_session_data(year, event, session_select):
     session_obj = fastf1.get_session(year, event, session_select)
     with st.spinner(session_obj.load()):
         session_results = session_obj.results.reset_index(drop=True)
-        return session_results
+        return session_results, session_obj
     
 @st.experimental_singleton
 def return_session_object(year,event, session_select):
@@ -465,7 +465,7 @@ def qualifying(summarised_results, year):
                     st.markdown(f'''<h6 style="font-family:formula1, syne;"><u> Driver Performance Investigation</u></h6>''',unsafe_allow_html=True)
                     AB, BN, TN, TC  = driver_dict[driver]
                     st.markdown(f'''<h6 style="font-family:formula1, syne;">Fastest Lap Analysis</h6>''',unsafe_allow_html=True)
-                    st.markdown(f'''<h4 style="font-family:formula1, syne;">{BN} ({AB})<sub style='color:#{TC}'>{TN}</sub></h4>''',unsafe_allow_html=True)
+                    st.markdown(f'''<h4 style="font-family:formula1, syne; font-weight:800;">{BN} ({AB})<sub style='color:#{TC}'>{TN}</sub></h4>''',unsafe_allow_html=True)
             
                     
                     # session data 
@@ -625,16 +625,6 @@ def qualifying(summarised_results, year):
             st.warning("The API doesn't hold the telemetry data for the years before 2018.")
             
 
-                                            
-
-                                        
-
-
-
-    
-
-    
-
 
 def display_qualifying_summary(data, mode):
 
@@ -700,9 +690,281 @@ def display_qualifying_summary(data, mode):
 
         st.markdown('***')
 
+def fetch_compounds(driver_data):
+    compounds = {}
+    initial = list(driver_data['Compound'].dropna().unique())[0]
+    compounds[1] = initial
 
+    lapnumbers = list(driver_data[~driver_data['PitInTime'].isnull()].loc[:,'LapNumber'].values)
+    nextcompounds = []
+    nextlaps = []
+    for lapnumber in lapnumbers:
+        try:
+            nextcompounds.append(driver_data[driver_data['LapNumber']==lapnumber+1].loc[:,'Compound'].values[0])
+            nextlaps.append(driver_data[driver_data['LapNumber']==lapnumber+1].loc[:,'LapNumber'].values[0])
+        except:
+            nextcompounds.append(driver_data[driver_data['LapNumber']==lapnumber].loc[:,'Compound'].values[0])
+            nextlaps.append(driver_data[driver_data['LapNumber']==lapnumber].loc[:,'LapNumber'].values[0])
+    
+    for lap, compound in zip(nextlaps, nextcompounds):
+
+        compounds[int(lap)] = compound
+        
+    return compounds
+
+def fetch_strategy(driver_data, total=None,mode='previous'):
+    
+    if mode == 'previous':
+        dfs = []
+        for compound in driver_data['Compound'].dropna().unique():
+            dfs.append(driver_data[driver_data['Compound']==compound])
+        lapschanged = []
+        for df in dfs:
+            lapschanged.append(df.iloc[-1:,:]['LapNumber'].values[0])
+
+        if driver_data.shape[0] == 1 or driver_data.empty:
+            return None, None
+        else:
+            lap_retired = driver_data.shape[0]
+            for i in range(len(lapschanged)):
+                try:
+                    if driver_data[driver_data['LapNumber'] == lapschanged[i]+1].empty:
+                        print('first if')
+                        lap_retired = lapschanged[i]
+                    else:
+                        # second check
+                        if driver_data[driver_data['LapNumber'] == lapschanged[i+1]+1].empty:
+                            print('second if')
+                            lap_retired = lapschanged[i+1]
+
+                        else:
+                            compounds = fetch_compounds(driver_data)
+                            return compounds, lap_retired
+                except:
+                    compounds = fetch_compounds(driver_data)
+                    return compounds, lap_retired
+                
+            compounds = fetch_compounds(driver_data)
+            return compounds, lap_retired
+
+    else:
+        
+        if driver_data.shape[0] == 1 or driver_data.empty:
+                print ('No Data Records, check knockout list.')
+        else:
+            dfs = []
+            for compound in driver_data['Compound'].dropna().unique():
+                dfs.append(driver_data[driver_data['Compound']==compound])
+            lapschanged = []
+            for df in dfs:
+                lapschanged.append(df.iloc[-1:,:]['LapNumber'].values[0])
+
+            lapschanged = list(map(int, lapschanged))
+
+            firstphase = driver_data[driver_data['LapNumber']<lapschanged[0]]['Compound'].value_counts().idxmax()
+            lapschanged.insert(0,1)
+
+            retired_flag = False
+            if lapschanged[-1:][0] < 64 and not (lapschanged[-1:][0] - total) == 1:
+                retired_flag = True
+                pairs = []
+                for lap, i in zip(lapschanged, range(len(lapschanged)) ):
+                    try:
+                        pairs.append((lapschanged[i],lapschanged[i+1]-1))
+                    except:
+                        pass
+            else:
+                pairs = []
+                for lap, i in zip(lapschanged, range(len(lapschanged)) ):
+                    try:
+                        pairs.append((lapschanged[i],lapschanged[i+1]))
+                    except:
+                        pass
+
+
+            print(lapschanged)
+            print(pairs)
+
+            compounds = {}
+            for df, laprange in zip(dfs, pairs):
+                compound = df['Compound'].value_counts().idxmax()
+            #     print(df['Compound'].value_counts().idxmax())
+                compounds[compound] = laprange
+
+            if retired_flag:
+                compounds['Retired'] = (lapschanged[-1:][0], total)
+
+            print(compounds)
+            return compounds, lapschanged, pairs
+
+                
+def display_strategy(presets, mode='previous'):
+
+
+    # color_dict
+    color_dict = {'soft':'red','supersoft':'red','ultrasoft':'purple','hypersoft':'purple','hard':'grey','medium':'gold','intermediate':'limegreen','wet':'dodgerblue'} 
+
+
+     # Tyre Information
+    information_dict = {'soft':'A soft tyre is stickier, allowing the driver to: Accelerate faster without spinning the rear wheels, because the car has more traction; Brake harder without locking; Take corners at a higher speed.',
+    'supersoft':'It is a very adaptable tire that can be used as the softest compound at a high-severity track as well as the hardest compound at a low-severity track or street circuit. It is one of the most commonly used compounds of all.',
+    'ultrasoft':'As the very softest tire in the range, designed to sit below the supersoft, it has a very rapid warm-up and huge peak performance, but the other side of this is its relatively limited overall life.',
+    'hypersoft':'Is the heir to the universally-popular hyper-soft: the fastest compound that Pirelli has ever made. This tire is suitable for all circuits that demand high levels of mechanical grip, but the trade-off for this extra speed and adhesion is a considerably shorter lifespan than the other tires in the range. It is not a qualifying tire, but it comes closest.',
+    'hard':'Hardest Tyre from the lot, It is designed for circuits that put the highest energy loadings through the tires, which will typically feature fast corners, abrasive surfaces, or high ambient temperatures. The compound takes longer to warm up but offers maximum durability and provides low degradation.',
+    'medium':'Strikes a very good balance between performance and durability, with the accent on performance. It is a very adaptable tire that can be used as the softest compound at a high-severity track as well as the hardest compound at a low-severity track or street circuit. It is one of the most commonly used compounds of all.',
+    'intermediate':'The intermediates are the most versatile of the rain tires. They can be used on a wet track with no standing water, as well as a drying surface. This tire evacuates 30 litres of water per second per tire at 300kph. The compound has been designed to expand the working range, as seen at a number of races last year, guaranteeing a wide crossover window both with the slicks and the full wets.',
+    'wet':'The full wet tires are the most effective for heavy rain. These tires can evacuate 85 litres of water per second per tire at 300kph: when it rains heavily, visibility rather than grip causes issues. The profile has been designed to increase resistance to aquaplaning, which gives the tire more grip in heavy rain. The diameter of the full wet tire is 10mm wider than the slick tire.'}
+                    
+
+
+    if mode == 'previous':
+
+        # unwarp 
+        strategy, lap_retired, total_laps = presets
+
+        if not strategy == None and not lap_retired == None:
+
+            last_lap_error = False
+            if not int(lap_retired) == total_laps:
+                strategy[lap_retired] = 'Retired' 
+                if (total_laps - lap_retired) == 1:
+                    last_lap_error = True
+                        
+                    
+
+           
             
             
+            laps0 = list(strategy.keys())
+            laps0.append(total_laps)
+            laps1 = list(strategy.keys())
+
+
+            # range of tyre usage
+            pairs = []
+            for lap, i in zip(laps1, range(len(laps1)) ):
+                try:
+                    pairs.append((laps1[i],laps1[i+1]-1))
+                except:
+                    pass
+
+            pairs.append((laps1[-1:][0], total_laps))                                                                  
+            
+            cols = st.columns(laps0[1:])
+            for lap, i in zip(laps0 ,range(len(laps0[1:]))):
+                range_of_usage = pairs[i]
+                cols[i].markdown(f'''<center><span style='font-size:28px;'>{int(range_of_usage[0])} - {int(range_of_usage[1])}</span></center>''',unsafe_allow_html=True)
+                try:
+                    cols[i].markdown(f'''<hr style="height:10px; width:100%; border-width:0; color:{color_dict[strategy[lap].lower()]}; background-color:{color_dict[strategy[lap].lower()]}">''',unsafe_allow_html=True)
+                    cols[i].markdown(f'''<center><span style='font-size:28px;'><img src='data:image/png;base64,{img_to_bytes(f'./assets/{strategy[lap].lower()}.png')}' class='img-fluid' width=50></span></center>''',unsafe_allow_html=True)
+                except:
+                    cols[i].markdown(f'''<hr style="height:10px; width:100%; border-width:0; color:black; background-color:black;">''',unsafe_allow_html=True)
+                    if last_lap_error:
+                        cols[i].markdown(f'''<center><span style='font-size:28px;'>+1</span></center>''',unsafe_allow_html=True)
+                    else:
+                        cols[i].markdown(f'''<center><span style='font-size:28px;'>Retired</span></center>''',unsafe_allow_html=True)
+
+
+            # baseline 
+            st.markdown(f'''<hr style="height:5px; width:100%; border-width:0; color:black; background-color:black">''',unsafe_allow_html=True)
+            st.markdown(f'''<center><span style='font-size:35px;'>{total_laps} Laps</span></center>''',unsafe_allow_html=True)
+            st.markdown('')
+
+           
+            tyreexp = st.expander('Tyre Information', expanded=True)
+            # st.write(strategy)
+            if 'Retired' in strategy.values():
+                strategy.popitem()
+            # st.write(strategy)
+
+            compounds = set(strategy.values())
+            for compound in compounds: 
+                tyreexp.markdown(f'''* <span> <img src='data:image/png;base64,{img_to_bytes(f'./assets/{compound.lower()}.png')}' class='img-fluid' width=35> {compound}</span>''',unsafe_allow_html=True)
+                tyreexp.markdown(f'''> <p style='font-size:15px;text-align:justify;'>{information_dict[compound.lower()]}</p>''',unsafe_allow_html=True)
+
+
+
+            disclaimer = st.expander('Disclaimer?')
+            disclaimer_info = '''
+            * The Retired Lap Range representation might not be accurate to the real-life scenario. 
+            * '+1' Represents a Missing Data record, in this scenario the driver isn't retired.'''
+            disclaimer.info(disclaimer_info)
+            st.markdown('***')
+            
+
+
+
+            disclaimer = st.expander('Disclaimer?')
+            disclaimer.info('The Retired Lap Range representation might not be accurate to the real-life scenario.')
+            st.markdown('***')
+            
+        
+
+        else:
+            st.warning('Data Descrepancy! check the Retired List.')
+
+    else:
+
+        compounds, lapschanged, pairs, total = presets
+        # st.code(compounds)
+        # st.code(lapschanged)
+        # st.code(pairs)
+        # st.code(total)
+        column_lengths = []
+
+        for pair in pairs:
+            l, u = pair
+            value = int(u) - int(l)
+            column_lengths.append(value)
+
+        # st.code(column_lengths)
+        cols = st.columns(column_lengths)
+
+        for compound, lrange, i in zip(compounds.keys(), compounds.values(), range(len(compounds))):
+
+            lower, upper = lrange
+            cols[i].markdown(f'''<center><span style='font-size:28px;'>{lower} - {upper}</span></center>''',unsafe_allow_html=True)
+            
+            cols[i].markdown(f'''<hr style="height:10px; width:100%; border-width:0; color:{color_dict[compound.lower()]}; background-color:{color_dict[compound.lower()]}">''',unsafe_allow_html=True)
+            cols[i].markdown(f'''<center><span style='font-size:28px;'><img src='data:image/png;base64,{img_to_bytes(f'./assets/{compound.lower()}.png')}' class='img-fluid' width=50></span></center>''',unsafe_allow_html=True)
+            # except:
+            #     cols[i].markdown(f'''<hr style="height:10px; width:100%; border-width:0; color:black; background-color:black;">''',unsafe_allow_html=True)
+            #     # if last_lap_error:
+                #     cols[i].markdown(f'''<center><span style='font-size:28px;'>+1</span></center>''',unsafe_allow_html=True)
+                # else:
+                #     cols[i].markdown(f'''<center><span style='font-size:28px;'>Retired</span></center>''',unsafe_allow_html=True)
+
+
+        # baseline 
+        st.markdown(f'''<hr style="height:5px; width:100%; border-width:0; color:black; background-color:black">''',unsafe_allow_html=True)
+        st.markdown(f'''<center><span style='font-size:35px;'>{total} Laps</span></center>''',unsafe_allow_html=True)
+        st.markdown('')
+
+        tyreexp = st.expander('Tyre Information', expanded=True)
+        # st.write(strategy)
+        if 'Retired' in compounds.keys():
+            strategy.popitem()
+        # st.write(strategy)
+
+        compounds = set(compounds.keys())
+        for compound in compounds: 
+            tyreexp.markdown(f'''* <span> <img src='data:image/png;base64,{img_to_bytes(f'./assets/{compound.lower()}.png')}' class='img-fluid' width=35> {compound}</span>''',unsafe_allow_html=True)
+            tyreexp.markdown(f'''> <p style='font-size:15px;text-align:justify;'>{information_dict[compound.lower()]}</p>''',unsafe_allow_html=True)
+
+
+        disclaimer = st.expander('Disclaimer?')
+        disclaimer_info = '''
+        * The Retired Lap Range representation might not be accurate to the real-life scenario. 
+        * '+1' Represents a Missing Data record, in this scenario the driver isn't retired.'''
+        disclaimer.info(disclaimer_info)
+        st.markdown('***')
+        
+        
+
+        
+
+
+
             
 
 if __name__ == '__main__':
@@ -768,12 +1030,12 @@ if __name__ == '__main__':
     
 
     # Sidebar title 
-    st.sidebar.markdown(f'''<h2 style="font-family:formula1, syne;font-weight:bold; font-size:27px;">The Control Deck <img src='data:image/png;base64,{img_to_bytes('./assets/steering-1.png')}' class='img-fluid' width=50 ></h2>''',unsafe_allow_html=True)
+    st.sidebar.markdown(f'''<h2 style="font-family:formula1, syne; font-weight:bold; font-size:27px;">The Control Deck <img src='data:image/png;base64,{img_to_bytes('./assets/steering-1.png')}' class='img-fluid' width=50 ></h2>''',unsafe_allow_html=True)
     st.sidebar.markdown('***')
 
 
     # title 
-    st.markdown(f'''<center><h1 style='font-family:formula1, syne; font-size:40px;'>The Formula-1 Web-Paddock <img src='data:image/png;base64,{img_to_bytes('./assets/f1-car.png')}' class='img-fluid' width=80></h1></center>''',unsafe_allow_html=True)
+    st.markdown(f'''<center><h1 style='font-family:formula1, syne; font-size:40px; font-weight:bold;'>The Formula-1 Web-Paddock <img src='data:image/png;base64,{img_to_bytes('./assets/f1-car.png')}' class='img-fluid' width=80></h1></center>''',unsafe_allow_html=True)
     st.markdown('***')
 
 
@@ -884,28 +1146,82 @@ if __name__ == '__main__':
                     # bypassing the first element problem
                     if session_select != 'Select Session':
 
-                        session_results = load_session_data(year, event, session_select)
+                        session_results, session_obj = load_session_data(year, event, session_select)
                         
                         
+                        if session_select == 'Qualifying':
 
-                    if session_select == 'Qualifying':
+                            # Data Collection
+                            summarised_results = session_results.copy(deep=True)
+                            summarised_results = pd.DataFrame(summarised_results)
+                            summarised_results = summarised_results.drop(['Time','Status','Points'], axis=1)
+                            summarised_results = summarised_results.fillna('0')
 
-                        # Data Collection
-                        summarised_results = session_results.copy(deep=True)
-                        summarised_results = pd.DataFrame(summarised_results)
-                        summarised_results = summarised_results.drop(['Time','Status','Points'], axis=1)
-                        summarised_results = summarised_results.fillna('0')
-
-                        qualifying(summarised_results, year)
+                            qualifying(summarised_results, year)
 
 
-                    elif session_select in ['Practice 1','Practice 2','Practice 3','Sprint']:
-    
-                        st.warning('In Development ⌛')
-                        st.markdown('***')
+                        elif session_select in ['Practice 1','Practice 2','Practice 3','Sprint']:
+        
+                            st.warning('In Development ⌛')
+                            st.markdown('***')
+
+                        elif session_select == 'Race':
+
+
+                            cols = st.columns([6,3])
+                            placeholder = cols[1].empty()
+                            placeholder.selectbox('?',['?'])
+                            mode = cols[0].selectbox('Select Mode', ['Mode?','Driver Analysis','Team Analysis', 'Race Standings','Retirements'])
+
+                            
+                            
+                            if mode == 'Driver Analysis':
+                                
+                                
+                                if year >= 2018:
+                                    driverlaps = session_obj.laps
+                                    ab_list = list(driverlaps['Driver'].unique())
+                                    driver_AB = placeholder.selectbox('Driver',ab_list) # selection
+                                    driver_data = driverlaps.pick_driver(driver_AB)
+                                    driver_data = driver_data.reset_index()
+                                    driver_data = driver_data.drop(0)
+                                    total_laps = int(driverlaps['LapNumber'].max())
+
+
+                                    # fetch strategy 
+                                    st.markdown('***')
+                                    st.markdown('''<center><span style='font-weight:800; font-size:28px;'>Race Strategy</span></center>''', unsafe_allow_html=True)
+                                    st.markdown('***')
+
+                                    driver_info = session_obj.get_driver(driver_AB)
+                                    dn, bn, ab, tn, tc  = driver_info[:5]
+                                    st.markdown(f'''<h4 style="font-family:formula1, syne; font-weight:800;">{bn} ({ab})<sub style='color:#{tc}'>{tn}</sub></h4>''',unsafe_allow_html=True)
+                                    # st.subheader(driver_AB) # subheader -- racer name 
+
+                                    strategy, lap_retired = fetch_strategy(driver_data)
+                                    presets = [strategy, lap_retired, total_laps]  
+                                    display_strategy(presets, mode='previous')
+
+                                   
+
+                                    
+
+
+
+                                else:
+                                    st.warning("The API doesn't hold the telemetry data for the years before 2018.")
+
+                            
+
+                            
 
                        
-                            
+                    
+                    
+                    
+                    else:
+                        pass
+                        # CONTROL WILL NOT REACH HERE
 
 
     
@@ -913,6 +1229,7 @@ if __name__ == '__main__':
         st.sidebar.markdown('***')
 
         current_year = datetime.now().strftime('%Y')
+        current_year = int(current_year)
         st.markdown(f'''<p style="font-size:30px; font-weight:bold; font-family:formula1, syne;"> <span style='color:darkblue;'>{current_year}</span> Race Schedule | Grand Prix List </p>''',unsafe_allow_html=True)
         st.markdown("***")
 
@@ -923,13 +1240,13 @@ if __name__ == '__main__':
         if radios == 'Schedule':
             # Events for the year 
             st.markdown(f'''<p style='font-weight:bold;'></p>''',unsafe_allow_html=True)
-            display_schedule(int(current_year), circuits_cdf, circuits_rdf)
+            display_schedule(current_year, circuits_cdf, circuits_rdf)
 
         else:
             # GP analysis
     
             # Analytics for the races that happened
-            current_event = fastf1.get_event_schedule(int(current_year))
+            current_event = fastf1.get_event_schedule(current_year)
             conditional = (current_event['EventDate'] <= datetime.now()) | (current_event['Session1Date'] <= datetime.now()) | (current_event['Session2Date'] <= datetime.now()) | (current_event['Session3Date'] <= datetime.now()) | (current_event['Session4Date'] <= datetime.now()) | (current_event['Session4Date'] <= datetime.now())
             index = current_event[conditional].index
             current_event = current_event.loc[index,:]
@@ -967,10 +1284,10 @@ if __name__ == '__main__':
 
                 # Bypassing the first element problem
                 if session_select != 'Select Session':
+
+                    session_results, session_obj = load_session_data(current_year, event, session_select)
                     
                     if session_select == 'Qualifying':
-
-                        session_results = load_session_data(int(current_year), event, session_select)
 
                         # Data Collection
                         summarised_results = session_results.copy(deep=True)
@@ -979,7 +1296,58 @@ if __name__ == '__main__':
                         summarised_results = summarised_results.fillna('0')
 
                         
-                        qualifying(summarised_results,int(current_year))
+                        qualifying(summarised_results,current_year)
+
+                    elif session_select == 'Race':
+
+
+                        cols = st.columns([6,3])
+                        placeholder = cols[1].empty()
+                        placeholder.selectbox('?',['?'])
+                        mode = cols[0].selectbox('Select Mode', ['Mode?','Driver Analysis','Team Analysis', 'Race Standings','Retirements'])
+
+                        
+                        
+                        if mode == 'Driver Analysis':
+                            
+                            
+                            if current_year >= 2018:
+                                driverlaps = session_obj.laps
+                                ab_list = list(driverlaps['Driver'].unique())
+                                driver_AB = placeholder.selectbox('Driver',ab_list) # selection
+                                driver_data = driverlaps.pick_driver(driver_AB)
+                                driver_data = driver_data.reset_index()
+                                total_laps = int(driverlaps['LapNumber'].max())
+
+                                
+
+
+                                # fetch strategy 
+                                st.markdown('***')
+                                st.markdown('''<center><span style='font-weight:800; font-size:28px;'>Race Strategy</span></center>''', unsafe_allow_html=True)
+                                st.markdown('***')
+
+                                driver_info = session_obj.get_driver(driver_AB)
+                                dn, bn, ab, tn, tc  = driver_info[:5]
+                                st.markdown(f'''<h4 style="font-family:formula1, syne; font-weight:800;">{bn} ({ab})<sub style='color:#{tc}'>{tn}</sub></h4>''',unsafe_allow_html=True)
+                                # st.subheader(driver_AB) # subheader -- racer name 
+
+                                compounds, lapschanged, pairs = fetch_strategy(driver_data,total_laps, mode='current') 
+                                strategy, lap_retired = fetch_strategy(driver_data)
+                                if event == 'Monaco Grand Prix':
+                                    presets = [compounds, lapschanged, pairs, total_laps] 
+                                    display_strategy(presets, mode='current')
+                                else:
+                                    presets = [strategy, lap_retired, total_laps]  
+                                    display_strategy(presets, mode='previous')
+                                
+
+
+
+                            else:
+                                st.warning("The API doesn't hold the telemetry data for the years before 2018.")
+
+                        
 
             
                     elif session_select in ['Practice 1','Practice 2','Practice 3','Sprint']:
@@ -987,8 +1355,12 @@ if __name__ == '__main__':
                         st.warning('In Development ⌛')
                         st.markdown('***')
 
+                    
 
-                
+
+                else:
+                    pass
+                    # CONTROL WILL NOT REACH HERE
 
 
     elif category == 'About':
