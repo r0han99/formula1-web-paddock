@@ -892,14 +892,6 @@ def display_strategy(presets, mode='previous'):
             st.markdown('***')
             
 
-
-
-            disclaimer = st.expander('Disclaimer?')
-            disclaimer.info('The Retired Lap Range representation might not be accurate to the real-life scenario.')
-            st.markdown('***')
-            
-        
-
         else:
             st.warning('Data Descrepancy! check the Retired List.')
 
@@ -1204,8 +1196,7 @@ if __name__ == '__main__':
 
                                    
 
-                                    
-
+                                
 
 
                                 else:
@@ -1260,6 +1251,16 @@ if __name__ == '__main__':
             if not event == "List of Completed Grand Prixs'":
 
                 event_data = current_event[current_event['EventName'] == event].T
+                
+                # country name
+                country = event_data.loc['Country'].values[0]
+
+                try:
+                    circuit = circuits_rdf.loc[event, 'Circuits']
+                    locality = circuits_rdf.loc[event, 'Localities']
+                except:
+                    circuit = circuits_cdf.loc[country, 'Circuits']
+                    locality = circuits_cdf.loc[country, 'Localities']
 
                 # packaging event summarised-information
                 package = {}
@@ -1273,7 +1274,8 @@ if __name__ == '__main__':
                 st.markdown('***')
 
                 # Grand Prix Title
-                st.markdown(f'''<p style="font-size:28px; font-weight:bold; font-family:formula1, syne;"> <img src="https://countryflagsapi.com/png/{package["Country"]}" width="50">  <u>{package["EventName"]}</u>  |  <span style="font-size:23px;">{date_modifier(package["EventDate"])}</span></p>''',unsafe_allow_html=True)
+                st.markdown(f'''<p style="font-size:30px; font-weight:bold; font-family:formula1, syne;"> <img src="https://countryflagsapi.com/png/{package["Country"]}" width="50">  <u>{package["EventName"]}</u>  |  <span style="font-size:23px;">{date_modifier(package["EventDate"])} <br><span style='font-family:syne; '>{circuit}, {locality}</span> </span> </p>''',unsafe_allow_html=True)
+                # st.markdown(f'''<p style="font-size:28px; font-weight:bold; font-family:formula1, syne;"> <img src="https://countryflagsapi.com/png/{package["Country"]}" width="50">  <u>{package["EventName"]}</u>  |  <span style="font-size:23px;">{date_modifier(package["EventDate"])}</span></p>''',unsafe_allow_html=True)
                 st.markdown(f'<p style="font-size:15px;font-family:formula1, syne; font-weight:bold;">Race Format - {package["EventFormat"].capitalize()}</p>',unsafe_allow_html=True)
 
                 # session select
