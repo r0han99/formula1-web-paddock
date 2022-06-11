@@ -8,8 +8,6 @@ import requests
 import fastf1
 import fastf1.plotting
 import matplotlib.pyplot as plt
-from tables import Cols
-from torch import int64
 from src.about import about_cs
 from pathlib import Path
 import base64
