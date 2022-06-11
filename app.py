@@ -1504,7 +1504,7 @@ if __name__ == '__main__':
                                     image =  f'''<img src='data:image/png;base64,{img_to_bytes(f"./assets/green_up.png")}' class='img-fluid' width=25 >'''
                                 
                                 if index%2==0:
-                                    if status == 'Finished':
+                                    if status == 'Finished' and status == '+1 Lap':
                                         cols[0].markdown(f'''<center><span style='font-size:45px; font-weight:bold;  border-bottom:3px solid #000;'>P{int(pn)}<sup>{points}</sup> </span><br><span style='font-size:32px;'>{fn} <b>{ln}</b></span> <br><sub style='color:#{tc}'><b>{tn}</b></sub> <br><sub>positions {image} {abs(gained)}</sub></center>''',unsafe_allow_html=True)
                                     else:
                                         cols[0].markdown(f'''<center><span style='font-size:45px; font-weight:bold;  border-bottom:3px solid #000;'>P{int(pn)}<sup>{points}</sup> </span><br><span style='font-size:32px;'>{fn} <b>{ln}</b></span> <br><sub style='color:#{tc}'><b>{tn}</b></sub> <br><sub><b>Retired</b> - {status}</sub></center>''',unsafe_allow_html=True)
@@ -1515,7 +1515,7 @@ if __name__ == '__main__':
                                 else:
                                     cols[0].markdown('')
                                     cols[0].markdown('')
-                                    if status == 'Finished':
+                                    if status == 'Finished' and status == '+1 Lap':
                                         cols[1].markdown(f'''<center><span style='font-size:45px; font-weight:bold;  border-bottom:3px solid #000;'>P{int(pn)}<sup>{points}</sup> </span><br><span style='font-size:32px;'>{fn} <b>{ln}</b></span> <br><sub style='color:#{tc}'><b>{tn}</b></sub> <br><sub>positions {image} {abs(gained)}</sub></center>''',unsafe_allow_html=True)
                                     else:
                                         cols[1].markdown(f'''<center><span style='font-size:45px; font-weight:bold;  border-bottom:3px solid #000;'>P{int(pn)}<sup>{points}</sup> </span><br><span style='font-size:32px;'>{fn} <b>{ln}</b></span> <br><sub style='color:#{tc}'><b>{tn}</b></sub> <br><sub><b>Retired</b> - {status}</sub></center>''',unsafe_allow_html=True)
