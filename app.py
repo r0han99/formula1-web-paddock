@@ -9,6 +9,7 @@ import fastf1
 import fastf1.plotting
 import matplotlib.pyplot as plt
 from tables import Cols
+from torch import int64
 from src.about import about_cs
 from pathlib import Path
 import base64
@@ -951,9 +952,19 @@ def display_strategy(presets, mode='previous'):
         disclaimer.info(disclaimer_info)
         st.markdown('***')
         
-        
+@st.experimental_singleton(show_spinner=True)
+def get_race_lap_data(_driverlaps, driver_AB):
 
-        
+    laps_data = driverlaps.copy(deep=True)
+    laps_data = laps_data.reset_index(drop=True)
+
+    weather_data = laps_data.get_weather_data()
+    weather_data = weather_data.reset_index(drop=True)
+
+    joined = pd.concat([laps_data, weather_data.loc[:, ~(weather_data.columns == 'Time')]], axis=1) #from the fastf1 documentation
+    driver_data = joined.pick_driver(driver_AB)
+
+    return joined, driver_data
 
 
 
@@ -996,7 +1007,7 @@ if __name__ == '__main__':
     }
 
     html, body, [class*="css"]  {
-    font-family: 'syne';
+    font-family: 'formula1';
     }
     
 
@@ -1027,7 +1038,7 @@ if __name__ == '__main__':
 
 
     # title 
-    st.markdown(f'''<center><h1 style='font-family:formula1, syne; font-size:40px; font-weight:bold;'>The Formula-1 Web-Paddock <img src='data:image/png;base64,{img_to_bytes('./assets/f1-car.png')}' class='img-fluid' width=80></h1></center>''',unsafe_allow_html=True)
+    st.markdown(f'''<center><h1 style='font-family:formula1, syne; font-size:55px; font-weight:900;'>The <img src='data:image/png;base64,{img_to_bytes('./assets/f1.png')}' class='img-fluid' width=120> Web-Paddock <img src='data:image/png;base64,{img_to_bytes('./assets/f1-car.png')}' class='img-fluid' width=80></h1></center>''',unsafe_allow_html=True)
     st.markdown('***')
 
 
@@ -1305,9 +1316,14 @@ if __name__ == '__main__':
 
                         cols = st.columns([6,3])
                         placeholder = cols[1].empty()
-                        placeholder.selectbox('?',['?'])
+                        # placeholder.markdown('<-')
                         mode = cols[0].selectbox('Select Mode', ['Mode?','Driver Analysis','Team Analysis', 'Race Standings','Retirements'])
 
+                        # result summary
+                        results = session_obj.results
+                        results = results.drop(['Q1','Q2','Q3','FullName'],axis=1)
+                        results = results.fillna('0')
+                        retired = results[(results['Status'] != 'Finished') & (results['Status'] != '+1 Lap') ]
                         
                         
                         if mode == 'Driver Analysis':
@@ -1321,8 +1337,6 @@ if __name__ == '__main__':
                                 driver_data = driver_data.reset_index()
                                 total_laps = int(driverlaps['LapNumber'].max())
 
-                                
-
 
                                 # fetch strategy 
                                 st.markdown('***')
@@ -1331,7 +1345,7 @@ if __name__ == '__main__':
 
                                 driver_info = session_obj.get_driver(driver_AB)
                                 dn, bn, ab, tn, tc  = driver_info[:5]
-                                st.markdown(f'''<h4 style="font-family:formula1, syne; font-weight:800;">{bn} ({ab})<sub style='color:#{tc}'>{tn}</sub></h4>''',unsafe_allow_html=True)
+                                st.markdown(f'''<h4 style="font-family:formula1, syne; font-weight:800;">{bn} ({ab}) <sub style='color:#{tc}'>{tn}</sub></h4>''',unsafe_allow_html=True)
                                 # st.subheader(driver_AB) # subheader -- racer name 
 
                                 compounds, lapschanged, pairs = fetch_strategy(driver_data,total_laps, mode='current') 
@@ -1342,13 +1356,204 @@ if __name__ == '__main__':
                                 else:
                                     presets = [strategy, lap_retired, total_laps]  
                                     display_strategy(presets, mode='previous')
+
+
                                 
+                                # st.markdown('''<center><span style='font-weight:800; font-size:28px;'>Stints</span></center>''', unsafe_allow_html=True)
+                                # st.markdown('***')
+
+                                # cols = st.columns([6,2])
+                                # cols[0].select_slider('',['Summarise','Get Nerdy!'])
+                                # cols[1].markdown('> <- Select Mode')
+                                # st.markdown('***')
+
+
+                                # required = ['LapTime','LapNumber','Sector1Time','Sector2Time','Sector3Time',
+                                # 'SpeedI1','SpeedI2','SpeedFL','SpeedST','Compound','TyreLife','AirTemp',
+                                # 'Humidity','Pressure','Rainfall','TrackTemp','WindDirection','WindSpeed']
+
+                                # joined, driver_data = get_race_lap_data(driverlaps, driver_AB)
+                                
+                                # stints = driver_data['Stint'].unique()
+                                # stint_dfs = []
+                                # for stint in stints:
+                                #     stint_dfs.append(driver_data[driver_data['Stint']==stint])
+
+                                # stint_minmax = []
+                                # for stint_df in stint_dfs:
+                                #     stint_minmax.append((stint_df['LapNumber'].min(),stint_df['LapNumber'].max()))
+
+
+                                # expander_objects = []
+                                # for stint in stints:
+                                #     expander_objects.append(st.expander(f'Stint {stint}'))
+
+                                
+                                
+                                # for stint_df,expander, stint_range in zip(stint_dfs, expander_objects, stint_minmax):
+                                #     min_val, max_val = stint_range
+                                #     # st.write(min_val, max_val)
+                                #     lapnum = expander.number_input('Laps', min_value=min_val,max_value=max_val, key=f'value{stint_range}')
+                                #     lapnum = int(lapnum)
+                                #     # st.write(lapnum)
+                                #     # stint_df = stint_df.set_index('LapNumber')
+                                #     # expander.write(stint_df.iloc[lapnum,:]['IsPersonalBest'])           
+                                #     # st.write(stint_df)
+                                    
+                                #     stint_df = stint_df.fillna('0')
+                                    
+                                #     selector = stint_df[stint_df['LapNumber']==lapnum]                                    
+
+                                #     if selector['IsPersonalBest'].values[0]:
+                                        
+                                #         expander.markdown(f'''> <h5 style="font-family:formula1, syne; color:purple;">Lap Time - {timedelta_conversion(pd.Timedelta(selector['LapTime'].T.values[0]))} <sub style='color:black;'>Personal Best</sub></h5>''',unsafe_allow_html=True)
+                                #     else:
+                                        
+                                #         expander.markdown(f'''> <h5 style="font-family:formula1, syne; color:purple;">Lap Time - {timedelta_conversion(pd.Timedelta(selector['LapTime'].T.values[0]))}</h5>''',unsafe_allow_html=True)
+
+                                #     expander.markdown('***')
+                                #     # compound 
+                                    
+                                #     expander.markdown(f'''<h6 style="font-family:formula1, syne"><u>Compounds Used</u></h6>''',unsafe_allow_html=True)                                                                                
+                                #     expander.markdown(f'''<h6 style="font-family:formula1, syne; "><img src='data:image/png;base64,{img_to_bytes(f"./assets/{selector['Compound'].values[0]}.png")}' class='img-fluid' width=50 ><sub style='padding-left:10px;'>{selector['Compound'].values} Compound, </sub> Tyre Life <span style='font-size:28px'>{selector['TyreLife'].values[0]}</span> Laps</h6>''',unsafe_allow_html=True)
+                                #     expander.markdown('***')
+                                #     # Speed Traps
+                                #     expander.markdown(f'''<h6 style="font-family:formula1, syne;"><u>Speed Traps</u></h6>''',unsafe_allow_html=True)
+                                #     expander.markdown(f'''<h6 style="font-family:formula1, syne; ">Sector1 Speed - <span style='font-size:28px'>{selector['SpeedI1'].values[0]}<sup>km/h</sup></span></h6>''',unsafe_allow_html=True)
+                                #     expander.markdown(f'''<h6 style="font-family:formula1, syne; ">Sector2 Speed - <span style='font-size:28px'>{selector['SpeedI2'].values[0]} <sup>km/h</sup></span></h6>''',unsafe_allow_html=True)
+                                #     expander.markdown(f'''<h6 style="font-family:formula1, syne; ">Finish Line Speed - <span style='font-size:28px'>{selector['SpeedFL'].values[0]} <sup>km/h</sup></span></h6>''',unsafe_allow_html=True)
+                                #     expander.markdown(f'''<h6 style="font-family:formula1, syne; ">Longest Straight Speed - <span style='font-size:28px'>{selector['SpeedST'].values[0]} <sup>km/h</sup></span> </h6>''',unsafe_allow_html=True)
+
+                                #     expander.markdown('***')
+
+                                #     expander.markdown(f'''<h6 style="font-family:formula1, syne;"><u>Weather Data</u></h6>''',unsafe_allow_html=True) 
+                                #     expander.markdown(f'''<h6 style="font-family:formula1, syne;">Air Temperature - {selector['AirTemp'].values[0]} °C</h6>''',unsafe_allow_html=True)            
+                                #     expander.markdown(f'''<h6 style="font-family:formula1, syne;">Track Temperature - {selector['TrackTemp'].values[0]} °C</h6>''',unsafe_allow_html=True)     
+                                #     expander.markdown(f'''<h6 style="font-family:formula1, syne;">Humidity - {selector['Humidity'].values[0]}</h6>''',unsafe_allow_html=True)       
+                                #     expander.markdown(f'''<h6 style="font-family:formula1, syne;">Pressure - {selector['Pressure'].values[0]}</h6>''',unsafe_allow_html=True)                                                                                                                                                     
+                                #     expander.markdown(f'''<h6 style="font-family:formula1, syne;">Wind Direction - {selector['WindDirection'].values[0]}</h6>''',unsafe_allow_html=True)
+                                #     expander.markdown(f'''<h6 style="font-family:formula1, syne;">Wind Speed - {selector['WindSpeed'].values[0]}</h6>''',unsafe_allow_html=True)
+                                #     if selector['Rainfall'].values[0]:
+                                #         expander.markdown(f'''<h6 style="font-family:formula1, syne;"> Rainfall - <img src='data:image/png;base64, {img_to_bytes('./assets/rain.png')}' class='img-fluid', width=35> </h6>''',unsafe_allow_html=True)
+                                #     else:
+                                #         expander.markdown(f'''<h6 style="font-family:formula1, syne;"> Rainfall - <img src='data:image/png;base64, {img_to_bytes('./assets/no-rain.png')}' class='img-fluid', width=35> </h6>''',unsafe_allow_html=True)
+
+                                # for expander in expander_objects:
+
+                                #     for stint_df in stint_dfs:
+                                #         for item in required:
+                                #             expander.markdown()
 
 
 
                             else:
                                 st.warning("The API doesn't hold the telemetry data for the years before 2018.")
 
+                                
+
+                               
+
+                        elif mode == 'Race Standings':
+                            
+                            
+                            top3 = results.iloc[:3,:]
+                            results = results.iloc[3:,:]
+                            results = results.reset_index(drop=True)
+
+                            st.markdown('***')
+                            st.markdown('''<center><span style='font-weight:800; font-size:28px;'>Race Standings</span></center>''', unsafe_allow_html=True)
+                            st.markdown('***')
+
+                            # podium
+                            p1 = top3.iloc[0,:]
+                            p2 = top3.iloc[1,:]
+                            p3 = top3.iloc[2,:]
+
+                            # reference
+                            #  cols[1].markdown(f'''<center><span style='font-size:70px; font-weight:bold;  border-bottom:3px solid #000;'>P1<sup>{points}</sup> </span><br><span style='font-size:32px;'>{fn} <b>{ln}</b></span> <br><sub style='color:#{tc}'><b>{tn}</b></sub> <br><sub>positions {image} {abs(gained)}</sub></center>''',unsafe_allow_html=True)
+                                                        
+                            cols = st.columns([9,9,9])
+                            dn, bn, ab, tn, tc, fn, ln,  pn, gp, _, status, points = p1
+                            gained = gp-pn
+                            if gained < 0:
+                                image = f'''<img src='data:image/png;base64,{img_to_bytes(f"./assets/red_down.png")}' class='img-fluid' width=25 >'''
+                            else:
+                                image =  f'''<img src='data:image/png;base64,{img_to_bytes(f"./assets/green_up.png")}' class='img-fluid' width=25 >'''
+                            cols[1].markdown(f'''<center><span style='font-size:70px; font-weight:bold;  border-bottom:3px solid #000;'>P1<sup>{points}</sup> </span><br><span style='font-size:32px;'>{fn} <b>{ln}</b></span> <br><sub style='color:#{tc}'><b>{tn}</b></sub> </center>''',unsafe_allow_html=True)
+                            cols[0].markdown('')
+                            cols[0].markdown('')
+                            cols[0].markdown('')               
+                            
+                            dn, bn, ab, tn, tc, fn, ln,  pn, gp, _, status, points = p2
+                            cols[0].markdown(f'''<center><span style='font-size:70px; font-weight:bold;  border-bottom:3px solid #000;'>P2<sup>{points}</sup> </span><br><span style='font-size:32px;'>{fn} <b>{ln}</b></span> <br><sub style='color:#{tc}'><b>{tn}</b></sub> </center>''',unsafe_allow_html=True)
+                            
+
+                            cols[2].markdown('')
+                            cols[2].markdown('')
+                            cols[2].markdown('') 
+                            dn, bn, ab, tn, tc, fn, ln,  pn, gp, _, status, points = p3
+                            cols[2].markdown(f'''<center><span style='font-size:70px; font-weight:bold;  border-bottom:3px solid #000;'>P3<sup>{points}</sup> </span><br><span style='font-size:32px;'>{fn} <b>{ln}</b></span> <br><sub style='color:#{tc}'><b>{tn}</b></sub> </center>''',unsafe_allow_html=True)  
+
+                            st.markdown('***')
+
+                            cols = st.columns([5,5])
+                            for index in range(len(results)):
+                                dn, bn, ab, tn, tc, fn, ln, pn, gp, time, status, points = results.iloc[index,:]
+                                gained = gp-pn
+                                if gained < 0:
+                                    image = f'''<img src='data:image/png;base64,{img_to_bytes(f"./assets/red_down.png")}' class='img-fluid' width=25 >'''
+                                else:
+                                    image =  f'''<img src='data:image/png;base64,{img_to_bytes(f"./assets/green_up.png")}' class='img-fluid' width=25 >'''
+                                
+                                if index%2==0:
+                                    if status == 'Finished':
+                                        cols[0].markdown(f'''<center><span style='font-size:45px; font-weight:bold;  border-bottom:3px solid #000;'>P{int(pn)}<sup>{points}</sup> </span><br><span style='font-size:32px;'>{fn} <b>{ln}</b></span> <br><sub style='color:#{tc}'><b>{tn}</b></sub> <br><sub>positions {image} {abs(gained)}</sub></center>''',unsafe_allow_html=True)
+                                    else:
+                                        cols[0].markdown(f'''<center><span style='font-size:45px; font-weight:bold;  border-bottom:3px solid #000;'>P{int(pn)}<sup>{points}</sup> </span><br><span style='font-size:32px;'>{fn} <b>{ln}</b></span> <br><sub style='color:#{tc}'><b>{tn}</b></sub> <br><sub><b>Retired</b> - {status}</sub></center>''',unsafe_allow_html=True)
+
+                                    cols[1].markdown('')
+                                    cols[1].markdown('')
+
+                                else:
+                                    cols[0].markdown('')
+                                    cols[0].markdown('')
+                                    if status == 'Finished':
+                                        cols[1].markdown(f'''<center><span style='font-size:45px; font-weight:bold;  border-bottom:3px solid #000;'>P{int(pn)}<sup>{points}</sup> </span><br><span style='font-size:32px;'>{fn} <b>{ln}</b></span> <br><sub style='color:#{tc}'><b>{tn}</b></sub> <br><sub>positions {image} {abs(gained)}</sub></center>''',unsafe_allow_html=True)
+                                    else:
+                                        cols[1].markdown(f'''<center><span style='font-size:45px; font-weight:bold;  border-bottom:3px solid #000;'>P{int(pn)}<sup>{points}</sup> </span><br><span style='font-size:32px;'>{fn} <b>{ln}</b></span> <br><sub style='color:#{tc}'><b>{tn}</b></sub> <br><sub><b>Retired</b> - {status}</sub></center>''',unsafe_allow_html=True)
+
+                            st.markdown('***')
+                        
+                        elif mode == 'Retirements':
+
+
+                            st.markdown('***')
+                            st.markdown('''<center><span style='font-weight:800; font-size:28px;'>Retirements</span></center>''', unsafe_allow_html=True)
+                            st.markdown('***')
+
+                            if retired.empty:
+                                st.info('No Retirements')
+
+                            else:
+                                for index in range(len(retired)):
+                                    dn, bn, ab, tn, tc, fn, ln, pn, gp, time, status, points = retired.iloc[index,:]
+                                    st.markdown(f'''> <h2><span style='font-family:syne; font-size:70px; font-weight:800;'>{dn} </span>{fn} <b>{ln}</b> <sub style='color:#{tc}'>{tn}</sub> <p><b>{status}</b> (Problem / Failure / Occured)</p></h2>''',unsafe_allow_html=True)
+                            
+                            st.markdown('***')
+                            expander = st.expander('Information')
+                            expander.info('In order to know the Retired Lap Number, refer back to Driver Analysis which presents the strategy.')
+
+
+
+                            # for index in range(len(results)):
+                            #     dn, bn, ab, tn, tc, pn, gp, time, status, points = results.iloc[index,:]
+                                
+
+                                
+
+
+
+                            
                         
 
             
