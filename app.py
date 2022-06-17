@@ -1484,7 +1484,7 @@ if __name__ == '__main__':
 
 
     # title 
-    st.markdown(f'''<center><h1 style='font-family:formula1, syne; font-size:55px; font-weight:900;'>The <img src='data:image/png;base64,{img_to_bytes('./assets/f1.png')}' class='img-fluid' width=120> Web-Paddock <img src='data:image/png;base64,{img_to_bytes('./assets/f1-car.png')}' class='img-fluid' width=80></h1></center>''',unsafe_allow_html=True)
+    st.markdown(f'''<center><h1 style="font-family:'formula1, syne'; font-size:55px; font-weight:900;">The <img src='data:image/png;base64,{img_to_bytes('./assets/f1.png')}' class='img-fluid' width=120> Web-Paddock <img src='data:image/png;base64,{img_to_bytes('./assets/f1-car.png')}' class='img-fluid' width=80></h1></center>''',unsafe_allow_html=True)
     st.markdown('***')
 
 
