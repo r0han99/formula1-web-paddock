@@ -1452,7 +1452,8 @@ if __name__ == '__main__':
     }
 
     html, body, [class*="css"]  {
-    font-family: 'formula1';
+    font-family: 'formula1, syne';
+    font-weight:800;
     }
     
 
