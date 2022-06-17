@@ -1451,9 +1451,6 @@ if __name__ == '__main__':
 
     }
 
-    html, body, [class*="css"]  {
-    font-family: 'formula1, syne';
-    font-weight:800;
     }
     
 
@@ -1471,6 +1468,10 @@ if __name__ == '__main__':
     font-style: normal;
 
     }
+
+    html, body, [class*="css"]  {
+    font-family: 'formula1, syne';
+    font-weight:800;
 
     </style>
     '''
