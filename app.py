@@ -300,7 +300,7 @@ def speed_visualisation(package, mode):
 
         x, y, color, AB = package[i]
 
-        if mode == 'individual':
+        if mode == 'different':
             fig.add_trace(go.Scatter(x=x, y=y,
                                     line = dict(color=color),
                                 mode='lines',
@@ -373,11 +373,11 @@ def qualifying_comparison(driver1, driver2, joined, driver_dict, delta_required,
         
         # cols[1].markdown('')
         if mode == 'different':
-            cols[i].markdown(f'''<h4 style="font-family:formula1, syne; font-weight:800;">{BN} <br><sub style='color:#{TC};'> {TN}</sub></h4>''',unsafe_allow_html=True)
+            cols[i].markdown(f'''<h5 style="font-family:formula1, syne; font-weight:800;">{BN} <br><sub style='color:#{TC};'> {TN}</sub></h4>''',unsafe_allow_html=True)
             # cols[0].markdown('')
             # cols[0].markdown('')
         else:
-            cols[i].markdown(f'''<h4 style="font-family:formula1, syne; font-weight:800;">{BN} <sub>({AB})</sub>''',unsafe_allow_html=True)
+            cols[i].markdown(f'''<h5 style="font-family:formula1, syne; font-weight:800;">{BN} <sub>({AB})</sub></h5>''',unsafe_allow_html=True)
             
         # cols[1].markdown('')
         
@@ -1021,7 +1021,7 @@ def fetch_strategy(driver_data, total=None,mode='previous'):
             return compounds, lapschanged, pairs
 
                 
-def display_strategy(presets, mode='previous'):
+def display_strategy(presets, mode='previous', team=False):
 
 
     # color_dict
@@ -1091,27 +1091,27 @@ def display_strategy(presets, mode='previous'):
             st.markdown(f'''<center><span style='font-size:35px;'>{total_laps} Laps</span></center>''',unsafe_allow_html=True)
             st.markdown('')
 
-           
-            tyreexp = st.expander('Tyre Information', expanded=True)
-            # st.write(strategy)
-            if 'Retired' in strategy.values():
-                strategy.popitem()
-            # st.write(strategy)
+            if not team:
+                tyreexp = st.expander('Tyre Information', expanded=True)
+                # st.write(strategy)
+                if 'Retired' in strategy.values():
+                    strategy.popitem()
+                # st.write(strategy)
 
-            compounds = set(strategy.values())
-            for compound in compounds: 
-                tyreexp.markdown(f'''* <span> <img src='data:image/png;base64,{img_to_bytes(f'./assets/{compound.lower()}.png')}' class='img-fluid' width=35> {compound}</span>''',unsafe_allow_html=True)
-                tyreexp.markdown(f'''> <p style='font-size:15px;text-align:justify;'>{information_dict[compound.lower()]}</p>''',unsafe_allow_html=True)
+                compounds = set(strategy.values())
+                for compound in compounds: 
+                    tyreexp.markdown(f'''* <span> <img src='data:image/png;base64,{img_to_bytes(f'./assets/{compound.lower()}.png')}' class='img-fluid' width=35> {compound}</span>''',unsafe_allow_html=True)
+                    tyreexp.markdown(f'''> <p style='font-size:15px;text-align:justify;'>{information_dict[compound.lower()]}</p>''',unsafe_allow_html=True)
 
 
 
-            disclaimer = st.expander('Disclaimer?')
-            disclaimer_info = '''
-            * The Retired Lap Range representation might not be accurate to the real-life scenario. 
-            * '+1' Represents a Missing Data record, in this scenario the driver isn't retired.'''
-            disclaimer.info(disclaimer_info)
-            st.markdown('***')
-            
+                disclaimer = st.expander('Disclaimer?')
+                disclaimer_info = '''
+                * The Retired Lap Range representation might not be accurate to the real-life scenario. 
+                * '+1' Represents a Missing Data record, in this scenario the driver isn't retired.'''
+                disclaimer.info(disclaimer_info)
+                # st.markdown('***')
+                
 
         else:
             st.warning(f'No Lap Records Found, Check the Retired List.')
@@ -1154,24 +1154,25 @@ def display_strategy(presets, mode='previous'):
         st.markdown(f'''<center><span style='font-size:35px;'>{total} Laps</span></center>''',unsafe_allow_html=True)
         st.markdown('')
 
-        tyreexp = st.expander('Tyre Information', expanded=True)
-        # st.write(strategy)
-        if 'Retired' in compounds.keys():
-            strategy.popitem()
-        # st.write(strategy)
+        if not team:
+            tyreexp = st.expander('Tyre Information', expanded=True)
+            # st.write(strategy)
+            if 'Retired' in compounds.keys():
+                strategy.popitem()
+            # st.write(strategy)
 
-        compounds = set(compounds.keys())
-        for compound in compounds: 
-            tyreexp.markdown(f'''* <span> <img src='data:image/png;base64,{img_to_bytes(f'./assets/{compound.lower()}.png')}' class='img-fluid' width=35> {compound}</span>''',unsafe_allow_html=True)
-            tyreexp.markdown(f'''> <p style='font-size:15px;text-align:justify;'>{information_dict[compound.lower()]}</p>''',unsafe_allow_html=True)
+            compounds = set(compounds.keys())
+            for compound in compounds: 
+                tyreexp.markdown(f'''* <span> <img src='data:image/png;base64,{img_to_bytes(f'./assets/{compound.lower()}.png')}' class='img-fluid' width=35> {compound}</span>''',unsafe_allow_html=True)
+                tyreexp.markdown(f'''> <p style='font-size:15px;text-align:justify;'>{information_dict[compound.lower()]}</p>''',unsafe_allow_html=True)
 
 
-        disclaimer = st.expander('Disclaimer?')
-        disclaimer_info = '''
-        * The Retired Lap Range representation might not be accurate to the real-life scenario. 
-        * '+1' Represents a Missing Data record, in this scenario the driver isn't retired.'''
-        disclaimer.info(disclaimer_info)
-        st.markdown('***')
+            disclaimer = st.expander('Disclaimer?')
+            disclaimer_info = '''
+            * The Retired Lap Range representation might not be accurate to the real-life scenario. 
+            * '+1' Represents a Missing Data record, in this scenario the driver isn't retired.'''
+            disclaimer.info(disclaimer_info)
+            st.markdown('***')
         
 @st.cache(persist=True)
 def get_race_lap_data(_driverlaps, driver_AB):
@@ -1187,157 +1188,199 @@ def get_race_lap_data(_driverlaps, driver_AB):
 
     return joined, driver_data
 
+@st.experimental_singleton(show_spinner=True)
+def parse_race_points(year):
 
-def driver_race_analysis(year, event, driverlaps, driver_AB, driver_data, total_laps,mode):
+    driver_url = f'http://ergast.com/api/f1/{year}/driverStandings.json'
+    const_url = f'http://ergast.com/api/f1/{year}/constructorStandings.json'
 
-    # fetch strategy 
-    st.markdown('***')
-    st.markdown('''<center><span style='font-weight:800; font-size:28px;'>Race Strategy</span></center>''', unsafe_allow_html=True)
-    st.markdown('***')
+    result_driver =  requests.get(driver_url)
+    result_const =  requests.get(const_url) 
 
-    driver_info = session_obj.get_driver(driver_AB)
-    dn, bn, ab, tn, tc  = driver_info[:5]
-    st.markdown(f'''<h4 style="font-family:formula1, syne; font-weight:800;">{bn} ({ab}) <sub style='color:#{tc}'>{tn}</sub></h4>''',unsafe_allow_html=True)
-    # st.subheader(driver_AB) # subheader -- racer name 
+    # constructors
+    const_list = result_const.json()['MRData']['StandingsTable']['StandingsLists'][0]['ConstructorStandings']
+    required = ['position','points','wins']
+    constructors = {}
+    for i,item in enumerate(const_list,0):
+        temp = {}
+        for element in required:
+            temp[element] = item[element]
+        temp['Team'] = item['Constructor']['name']
+        temp['Nationality'] = item['Constructor']['nationality']
+        constructors[i] = temp
 
-    if mode == 'previous':
-        strategy, lap_retired = fetch_strategy(driver_data)
-        presets = [strategy, lap_retired, total_laps]  
-        display_strategy(presets, mode='previous')
-        
-        st.markdown('''<center><span style='font-weight:800; font-size:28px;'>Stints</span></center>''', unsafe_allow_html=True)
+    # Drivers
+    driver_pos_list = result_driver.json()['MRData']['StandingsTable']['StandingsLists'][0]['DriverStandings']
+    required, driver_details, loc = ['position','points','wins'],['permanentNumber','code','givenName','familyName'],['name','nationality']
+    driver_standings = {}
+    for i, item in enumerate(driver_pos_list,0):
+        temp = {}
+        for element in required:
+            temp[element] = item[element]
+        for dd in driver_details:
+            temp[dd] = item['Driver'][dd]
+        for ll in loc:
+            temp[ll] = item['Constructors'][0][ll]
+        driver_standings[i] = temp
+
+    return constructors, driver_standings
+
+
+
+def driver_race_analysis(year, event, driverlaps, driver_AB, driver_data, total_laps,mode, team=False, preset=None):
+
+    
+    if not team:
+        # fetch strategy 
+        st.markdown('***')
+        st.markdown('''<center><span style='font-weight:800; font-size:28px;'>Race Strategy</span></center>''', unsafe_allow_html=True)
         st.markdown('***')
 
-        
-    else:
-        compounds, lapschanged, pairs = fetch_strategy(driver_data,total_laps, mode='current') 
-        strategy, lap_retired = fetch_strategy(driver_data)
-        if event == 'Monaco Grand Prix':
-            presets = [compounds, lapschanged, pairs, total_laps] 
-            display_strategy(presets, mode='current')
-        else:
+        driver_info = session_obj.get_driver(driver_AB)
+        dn, bn, ab, tn, tc  = driver_info[:5]
+        st.markdown(f'''<h4 style="font-family:formula1, syne; font-weight:800;">{bn} ({ab}) <sub style='color:#{tc}'>{tn}</sub></h4>''',unsafe_allow_html=True)
+        # st.subheader(driver_AB) # subheader -- racer name 
+
+        if mode == 'previous':
+            strategy, lap_retired = fetch_strategy(driver_data)
             presets = [strategy, lap_retired, total_laps]  
             display_strategy(presets, mode='previous')
+            
 
-        st.markdown('''<center><span style='font-weight:800; font-size:28px;'>Stints</span></center>''', unsafe_allow_html=True)
+            
+        else:
+            compounds, lapschanged, pairs = fetch_strategy(driver_data,total_laps, mode='current') 
+            strategy, lap_retired = fetch_strategy(driver_data)
+            if event == 'Monaco Grand Prix':
+                presets = [compounds, lapschanged, pairs, total_laps] 
+                display_strategy(presets, mode='current')
+            else:
+                presets = [strategy, lap_retired, total_laps]  
+                display_strategy(presets, mode='previous')
+
+    if team:
+        TC, AB = preset
+        st.markdown(f'''<center><span style='font-weight:800; font-size:28px;'>Stints <span style='color:#{TC};'>{AB}</span></span></center>''', unsafe_allow_html=True)
+        st.markdown('***')
+    else:
+        st.markdown(f'''<center><span style='font-weight:800; font-size:28px;'>Stints</span></center>''', unsafe_allow_html=True)
         st.markdown('***')
 
-    cols = st.columns([6,2])
-    category = cols[0].select_slider('Lap Data Presentation',['Detailed','Summarised'],key=f'{mode}')
-    cols[1].markdown('> <- Select Mode')
-    st.markdown('***')
 
-    if category == 'Detailed':
+    # cols = st.columns([6,2])
+    # category = cols[0].select_slider('Lap Data Presentation',['Detailed','Summarised'],key=f'{mode}')
+    # cols[1].markdown('> <- Select Mode')
+    # st.markdown('***')
 
-        st.markdown('**Detailed Presentation Lap Data**')
-
-        required = ['LapTime','LapNumber','Sector1Time','Sector2Time','Sector3Time',
-        'SpeedI1','SpeedI2','SpeedFL','SpeedST','Compound','TyreLife','AirTemp',
-        'Humidity','Pressure','Rainfall','TrackTemp','WindDirection','WindSpeed']
-
-        joined, driver_data = get_race_lap_data(driverlaps, driver_AB)
-        # st.markdown(driver_AB)
-
-        # st.write(driver_data.shape[0])
-        
-        if driver_data.empty or int(driver_data.shape[0]) == 1:
-            
-           st.warning(f'No Lap Records Found for **{bn}**, Check the Retired List.')
-        
-        else:
-            
-            stints = driver_data['Stint'].unique()
-            stints = list(map(int, stints))
-            stint_dfs = []
-            for stint in stints:
-                stint_dfs.append(driver_data[driver_data['Stint']==stint])
-
-            stint_minmax = []
-            for stint_df in stint_dfs:
-                stint_minmax.append((stint_df['LapNumber'].min(),stint_df['LapNumber'].max()))
-
-
-            expander_objects = []
-            for stint in stints:
-                expander_objects.append(st.expander(f'Stint {stint}'))
-
-            
-            
-            for stint_df,expander, stint_range in zip(stint_dfs, expander_objects, stint_minmax):
-                min_val, max_val = stint_range
-                min_val, max_val = int(min_val), int(max_val)
-                # st.write(min_val, max_val)
-                compound_title = expander.empty()
-                lapnum = expander.number_input('Laps', min_value=min_val,max_value=max_val, key=f'value{stint_range}')
-                lapnum = int(lapnum)
-                # st.write(lapnum)
-                # stint_df = stint_df.set_index('LapNumber')
-                # expander.write(stint_df.iloc[lapnum,:]['IsPersonalBest'])           
-                # st.write(stint_df['Driver'])
-                
-                stint_df = stint_df.fillna('0')
-                
-                selector = stint_df[stint_df['LapNumber']==lapnum]                                    
-
-                    
-
-                expander.markdown('***')
-                # compound 
-                compound_title.markdown(f'''<center><h6 style="font-family:formula1, syne; "><img src='data:image/png;base64,{img_to_bytes(f"./assets/{selector['Compound'].values[0]}.png")}' class='img-fluid' width=70 >  {selector['Compound'].values[0]} Compound</h6> <sub><h6 style="font-family:formula1, syne; ">Tyre Life <span style='font-size:28px'>{selector['TyreLife'].values[0]}</span> Laps</h6></sub></center>''',unsafe_allow_html=True)
-                # expander.markdown(f'''> <h6 style="font-family:formula1, syne; ">Tyre Life <span style='font-size:28px'>{selector['TyreLife'].values[0]}</span> Laps</h6>''',unsafe_allow_html=True)                                                                              
-                # expander.markdown('***')
-
-                #Time 
-                if selector['IsPersonalBest'].values[0]:
-
-                    if not int(lapnum) == min_val:
-                        expander.markdown(f'''> <h5 style="font-family:formula1, syne; color:black;">Lap Time - {timedelta_conversion(pd.Timedelta(selector['LapTime'].T.values[0]))} <sub style='color:black;'>Personal Best</sub></h5>''',unsafe_allow_html=True)
-                    else:
-                        expander.markdown(f'''> <h5 style="font-family:formula1, syne; color:black;">Out Lap</h5>''',unsafe_allow_html=True)
-
-                else:
-                    if not int(lapnum) == min_val:
-                        expander.markdown(f'''> <h5 style="font-family:formula1, syne; color:black;">Lap Time - {timedelta_conversion(pd.Timedelta(selector['LapTime'].T.values[0]))}</h5>''',unsafe_allow_html=True)
-                    else:
-                        expander.markdown(f'''> <h5 style="font-family:formula1, syne; color:black;">Out Lap</h5>''',unsafe_allow_html=True)
-
-                expander.markdown('***')
-
-                # Sector Times
-                expander.markdown(f'''<h6 style="font-family:formula1, syne;"><u>Sector Times</u></h6>''',unsafe_allow_html=True)
-                expander.markdown(f'''<h6 style="font-family:formula1, syne; ">Sector1 Time - <span style='font-size:28px'>{timedelta_conversion(pd.Timedelta(selector['Sector1Time'].values[0]))}</span></h6>''',unsafe_allow_html=True)
-                expander.markdown(f'''<h6 style="font-family:formula1, syne; ">Sector2 Time - <span style='font-size:28px'>{timedelta_conversion(pd.Timedelta(selector['Sector2Time'].values[0]))}</span></h6>''',unsafe_allow_html=True)
-                expander.markdown(f'''<h6 style="font-family:formula1, syne; ">Sector3 Time - <span style='font-size:28px'>{timedelta_conversion(pd.Timedelta(selector['Sector3Time'].values[0]))}</span></h6>''',unsafe_allow_html=True)
-                
-                    # Speed Traps
-                expander.markdown('***')
-                expander.markdown(f'''<h6 style="font-family:formula1, syne;"><u>Speed Traps</u></h6>''',unsafe_allow_html=True)
-                expander.markdown(f'''<h6 style="font-family:formula1, syne; ">Sector1 Speed - <span style='font-size:28px'>{selector['SpeedI1'].values[0]}<sup>km/h</sup></span></h6>''',unsafe_allow_html=True)
-                expander.markdown(f'''<h6 style="font-family:formula1, syne; ">Sector2 Speed - <span style='font-size:28px'>{selector['SpeedI2'].values[0]} <sup>km/h</sup></span></h6>''',unsafe_allow_html=True)
-                expander.markdown(f'''<h6 style="font-family:formula1, syne; ">Finish Line Speed - <span style='font-size:28px'>{selector['SpeedFL'].values[0]} <sup>km/h</sup></span></h6>''',unsafe_allow_html=True)
-                expander.markdown(f'''<h6 style="font-family:formula1, syne; ">Longest Straight Speed - <span style='font-size:28px'>{selector['SpeedST'].values[0]} <sup>km/h</sup></span> </h6>''',unsafe_allow_html=True)
-                
-
-
-                expander.markdown('***')
-                if expander.checkbox('Show Weather Data',key=f'value{stint_range}'):
-                    expander.markdown(f'''<h6 style="font-family:formula1, syne;"><u>Weather Data</u></h6>''',unsafe_allow_html=True) 
-                    expander.markdown(f'''<h6 style="font-family:formula1, syne;">Air Temperature - {selector['AirTemp'].values[0]} °C</h6>''',unsafe_allow_html=True)            
-                    expander.markdown(f'''<h6 style="font-family:formula1, syne;">Track Temperature - {selector['TrackTemp'].values[0]} °C</h6>''',unsafe_allow_html=True)     
-                    expander.markdown(f'''<h6 style="font-family:formula1, syne;">Humidity - {selector['Humidity'].values[0]}%</h6>''',unsafe_allow_html=True)       
-                    expander.markdown(f'''<h6 style="font-family:formula1, syne;">Pressure - {selector['Pressure'].values[0]} Pa</h6>''',unsafe_allow_html=True)                                                                                                                                                     
-                    expander.markdown(f'''<h6 style="font-family:formula1, syne;">Wind Direction - {selector['WindDirection'].values[0]}°</h6>''',unsafe_allow_html=True)
-                    expander.markdown(f'''<h6 style="font-family:formula1, syne;">Wind Speed - {selector['WindSpeed'].values[0]} Kmph</h6>''',unsafe_allow_html=True)
-                    if selector['Rainfall'].values[0]:
-                        expander.markdown(f'''<h6 style="font-family:formula1, syne;"> Rainfall - <img src='data:image/png;base64, {img_to_bytes('./assets/rain.png')}' class='img-fluid', width=35> </h6>''',unsafe_allow_html=True)
-                    else:
-                        expander.markdown(f'''<h6 style="font-family:formula1, syne;"> Rainfall - <img src='data:image/png;base64, {img_to_bytes('./assets/no-rain.png')}' class='img-fluid', width=35> </h6>''',unsafe_allow_html=True)
-
-        
     
-    elif category == 'Summarised':
 
-        st.info('Data Summary')
+    st.markdown('**Stintwise, Individual Lap Data**')
+
+    required = ['LapTime','LapNumber','Sector1Time','Sector2Time','Sector3Time',
+    'SpeedI1','SpeedI2','SpeedFL','SpeedST','Compound','TyreLife','AirTemp',
+    'Humidity','Pressure','Rainfall','TrackTemp','WindDirection','WindSpeed']
+
+    joined, driver_data = get_race_lap_data(driverlaps, driver_AB)
+    # st.markdown(driver_AB)
+
+    # st.write(driver_data.shape[0])
+    
+    if driver_data.empty or int(driver_data.shape[0]) == 1:
+        
+        st.warning(f'No Lap Records Found for **{bn}**, Check the Retired List.')
+    
+    else:
+        
+        stints = driver_data['Stint'].unique()
+        stints = list(map(int, stints))
+        stint_dfs = []
+        for stint in stints:
+            stint_dfs.append(driver_data[driver_data['Stint']==stint])
+
+        stint_minmax = []
+        for stint_df in stint_dfs:
+            stint_minmax.append((stint_df['LapNumber'].min(),stint_df['LapNumber'].max()))
+
+
+        expander_objects = []
+        for stint in stints:
+            expander_objects.append(st.expander(f'Stint {stint}'))
+
+        
+        
+        for stint_df,expander, stint_range in zip(stint_dfs, expander_objects, stint_minmax):
+            min_val, max_val = stint_range
+            min_val, max_val = int(min_val), int(max_val)
+            # st.write(min_val, max_val)
+            compound_title = expander.empty()
+            lapnum = expander.number_input('Laps', min_value=min_val,max_value=max_val, key=f'{driver_AB}')
+            lapnum = int(lapnum)
+            # st.write(lapnum)
+            # stint_df = stint_df.set_index('LapNumber')
+            # expander.write(stint_df.iloc[lapnum,:]['IsPersonalBest'])           
+            # st.write(stint_df['Driver'])
+            
+            stint_df = stint_df.fillna('0')
+            
+            selector = stint_df[stint_df['LapNumber']==lapnum]                                    
+
+                
+
+            expander.markdown('***')
+            # compound 
+            compound_title.markdown(f'''<center><h6 style="font-family:formula1, syne; "><img src='data:image/png;base64,{img_to_bytes(f"./assets/{selector['Compound'].values[0]}.png")}' class='img-fluid' width=70 >  {selector['Compound'].values[0]} Compound</h6> <sub><h6 style="font-family:formula1, syne; ">Tyre Life <span style='font-size:28px'>{selector['TyreLife'].values[0]}</span> Laps</h6></sub></center>''',unsafe_allow_html=True)
+            # expander.markdown(f'''> <h6 style="font-family:formula1, syne; ">Tyre Life <span style='font-size:28px'>{selector['TyreLife'].values[0]}</span> Laps</h6>''',unsafe_allow_html=True)                                                                              
+            # expander.markdown('***')
+
+            #Time 
+            if selector['IsPersonalBest'].values[0]:
+
+                if not int(lapnum) == min_val:
+                    expander.markdown(f'''> <h5 style="font-family:formula1, syne; color:black;">Lap Time - {timedelta_conversion(pd.Timedelta(selector['LapTime'].T.values[0]))} <sub style='color:black;'>Personal Best</sub></h5>''',unsafe_allow_html=True)
+                else:
+                    expander.markdown(f'''> <h5 style="font-family:formula1, syne; color:black;">Out Lap</h5>''',unsafe_allow_html=True)
+
+            else:
+                if not int(lapnum) == min_val:
+                    expander.markdown(f'''> <h5 style="font-family:formula1, syne; color:black;">Lap Time - {timedelta_conversion(pd.Timedelta(selector['LapTime'].T.values[0]))}</h5>''',unsafe_allow_html=True)
+                else:
+                    expander.markdown(f'''> <h5 style="font-family:formula1, syne; color:black;">Out Lap</h5>''',unsafe_allow_html=True)
+
+            expander.markdown('***')
+
+            # Sector Times
+            expander.markdown(f'''<h6 style="font-family:formula1, syne;"><u>Sector Times</u></h6>''',unsafe_allow_html=True)
+            expander.markdown(f'''<h6 style="font-family:formula1, syne; ">Sector1 Time - <span style='font-size:28px'>{timedelta_conversion(pd.Timedelta(selector['Sector1Time'].values[0]))}</span></h6>''',unsafe_allow_html=True)
+            expander.markdown(f'''<h6 style="font-family:formula1, syne; ">Sector2 Time - <span style='font-size:28px'>{timedelta_conversion(pd.Timedelta(selector['Sector2Time'].values[0]))}</span></h6>''',unsafe_allow_html=True)
+            expander.markdown(f'''<h6 style="font-family:formula1, syne; ">Sector3 Time - <span style='font-size:28px'>{timedelta_conversion(pd.Timedelta(selector['Sector3Time'].values[0]))}</span></h6>''',unsafe_allow_html=True)
+            
+                # Speed Traps
+            expander.markdown('***')
+            expander.markdown(f'''<h6 style="font-family:formula1, syne;"><u>Speed Traps</u></h6>''',unsafe_allow_html=True)
+            expander.markdown(f'''<h6 style="font-family:formula1, syne; ">Sector1 Speed - <span style='font-size:28px'>{selector['SpeedI1'].values[0]}<sup>km/h</sup></span></h6>''',unsafe_allow_html=True)
+            expander.markdown(f'''<h6 style="font-family:formula1, syne; ">Sector2 Speed - <span style='font-size:28px'>{selector['SpeedI2'].values[0]} <sup>km/h</sup></span></h6>''',unsafe_allow_html=True)
+            expander.markdown(f'''<h6 style="font-family:formula1, syne; ">Finish Line Speed - <span style='font-size:28px'>{selector['SpeedFL'].values[0]} <sup>km/h</sup></span></h6>''',unsafe_allow_html=True)
+            expander.markdown(f'''<h6 style="font-family:formula1, syne; ">Longest Straight Speed - <span style='font-size:28px'>{selector['SpeedST'].values[0]} <sup>km/h</sup></span> </h6>''',unsafe_allow_html=True)
+            
+
+
+            expander.markdown('***')
+            if expander.checkbox('Show Weather Data',key=f'value{driver_AB}{min_val}'):
+                expander.markdown(f'''<h6 style="font-family:formula1, syne;"><u>Weather Data</u></h6>''',unsafe_allow_html=True) 
+                expander.markdown(f'''<h6 style="font-family:formula1, syne;">Air Temperature - {selector['AirTemp'].values[0]} °C</h6>''',unsafe_allow_html=True)            
+                expander.markdown(f'''<h6 style="font-family:formula1, syne;">Track Temperature - {selector['TrackTemp'].values[0]} °C</h6>''',unsafe_allow_html=True)     
+                expander.markdown(f'''<h6 style="font-family:formula1, syne;">Humidity - {selector['Humidity'].values[0]}%</h6>''',unsafe_allow_html=True)       
+                expander.markdown(f'''<h6 style="font-family:formula1, syne;">Pressure - {selector['Pressure'].values[0]} Pa</h6>''',unsafe_allow_html=True)                                                                                                                                                     
+                expander.markdown(f'''<h6 style="font-family:formula1, syne;">Wind Direction - {selector['WindDirection'].values[0]}°</h6>''',unsafe_allow_html=True)
+                expander.markdown(f'''<h6 style="font-family:formula1, syne;">Wind Speed - {selector['WindSpeed'].values[0]} Kmph</h6>''',unsafe_allow_html=True)
+                if selector['Rainfall'].values[0]:
+                    expander.markdown(f'''<h6 style="font-family:formula1, syne;"> Rainfall - <img src='data:image/png;base64, {img_to_bytes('./assets/rain.png')}' class='img-fluid', width=35> </h6>''',unsafe_allow_html=True)
+                else:
+                    expander.markdown(f'''<h6 style="font-family:formula1, syne;"> Rainfall - <img src='data:image/png;base64, {img_to_bytes('./assets/no-rain.png')}' class='img-fluid', width=35> </h6>''',unsafe_allow_html=True)
+
+    
+    
+    
 
     st.markdown('***')
 
@@ -1363,20 +1406,20 @@ def display_race_standings(results, top3):
         image = f'''<img src='data:image/png;base64,{img_to_bytes(f"./assets/red_down.png")}' class='img-fluid' width=25 >'''
     else:
         image =  f'''<img src='data:image/png;base64,{img_to_bytes(f"./assets/green_up.png")}' class='img-fluid' width=25 >'''
-    cols[1].markdown(f'''<center><span style='font-size:70px; font-weight:bold;  border-bottom:3px solid #000;'>P1<sup>{points}</sup> </span><br><span style='font-size:32px;'>{fn} <b>{ln}</b></span> <br><sub style='color:#{tc}'><b>{tn}</b></sub> </center>''',unsafe_allow_html=True)
+    cols[1].markdown(f'''<center><span style='font-size:70px; font-weight:bold;  border-bottom:3px solid #000;font-weight:800;' >P1<sup>{points}</sup> </span><br><span style='font-size:32px;'>{fn} <b style='font-weight:800;'>{ln}</b></span> <br><sub style='color:#{tc}'><b>{tn}</b></sub> </center>''',unsafe_allow_html=True)
     cols[0].markdown('')
     cols[0].markdown('')
     cols[0].markdown('')               
     
     dn, bn, ab, tn, tc, fn, ln,  pn, gp, _, status, points = p2
-    cols[0].markdown(f'''<center><span style='font-size:70px; font-weight:bold;  border-bottom:3px solid #000;'>P2<sup>{points}</sup> </span><br><span style='font-size:32px;'>{fn} <b>{ln}</b></span> <br><sub style='color:#{tc}'><b>{tn}</b></sub> </center>''',unsafe_allow_html=True)
+    cols[0].markdown(f'''<center><span style='font-size:70px; font-weight:bold;  border-bottom:3px solid #000;font-weight:800;'>P2<sup>{points}</sup> </span><br><span style='font-size:32px;'>{fn} <b style='font-weight:800;'>{ln}</b></span> <br><sub style='color:#{tc}'><b>{tn}</b></sub> </center>''',unsafe_allow_html=True)
     
 
     cols[2].markdown('')
     cols[2].markdown('')
     cols[2].markdown('') 
     dn, bn, ab, tn, tc, fn, ln,  pn, gp, _, status, points = p3
-    cols[2].markdown(f'''<center><span style='font-size:70px; font-weight:bold;  border-bottom:3px solid #000;'>P3<sup>{points}</sup> </span><br><span style='font-size:32px;'>{fn} <b>{ln}</b></span> <br><sub style='color:#{tc}'><b>{tn}</b></sub> </center>''',unsafe_allow_html=True)  
+    cols[2].markdown(f'''<center><span style='font-size:70px; font-weight:bold;  border-bottom:3px solid #000;font-weight:800;'>P3<sup>{points}</sup> </span><br><span style='font-size:32px;'>{fn} <b style='font-weight:800;'>{ln}</b></span> <br><sub style='color:#{tc}'><b>{tn}</b></sub> </center>''',unsafe_allow_html=True)  
 
     st.markdown('***')
 
@@ -1391,9 +1434,9 @@ def display_race_standings(results, top3):
         
         if index%2==0:
             if status == 'Finished' and status == '+1 Lap':
-                cols[0].markdown(f'''<center><span style='font-size:45px; font-weight:bold;  border-bottom:3px solid #000;'>P{int(pn)}<sup>{points}</sup> </span><br><span style='font-size:32px;'>{fn} <b>{ln}</b></span> <br><sub style='color:#{tc}'><b>{tn}</b></sub> <br><sub>positions {image} {abs(gained)}</sub></center>''',unsafe_allow_html=True)
+                cols[0].markdown(f'''<center><span style='font-size:45px; font-weight:bold;  border-bottom:3px solid #000;font-weight:800;'>P{int(pn)}<sup>{points}</sup> </span><br><span style='font-size:32px;'>{fn} <b style='font-weight:800;'>{ln}</b></span> <br><sub style='color:#{tc}'><b>{tn}</b></sub> <br><sub>positions {image} {abs(gained)}</sub></center>''',unsafe_allow_html=True)
             else:
-                cols[0].markdown(f'''<center><span style='font-size:45px; font-weight:bold;  border-bottom:3px solid #000;'>P{int(pn)}<sup>{points}</sup> </span><br><span style='font-size:32px;'>{fn} <b>{ln}</b></span> <br><sub style='color:#{tc}'><b>{tn}</b></sub> <br><sub><b>Retired</b> - {status}</sub></center>''',unsafe_allow_html=True)
+                cols[0].markdown(f'''<center><span style='font-size:45px; font-weight:bold;  border-bottom:3px solid #000;font-weight:800;'>P{int(pn)}<sup>{points}</sup> </span><br><span style='font-size:32px;'>{fn} <b style='font-weight:800;'>{ln}</b></span> <br><sub style='color:#{tc}'><b>{tn}</b></sub> <br><sub><b>Retired</b> - {status}</sub></center>''',unsafe_allow_html=True)
 
             cols[1].markdown('')
             cols[1].markdown('')
@@ -1402,9 +1445,9 @@ def display_race_standings(results, top3):
             cols[0].markdown('')
             cols[0].markdown('')
             if status == 'Finished' and status == '+1 Lap':
-                cols[1].markdown(f'''<center><span style='font-size:45px; font-weight:bold;  border-bottom:3px solid #000;'>P{int(pn)}<sup>{points}</sup> </span><br><span style='font-size:32px;'>{fn} <b>{ln}</b></span> <br><sub style='color:#{tc}'><b>{tn}</b></sub> <br><sub>positions {image} {abs(gained)}</sub></center>''',unsafe_allow_html=True)
+                cols[1].markdown(f'''<center><span style='font-size:45px; font-weight:bold;  border-bottom:3px solid #000;font-weight:800;'>P{int(pn)}<sup>{points}</sup> </span><br><span style='font-size:32px;'>{fn} <b style='font-weight:800;'>{ln}</b></span> <br><sub style='color:#{tc}'><b>{tn}</b></sub> <br><sub>positions {image} {abs(gained)}</sub></center>''',unsafe_allow_html=True)
             else:
-                cols[1].markdown(f'''<center><span style='font-size:45px; font-weight:bold;  border-bottom:3px solid #000;'>P{int(pn)}<sup>{points}</sup> </span><br><span style='font-size:32px;'>{fn} <b>{ln}</b></span> <br><sub style='color:#{tc}'><b>{tn}</b></sub> <br><sub><b>Retired</b> - {status}</sub></center>''',unsafe_allow_html=True)
+                cols[1].markdown(f'''<center><span style='font-size:45px; font-weight:bold;  border-bottom:3px solid #000;font-weight:800;'>P{int(pn)}<sup>{points}</sup> </span><br><span style='font-size:32px;'>{fn} <b style='font-weight:800;'>{ln}</b></span> <br><sub style='color:#{tc}'><b>{tn}</b></sub> <br><sub><b>Retired</b> - {status}</sub></center>''',unsafe_allow_html=True)
 
     st.markdown('***')
 
@@ -1421,15 +1464,15 @@ if __name__ == '__main__':
     st.set_option('deprecation.showPyplotGlobalUse', False)
     st.set_page_config(page_title="F1-Web-Paddock",layout="wide",initial_sidebar_state="expanded",)
 
-    # font-base64
-    with open('./assets/formula1-regular-base64.txt', 'r') as f:
-        regular = f.read()
+    # # font-base64
+    # with open('./assets/formula1-regular-base64.txt', 'r') as f:
+    #     regular = f.read()
 
-    with open('./assets/formula1-bold-base64.txt', 'r') as f:
-        bold = f.read()
+    # with open('./assets/formula1-bold-base64.txt', 'r') as f:
+    #     bold = f.read()
 
-    with open('./assets/formula1-black-base64.txt', 'r') as f:
-        black = f.read()
+    # with open('./assets/formula1-black-base64.txt', 'r') as f:
+    #     black = f.read()
 
 
     # font-style
@@ -1443,45 +1486,38 @@ if __name__ == '__main__':
     # fonts-style preset
     style = '''
     <style>
-    @font-face {
-    font-family: 'formula1';'''+f'''
-    src: url(data:application/x-font-woff;charset=utf-8;base64,{regular} )'''+''' format('woff');
-    font-weight: normal;
-    font-style: normal;
-
+    html, body, [class*="css"] {
+        font-family: syne; 
+        
     }
-
-    }
-    
-
-    @font-face {
-    font-family: 'formula1';'''+f'''
-    src: url(data:application/x-font-woff;charset=utf-8;base64,{bold} )'''+''' format('woff');
-    font-weight: normal;
-    font-style: normal;
-    }
-
-    @font-face {
-    font-family: 'formula1';'''+f'''
-    src: url(data:application/x-font-woff;charset=utf-8;base64,{black} )'''+''' format('woff');
-    font-weight: normal;
-    font-style: normal;
-
-    }
-
-    html, body, [class*="css"]  {
-    font-family: 'formula1, syne';
 
     </style>
     '''
-    # st.markdown(f'{style}',unsafe_allow_html=True)
+    # }
+
+    # @font-face {
+    # font-family: 'formula1';'''+f'''
+    # src: url(data:application/x-font-woff;charset=utf-8;base64,{bold} )'''+''' format('woff');
+    # font-weight: normal;
+    # font-style: normal;
+    # }
+
+    # @font-face {
+    # font-family: 'formula1';'''+f'''
+    # src: url(data:application/x-font-woff;charset=utf-8;base64,{black} )'''+''' format('woff');
+    # font-weight: normal;
+    # font-style: normal;
+
+    # }
+
+    st.markdown(style,unsafe_allow_html=True)
 
     # title 
-    st.markdown(f'''<center><h1 style="font-family: syne; font-size:35px; font-weight:900;">The <img src='data:image/png;base64,{img_to_bytes('./assets/f1.png')}' class='img-fluid' width=120> Web-Paddock <img src='data:image/png;base64,{img_to_bytes('./assets/f1-car.png')}' class='img-fluid' width=80></h1></center>''',unsafe_allow_html=True)
+    st.markdown(f'''<center><h1 style="font-family:syne; font-size:50px; font-weight:800; text-shadow: 2px 2px #ff0000;">The <img src='data:image/png;base64,{img_to_bytes('./assets/f1.png')}' class='img-fluid' width=120><br>Web-Paddock </h1></center>''',unsafe_allow_html=True)
     st.markdown('***')
 
     # Sidebar title 
-    st.sidebar.markdown(f'''<h2 style="font-family:formula1, syne; font-weight:bold; font-size:27px;">The Control Deck <img src='data:image/png;base64,{img_to_bytes('./assets/steering-1.png')}' class='img-fluid' width=50 ></h2>''',unsafe_allow_html=True)
+    st.sidebar.markdown(f'''<h2 style="font-family:syne, syne; font-weight:bold; font-size:27px;">The Control Deck <img src='data:image/png;base64,{img_to_bytes('./assets/steering-1.png')}' class='img-fluid' width=50 ></h2>''',unsafe_allow_html=True)
     st.sidebar.markdown('***')
 
 
@@ -1496,7 +1532,7 @@ if __name__ == '__main__':
 
     # Categories -- Change Order to, About, Current Season, Previous Season, The F1 Glossary
     # category = st.sidebar.selectbox('Select', ['Current Season', 'Previous Seasons', 'About', 'The F1 Glossary'])
-    category = st.sidebar.selectbox('Select Timeline', ['Current Season', 'Previous Seasons'])
+    category = st.sidebar.selectbox('Select Timeline', ['Home Page', 'Current Season', 'Previous Seasons'])
     
 
     if category == 'Previous Seasons':
@@ -1516,12 +1552,13 @@ if __name__ == '__main__':
 
         
 
-        radios = st.sidebar.radio('Data', ['Schedule', 'Grand Prix Analysis'])
+        radios = st.sidebar.radio('Data', ['Schedule', 'Grand Prix Analysis','Points Table'])
+        st.sidebar.markdown('***')
 
 
         if radios == 'Schedule':
 
-            st.markdown(f'''<p style="font-size:30px; font-weight:bold; font-family:formula1, syne;"> <span style='color:darkblue;'>{year}</span> Race Schedule | Grand Prix List </p>''',unsafe_allow_html=True)
+            st.markdown(f'''<p style="font-size:30px; font-weight:bold; font-family:syne;"> <span style='color:darkblue; font-weight:900;'>{year}</span> Race Schedule | Grand Prix List </p>''',unsafe_allow_html=True)
             st.markdown('***')
 
             # Events for the year 
@@ -1529,7 +1566,7 @@ if __name__ == '__main__':
             display_schedule(year, circuits_cdf, circuits_rdf)
 
 
-        else:
+        elif radios == 'Grand Prix Analysis':
 
             # Events for the year 
             st.sidebar.markdown(f'''<p style='font-weight:bold;'>Grand Prix List | <span style='color:darkblue;'>{year}</span></p>''',unsafe_allow_html=True)
@@ -1557,11 +1594,11 @@ if __name__ == '__main__':
                 if summary_type == 'Weekend Analysis':
 
                     # title
-                    st.markdown(f'''<center><h4 style="font-family:formula1, syne;">{summary_type}</h4></center>''',unsafe_allow_html=True)
+                    st.markdown(f'''<center><h4 style="font-family:syne;">{summary_type}</h4></center>''',unsafe_allow_html=True)
                     st.markdown('***')
 
                     # Grand Prix Title
-                    st.markdown(f'''<p style="font-size:30px; font-weight:bold; font-family:formula1, syne;"> <img src="https://countryflagsapi.com/png/{package["Country"]}" width="50">  <u>{package["EventName"]}</u>  |  <span style="font-size:23px;">{date_modifier(package["EventDate"])}</span></p>''',unsafe_allow_html=True)
+                    st.markdown(f'''<p style="font-size:30px; font-weight:800; font-family:syne;"> <img src="https://countryflagsapi.com/png/{package["Country"]}" width="50">  <u>{package["EventName"]}</u>  |  <span style="font-size:23px;">{date_modifier(package["EventDate"])}</span></p>''',unsafe_allow_html=True)
                 
                 
                     # Race Type
@@ -1582,7 +1619,7 @@ if __name__ == '__main__':
                     st.markdown('***')
 
                     # Grand Prix Title
-                    st.markdown(f'''<p style="font-size:28px; font-weight:bold; font-family:formula1, syne;"> <img src="https://countryflagsapi.com/png/{package["Country"]}" width="50">  <u>{package["EventName"]}</u>  |  <span style="font-size:23px;">{date_modifier(package["EventDate"])}</span></p>''',unsafe_allow_html=True)
+                    st.markdown(f'''<p style="font-size:28px; font-weight:800; font-family:formula1, syne;"> <img src="https://countryflagsapi.com/png/{package["Country"]}" width="50">  <u>{package["EventName"]}</u>  |  <span style="font-size:23px;">{date_modifier(package["EventDate"])}</span></p>''',unsafe_allow_html=True)
                 
 
 
@@ -1628,12 +1665,12 @@ if __name__ == '__main__':
                                 results = results.drop(['Q1','Q2','Q3','FullName'],axis=1)
                                 results = results.fillna('0')
                                 retired = results[(results['Status'] != 'Finished') & (results['Status'] != '+1 Lap') ]
-                                
+                                driverlaps = session_obj.laps
                             
                                 if mode == 'Driver Analysis':
 
                                     
-                                        driverlaps = session_obj.laps
+                                        
                                         ab_list = list(driverlaps['Driver'].unique())
                                         driver_AB = placeholder.selectbox('Driver',ab_list) # selection
                                         driver_data = driverlaps.pick_driver(driver_AB)
@@ -1643,6 +1680,59 @@ if __name__ == '__main__':
 
                                         driver_race_analysis(year, event, driverlaps, driver_AB, driver_data, total_laps, 'previous')
 
+                                elif mode == 'Team Analysis':
+
+                                    team_data = session_obj.results
+                                    team_data = team_data.set_index('TeamName')
+                                    team_data = team_data.drop(team_data.columns[7:], axis=1)
+
+                                    team = placeholder.selectbox('Select Team', team_data.index.unique(),key='teams')   
+                                    DN1, BN1, AB1, TC1, FN1, LN1, FuN1 = team_data.loc[team].reset_index(drop=True).loc[0,:]
+                                    DN2, BN2, AB2, TC2, FN2, LN2, FuN2 = team_data.loc[team].reset_index(drop=True).loc[1,:]
+                                    TN = team
+
+                                    st.markdown(f'''<h3 style="font-family:formula1, syne; font-weight:800; color:#{TC1};"><center>{TN}</center></h3>''',unsafe_allow_html=True)
+
+                                    
+
+                                    st.markdown('***')
+                                    st.markdown('''<center><span style='font-weight:800; font-size:28px;'>Race Strategy</span></center>''', unsafe_allow_html=True)
+                                    st.markdown('***')
+                                    total_laps = int(driverlaps['LapNumber'].max())
+
+                                    Boolean = [True,False]
+                                    data_gen = (y for y in Boolean)
+
+                                    for driver_AB in [AB1, AB2]:
+                                        driver_data = driverlaps.pick_driver(driver_AB)
+                                        driver_info = session_obj.get_driver(driver_AB)
+                                        dn, bn, ab, tn, tc  = driver_info[:5]
+                                        st.markdown(f'''<h4 style="font-family:formula1, syne; font-weight:800;">{bn} ({ab}) <sub style='color:#{tc}'>{tn}</sub></h4>''',unsafe_allow_html=True)
+                                        # st.subheader(driver_AB) # subheader -- racer name 
+
+
+                                        strategy, lap_retired = fetch_strategy(driver_data)
+                                        presets = [strategy, lap_retired, total_laps]  
+                                        display_strategy(presets, mode='previous',team=next(data_gen))
+                                            
+
+                                    
+                                    st.markdown('***')
+
+                                    col1, col2 = st.columns(2)
+                                    with col1:
+                                        driver_data = driverlaps.pick_driver(AB1)
+                                        driver_data = driver_data.reset_index()
+                                        driver_race_analysis(year, event, driverlaps, AB1, driver_data, total_laps,'previous',team=True,preset=[TC1,AB1])
+                                    
+                                    with col2:
+                                        driver_data = driverlaps.pick_driver(AB2)
+                                        driver_data = driver_data.reset_index()
+                                        driver_race_analysis(year, event, driverlaps, AB2, driver_data, total_laps,'previous',team=True,preset=[TC2,AB2])
+                                    
+
+                                
+                                
                                 elif mode == 'Race Standings':
                                     
                                 
@@ -1681,20 +1771,44 @@ if __name__ == '__main__':
                                 st.warning("The API doesn't hold the telemetry data for the years before 2018.")
 
                                     
+        
+        
+        elif radios == 'Points Table':
+            st.markdown('''<center><span style='font-weight:800; font-size:28px;'>Driver Standings & Constructors</span></center>''', unsafe_allow_html=True)
+            st.markdown('***')
+            constructors, driver_standings = parse_race_points(year)
 
-                                
+            
+            
+            
+            # driver standings
+            st.markdown(f'''<span style="font-family:syne; font-size:25px">Driver Standings <span style='font-weight:900;color:darkblue;'>{year}</span></span>''',unsafe_allow_html=True)
+            y = pd.DataFrame(driver_standings).T.copy(deep=True)
+            y['Full Name'] = pd.DataFrame(driver_standings).T['givenName'] +' '+ pd.DataFrame(driver_standings).T['familyName']
+            y['Driver Code'] = y['code'] + ' ' + y['permanentNumber']
+            y = y.drop(['givenName','familyName','code','permanentNumber'],axis=1)
+            columns = ['Position','Points','Wins','Team','Nationality','Full Name','Driver Code']
+            y.columns = columns
+            y = y[['Full Name','Driver Code','Team','Points','Wins','Nationality','Position']]
+            y = y.set_index('Position')
+            
+            st.dataframe(y,2000, 2000)
+
+            st.markdown('***')
+            st.markdown(f'''<span style="font-family:syne; font-size:25px">Constructors <span style='font-weight:900;color:darkblue;'>{year}</span></span>''',unsafe_allow_html=True)
+            y = constructors = pd.DataFrame(constructors).T.copy(deep=True)
+            columns = ['Position','Points','Wins','Team','Nationality']
+            y.columns = columns
+            y = y[['Position','Team','Points','Wins','Nationality']].set_index('Position')
+            
+            cols = st.columns([2,6,2])
+            cols[1].dataframe(y, 1000,1000)
+
 
                             
-                                
-
-
-                       
+                        
                     
-                    
-                    
-                    else:
-                        pass
-                        # CONTROL WILL NOT REACH HERE
+                  
 
 
     
@@ -1703,19 +1817,20 @@ if __name__ == '__main__':
 
         current_year = datetime.now().strftime('%Y')
         current_year = int(current_year)
-        st.markdown(f'''<p style="font-size:30px; font-weight:bold; font-family:formula1, syne;"> <span style='color:darkblue;'>{current_year}</span> Race Schedule | Grand Prix List </p>''',unsafe_allow_html=True)
-        st.markdown("***")
+        
 
         circuits_cdf, circuits_rdf = fetch_circuits_data(current_year)
 
-        radios = st.sidebar.radio('Data',['Schedule','Grand Prix Analysis'], key='current')
+        radios = st.sidebar.radio('Data',['Schedule','Grand Prix Analysis','Points Table'], key='current')
+        st.sidebar.markdown('***')
 
         if radios == 'Schedule':
             # Events for the year 
-            st.markdown(f'''<p style='font-weight:bold;'></p>''',unsafe_allow_html=True)
+            st.markdown(f'''<p style="font-size:30px; font-weight:bold; font-family:syne;"> <span style='color:darkblue; font-weight:900;'>{current_year}</span> Race Schedule | Grand Prix List </p>''',unsafe_allow_html=True)
+            st.markdown("***") 
             display_schedule(current_year, circuits_cdf, circuits_rdf)
 
-        else:
+        elif radios == 'Grand Prix Analysis':
             # GP analysis
     
             # Analytics for the races that happened
@@ -1795,65 +1910,123 @@ if __name__ == '__main__':
                         results = results.drop(['Q1','Q2','Q3','FullName'],axis=1)
                         results = results.fillna('0')
                         retired = results[(results['Status'] != 'Finished') & (results['Status'] != '+1 Lap') ]
-                        
-                        
-                        if mode == 'Driver Analysis':
-                            
-                            
-                            if current_year >= 2018:
-                                driverlaps = session_obj.laps
+                        driverlaps = session_obj.laps
+
+                        if current_year >= 2018:
+                            if mode == 'Driver Analysis':
+                                
+                                
                                 ab_list = list(driverlaps['Driver'].unique())
                                 driver_AB = placeholder.selectbox('Driver',ab_list)
-                                analysis_type = st.checkbox('Comparative?')
-                                 # selection
+                                # analysis_type = st.checkbox('Comparative?')
+                                # selection
                                 driver_data = driverlaps.pick_driver(driver_AB)
                                 driver_data = driver_data.reset_index()
                                 total_laps = int(driverlaps['LapNumber'].max())
 
                                 driver_race_analysis(current_year, event, driverlaps, driver_AB, driver_data, total_laps,'current')
 
-                            else:
-                                st.warning("The API doesn't hold the telemetry data for the years before 2018.")
+                          
+                            elif mode == 'Team Analysis':
 
+                                team_data = session_obj.results
+                                team_data = team_data.set_index('TeamName')
+                                team_data = team_data.drop(team_data.columns[7:], axis=1)
 
+                                team = placeholder.selectbox('Select Team', team_data.index.unique(),key='teams')   
+                                DN1, BN1, AB1, TC1, FN1, LN1, FuN1 = team_data.loc[team].reset_index(drop=True).loc[0,:]
+                                DN2, BN2, AB2, TC2, FN2, LN2, FuN2 = team_data.loc[team].reset_index(drop=True).loc[1,:]
+                                TN = team
 
-                               
+                                st.markdown(f'''<h3 style="font-family:formula1, syne; font-weight:800; color:#{TC1};"><center>{TN}</center></h3>''',unsafe_allow_html=True)
 
-                        elif mode == 'Race Standings':
-                            
-                            
-                            top3 = results.iloc[:3,:]
-                            results = results.iloc[3:,:]
-                            results = results.reset_index(drop=True)
-
-                            display_race_standings(results, top3)
-                            
-                        
-                        elif mode == 'Retirements':
-                        
-                            total_laps = session_obj.laps['LapNumber'].max()
-                            st.markdown('***')
-                            st.markdown('''<center><span style='font-weight:800; font-size:28px;'>Retirements</span></center>''', unsafe_allow_html=True)
-                            st.markdown('***')
-
-                            if retired.empty:
-                                st.info('No Retirements')
-
-                            else:
-                                for index in range(len(retired)):
-                                    dn, bn, ab, tn, tc, fn, ln, pn, gp, time, status, points = retired.iloc[index,:]
-                                    retired_lap = session_obj.laps.pick_driver(ab).iloc[-1:,:]['LapNumber'].values[0]
-                                    if  retired_lap < total_laps and (total_laps-retired_lap) !=1:
-                                        pass
-                                    st.markdown(f'''> <h2><span style='font-family:syne; font-size:70px; font-weight:800;'>{dn} </span>{fn} <b>{ln}</b> <sub style='color:#{tc}'>{tn}</sub> <p><b>{status}</b> (Problem / Failure / Occured) — Retired at <b>Lap {retired_lap}</b></p></h2>''',unsafe_allow_html=True)
-
-                            st.markdown('***')
-                            
-
-                            # for index in range(len(results)):
-                            #     dn, bn, ab, tn, tc, pn, gp, time, status, points = results.iloc[index,:]
                                 
 
+                                st.markdown('***')
+                                st.markdown('''<center><span style='font-weight:800; font-size:28px;'>Race Strategy</span></center>''', unsafe_allow_html=True)
+                                st.markdown('***')
+                                total_laps = int(driverlaps['LapNumber'].max())
+
+                                Boolean = [True,False]
+                                data_gen = (y for y in Boolean)
+
+                                for driver_AB in [AB1, AB2]:
+                                    driver_data = driverlaps.pick_driver(driver_AB)
+                                    driver_info = session_obj.get_driver(driver_AB)
+                                    dn, bn, ab, tn, tc  = driver_info[:5]
+                                    st.markdown(f'''<h4 style="font-family:formula1, syne; font-weight:800;">{bn} ({ab}) <sub style='color:#{tc}'>{tn}</sub></h4>''',unsafe_allow_html=True)
+                                    # st.subheader(driver_AB) # subheader -- racer name 
+
+                                  
+
+                                    if mode == 'previous':
+                                        strategy, lap_retired = fetch_strategy(driver_data)
+                                        presets = [strategy, lap_retired, total_laps]  
+                                        display_strategy(presets, mode='previous',team=next(data_gen))
+                                        
+                                        
+                                    else:
+                                        compounds, lapschanged, pairs = fetch_strategy(driver_data,total_laps, mode='current') 
+                                        strategy, lap_retired = fetch_strategy(driver_data)
+                                        if event == 'Monaco Grand Prix':
+                                            presets = [compounds, lapschanged, pairs, total_laps] 
+                                            display_strategy(presets, mode='current',team=next(data_gen))
+                                        else:
+                                            presets = [strategy, lap_retired, total_laps]  
+                                            display_strategy(presets, mode='previous',team=next(data_gen))
+
+                                
+                                st.markdown('***')
+
+                                col1, col2 = st.columns(2)
+                                with col1:
+                                    driver_data = driverlaps.pick_driver(AB1)
+                                    driver_data = driver_data.reset_index()
+                                    driver_race_analysis(current_year, event, driverlaps, AB1, driver_data, total_laps,'current',team=True,preset=[TC1,AB1])
+                                
+                                with col2:
+                                    driver_data = driverlaps.pick_driver(AB2)
+                                    driver_data = driver_data.reset_index()
+                                    driver_race_analysis(current_year, event, driverlaps, AB2, driver_data, total_laps,'current',team=True,preset=[TC2,AB2])
+                                
+
+                                
+
+                            elif mode == 'Race Standings':
+                                
+                                
+                                top3 = results.iloc[:3,:]
+                                results = results.iloc[3:,:]
+                                results = results.reset_index(drop=True)
+
+                                display_race_standings(results, top3)
+                                
+                            
+                            elif mode == 'Retirements':
+                            
+                                total_laps = session_obj.laps['LapNumber'].max()
+                                st.markdown('***')
+                                st.markdown('''<center><span style='font-weight:800; font-size:28px;'>Retirements</span></center>''', unsafe_allow_html=True)
+                                st.markdown('***')
+
+                                if retired.empty:
+                                    st.info('No Retirements')
+
+                                else:
+                                    for index in range(len(retired)):
+                                        dn, bn, ab, tn, tc, fn, ln, pn, gp, time, status, points = retired.iloc[index,:]
+                                        retired_lap = session_obj.laps.pick_driver(ab).iloc[-1:,:]['LapNumber'].values[0]
+                                        if  retired_lap < total_laps and (total_laps-retired_lap) !=1:
+                                            pass
+                                        st.markdown(f'''> <h2><span style='font-family:syne; font-size:70px; font-weight:800;'>{dn} </span>{fn} <b>{ln}</b> <sub style='color:#{tc}'>{tn}</sub> <p><b>{status}</b> (Problem / Failure / Occured) — Retired at <b>Lap {retired_lap}</b></p></h2>''',unsafe_allow_html=True)
+
+                                st.markdown('***')
+                        
+                        else:
+                            st.warning("The API doesn't hold the telemetry data for the years before 2018.")
+
+
+                           
                                 
 
 
@@ -1869,13 +2042,40 @@ if __name__ == '__main__':
 
                     
 
+        elif radios == 'Points Table':
+            st.markdown('''<center><span style='font-weight:800; font-size:28px;'>Driver Standings & Constructors</span></center>''', unsafe_allow_html=True)
+            st.markdown('***')
+            constructors, driver_standings = parse_race_points(current_year)
 
-                else:
-                    pass
-                    # CONTROL WILL NOT REACH HERE
+        
+            # driver standings
+            st.markdown(f'''<span style="font-family:syne; font-size:25px">Driver Standings <span style='font-weight:900;color:darkblue;'>{current_year}</span></span>''',unsafe_allow_html=True)
+            y = pd.DataFrame(driver_standings).T.copy(deep=True)
+            y['Full Name'] = pd.DataFrame(driver_standings).T['givenName'] +' '+ pd.DataFrame(driver_standings).T['familyName']
+            y['Driver Code'] = y['code'] + ' ' + y['permanentNumber']
+            y = y.drop(['givenName','familyName','code','permanentNumber'],axis=1)
+            columns = ['Position','Points','Wins','Team','Nationality','Full Name','Driver Code']
+            y.columns = columns
+            y = y[['Full Name','Driver Code','Team','Points','Wins','Nationality','Position']]
+            y = y.set_index('Position')
+            
+            st.dataframe(y,2000, 2000)
+
+            st.markdown('***')
+            st.markdown(f'''<span style="font-family:syne; font-size:25px">Constructors <span style='font-weight:900;color:darkblue;'>{current_year}</span></span>''',unsafe_allow_html=True)
+            y = constructors = pd.DataFrame(constructors).T.copy(deep=True)
+            columns = ['Position','Points','Wins','Team','Nationality']
+            y.columns = columns
+            y = y[['Position','Team','Points','Wins','Nationality']].set_index('Position')
+            
+            cols = st.columns([2,6,2])
+            cols[1].dataframe(y, 1000,1000)
 
 
-    elif category == 'About':
+    
+    
+    
+    elif category == 'Home Page':
         about_cs()
 
 
@@ -1883,7 +2083,4 @@ if __name__ == '__main__':
 
 
 
-    st.sidebar.markdown('***')
-    
-    st.sidebar.markdown(f'''<h4 style='font-family:formula1, syne;'><span style='font-weight:normal;'>Engineered by</span> <u style='font-size:25px'>r0han</u> <a href='https://github.com/r0han99'> <img src='data:image/png;base64,{img_to_bytes('./assets/github.png')}' class='img-fluid' width=35> </a></h4>''',unsafe_allow_html=True)
-    
+   
