@@ -605,35 +605,37 @@ def qualifying(summarised_results, year, session_obj):
                 display_qualifying_summary(q1_grid, mode='Q3 Grid-Positions')
 
     else: 
-        st.markdown(f'''<h6 style="font-family:formula1, syne;">{session_select} Comprehensive Analysis</h6>''',unsafe_allow_html=True)
-
-        cols = st.columns([6,3])
-        placeholder = cols[1].empty()
-        analysis_type = cols[0].selectbox('Select to Investigate', ['Analysis Type?','Driver Performance Analysis', 'Team Performance Analysis'],key='key-analysis')
-        placeholder.selectbox('?',[])
-
-
-        # laps
-        laps = session_obj.laps.reset_index(drop=True)
-
-        # weather data
-        weather_data = session_obj.laps.get_weather_data()
-        weather_data = weather_data.reset_index(drop=True)
-
-        # club data
-        joined = pd.concat([laps, weather_data.loc[:, ~(weather_data.columns == 'Time')]], axis=1) #from the fastf1 documentation
-        
-        delta_required = [ 'LapTime',
-                                    'Sector1Time',
-                                    'Sector2Time',
-                                    'Sector3Time',   ]  
-                
 
         if year >= 2018:
+            st.markdown(f'''<h6 style="font-family:formula1, syne;">{session_select} Comprehensive Analysis</h6>''',unsafe_allow_html=True)
+
+            cols = st.columns([6,3])
+            placeholder = cols[1].empty()
+            analysis_type = cols[0].selectbox('Select to Investigate', ['Analysis Type?','Driver Performance Analysis', 'Team Performance Analysis'],key='key-analysis')
+            placeholder.selectbox('?',[])
+
+
+            # laps
+            laps = session_obj.laps.reset_index(drop=True)
+
+            # weather data
+            weather_data = session_obj.laps.get_weather_data()
+            weather_data = weather_data.reset_index(drop=True)
+
+            # club data
+            joined = pd.concat([laps, weather_data.loc[:, ~(weather_data.columns == 'Time')]], axis=1) #from the fastf1 documentation
+            
+            delta_required = [ 'LapTime',
+                                        'Sector1Time',
+                                        'Sector2Time',
+                                        'Sector3Time',   ]  
+                    
+
+            
 
             if analysis_type == 'Driver Performance Analysis':
 
-               
+            
                 # overwrite placeholder selectbox
 
                 
@@ -839,14 +841,14 @@ def qualifying(summarised_results, year, session_obj):
                 qualifying_comparison(FuN1, FuN2, joined, driver_dict, delta_required, session_obj, event, year, mode='same')
                 
 
-                    
-                    
-                    
+                        
+                        
+                        
 
         else:
 
             st.warning("The API doesn't hold the telemetry data for the years before 2018.")
-            
+                
 
 
 def display_qualifying_summary(data, mode):
@@ -1188,7 +1190,7 @@ def get_race_lap_data(_driverlaps, driver_AB):
 
     return joined, driver_data
 
-@st.experimental_singleton(show_spinner=True)
+@st.cache(persist=True)
 def parse_race_points(year):
 
     driver_url = f'http://ergast.com/api/f1/{year}/driverStandings.json'
@@ -1777,34 +1779,42 @@ if __name__ == '__main__':
         elif radios == 'Points Table':
             st.markdown('''<center><span style='font-weight:800; font-size:28px;'>Driver Standings & Constructors</span></center>''', unsafe_allow_html=True)
             st.markdown('***')
-            constructors, driver_standings = parse_race_points(year)
+            try:
+                constructors, driver_standings = parse_race_points(year)
+                 
+                # driver standings
+                st.markdown(f'''<span style="font-family:syne; font-size:25px">Driver Standings <span style='font-weight:900;color:darkblue;'>{year}</span></span>''',unsafe_allow_html=True)
+                y = pd.DataFrame(driver_standings).T.copy(deep=True)
+                y['Full Name'] = pd.DataFrame(driver_standings).T['givenName'] +' '+ pd.DataFrame(driver_standings).T['familyName']
+                y['Driver Code'] = y['code'] + ' ' + y['permanentNumber']
+                y = y.drop(['givenName','familyName','code','permanentNumber'],axis=1)
+                columns = ['Position','Points','Wins','Team','Nationality','Full Name','Driver Code']
+                y.columns = columns
+                y = y[['Full Name','Driver Code','Team','Points','Wins','Nationality','Position']]
+                y = y.set_index('Position')
+                
+                st.dataframe(y,2000, 2000)
 
-            
-            
-            
-            # driver standings
-            st.markdown(f'''<span style="font-family:syne; font-size:25px">Driver Standings <span style='font-weight:900;color:darkblue;'>{year}</span></span>''',unsafe_allow_html=True)
-            y = pd.DataFrame(driver_standings).T.copy(deep=True)
-            y['Full Name'] = pd.DataFrame(driver_standings).T['givenName'] +' '+ pd.DataFrame(driver_standings).T['familyName']
-            y['Driver Code'] = y['code'] + ' ' + y['permanentNumber']
-            y = y.drop(['givenName','familyName','code','permanentNumber'],axis=1)
-            columns = ['Position','Points','Wins','Team','Nationality','Full Name','Driver Code']
-            y.columns = columns
-            y = y[['Full Name','Driver Code','Team','Points','Wins','Nationality','Position']]
-            y = y.set_index('Position')
-            
-            st.dataframe(y,2000, 2000)
+                st.markdown('***')
+                st.markdown(f'''<span style="font-family:syne; font-size:25px">Constructors <span style='font-weight:900;color:darkblue;'>{year}</span></span>''',unsafe_allow_html=True)
+                y = constructors = pd.DataFrame(constructors).T.copy(deep=True)
+                columns = ['Position','Points','Wins','Team','Nationality']
+                y.columns = columns
+                y = y[['Position','Team','Points','Wins','Nationality']].set_index('Position')
+                
+                cols = st.columns([2,6,2])
+                cols[1].dataframe(y, 1000,1000)
 
-            st.markdown('***')
-            st.markdown(f'''<span style="font-family:syne; font-size:25px">Constructors <span style='font-weight:900;color:darkblue;'>{year}</span></span>''',unsafe_allow_html=True)
-            y = constructors = pd.DataFrame(constructors).T.copy(deep=True)
-            columns = ['Position','Points','Wins','Team','Nationality']
-            y.columns = columns
-            y = y[['Position','Team','Points','Wins','Nationality']].set_index('Position')
+            except:
+                st.warning('Data Descrepancy!, Certain elements of the Data are not Preserved by the API')
+                constructors_url = f'https://www.formula1.com/en/results.html/{year}/team.html'
+                driver_standing_url = f'https://www.formula1.com/en/results.html/{year}/drivers.html'
+                st.markdown(f''' <span style='font-weight:900;color:darkblue;font-size:30px;'> {year}</span>, <span style="font-family:syne; font-size:25px">Driver Standings <a href='{driver_standing_url}'>Refer this Source.</a></span>''',unsafe_allow_html=True)
+                st.markdown(f'''<span style='font-weight:900;color:darkblue;font-size:30px;'> {year}</span>, <span style="font-family:syne; font-size:25px">Constructors Standings <a href='{constructors_url}'>Refer this Source.</a></span>''',unsafe_allow_html=True)
+                
             
-            cols = st.columns([2,6,2])
-            cols[1].dataframe(y, 1000,1000)
-
+            
+           
 
                             
                         
@@ -2046,33 +2056,39 @@ if __name__ == '__main__':
         elif radios == 'Points Table':
             st.markdown('''<center><span style='font-weight:800; font-size:28px;'>Driver Standings & Constructors</span></center>''', unsafe_allow_html=True)
             st.markdown('***')
-            constructors, driver_standings = parse_race_points(current_year)
+
+            try:
+                constructors, driver_standings = parse_race_points(current_year)
+                # driver standings
+                st.markdown(f'''<span style="font-family:syne; font-size:25px">Driver Standings <span style='font-weight:900;color:darkblue;'>{current_year}</span></span>''',unsafe_allow_html=True)
+                y = pd.DataFrame(driver_standings).T.copy(deep=True)
+                y['Full Name'] = pd.DataFrame(driver_standings).T['givenName'] +' '+ pd.DataFrame(driver_standings).T['familyName']
+                y['Driver Code'] = y['code'] + ' ' + y['permanentNumber']
+                y = y.drop(['givenName','familyName','code','permanentNumber'],axis=1)
+                columns = ['Position','Points','Wins','Team','Nationality','Full Name','Driver Code']
+                y.columns = columns
+                y = y[['Full Name','Driver Code','Team','Points','Wins','Nationality','Position']]
+                y = y.set_index('Position')
+                
+                st.dataframe(y,2000, 2000)
+
+                st.markdown('***')
+                st.markdown(f'''<span style="font-family:syne; font-size:25px">Constructors <span style='font-weight:900;color:darkblue;'>{current_year}</span></span>''',unsafe_allow_html=True)
+                y = constructors = pd.DataFrame(constructors).T.copy(deep=True)
+                columns = ['Position','Points','Wins','Team','Nationality']
+                y.columns = columns
+                y = y[['Position','Team','Points','Wins','Nationality']].set_index('Position')
+                
+                cols = st.columns([2,6,2])
+                cols[1].dataframe(y, 1000,1000)
+
+
+            except:
+                st.warning('Data Descrepancy!, Certain elements of the Data are not Preserved by the API')
+                
 
         
-            # driver standings
-            st.markdown(f'''<span style="font-family:syne; font-size:25px">Driver Standings <span style='font-weight:900;color:darkblue;'>{current_year}</span></span>''',unsafe_allow_html=True)
-            y = pd.DataFrame(driver_standings).T.copy(deep=True)
-            y['Full Name'] = pd.DataFrame(driver_standings).T['givenName'] +' '+ pd.DataFrame(driver_standings).T['familyName']
-            y['Driver Code'] = y['code'] + ' ' + y['permanentNumber']
-            y = y.drop(['givenName','familyName','code','permanentNumber'],axis=1)
-            columns = ['Position','Points','Wins','Team','Nationality','Full Name','Driver Code']
-            y.columns = columns
-            y = y[['Full Name','Driver Code','Team','Points','Wins','Nationality','Position']]
-            y = y.set_index('Position')
             
-            st.dataframe(y,2000, 2000)
-
-            st.markdown('***')
-            st.markdown(f'''<span style="font-family:syne; font-size:25px">Constructors <span style='font-weight:900;color:darkblue;'>{current_year}</span></span>''',unsafe_allow_html=True)
-            y = constructors = pd.DataFrame(constructors).T.copy(deep=True)
-            columns = ['Position','Points','Wins','Team','Nationality']
-            y.columns = columns
-            y = y[['Position','Team','Points','Wins','Nationality']].set_index('Position')
-            
-            cols = st.columns([2,6,2])
-            cols[1].dataframe(y, 1000,1000)
-
-
     
     
     
