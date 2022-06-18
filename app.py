@@ -1328,7 +1328,7 @@ def driver_race_analysis(year, event, driverlaps, driver_AB, driver_data, total_
 
             expander.markdown('***')
             # compound 
-            compound_title.markdown(f'''<center><h6 style="font-family:formula1, syne; "><img src='data:image/png;base64,{img_to_bytes(f"./assets/{selector['Compound'].values[0]}.png")}' class='img-fluid' width=70 >  {selector['Compound'].values[0]} Compound</h6> <sub><h6 style="font-family:formula1, syne; ">Tyre Life <span style='font-size:28px'>{selector['TyreLife'].values[0]}</span> Laps</h6></sub></center>''',unsafe_allow_html=True)
+            compound_title.markdown(f'''<center><h6 style="font-family:formula1, syne; "><img src='data:image/png;base64,{img_to_bytes(f"./assets/{selector['Compound'].values[0].lower()}.png")}' class='img-fluid' width=70 >  {selector['Compound'].values[0].lower()} Compound</h6> <sub><h6 style="font-family:formula1, syne; ">Tyre Life <span style='font-size:28px'>{selector['TyreLife'].values[0]}</span> Laps</h6></sub></center>''',unsafe_allow_html=True)
             # expander.markdown(f'''> <h6 style="font-family:formula1, syne; ">Tyre Life <span style='font-size:28px'>{selector['TyreLife'].values[0]}</span> Laps</h6>''',unsafe_allow_html=True)                                                                              
             # expander.markdown('***')
 
