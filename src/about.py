@@ -42,7 +42,7 @@ def about_cs():
     cols = st.columns([3.5,4])
     cols[0].image('./assets/f1.gif',caption='By Twain Forsythe')
     info = '''
-    "Here is the portal directly taking you into the Team Paddocks giving you a deeper look into the Past Races, Strategies, Times Recorded and much more."
+    "Here is a portal directly taking you into the Team Paddocks giving you a deeper look into the Past Races, Strategies, Times Recorded and much more."
     '''
     cols[1].markdown(f'''<h3 style="font-family:syne">For the vehement Formula One fans,<br> <span style='font-size:22px;'>{info}</span></h3>''',unsafe_allow_html=True)
     cols[1].markdown(f'''<p style='font-family:syne;'; font-size:18px;><span style='font-weight:normal;'>Engineered by</span> <u style='font-size:22px; font-weight:900; color:orange;'>r0han</u> <a href='https://github.com/r0han99'> <img src='data:image/png;base64,{img_to_bytes('./assets/github.png')}' class='img-fluid' width=35> </a></p>''',unsafe_allow_html=True)
