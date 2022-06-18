@@ -9,7 +9,6 @@ def img_to_bytes(img_path):
     return encoded
 
 
-
 def about_cs():
     
 
