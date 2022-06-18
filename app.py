@@ -1462,7 +1462,8 @@ if __name__ == '__main__':
 
     # page configuration
     st.set_option('deprecation.showPyplotGlobalUse', False)
-    st.set_page_config(page_title="F1-Web-Paddock",layout="wide",initial_sidebar_state="expanded",)
+    st.set_page_config(page_title="F1-Web-Paddock",layout="wide",initial_sidebar_state="expanded",page_icon='./assets/tab-logo.png')
+    
 
     # # font-base64
     # with open('./assets/formula1-regular-base64.txt', 'r') as f:
