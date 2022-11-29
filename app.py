@@ -9,6 +9,7 @@ import fastf1
 import fastf1.plotting
 import matplotlib.pyplot as plt
 from src.about import about_cs
+from src.carimages import fetch_carimgs
 from pathlib import Path
 import base64
 from dateutil import parser
@@ -17,9 +18,15 @@ import copy
 import matplotlib.pyplot as plt
 from matplotlib.collections import LineCollection
 from matplotlib import cm
+import seaborn as sns
 
 
 # fastf1.Cache.enable_cache('./cache')  
+
+
+def load_model():
+    reconstructed_model = load_model("data_mining_LSTM.h5")
+    return reconstructed_model
 
 
 # default subroutines
@@ -33,9 +40,22 @@ def load_miscellaneous_data():
 
     rounds = pd.read_csv('./data/year_wise_rounds.csv').set_index('Unnamed: 0')
     
+    
     return rounds
 
 
+@st.cache(persist=True,suppress_st_warning=True)
+def load_rounds():
+    rounds = pd.read_csv('./data/year_wise_rounds.csv')
+    rounds.columns = ['year','rounds']  
+    years = rounds['year'].to_list()
+    round_v = rounds['rounds'].to_list()
+    rounds = {}
+    for year, r in zip(years, round_v):
+        rounds[year] = r
+        
+
+    return rounds
 
 def instantiate_API_keys():
 
@@ -49,6 +69,21 @@ def instantiate_API_keys():
 
     return API_elements
 
+
+def fetch_position_rank(const=None, driver=None,team=None,year=2022, individual=False):
+    if not individual:
+        pos = const.loc[year].loc[rounds[year]].reset_index()
+        position = pos[pos['Constructor']==team]['position'].values[0]
+        points = pos[pos['Constructor']==team]['points'].values[0]
+        
+        return position, points
+    else:
+        pos = driver.loc[year].loc[rounds[year]].reset_index()
+        dr_standings = {}
+        for dr in pos[pos['Constructors'] == team].values:
+            pos, name, _, code, team, points, wins = dr
+            dr_standings[name] = [(pos, code, points, wins)]
+        return dr_standings
 
 
 def drivers_summary(api_elements, yearwise_rounds):
@@ -73,6 +108,146 @@ def date_modifier(date_obj, type=1):
     else:
         return None
         
+
+
+
+@st.cache(persist=True, show_spinner=True)
+def fetch_constructorStandings(range_list=[2014,2023], roundwise=False,rounds=None,verbose=False):
+    
+    if roundwise == False:
+        dfs = []
+        years = list(range(*range_list))
+        for year in range(*range_list):
+            url = f'http://ergast.com/api/f1/{year}/constructorStandings.json'
+            response = requests.get(url)
+            constructor_standings = response.json()
+
+            itemlist = constructor_standings['MRData']['StandingsTable']['StandingsLists'][0]['ConstructorStandings']
+            teams = []
+            for item in itemlist:
+                teams.append(item['Constructor']['name'])
+
+            constructor_data = pd.DataFrame(itemlist)
+            constructor_data['Constructor'] = teams
+            constructor_data = constructor_data.set_index('position',drop=True)
+            constructor_data = constructor_data.drop('positionText',axis=1)
+
+            dfs.append(constructor_data)
+
+        return pd.concat(dfs, keys=years)
+    elif rounds != None and roundwise==True:
+
+        # roundwise constructors
+        dfs_y = {}
+        for year in range(*range_list):
+            dfs_r = []
+            for r in range(1,rounds[year]+1):
+                if verbose:
+                    print(f'Constructors: fetching {year}, round:{r}')
+                url = f'http://ergast.com/api/f1/{year}/{r}/constructorStandings.json'
+                res = requests.get(url)
+                res = res.json()
+                item_list = res['MRData']['StandingsTable']['StandingsLists'][0]['ConstructorStandings']
+
+                teams = []
+                for item in item_list:
+                    teams.append(item['Constructor']['name'])
+
+                constructor_data = pd.DataFrame(item_list)
+                constructor_data['Constructor'] = teams
+                constructor_data = constructor_data.set_index('position',drop=True)
+                constructor_data = constructor_data.drop('positionText',axis=1)
+
+                dfs_r.append(constructor_data)
+
+            dfs_y[year] = dfs_r
+
+        year_wise_data = []
+        for key in zip(dfs_y.keys()):
+        #     print(key[0])
+            year_wise_data.append(pd.concat(dfs_y[key[0]], keys=range(1,rounds[year]+1)))
+
+        const = pd.concat(year_wise_data, keys=range(*range_list))
+        return const
+        
+        
+@st.cache(persist=True, show_spinner=True)
+def fetch_driverstandings(range_list=[2014,2023], rounds=None, roundwise=False,verbose=False):
+    
+    
+    if roundwise == False:
+        dfs = []
+        years = list(range(*range_list))
+
+        for year in range(*range_list):
+            url = f'http://ergast.com/api/f1/{year}/driverStandings.json'
+            response = requests.get(url)
+            drivers_standings = response.json()
+
+            item_list = drivers_standings['MRData']['StandingsTable']['StandingsLists'][0]['DriverStandings']
+
+            teams = []
+            for item in item_list:
+                teams.append(item['Constructors'][0]['name'])
+
+            driver_dict_list = []
+            for item in item_list:
+                driver_dict_list.append(item['Driver'])
+
+            ds = pd.DataFrame(item_list)
+            ds['Constructors'] = teams
+            ds = pd.concat([ds,pd.DataFrame(driver_dict_list)],axis=1)
+            ds['fullname'] = ds['givenName'] + ' ' + ds['familyName']
+            ds = ds.drop(['positionText','Driver','driverId','url','dateOfBirth','givenName','familyName','nationality'],axis=1)
+            ds = ds.set_index('position',drop=True)
+            col_order = ['fullname','permanentNumber','code','Constructors','points','wins']
+            dfs.append(ds[col_order])
+        return pd.concat(dfs,keys=years)
+    
+    elif roundwise==True and rounds != None:
+        # Drivers Round Wise
+        dfs_y = {}
+        for year in range(*[2014,2023]):
+            dfs_r = []
+            for r in range(1,rounds[year]+1):
+                print(f'fetching {year}, round:{r}')
+                url = f'http://ergast.com/api/f1/{year}/{r}/driverStandings.json'
+                res = requests.get(url)
+                res = res.json()
+                item_list = res['MRData']['StandingsTable']['StandingsLists'][0]['DriverStandings']
+
+                teams = []
+                for item in item_list:
+                    teams.append(item['Constructors'][0]['name'])
+
+                driver_dict_list = []
+                for item in item_list:
+                    driver_dict_list.append(item['Driver'])
+
+                ds = pd.DataFrame(item_list)
+                ds['Constructors'] = teams
+                ds = pd.concat([ds,pd.DataFrame(driver_dict_list)],axis=1)
+                ds['fullname'] = ds['givenName'] + ' ' + ds['familyName']
+                ds = ds.drop(['positionText','Driver','driverId','url','dateOfBirth','givenName','familyName','nationality'],axis=1)
+                ds = ds.set_index('position',drop=True)
+                col_order = ['fullname','permanentNumber','code','Constructors','points','wins']
+                ds = ds[col_order]
+                dfs_r.append(ds)
+
+            dfs_y[year] = dfs_r
+
+        year_wise_data = []
+        for key in zip(dfs_y.keys()):
+        #     print(key[0])
+            year_wise_data.append(pd.concat(dfs_y[key[0]], keys=range(1,rounds[year]+1)))
+
+        drivers = pd.concat(year_wise_data, keys=range(*range_list))
+
+        return drivers
+
+            
+    
+
 
 
 @st.cache(persist=True, suppress_st_warning=True, allow_output_mutation=True)
@@ -350,6 +525,43 @@ def gear_heatmap(x,y,tel,driver,event,year):
 
 
     st.pyplot(plt.show())
+
+
+def bump_plot(driver, team=None, mode='overall', year=2022, team_color=None ):
+    
+    if mode == 'team':
+        if team_color == None:
+            team_color = 'orange'
+        plt.style.use('seaborn-darkgrid')
+        test = driver.loc[year].reset_index()
+        plt.style.use('seaborn-whitegrid')
+        plt.figure(figsize=(11,8))
+        sns.lineplot(data=test[test['Constructors']==team], x='level_0',y='position',
+                     style='code',
+                     markers=True,linewidth=3, color=team_color )
+        plt.xticks(ticks=list(range(1,rounds[year])))
+        plt.legend(bbox_to_anchor =(1.25,1), loc='lower right')
+        plt.xlabel('Rounds',size=15)
+        plt.ylabel('Position',size=15)
+        plt.title(f'{team}, Drivers-Standing: Position Vs Rounds for the Year {year}')
+        
+        
+        
+    elif mode == 'overall':
+        plt.style.use('seaborn-darkgrid')
+        test = driver.loc[year].reset_index()
+        plt.style.use('seaborn-whitegrid')
+        plt.figure(figsize=(11,8))
+        sns.lineplot(data=test, x='level_0',y='position',
+                     style='code', hue='Constructors',
+                     markers=True,linewidth=3, palette='Set2' )
+        plt.xticks(ticks=list(range(1,rounds[year])))
+        plt.legend(bbox_to_anchor =(1.25,-0.1), loc='lower right')
+        plt.xlabel('Rounds',size=15)
+        plt.ylabel('Position',size=15)
+        plt.title(f'Drivers Standing Position Vs Rounds for the Year {year}')
+
+
 
 
 def qualifying_comparison(driver1, driver2, joined, driver_dict, delta_required, session_obj, event, year, mode):
@@ -839,9 +1051,8 @@ def qualifying(summarised_results, year, session_obj):
                 st.markdown(f'''<h3 style="font-family:formula1, syne; font-weight:800; color:#{TC1};"><center>{TN}</center></h3>''',unsafe_allow_html=True)
 
                 qualifying_comparison(FuN1, FuN2, joined, driver_dict, delta_required, session_obj, event, year, mode='same')
-                
 
-                        
+
                         
                         
 
@@ -1315,7 +1526,8 @@ def driver_race_analysis(year, event, driverlaps, driver_AB, driver_data, total_
             min_val, max_val = int(min_val), int(max_val)
             # st.write(min_val, max_val)
             compound_title = expander.empty()
-            lapnum = expander.number_input('Laps', min_value=min_val,max_value=max_val, key=f'{driver_AB}')
+            random_num = np.random.randint(0,1000,1)[0]
+            lapnum = expander.number_input('Laps', min_value=min_val,max_value=max_val, key=f'{driver_AB}'+str(random_num))
             lapnum = int(lapnum)
             # st.write(lapnum)
             # stint_df = stint_df.set_index('LapNumber')
@@ -1438,7 +1650,7 @@ def display_race_standings(results, top3):
             if status == 'Finished' and status == '+1 Lap':
                 cols[0].markdown(f'''<center><span style='font-size:45px; font-weight:bold;  border-bottom:3px solid #000;font-weight:800;'>P{int(pn)}<sup>{points}</sup> </span><br><span style='font-size:32px;'>{fn} <b style='font-weight:800;'>{ln}</b></span> <br><sub style='color:#{tc}'><b>{tn}</b></sub> <br><sub>positions {image} {abs(gained)}</sub></center>''',unsafe_allow_html=True)
             else:
-                cols[0].markdown(f'''<center><span style='font-size:45px; font-weight:bold;  border-bottom:3px solid #000;font-weight:800;'>P{int(pn)}<sup>{points}</sup> </span><br><span style='font-size:32px;'>{fn} <b style='font-weight:800;'>{ln}</b></span> <br><sub style='color:#{tc}'><b>{tn}</b></sub> <br><sub><b>Retired</b> - {status}</sub></center>''',unsafe_allow_html=True)
+                cols[0].markdown(f'''<center><span style='font-size:45px; font-weight:bold;  border-bottom:3px solid #000;font-weight:800;'>P{int(pn)}<sup>{points}</sup> </span><br><span style='font-size:32px;'>{fn} <b style='font-weight:800;'>{ln}</b></span> <br><sub style='color:#{tc}'><b>{tn}</b></sub> <br><sub><b>Status</b> - {status}</sub></center>''',unsafe_allow_html=True)
 
             cols[1].markdown('')
             cols[1].markdown('')
@@ -1449,7 +1661,7 @@ def display_race_standings(results, top3):
             if status == 'Finished' and status == '+1 Lap':
                 cols[1].markdown(f'''<center><span style='font-size:45px; font-weight:bold;  border-bottom:3px solid #000;font-weight:800;'>P{int(pn)}<sup>{points}</sup> </span><br><span style='font-size:32px;'>{fn} <b style='font-weight:800;'>{ln}</b></span> <br><sub style='color:#{tc}'><b>{tn}</b></sub> <br><sub>positions {image} {abs(gained)}</sub></center>''',unsafe_allow_html=True)
             else:
-                cols[1].markdown(f'''<center><span style='font-size:45px; font-weight:bold;  border-bottom:3px solid #000;font-weight:800;'>P{int(pn)}<sup>{points}</sup> </span><br><span style='font-size:32px;'>{fn} <b style='font-weight:800;'>{ln}</b></span> <br><sub style='color:#{tc}'><b>{tn}</b></sub> <br><sub><b>Retired</b> - {status}</sub></center>''',unsafe_allow_html=True)
+                cols[1].markdown(f'''<center><span style='font-size:45px; font-weight:bold;  border-bottom:3px solid #000;font-weight:800;'>P{int(pn)}<sup>{points}</sup> </span><br><span style='font-size:32px;'>{fn} <b style='font-weight:800;'>{ln}</b></span> <br><sub style='color:#{tc}'><b>{tn}</b></sub> <br><sub><b>Status</b> - {status}</sub></center>''',unsafe_allow_html=True)
 
     st.markdown('***')
 
@@ -1520,7 +1732,7 @@ if __name__ == '__main__':
     st.markdown('***')
 
     # Sidebar title 
-    st.sidebar.markdown(f'''<h2 style="font-family:syne, syne; font-weight:bold; font-size:27px;">The Control Deck <img src='data:image/png;base64,{img_to_bytes('./assets/steering-1.png')}' class='img-fluid' width=50 ></h2>''',unsafe_allow_html=True)
+    st.sidebar.markdown(f'''<h2 style="font-family:syne, syne; font-weight:bold; font-size:27px;">The Control Deck <img src='data:image/png;base64,{img_to_bytes('./assets/steering-1.png')}' class='img-fluid' width=35 ></h2>''',unsafe_allow_html=True)
     st.sidebar.markdown('***')
 
 
@@ -1535,107 +1747,383 @@ if __name__ == '__main__':
 
     # Categories -- Change Order to, About, Current Season, Previous Season, The F1 Glossary
     # category = st.sidebar.selectbox('Select', ['Current Season', 'Previous Seasons', 'About', 'The F1 Glossary'])
-    category = st.sidebar.selectbox('Select Timeline', ['Home Page', 'Current Season', 'Previous Seasons'])
-    
 
-    if category == 'Previous Seasons':
-        st.sidebar.markdown('***')
+    dashboard_type = st.sidebar.selectbox('Who are you?', ['Home Page','A Fan!', 'A Sponsor'],key='dashboard-type')
+    st.sidebar.info('*This decides how the dashboard is organised with the results. A Fan can see all the session level details, sponsor will be able to get analytical reports summarising the performance of a team for them to take decisions on whether to sponsor or pass.*')
+    st.sidebar.markdown('***')
 
-        # YEAR -- input
+    if dashboard_type == 'A Fan!':
+
+        category = st.sidebar.selectbox('Select Timeline', ['Current Season', 'Previous Seasons'])
         
-        st.sidebar.markdown(f'''<p style='font-weight:bold;'><u>Parameters</u></p>''',unsafe_allow_html=True)
-        year = st.sidebar.slider('Select Year', min_value=2006, max_value=2021,value=2021)
+        
+        if category == 'Previous Seasons':
 
-        # fetch circuits
-        circuits_cdf, circuits_rdf = fetch_circuits_data(year)
+
+            # st.sidebar.markdown('***')
+
+            # YEAR -- input
             
-        # collecting data
-        event_names, event_schedule = fetch_event_schedule(int(year))
-        
+            st.sidebar.markdown(f'''<p style='font-weight:bold;'><u>Parameters</u></p>''',unsafe_allow_html=True)
+            year = st.sidebar.slider('Select Year', min_value=2006, max_value=2021,value=2021)
 
-        
-
-        radios = st.sidebar.radio('Data', ['Schedule', 'Grand Prix Analysis','Points Table'])
-        st.sidebar.markdown('***')
-
-
-        if radios == 'Schedule':
-
-            st.markdown(f'''<p style="font-size:30px; font-weight:bold; font-family:syne;"> <span style='color:darkblue; font-weight:900;'>{year}</span> Race Schedule | Grand Prix List </p>''',unsafe_allow_html=True)
-            st.markdown('***')
-
-            # Events for the year 
-            st.markdown(f'''<p style='font-weight:bold;'></p>''',unsafe_allow_html=True)
-            display_schedule(year, circuits_cdf, circuits_rdf)
-
-
-        elif radios == 'Grand Prix Analysis':
-
-            # Events for the year 
-            st.sidebar.markdown(f'''<p style='font-weight:bold;'>Grand Prix List | <span style='color:darkblue;'>{year}</span></p>''',unsafe_allow_html=True)
+            # fetch circuits
+            circuits_cdf, circuits_rdf = fetch_circuits_data(year)
+                
+            # collecting data
+            event_names, event_schedule = fetch_event_schedule(int(year))
+            
 
             
-            # EVENT NAME
-            event = st.sidebar.selectbox('Select Event', event_names)
 
-            if not event == "List of Grand Prix's":
+            radios = st.sidebar.radio('Data', ['Schedule', 'Grand Prix Analysis','Points Table'])
+            st.sidebar.markdown('***')
+
+
+            if radios == 'Schedule':
+
+                st.markdown(f'''<p style="font-size:30px; font-weight:bold; font-family:syne;"> <span style='color:darkblue; font-weight:900;'>{year}</span> Race Schedule | Grand Prix List </p>''',unsafe_allow_html=True)
+                st.markdown('***')
+
+                # Events for the year 
+                st.markdown(f'''<p style='font-weight:bold;'></p>''',unsafe_allow_html=True)
+                display_schedule(year, circuits_cdf, circuits_rdf)
+
+
+            elif radios == 'Grand Prix Analysis':
+
+                # Events for the year 
+                st.sidebar.markdown(f'''<p style='font-weight:bold;'>Grand Prix List | <span style='color:darkblue;'>{year}</span></p>''',unsafe_allow_html=True)
+
                 
-                # slicing data 
-                event_data = event_schedule[event_schedule['EventName'] == event].T
+                # EVENT NAME
+                event = st.sidebar.selectbox('Select Event', event_names)
 
-                # packaging event summarised-information
-                package = {}
-                items = event_schedule.columns[:-1]
-                for item in items:
-                    package[item] = event_data.loc[item].values[0]
-
-                sessions_list = [package[x] for x in ['Session'+str(i) for i in range(1,6)]]
-                # st.write(package)
-
-                summary_type = st.sidebar.radio('Select Category', ['Session Analysis', 'Weekend Analysis'])
-
-                if summary_type == 'Weekend Analysis':
-
-                    # title
-                    st.markdown(f'''<center><h4 style="font-family:syne;">{summary_type}</h4></center>''',unsafe_allow_html=True)
-                    st.markdown('***')
-
-                    # Grand Prix Title
-                    st.markdown(f'''<p style="font-size:30px; font-weight:800; font-family:syne;"> <img src="https://countryflagsapi.com/png/{package["Country"]}" width="50">  <u>{package["EventName"]}</u>  |  <span style="font-size:23px;">{date_modifier(package["EventDate"])}</span></p>''',unsafe_allow_html=True)
-                
-                
-                    # Race Type
-                    st.markdown(f'<p style="font-size:22px;font-family:formula1, syne;">Race Format - {package["EventFormat"].capitalize()}</p>',unsafe_allow_html=True)
-
-                    # Sessions
-                    cols = st.columns(len(sessions_list))
-                    for i, session_name in enumerate(sessions_list, start=0) :
-                        cols[i].markdown('> <p style="font-size:17px; font-weight:bold; font-family:formula1, syne;"><u>{}</u><p>'.format(session_name),unsafe_allow_html=True)
-                        cols[i].markdown('> <p style="font-size:13px; font-weight:bold; font-family:formula1, syne;">{}<p>'.format(date_modifier(package['Session'+str(i+1)+"Date"])),unsafe_allow_html=True)
+                if not event == "List of Grand Prix's":
                     
+                    # slicing data 
+                    event_data = event_schedule[event_schedule['EventName'] == event].T
+
+                    # packaging event summarised-information
+                    package = {}
+                    items = event_schedule.columns[:-1]
+                    for item in items:
+                        package[item] = event_data.loc[item].values[0]
+
+                    sessions_list = [package[x] for x in ['Session'+str(i) for i in range(1,6)]]
+                    # st.write(package)
+
+                    summary_type = st.sidebar.radio('Select Category', ['Session Analysis', 'Weekend Analysis'])
+
+                    if summary_type == 'Weekend Analysis':
+
+                        # title
+                        st.markdown(f'''<center><h4 style="font-family:syne;">{summary_type}</h4></center>''',unsafe_allow_html=True)
+                        st.markdown('***')
+
+                        # Grand Prix Title
+                        st.markdown(f'''<p style="font-size:30px; font-weight:800; font-family:syne;"> <img src="https://countryflagsapi.com/png/{package["Country"]}" width="50">  <u>{package["EventName"]}</u>  |  <span style="font-size:23px;">{date_modifier(package["EventDate"])}</span></p>''',unsafe_allow_html=True)
+                    
+                    
+                        # Race Type
+                        st.markdown(f'<p style="font-size:22px;font-family:formula1, syne;">Race Format - {package["EventFormat"].capitalize()}</p>',unsafe_allow_html=True)
+
+                        # Sessions
+                        cols = st.columns(len(sessions_list))
+                        for i, session_name in enumerate(sessions_list, start=0) :
+                            cols[i].markdown('> <p style="font-size:17px; font-weight:bold; font-family:formula1, syne;"><u>{}</u><p>'.format(session_name),unsafe_allow_html=True)
+                            cols[i].markdown('> <p style="font-size:13px; font-weight:bold; font-family:formula1, syne;">{}<p>'.format(date_modifier(package['Session'+str(i+1)+"Date"])),unsafe_allow_html=True)
+                        
+                        st.markdown('***')
+
+
+                    else:
+                        # title
+                        st.markdown(f'''<center><h4 style="font-family:formula1, syne;">{summary_type}</h4></center>''',unsafe_allow_html=True)
+                        st.markdown('***')
+
+                        # Grand Prix Title
+                        st.markdown(f'''<p style="font-size:28px; font-weight:800; font-family:formula1, syne;"> <img src="https://countryflagsapi.com/png/{package["Country"]}" width="50">  <u>{package["EventName"]}</u>  |  <span style="font-size:23px;">{date_modifier(package["EventDate"])}</span></p>''',unsafe_allow_html=True)
+                    
+
+
+                        st.markdown(f'<p style="font-size:15px;font-family:formula1, syne; font-weight:bold;">Race Format - {package["EventFormat"].capitalize()}</p>',unsafe_allow_html=True)
+                        sessions_list.insert(0,'Select Session')
+                        session_select = st.selectbox('Select Session', sessions_list, key='sessions')
+                        st.markdown('***')
+                        
+                        # bypassing the first element problem
+                        if session_select != 'Select Session':
+
+                            session_results, session_obj = load_session_data(year, event, session_select)
+                            
+                            
+                            if session_select == 'Qualifying':
+
+                                # Data Collection
+                                summarised_results = session_results.copy(deep=True)
+                                summarised_results = pd.DataFrame(summarised_results)
+                                summarised_results = summarised_results.drop(['Time','Status','Points'], axis=1)
+                                summarised_results = summarised_results.fillna('0')
+
+                                qualifying(summarised_results, year, session_obj)
+
+
+                            elif session_select in ['Practice 1','Practice 2','Practice 3','Sprint']:
+            
+                                st.warning('In Development ⌛')
+                                st.markdown('***')
+
+                            elif session_select == 'Race':
+
+
+                                cols = st.columns([6,3])
+                                placeholder = cols[1].empty()
+                                # placeholder.selectbox('?',['?'])
+                                mode = cols[0].selectbox('Select Mode', ['Mode?','Driver Analysis','Team Analysis', 'Race Standings','Retirements'])
+
+                                if year >= 2018:
+
+                                    # result summary
+                                    results = session_obj.results
+                                    results = results.drop(['Q1','Q2','Q3','FullName'],axis=1)
+                                    results = results.fillna('0')
+                                    retired = results[(results['Status'] != 'Finished') & (results['Status'] != '+1 Lap') ]
+                                    driverlaps = session_obj.laps
+                                
+                                    if mode == 'Driver Analysis':
+
+                                        
+                                            
+                                            ab_list = list(driverlaps['Driver'].unique())
+                                            driver_AB = placeholder.selectbox('Driver',ab_list) # selection
+                                            driver_data = driverlaps.pick_driver(driver_AB)
+                                            driver_data = driver_data.reset_index()
+                                            driver_data = driver_data.drop(0)
+                                            total_laps = int(driverlaps['LapNumber'].max())
+
+                                            driver_race_analysis(year, event, driverlaps, driver_AB, driver_data, total_laps, 'previous')
+
+                                    elif mode == 'Team Analysis':
+
+                                        team_data = session_obj.results
+                                        team_data = team_data.set_index('TeamName')
+                                        team_data = team_data.drop(team_data.columns[7:], axis=1)
+
+                                        team = placeholder.selectbox('Select Team', team_data.index.unique(),key='teams')   
+                                        DN1, BN1, AB1, TC1, FN1, LN1, FuN1 = team_data.loc[team].reset_index(drop=True).loc[0,:]
+                                        DN2, BN2, AB2, TC2, FN2, LN2, FuN2 = team_data.loc[team].reset_index(drop=True).loc[1,:]
+                                        TN = team
+
+                                        st.markdown(f'''<h3 style="font-family:formula1, syne; font-weight:800; color:#{TC1};"><center>{TN}</center></h3>''',unsafe_allow_html=True)
+
+                                        
+
+                                        st.markdown('***')
+                                        st.markdown('''<center><span style='font-weight:800; font-size:28px;'>Race Strategy</span></center>''', unsafe_allow_html=True)
+                                        st.markdown('***')
+                                        total_laps = int(driverlaps['LapNumber'].max())
+
+                                        Boolean = [True,False]
+                                        data_gen = (y for y in Boolean)
+
+                                        for driver_AB in [AB1, AB2]:
+                                            driver_data = driverlaps.pick_driver(driver_AB)
+                                            driver_info = session_obj.get_driver(driver_AB)
+                                            dn, bn, ab, tn, tc  = driver_info[:5]
+                                            st.markdown(f'''<h4 style="font-family:formula1, syne; font-weight:800;">{bn} ({ab}) <sub style='color:#{tc}'>{tn}</sub></h4>''',unsafe_allow_html=True)
+                                            # st.subheader(driver_AB) # subheader -- racer name 
+
+
+                                            strategy, lap_retired = fetch_strategy(driver_data)
+                                            presets = [strategy, lap_retired, total_laps]  
+                                            display_strategy(presets, mode='previous',team=next(data_gen))
+                                                
+
+                                        
+                                        st.markdown('***')
+
+                                        col1, col2 = st.columns(2)
+                                        with col1:
+                                            driver_data = driverlaps.pick_driver(AB1)
+                                            driver_data = driver_data.reset_index()
+                                            driver_race_analysis(year, event, driverlaps, AB1, driver_data, total_laps,'previous',team=True,preset=[TC1,AB1])
+                                        
+                                        with col2:
+                                            driver_data = driverlaps.pick_driver(AB2)
+                                            driver_data = driver_data.reset_index()
+                                            driver_race_analysis(year, event, driverlaps, AB2, driver_data, total_laps,'previous',team=True,preset=[TC2,AB2])
+                                        
+
+                                    
+                                    
+                                    elif mode == 'Race Standings':
+                                        
+                                    
+                                        top3 = results.iloc[:3,:]
+                                        results = results.iloc[3:,:]
+                                        results = results.reset_index(drop=True)
+
+                                        display_race_standings(results, top3)
+
+                                    elif mode == 'Retirements':
+
+                                        total_laps = session_obj.laps['LapNumber'].max()
+
+
+                                        st.markdown('***')
+                                        st.markdown('''<center><span style='font-weight:800; font-size:28px;'>Retirements</span></center>''', unsafe_allow_html=True)
+                                        st.markdown('***')
+
+                                        if retired.empty:
+                                            st.info('No Retirements')
+
+                                        else:
+                                            for index in range(len(retired)):
+                                                dn, bn, ab, tn, tc, fn, ln, pn, gp, time, status, points = retired.iloc[index,:]
+                                                retired_lap = session_obj.laps.pick_driver(ab).iloc[-1:,:]['LapNumber'].values[0]
+                                                if  retired_lap < total_laps and (total_laps-retired_lap) !=1:
+                                                    pass
+                                                st.markdown(f'''> <h2><span style='font-family:syne; font-size:70px; font-weight:800;'>{dn} </span>{fn} <b>{ln}</b> <sub style='color:#{tc}'>{tn}</sub> <p><b>{status}</b> (Problem / Failure / Occured) — Retired at <b>Lap {retired_lap}</b></p></h2>''',unsafe_allow_html=True)
+
+                                        st.markdown('***')
+
+
+
+                                    
+                                else:
+                                    st.warning("The API doesn't hold the telemetry data for the years before 2018.")
+
+                                        
+            
+            
+            elif radios == 'Points Table':
+                st.markdown('''<center><span style='font-weight:800; font-size:28px;'>Driver Standings & Constructors</span></center>''', unsafe_allow_html=True)
+                st.markdown('***')
+                try:
+                    constructors, driver_standings = parse_race_points(year)
+                    
+                    # driver standings
+                    st.markdown(f'''<span style="font-family:syne; font-size:25px">Driver Standings <span style='font-weight:900;color:darkblue;'>{year}</span></span>''',unsafe_allow_html=True)
+                    y = pd.DataFrame(driver_standings).T.copy(deep=True)
+                    y['Full Name'] = pd.DataFrame(driver_standings).T['givenName'] +' '+ pd.DataFrame(driver_standings).T['familyName']
+                    y['Driver Code'] = y['code'] + ' ' + y['permanentNumber']
+                    y = y.drop(['givenName','familyName','code','permanentNumber'],axis=1)
+                    columns = ['Position','Points','Wins','Team','Nationality','Full Name','Driver Code']
+                    y.columns = columns
+                    y = y[['Full Name','Driver Code','Team','Points','Wins','Nationality','Position']]
+                    y = y.set_index('Position')
+                    
+                    st.dataframe(y,2000, 2000)
+
                     st.markdown('***')
+                    st.markdown(f'''<span style="font-family:syne; font-size:25px">Constructors <span style='font-weight:900;color:darkblue;'>{year}</span></span>''',unsafe_allow_html=True)
+                    y = constructors = pd.DataFrame(constructors).T.copy(deep=True)
+                    columns = ['Position','Points','Wins','Team','Nationality']
+                    y.columns = columns
+                    y = y[['Position','Team','Points','Wins','Nationality']].set_index('Position')
+                    
+                    cols = st.columns([2,6,2])
+                    cols[1].dataframe(y, 1000,1000)
+
+                except:
+                    st.warning('Data Descrepancy!, Certain elements of the Data are not Preserved by the API')
+                    constructors_url = f'https://www.formula1.com/en/results.html/{year}/team.html'
+                    driver_standing_url = f'https://www.formula1.com/en/results.html/{year}/drivers.html'
+                    st.markdown(f''' <span style='font-weight:900;color:darkblue;font-size:30px;'> {year}</span>, <span style="font-family:syne; font-size:25px">Driver Standings <a href='{driver_standing_url}'>Refer this Source.</a></span>''',unsafe_allow_html=True)
+                    st.markdown(f'''<span style='font-weight:900;color:darkblue;font-size:30px;'> {year}</span>, <span style="font-family:syne; font-size:25px">Constructors Standings <a href='{constructors_url}'>Refer this Source.</a></span>''',unsafe_allow_html=True)
+                    
+                
+                
+            
+
+                                
+                            
+                        
+                    
 
 
-                else:
-                    # title
-                    st.markdown(f'''<center><h4 style="font-family:formula1, syne;">{summary_type}</h4></center>''',unsafe_allow_html=True)
+        
+        elif category == 'Current Season':
+
+            
+
+
+
+
+            st.sidebar.markdown('***')
+
+            current_year = datetime.now().strftime('%Y')
+            current_year = int(current_year)
+            
+
+            circuits_cdf, circuits_rdf = fetch_circuits_data(current_year)
+
+            radios = st.sidebar.radio('Data',['Schedule','Grand Prix Analysis','Points Table'], key='current')
+            st.sidebar.markdown('***')
+
+            if radios == 'Schedule':
+                # Events for the year 
+                st.markdown(f'''<p style="font-size:30px; font-weight:bold; font-family:syne;"> <span style='color:darkblue; font-weight:900;'>{current_year}</span> Race Schedule | Grand Prix List </p>''',unsafe_allow_html=True)
+                st.markdown("***") 
+                display_schedule(current_year, circuits_cdf, circuits_rdf)
+
+            elif radios == 'Grand Prix Analysis':
+                # GP analysis
+        
+                # Analytics for the races that happened
+                current_event = fastf1.get_event_schedule(current_year)
+                conditional = (current_event['EventDate'] <= datetime.now()) | (current_event['Session1Date'] <= datetime.now()) | (current_event['Session2Date'] <= datetime.now()) | (current_event['Session3Date'] <= datetime.now()) | (current_event['Session4Date'] <= datetime.now()) | (current_event['Session4Date'] <= datetime.now())
+                index = current_event[conditional].index
+                current_event = current_event.loc[index,:]
+
+                event_names = current_event['EventName'].to_list()
+                event_names = event_names[::-1]
+                event_names.insert(0, "List of Completed Grand Prixs'")
+
+                
+                event = st.sidebar.selectbox('Select Event', event_names)
+
+                if not event == "List of Completed Grand Prixs'":
+
+                    event_data = current_event[current_event['EventName'] == event].T
+                    
+                    # country name
+                    country = event_data.loc['Country'].values[0]
+
+                    try:
+                        circuit = circuits_rdf.loc[event, 'Circuits']
+                        locality = circuits_rdf.loc[event, 'Localities']
+                    except:
+                        circuit = circuits_cdf.loc[country, 'Circuits']
+                        locality = circuits_cdf.loc[country, 'Localities']
+
+                    # packaging event summarised-information
+                    package = {}
+                    items = current_event.columns[:-1]
+                    for item in items:
+                        package[item] = event_data.loc[item].values[0]
+
+                    sessions_list = [package[x] for x in ['Session'+str(i) for i in range(1,6)]]
+
+                    st.markdown(f'''<center><h4 style="font-family:formula1, syne;">Session Analysis</h4></center>''',unsafe_allow_html=True)
                     st.markdown('***')
 
                     # Grand Prix Title
-                    st.markdown(f'''<p style="font-size:28px; font-weight:800; font-family:formula1, syne;"> <img src="https://countryflagsapi.com/png/{package["Country"]}" width="50">  <u>{package["EventName"]}</u>  |  <span style="font-size:23px;">{date_modifier(package["EventDate"])}</span></p>''',unsafe_allow_html=True)
-                
-
-
+                    st.markdown(f'''<p style="font-size:30px; font-weight:bold; font-family:formula1, syne;"> <img src="https://countryflagsapi.com/png/{package["Country"]}" width="50">  <u>{package["EventName"]}</u>  |  <span style="font-size:23px;">{date_modifier(package["EventDate"])} <br><span style='font-family:syne; '>{circuit}, {locality}</span> </span> </p>''',unsafe_allow_html=True)
+                    # st.markdown(f'''<p style="font-size:28px; font-weight:bold; font-family:formula1, syne;"> <img src="https://countryflagsapi.com/png/{package["Country"]}" width="50">  <u>{package["EventName"]}</u>  |  <span style="font-size:23px;">{date_modifier(package["EventDate"])}</span></p>''',unsafe_allow_html=True)
                     st.markdown(f'<p style="font-size:15px;font-family:formula1, syne; font-weight:bold;">Race Format - {package["EventFormat"].capitalize()}</p>',unsafe_allow_html=True)
+
+                    # session select
                     sessions_list.insert(0,'Select Session')
                     session_select = st.selectbox('Select Session', sessions_list, key='sessions')
                     st.markdown('***')
-                    
-                    # bypassing the first element problem
+
+
+                    # Bypassing the first element problem
                     if session_select != 'Select Session':
 
-                        session_results, session_obj = load_session_data(year, event, session_select)
-                        
+                        session_results, session_obj = load_session_data(current_year, event, session_select)
                         
                         if session_select == 'Qualifying':
 
@@ -1645,44 +2133,39 @@ if __name__ == '__main__':
                             summarised_results = summarised_results.drop(['Time','Status','Points'], axis=1)
                             summarised_results = summarised_results.fillna('0')
 
-                            qualifying(summarised_results, year, session_obj)
-
-
-                        elif session_select in ['Practice 1','Practice 2','Practice 3','Sprint']:
-        
-                            st.warning('In Development ⌛')
-                            st.markdown('***')
+                            
+                            qualifying(summarised_results,current_year, session_obj)
 
                         elif session_select == 'Race':
 
 
                             cols = st.columns([6,3])
                             placeholder = cols[1].empty()
-                            # placeholder.selectbox('?',['?'])
+                            # placeholder.markdown('<-')
                             mode = cols[0].selectbox('Select Mode', ['Mode?','Driver Analysis','Team Analysis', 'Race Standings','Retirements'])
 
-                            if year >= 2018:
+                            # result summary
+                            results = session_obj.results
+                            results = results.drop(['Q1','Q2','Q3','FullName'],axis=1)
+                            results = results.fillna('0')
+                            retired = results[(results['Status'] != 'Finished') & (results['Status'] != '+1 Lap') ]
+                            driverlaps = session_obj.laps
 
-                                 # result summary
-                                results = session_obj.results
-                                results = results.drop(['Q1','Q2','Q3','FullName'],axis=1)
-                                results = results.fillna('0')
-                                retired = results[(results['Status'] != 'Finished') & (results['Status'] != '+1 Lap') ]
-                                driverlaps = session_obj.laps
-                            
+                            if current_year >= 2018:
                                 if mode == 'Driver Analysis':
-
                                     
-                                        
-                                        ab_list = list(driverlaps['Driver'].unique())
-                                        driver_AB = placeholder.selectbox('Driver',ab_list) # selection
-                                        driver_data = driverlaps.pick_driver(driver_AB)
-                                        driver_data = driver_data.reset_index()
-                                        driver_data = driver_data.drop(0)
-                                        total_laps = int(driverlaps['LapNumber'].max())
+                                    
+                                    ab_list = list(driverlaps['Driver'].unique())
+                                    driver_AB = placeholder.selectbox('Driver',ab_list)
+                                    # analysis_type = st.checkbox('Comparative?')
+                                    # selection
+                                    driver_data = driverlaps.pick_driver(driver_AB)
+                                    driver_data = driver_data.reset_index()
+                                    total_laps = int(driverlaps['LapNumber'].max())
 
-                                        driver_race_analysis(year, event, driverlaps, driver_AB, driver_data, total_laps, 'previous')
+                                    driver_race_analysis(current_year, event, driverlaps, driver_AB, driver_data, total_laps,'current')
 
+                            
                                 elif mode == 'Team Analysis':
 
                                     team_data = session_obj.results
@@ -1713,11 +2196,23 @@ if __name__ == '__main__':
                                         st.markdown(f'''<h4 style="font-family:formula1, syne; font-weight:800;">{bn} ({ab}) <sub style='color:#{tc}'>{tn}</sub></h4>''',unsafe_allow_html=True)
                                         # st.subheader(driver_AB) # subheader -- racer name 
 
+                                    
 
-                                        strategy, lap_retired = fetch_strategy(driver_data)
-                                        presets = [strategy, lap_retired, total_laps]  
-                                        display_strategy(presets, mode='previous',team=next(data_gen))
+                                        if mode == 'previous':
+                                            strategy, lap_retired = fetch_strategy(driver_data)
+                                            presets = [strategy, lap_retired, total_laps]  
+                                            display_strategy(presets, mode='previous',team=next(data_gen))
                                             
+                                            
+                                        else:
+                                            compounds, lapschanged, pairs = fetch_strategy(driver_data,total_laps, mode='current') 
+                                            strategy, lap_retired = fetch_strategy(driver_data)
+                                            if event == 'Monaco Grand Prix':
+                                                presets = [compounds, lapschanged, pairs, total_laps] 
+                                                display_strategy(presets, mode='current',team=next(data_gen))
+                                            else:
+                                                presets = [strategy, lap_retired, total_laps]  
+                                                display_strategy(presets, mode='previous',team=next(data_gen))
 
                                     
                                     st.markdown('***')
@@ -1726,30 +2221,29 @@ if __name__ == '__main__':
                                     with col1:
                                         driver_data = driverlaps.pick_driver(AB1)
                                         driver_data = driver_data.reset_index()
-                                        driver_race_analysis(year, event, driverlaps, AB1, driver_data, total_laps,'previous',team=True,preset=[TC1,AB1])
+                                        driver_race_analysis(current_year, event, driverlaps, AB1, driver_data, total_laps,'current',team=True,preset=[TC1,AB1])
                                     
                                     with col2:
                                         driver_data = driverlaps.pick_driver(AB2)
                                         driver_data = driver_data.reset_index()
-                                        driver_race_analysis(year, event, driverlaps, AB2, driver_data, total_laps,'previous',team=True,preset=[TC2,AB2])
+                                        driver_race_analysis(current_year, event, driverlaps, AB2, driver_data, total_laps,'current',team=True,preset=[TC2,AB2])
                                     
 
-                                
-                                
+                                    
+
                                 elif mode == 'Race Standings':
                                     
-                                
+                                    
                                     top3 = results.iloc[:3,:]
                                     results = results.iloc[3:,:]
                                     results = results.reset_index(drop=True)
 
                                     display_race_standings(results, top3)
-
+                                    
+                                
                                 elif mode == 'Retirements':
-
+                                
                                     total_laps = session_obj.laps['LapNumber'].max()
-
-
                                     st.markdown('***')
                                     st.markdown('''<center><span style='font-weight:800; font-size:28px;'>Retirements</span></center>''', unsafe_allow_html=True)
                                     st.markdown('***')
@@ -1766,334 +2260,323 @@ if __name__ == '__main__':
                                             st.markdown(f'''> <h2><span style='font-family:syne; font-size:70px; font-weight:800;'>{dn} </span>{fn} <b>{ln}</b> <sub style='color:#{tc}'>{tn}</sub> <p><b>{status}</b> (Problem / Failure / Occured) — Retired at <b>Lap {retired_lap}</b></p></h2>''',unsafe_allow_html=True)
 
                                     st.markdown('***')
-
-
-
-                                
+                            
                             else:
                                 st.warning("The API doesn't hold the telemetry data for the years before 2018.")
 
-                                    
-        
-        
-        elif radios == 'Points Table':
-            st.markdown('''<center><span style='font-weight:800; font-size:28px;'>Driver Standings & Constructors</span></center>''', unsafe_allow_html=True)
-            st.markdown('***')
-            try:
-                constructors, driver_standings = parse_race_points(year)
-                 
-                # driver standings
-                st.markdown(f'''<span style="font-family:syne; font-size:25px">Driver Standings <span style='font-weight:900;color:darkblue;'>{year}</span></span>''',unsafe_allow_html=True)
-                y = pd.DataFrame(driver_standings).T.copy(deep=True)
-                y['Full Name'] = pd.DataFrame(driver_standings).T['givenName'] +' '+ pd.DataFrame(driver_standings).T['familyName']
-                y['Driver Code'] = y['code'] + ' ' + y['permanentNumber']
-                y = y.drop(['givenName','familyName','code','permanentNumber'],axis=1)
-                columns = ['Position','Points','Wins','Team','Nationality','Full Name','Driver Code']
-                y.columns = columns
-                y = y[['Full Name','Driver Code','Team','Points','Wins','Nationality','Position']]
-                y = y.set_index('Position')
                 
-                st.dataframe(y,2000, 2000)
+                        elif session_select in ['Practice 1','Practice 2','Practice 3','Sprint']:
 
+                            st.warning('In Development ⌛')
+                            st.markdown('***')
+
+                
+                
+                
+                
+            elif radios == 'Points Table':
+                st.markdown('''<center><span style='font-weight:800; font-size:28px;'>Driver Standings & Constructors</span></center>''', unsafe_allow_html=True)
                 st.markdown('***')
-                st.markdown(f'''<span style="font-family:syne; font-size:25px">Constructors <span style='font-weight:900;color:darkblue;'>{year}</span></span>''',unsafe_allow_html=True)
-                y = constructors = pd.DataFrame(constructors).T.copy(deep=True)
-                columns = ['Position','Points','Wins','Team','Nationality']
-                y.columns = columns
-                y = y[['Position','Team','Points','Wins','Nationality']].set_index('Position')
-                
-                cols = st.columns([2,6,2])
-                cols[1].dataframe(y, 1000,1000)
-
-            except:
-                st.warning('Data Descrepancy!, Certain elements of the Data are not Preserved by the API')
-                constructors_url = f'https://www.formula1.com/en/results.html/{year}/team.html'
-                driver_standing_url = f'https://www.formula1.com/en/results.html/{year}/drivers.html'
-                st.markdown(f''' <span style='font-weight:900;color:darkblue;font-size:30px;'> {year}</span>, <span style="font-family:syne; font-size:25px">Driver Standings <a href='{driver_standing_url}'>Refer this Source.</a></span>''',unsafe_allow_html=True)
-                st.markdown(f'''<span style='font-weight:900;color:darkblue;font-size:30px;'> {year}</span>, <span style="font-family:syne; font-size:25px">Constructors Standings <a href='{constructors_url}'>Refer this Source.</a></span>''',unsafe_allow_html=True)
-                
-            
-            
-           
-
-                            
-                        
-                    
-                  
-
-
-    
-    elif category == 'Current Season':
-        st.sidebar.markdown('***')
-
-        current_year = datetime.now().strftime('%Y')
-        current_year = int(current_year)
-        
-
-        circuits_cdf, circuits_rdf = fetch_circuits_data(current_year)
-
-        radios = st.sidebar.radio('Data',['Schedule','Grand Prix Analysis','Points Table'], key='current')
-        st.sidebar.markdown('***')
-
-        if radios == 'Schedule':
-            # Events for the year 
-            st.markdown(f'''<p style="font-size:30px; font-weight:bold; font-family:syne;"> <span style='color:darkblue; font-weight:900;'>{current_year}</span> Race Schedule | Grand Prix List </p>''',unsafe_allow_html=True)
-            st.markdown("***") 
-            display_schedule(current_year, circuits_cdf, circuits_rdf)
-
-        elif radios == 'Grand Prix Analysis':
-            # GP analysis
-    
-            # Analytics for the races that happened
-            current_event = fastf1.get_event_schedule(current_year)
-            conditional = (current_event['EventDate'] <= datetime.now()) | (current_event['Session1Date'] <= datetime.now()) | (current_event['Session2Date'] <= datetime.now()) | (current_event['Session3Date'] <= datetime.now()) | (current_event['Session4Date'] <= datetime.now()) | (current_event['Session4Date'] <= datetime.now())
-            index = current_event[conditional].index
-            current_event = current_event.loc[index,:]
-
-            event_names = current_event['EventName'].to_list()
-            event_names.insert(0, "List of Completed Grand Prixs'")
-
-            
-            event = st.sidebar.selectbox('Select Event', event_names)
-
-            if not event == "List of Completed Grand Prixs'":
-
-                event_data = current_event[current_event['EventName'] == event].T
-                
-                # country name
-                country = event_data.loc['Country'].values[0]
 
                 try:
-                    circuit = circuits_rdf.loc[event, 'Circuits']
-                    locality = circuits_rdf.loc[event, 'Localities']
+                    constructors, driver_standings = parse_race_points(current_year)
+                    # driver standings
+                    st.markdown(f'''<span style="font-family:syne; font-size:25px">Driver Standings <span style='font-weight:900;color:darkblue;'>{current_year}</span></span>''',unsafe_allow_html=True)
+                    y = pd.DataFrame(driver_standings).T.copy(deep=True)
+                    y['Full Name'] = pd.DataFrame(driver_standings).T['givenName'] +' '+ pd.DataFrame(driver_standings).T['familyName']
+                    y['Driver Code'] = y['code'] + ' ' + y['permanentNumber']
+                    y = y.drop(['givenName','familyName','code','permanentNumber'],axis=1)
+                    columns = ['Position','Points','Wins','Team','Nationality','Full Name','Driver Code']
+                    y.columns = columns
+                    y = y[['Full Name','Driver Code','Team','Points','Wins','Nationality','Position']]
+                    y = y.set_index('Position')
+                    
+                    st.dataframe(y,2000, 2000)
+
+                    st.markdown('***')
+                    st.markdown(f'''<span style="font-family:syne; font-size:25px">Constructors <span style='font-weight:900;color:darkblue;'>{current_year}</span></span>''',unsafe_allow_html=True)
+                    y = constructors = pd.DataFrame(constructors).T.copy(deep=True)
+                    columns = ['Position','Points','Wins','Team','Nationality']
+                    y.columns = columns
+                    y = y[['Position','Team','Points','Wins','Nationality']].set_index('Position')
+                    
+                    cols = st.columns([2,6,2])
+                    cols[1].dataframe(y, 1000,1000)
+
+
                 except:
-                    circuit = circuits_cdf.loc[country, 'Circuits']
-                    locality = circuits_cdf.loc[country, 'Localities']
-
-                # packaging event summarised-information
-                package = {}
-                items = current_event.columns[:-1]
-                for item in items:
-                    package[item] = event_data.loc[item].values[0]
-
-                sessions_list = [package[x] for x in ['Session'+str(i) for i in range(1,6)]]
-
-                st.markdown(f'''<center><h4 style="font-family:formula1, syne;">Session Analysis</h4></center>''',unsafe_allow_html=True)
-                st.markdown('***')
-
-                # Grand Prix Title
-                st.markdown(f'''<p style="font-size:30px; font-weight:bold; font-family:formula1, syne;"> <img src="https://countryflagsapi.com/png/{package["Country"]}" width="50">  <u>{package["EventName"]}</u>  |  <span style="font-size:23px;">{date_modifier(package["EventDate"])} <br><span style='font-family:syne; '>{circuit}, {locality}</span> </span> </p>''',unsafe_allow_html=True)
-                # st.markdown(f'''<p style="font-size:28px; font-weight:bold; font-family:formula1, syne;"> <img src="https://countryflagsapi.com/png/{package["Country"]}" width="50">  <u>{package["EventName"]}</u>  |  <span style="font-size:23px;">{date_modifier(package["EventDate"])}</span></p>''',unsafe_allow_html=True)
-                st.markdown(f'<p style="font-size:15px;font-family:formula1, syne; font-weight:bold;">Race Format - {package["EventFormat"].capitalize()}</p>',unsafe_allow_html=True)
-
-                # session select
-                sessions_list.insert(0,'Select Session')
-                session_select = st.selectbox('Select Session', sessions_list, key='sessions')
-                st.markdown('***')
-
-
-                # Bypassing the first element problem
-                if session_select != 'Select Session':
-
-                    session_results, session_obj = load_session_data(current_year, event, session_select)
+                    st.warning('Data Descrepancy!, Certain elements of the Data are not Preserved by the API')
                     
-                    if session_select == 'Qualifying':
 
-                        # Data Collection
-                        summarised_results = session_results.copy(deep=True)
-                        summarised_results = pd.DataFrame(summarised_results)
-                        summarised_results = summarised_results.drop(['Time','Status','Points'], axis=1)
-                        summarised_results = summarised_results.fillna('0')
-
-                        
-                        qualifying(summarised_results,current_year, session_obj)
-
-                    elif session_select == 'Race':
+               
 
 
-                        cols = st.columns([6,3])
-                        placeholder = cols[1].empty()
-                        # placeholder.markdown('<-')
-                        mode = cols[0].selectbox('Select Mode', ['Mode?','Driver Analysis','Team Analysis', 'Race Standings','Retirements'])
 
-                        # result summary
-                        results = session_obj.results
-                        results = results.drop(['Q1','Q2','Q3','FullName'],axis=1)
-                        results = results.fillna('0')
-                        retired = results[(results['Status'] != 'Finished') & (results['Status'] != '+1 Lap') ]
-                        driverlaps = session_obj.laps
-
-                        if current_year >= 2018:
-                            if mode == 'Driver Analysis':
-                                
-                                
-                                ab_list = list(driverlaps['Driver'].unique())
-                                driver_AB = placeholder.selectbox('Driver',ab_list)
-                                # analysis_type = st.checkbox('Comparative?')
-                                # selection
-                                driver_data = driverlaps.pick_driver(driver_AB)
-                                driver_data = driver_data.reset_index()
-                                total_laps = int(driverlaps['LapNumber'].max())
-
-                                driver_race_analysis(current_year, event, driverlaps, driver_AB, driver_data, total_laps,'current')
-
-                          
-                            elif mode == 'Team Analysis':
-
-                                team_data = session_obj.results
-                                team_data = team_data.set_index('TeamName')
-                                team_data = team_data.drop(team_data.columns[7:], axis=1)
-
-                                team = placeholder.selectbox('Select Team', team_data.index.unique(),key='teams')   
-                                DN1, BN1, AB1, TC1, FN1, LN1, FuN1 = team_data.loc[team].reset_index(drop=True).loc[0,:]
-                                DN2, BN2, AB2, TC2, FN2, LN2, FuN2 = team_data.loc[team].reset_index(drop=True).loc[1,:]
-                                TN = team
-
-                                st.markdown(f'''<h3 style="font-family:formula1, syne; font-weight:800; color:#{TC1};"><center>{TN}</center></h3>''',unsafe_allow_html=True)
-
-                                
-
-                                st.markdown('***')
-                                st.markdown('''<center><span style='font-weight:800; font-size:28px;'>Race Strategy</span></center>''', unsafe_allow_html=True)
-                                st.markdown('***')
-                                total_laps = int(driverlaps['LapNumber'].max())
-
-                                Boolean = [True,False]
-                                data_gen = (y for y in Boolean)
-
-                                for driver_AB in [AB1, AB2]:
-                                    driver_data = driverlaps.pick_driver(driver_AB)
-                                    driver_info = session_obj.get_driver(driver_AB)
-                                    dn, bn, ab, tn, tc  = driver_info[:5]
-                                    st.markdown(f'''<h4 style="font-family:formula1, syne; font-weight:800;">{bn} ({ab}) <sub style='color:#{tc}'>{tn}</sub></h4>''',unsafe_allow_html=True)
-                                    # st.subheader(driver_AB) # subheader -- racer name 
-
-                                  
-
-                                    if mode == 'previous':
-                                        strategy, lap_retired = fetch_strategy(driver_data)
-                                        presets = [strategy, lap_retired, total_laps]  
-                                        display_strategy(presets, mode='previous',team=next(data_gen))
-                                        
-                                        
-                                    else:
-                                        compounds, lapschanged, pairs = fetch_strategy(driver_data,total_laps, mode='current') 
-                                        strategy, lap_retired = fetch_strategy(driver_data)
-                                        if event == 'Monaco Grand Prix':
-                                            presets = [compounds, lapschanged, pairs, total_laps] 
-                                            display_strategy(presets, mode='current',team=next(data_gen))
-                                        else:
-                                            presets = [strategy, lap_retired, total_laps]  
-                                            display_strategy(presets, mode='previous',team=next(data_gen))
-
-                                
-                                st.markdown('***')
-
-                                col1, col2 = st.columns(2)
-                                with col1:
-                                    driver_data = driverlaps.pick_driver(AB1)
-                                    driver_data = driver_data.reset_index()
-                                    driver_race_analysis(current_year, event, driverlaps, AB1, driver_data, total_laps,'current',team=True,preset=[TC1,AB1])
-                                
-                                with col2:
-                                    driver_data = driverlaps.pick_driver(AB2)
-                                    driver_data = driver_data.reset_index()
-                                    driver_race_analysis(current_year, event, driverlaps, AB2, driver_data, total_laps,'current',team=True,preset=[TC2,AB2])
-                                
-
-                                
-
-                            elif mode == 'Race Standings':
-                                
-                                
-                                top3 = results.iloc[:3,:]
-                                results = results.iloc[3:,:]
-                                results = results.reset_index(drop=True)
-
-                                display_race_standings(results, top3)
                                 
                             
-                            elif mode == 'Retirements':
-                            
-                                total_laps = session_obj.laps['LapNumber'].max()
-                                st.markdown('***')
-                                st.markdown('''<center><span style='font-weight:800; font-size:28px;'>Retirements</span></center>''', unsafe_allow_html=True)
-                                st.markdown('***')
 
-                                if retired.empty:
-                                    st.info('No Retirements')
-
-                                else:
-                                    for index in range(len(retired)):
-                                        dn, bn, ab, tn, tc, fn, ln, pn, gp, time, status, points = retired.iloc[index,:]
-                                        retired_lap = session_obj.laps.pick_driver(ab).iloc[-1:,:]['LapNumber'].values[0]
-                                        if  retired_lap < total_laps and (total_laps-retired_lap) !=1:
-                                            pass
-                                        st.markdown(f'''> <h2><span style='font-family:syne; font-size:70px; font-weight:800;'>{dn} </span>{fn} <b>{ln}</b> <sub style='color:#{tc}'>{tn}</sub> <p><b>{status}</b> (Problem / Failure / Occured) — Retired at <b>Lap {retired_lap}</b></p></h2>''',unsafe_allow_html=True)
-
-                                st.markdown('***')
-                        
-                        else:
-                            st.warning("The API doesn't hold the telemetry data for the years before 2018.")
+                
+    elif dashboard_type == 'A Sponsor':    
 
 
-                           
-                                
+        era = st.sidebar.selectbox('Select a Formual One Era to begin Analysis',['Turbo Hybrid Era','Turbo Era'],key='eras')
 
+       
 
-
-                            
-                        
-
+        if era == 'Turbo Hybrid Era':
+            expander = st.sidebar.expander('Info', expanded=True)
+            info = '''The turbo-hybrid era, which is where Formula 1 has gone, has been dubbed since 2014. And it's appropriate since this is the first time in the history of the sport that internal combustion engine and hybrid technology have been combined (ICE).'''
+            expander.markdown(f'_{info}_')        
             
-                    elif session_select in ['Practice 1','Practice 2','Practice 3','Sprint']:
+            team_colors = fastf1.plotting.TEAM_COLORS
 
-                        st.warning('In Development ⌛')
-                        st.markdown('***')
+            team_name_corr = {'Apine F1 Team':'alpine'}
 
-                    
+            # st.write(team_colors)
 
-        elif radios == 'Points Table':
-            st.markdown('''<center><span style='font-weight:800; font-size:28px;'>Driver Standings & Constructors</span></center>''', unsafe_allow_html=True)
+            st.markdown(f'''<center><h2 style="font-family:formula1, syne; font-weight:800">Turbo Hybrid Era</h2></center>''',unsafe_allow_html=True)
+            slot = st.empty()
             st.markdown('***')
-
-            try:
-                constructors, driver_standings = parse_race_points(current_year)
-                # driver standings
-                st.markdown(f'''<span style="font-family:syne; font-size:25px">Driver Standings <span style='font-weight:900;color:darkblue;'>{current_year}</span></span>''',unsafe_allow_html=True)
-                y = pd.DataFrame(driver_standings).T.copy(deep=True)
-                y['Full Name'] = pd.DataFrame(driver_standings).T['givenName'] +' '+ pd.DataFrame(driver_standings).T['familyName']
-                y['Driver Code'] = y['code'] + ' ' + y['permanentNumber']
-                y = y.drop(['givenName','familyName','code','permanentNumber'],axis=1)
-                columns = ['Position','Points','Wins','Team','Nationality','Full Name','Driver Code']
-                y.columns = columns
-                y = y[['Full Name','Driver Code','Team','Points','Wins','Nationality','Position']]
-                y = y.set_index('Position')
-                
-                st.dataframe(y,2000, 2000)
-
-                st.markdown('***')
-                st.markdown(f'''<span style="font-family:syne; font-size:25px">Constructors <span style='font-weight:900;color:darkblue;'>{current_year}</span></span>''',unsafe_allow_html=True)
-                y = constructors = pd.DataFrame(constructors).T.copy(deep=True)
-                columns = ['Position','Points','Wins','Team','Nationality']
-                y.columns = columns
-                y = y[['Position','Team','Points','Wins','Nationality']].set_index('Position')
-                
-                cols = st.columns([2,6,2])
-                cols[1].dataframe(y, 1000,1000)
-
-
-            except:
-                st.warning('Data Descrepancy!, Certain elements of the Data are not Preserved by the API')
-                
-
-        
             
-    
-    
-    
-    elif category == 'Home Page':
+        
+            if st.checkbox('Current Season',True):
+                year = 2022
+                slot.markdown(f'''<center><h4 style="font-family:formula1, syne;">2022</h4></center>''',unsafe_allow_html=True)
+            else:
+                year = st.number_input('Select Year:',max_value=2022, min_value=2014)
+                slot.markdown(f'''<center><h3 style="font-family:formula1, syne;">{year}</h3></center>''',unsafe_allow_html=True)
+
+            cars_dict = fetch_carimgs()
+            cars_names = pd.read_html('https://racingnews365.com/f1-2022-car-names')[0]
+            car_names = dict(cars_names[['Team','Car Name']].values)
+            rounds = load_rounds()
+
+            perf_category = st.selectbox('Select Summary Type', ['Choose','Entire Timeline','Yearly'], key='datetype-standings')
+
+            if not perf_category == 'Choose':
+
+                if perf_category == "Entire Timeline":
+                    
+                   
+                    constructor_standings = fetch_constructorStandings()
+                    driver_standings = fetch_driverstandings()
+
+                    # st.write(constructor_standings)
+                    # st.write(driver_standings)
+
+                    teams = constructor_standings.loc[year]['Constructor'].unique()
+
+
+                    team = st.selectbox('Choose a Team', teams, key='team-selection')
+                    
+                    try:
+                        st.markdown(f'''<center><h2 style="font-family:formula1, syne; font-weight:800; color:{team_colors[team.lower()]}">{team}</h2></center>''',unsafe_allow_html=True)
+                    
+                    except:
+                        st.markdown(f'''<center><h2 style="font-family:formula1, syne; font-weight:800; color:black">{team}</h2></center>''',unsafe_allow_html=True)
+                    st.markdown('***')
+                    
+                    all_drivers = {}
+                    for year in range(2014, 2023):
+                        x = driver_standings.loc[year]
+                        all_drivers[year] = list(x[x['Constructors']==team]['fullname'].values)
+
+                    
+                    #ADDRESS THE EXITING TEAMS PROBLEM
+
+                    st.markdown(f'''<center><h3 style="font-family:formula1, syne; color:"><span style='font-weight:800;'>{team}</span> Drivers Over the Years</h3></center>''',unsafe_allow_html=True)
+                    cols = st.columns(len(list(range(2014,2023))))
+                    for col, year in zip(cols, range(2014, 2023)):
+                        try:
+                            dr1, dr2 = all_drivers[year]
+                        except:
+                            try:
+                                dr1, dr2, dr3 = all_drivers[year]
+                            except:
+                                dr1, dr2 = 'b','b'
+                        if not dr1 == 'b' and not dr2 =='b':
+                            col.markdown(f'<h3>{year}</h3>',unsafe_allow_html=True)
+                            col.markdown(f'''> {dr1} {dr2}''')
+                        else:
+                            break
+
+                    points = []
+                    for year in range(2014,2023):
+                        x = constructor_standings.loc[year].reset_index()
+                        points.append(x[x['Constructor']==team]['points'].values[0])
+                    points = list(map(int, list(map(float, points))))
+
+                    years= list(range(2014,2023))
+
+                    wins = []
+                    for year in range(2014,2023):
+                        x = constructor_standings.loc[year].reset_index()
+                        wins.append(x[x['Constructor']==team]['wins'].values[0])
+                    wins = list(map(int, list(map(float, wins))))
+
+                   
+                    fig = go.Figure([go.Bar(x=years, y=points,  )])
+                    fig.update_traces(marker_color=team_colors[team.lower()], marker_line_color='black',
+                                    marker_line_width=1.5, )
+                    
+
+                    fig.update_layout(
+                        title=f"Points attained in the Turbo Hybrid Era - {team}",
+                        title_x=0.5,
+                        xaxis_title="Years",
+                        yaxis_title="Points",
+                        legend_title="Legend Title",
+                        font=dict(
+                            family="Syne",
+                            size=11,
+                            color="black"
+                        )
+                    )
+
+                    st.plotly_chart(fig)
+
+                    fig = go.Figure([go.Bar(x=years, y=wins,  )])
+                    fig.update_traces(marker_color=team_colors[team.lower()], marker_line_color='black',
+                                    marker_line_width=1.5, )
+                    
+
+                    fig.update_layout(
+                        title=f"All Podiums in the Turbo Hybrid Era - {team}",
+                        title_x=0.5,
+                        xaxis_title="Years",
+                        yaxis_title="Podiums",
+                        legend_title="Legend Title",
+                        font=dict(
+                            family="Syne",
+                            size=11,
+                            color="black"
+                        )
+                    )
+
+                    st.plotly_chart(fig)
+
+                    
+
+
+                
+                elif perf_category == 'Yearly':
+
+                            
+                    constructor_standings = fetch_constructorStandings(rounds=rounds, roundwise=True)
+                    driver_standings = fetch_driverstandings(rounds=rounds, roundwise=True)
+
+                    # st.write(constructor_standings)
+                    # st.write(driver_standings)
+
+                    teams = constructor_standings.loc[year].loc[1]['Constructor'].to_list()
+                    drivers = driver_standings.loc[year].loc[1]['fullname'].to_list()
+                    codes = driver_standings.loc[year].loc[1]['code'].to_list()
+                    
+                    cols = st.columns([4,2])
+                    slot = cols[1].empty()
+                    diff = cols[0].selectbox('Differentiator',['Team','Driver'],key='differentiator')
+
+                    if diff == 'Team':
+                        team = slot.selectbox('Select Team',teams,key='teams-diff')
+
+                        st.markdown('***')
+                        
+
+                        if year == 2022:
+                            cols = st.columns([5,5])
+                            cols[0].markdown(f'''<h2 style="font-family:formula1, syne; font-weight:800; color:{team_colors[team.lower()]}">{team}</h2>''',unsafe_allow_html=True)
+                            cols[0].image(cars_dict[team],caption=f'{team} - {car_names[team]}')
+                            
+                            pos, points = pos, points = fetch_position_rank(constructor_standings, team=team, year=year)
+                            cols[1].markdown(f'''> <h2><span style='font-family:syne; font-size:70px; font-weight:800;'>Position {pos} </span> <b></b> <sub style='color:#{team_colors[team.lower()]}'></sub> Points {points}</b></p></h2>''',unsafe_allow_html=True)
+
+                            dr_standings = fetch_position_rank(driver=driver_standings, team=team,individual=True,year=year)
+                            names = list(dr_standings.keys())
+                                
+                            pos0, code0, points0, wins0 = dr_standings[names[0]][0]
+                            pos1, code1, points1, wins1 = dr_standings[names[1]][0]
+                            
+                            cols[0].markdown(f'''> <h2><span style='font-family:syne; font-size:30px; font-weight:800; color:{team_colors[team.lower()]}'> {names[0]} <sub>{code0}</sub> </span> <b></b></sub> <br> Points {points0}</b><br> Wins {wins0}</p></h2>''',unsafe_allow_html=True)
+                            cols[1].markdown(f'''> <h2><span style='font-family:syne; font-size:30px; font-weight:800; color:{team_colors[team.lower()]}'> {names[1]} <sub>{code1}</sub> </span> <b></b></sub> <br> Points {points1}</b><br> Wins {wins1}</p></h2>''',unsafe_allow_html=True)
+
+
+
+                            try:
+                                st.pyplot(bump_plot(driver_standings, mode='team',team=team,year=year,team_color=team_colors[team.lower()]))
+                            except:
+                                st.pyplot(bump_plot(driver_standings, mode='team',team=team,year=year,team_color='black'))
+                            
+                            st.pyplot(bump_plot(driver_standings, mode='overall',year=year))
+
+
+                
+                        else:
+                            cols = st.columns([5,5])
+                            cols[0].markdown(f'''<h2 style="font-family:formula1, syne; font-weight:800; color:">{team}</h2>''',unsafe_allow_html=True)
+                            team_color='black'
+
+
+                            pos, points = pos, points = fetch_position_rank(constructor_standings, team=team, year=year)
+                            cols[1].markdown(f'''> <h2><span style='font-family:syne; font-size:70px; font-weight:800;'>Position {pos} </span> <b></b> <sub style='color:black'></sub> Points {points}</b></p></h2>''',unsafe_allow_html=True)
+
+                            dr_standings = fetch_position_rank(driver=driver_standings, team=team,individual=True,year=year)
+                            names = list(dr_standings.keys())
+                                
+                            pos0, code0, points0, wins0 = dr_standings[names[0]][0]
+                            pos1, code1, points1, wins1 = dr_standings[names[1]][0]
+                            
+                            cols[0].markdown('')
+                            cols[0].markdown('')
+                            cols[0].markdown('')
+                            cols[0].markdown('')
+                            cols[0].markdown('')
+                            cols[0].markdown('')
+                            cols[0].markdown('')
+                            cols[0].markdown('')
+                            cols[0].markdown('')
+                            cols[0].markdown(f'''> <h2><span style='font-family:syne; font-size:30px; font-weight:800; color:black'> {names[0]} <sub>{code0}</sub> </span> <b></b></sub> <br> Points {points0}</b><br> Wins {wins0}</p></h2>''',unsafe_allow_html=True)
+                           
+                            cols[1].markdown(f'''> <h2><span style='font-family:syne; font-size:30px; font-weight:800; color:black'> {names[1]} <sub>{code1}</sub> </span> <b></b></sub> <br> Points {points1}</b><br> Wins {wins1}</p></h2>''',unsafe_allow_html=True)
+
+
+                            try:
+                                st.pyplot(bump_plot(driver_standings, mode='team',team=team,year=year,team_color=team_colors[team.lower()]))
+                            except:
+                                st.pyplot(bump_plot(driver_standings, mode='team',team=team,year=year,team_color='black'))
+                            st.pyplot(bump_plot(driver_standings, mode='overall',year=year))
+
+                        const_overall = fetch_constructorStandings()
+                        driver_overall = fetch_driverstandings()
+
+                        cols = st.columns(2)
+                        cols[0].markdown(f'*Driver Standings {year}*')
+                        cols[0].dataframe(driver_overall.loc[year])
+                        cols[1].markdown(f'*Constructor Standings {year}*')
+                        cols[1].dataframe(const_overall.loc[year])
+
+                    else:
+                        st.warning('*Beta Testing*')
+
+
+            else:
+                pass
+
+        else:
+            st.markdown(f'''<center><h2 style="font-family:formula1, syne; font-weight:800">Turbo Era 2006-2013</h2></center>''',unsafe_allow_html=True)
+            st.warning('In Development ⌛')
+
+
+
+    elif dashboard_type == 'Home Page':
         about_cs()
+
+            
+
+
+
+    
+    
+   
 
 
 
