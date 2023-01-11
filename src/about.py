@@ -36,7 +36,7 @@ def about_cs():
     
     st.markdown('''<center><h4 style="font-family:syne;font-weight:900;">Home Page</h4></center>''',unsafe_allow_html=True)
     st.markdown('***')
-    st.sidebar.markdown('***')
+    # r
 
     
     cols = st.columns([3.5,4])

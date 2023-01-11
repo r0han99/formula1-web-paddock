@@ -1,0 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Martian+Mono:wght@300&family=Playfair+Display&family=Titillium+Web:wght@700&family=Unbounded:wght@500&display=swap'); 
+
+html, body, [class*="css"] {
+    font-family: 'Titillium+Web', Syne; 
+    font-weight: 700;
+}

@@ -19,9 +19,16 @@ import matplotlib.pyplot as plt
 from matplotlib.collections import LineCollection
 from matplotlib import cm
 import seaborn as sns
+from src.attributions import attribute
+import pycountry
+from itertools import cycle
+
+import pickle
 
 
 # fastf1.Cache.enable_cache('./cache')  
+
+missing_endpoints = {'Abu Dhabi':"United Arab Emirates", 'UAE':"United Arab Emirates"}
 
 
 def load_model():
@@ -34,6 +41,41 @@ def img_to_bytes(img_path):
     img_bytes = Path(img_path).read_bytes()
     encoded = base64.b64encode(img_bytes).decode()
     return encoded
+
+@st.cache(persist=True)
+def load_carspecs():
+    with open('./data/CAR_SPECIFICATIONS_v3.pickle', 'rb') as f:
+        return pickle.load(f)
+
+def fabricate_dict(dictionary):
+    if dictionary == []:
+        return "No Data"
+    else:
+        manifactured = {}
+        for string in dictionary:
+
+            if len(string.split(':')) == 1:
+                try:
+                    key, value = string.split(';')
+                except:
+                    key = string.split(':')[0]
+                    value = 'No Data'
+            
+            elif len(string.split(':'))>2:
+                ex = string.split(':')
+                l = [ex[0]]
+                l.append(','.join(ex[1:]))
+                key, value = l
+            else:
+                key, value = string.split(':')
+            
+            manifactured[key] = value.strip()
+
+        return manifactured
+
+def load_carimage_data():
+    df = pd.read_csv('./data/FINAL-CAR-IMAGES_2012-2022.csv')
+    return df
 
 
 def load_miscellaneous_data():
@@ -398,12 +440,20 @@ def display_schedule(year, circuit_cdf, circuits_rdf):
 
         # checkered flag
         current_date = datetime.now()
+        
+        
+        try:
+            flag = pycountry.countries.search_fuzzy(package["Country"].lower())[0].flag
+        except:
+            flag = pycountry.countries.search_fuzzy(missing_endpoints[package["Country"]])[0].flag
+
+
         if current_date > package['EventDate']:
             
-            st.markdown(f'''<p style="font-size:30px; font-weight:bold; font-family:formula1, syne;"> <img src="https://countryflagsapi.com/png/{package["Country"]}" width="50">  <u>{package["EventName"]}</u>  |  <span style="font-size:23px;">{date_modifier(package["EventDate"])} <br>{circuit}, {locality} <img src='data:image/png;base64,{img_to_bytes('./assets/checkered-flag.png')}' class='img-fluid' width=50 ></span> </p>''',unsafe_allow_html=True)
+            st.markdown(f'''<p style="font-size:30px; font-weight:bold; font-family:formula1, syne;"> {flag}  <u>{package["EventName"]}</u>  |  <span style="font-size:23px;">{date_modifier(package["EventDate"])} <br>{circuit}, {locality} <img src='data:image/png;base64,{img_to_bytes('./assets/checkered-flag.png')}' class='img-fluid' width=50 ></span> </p>''',unsafe_allow_html=True)
         
         else:
-            st.markdown(f'''<p style="font-size:30px; font-weight:bold; font-family:formula1, syne;"> <img src="https://countryflagsapi.com/png/{package["Country"]}" width="50">  <u>{package["EventName"]}</u>  |  <span style="font-size:23px;">{date_modifier(package["EventDate"])} <br>{circuit}, {locality} </span></p>''',unsafe_allow_html=True)
+            st.markdown(f'''<p style="font-size:30px; font-weight:bold; font-family:formula1, syne;"> {flag}  <u>{package["EventName"]}</u>  |  <span style="font-size:23px;">{date_modifier(package["EventDate"])} <br>{circuit}, {locality} </span></p>''',unsafe_allow_html=True)
 
 
         cols = st.columns(len(sessions_list))
@@ -748,10 +798,10 @@ def qualifying(summarised_results, year, session_obj):
     if preference == 'Summarise':
 
         st.markdown(f'''<h6 style="font-family:formula1, syne;">{session_select} Summary</h6>''',unsafe_allow_html=True)
-        select_choice = st.selectbox('Data Summary', ['Summarise?','Q1 Grid-Positions', 'Q2 Grid-Positions', 'Q3 Grid-Positions', 'Knocked Out', 'Final Grid-Positions'])
+        select_choice = st.selectbox('Data Summary', ['Choose','Q1 Grid-Positions', 'Q2 Grid-Positions', 'Q3 Grid-Positions', 'Knocked Out', 'Final Grid-Positions'])
             
 
-        if not select_choice == 'Summarise?':
+        if not select_choice == 'Choose':
             
             if select_choice == 'Knocked Out':
 
@@ -1728,11 +1778,11 @@ if __name__ == '__main__':
     st.markdown(style,unsafe_allow_html=True)
 
     # title 
-    st.markdown(f'''<center><h1 style="font-family:syne; font-size:50px; font-weight:800; text-shadow: 2px 2px #ff0000;">The <img src='data:image/png;base64,{img_to_bytes('./assets/f1.png')}' class='img-fluid' width=120><br>Web-Paddock </h1></center>''',unsafe_allow_html=True)
+    st.markdown(f'''<center><h1 style="font-family:syne; font-size:50px; font-weight:800;text-shadow: 4px 2px white; background-color: #e00400; border-radius: 10px;">The <img src='data:image/png;base64,{img_to_bytes('./assets/f1.png')}' class='img-fluid' width=120>   Web-Paddock </h1></center>''',unsafe_allow_html=True)
     st.markdown('***')
 
     # Sidebar title 
-    st.sidebar.markdown(f'''<h2 style="font-family:syne, syne; font-weight:bold; font-size:27px;">The Control Deck <img src='data:image/png;base64,{img_to_bytes('./assets/steering-1.png')}' class='img-fluid' width=35 ></h2>''',unsafe_allow_html=True)
+    st.sidebar.markdown(f'''<h2 style="font-family:syne, syne; font-weight:bold; font-size:27px;">The Control Deck <img src='data:image/png;base64,{img_to_bytes('./assets/steering-wheel.png')}' class='img-fluid' width=35 ></h2>''',unsafe_allow_html=True)
     st.sidebar.markdown('***')
 
 
@@ -1748,11 +1798,12 @@ if __name__ == '__main__':
     # Categories -- Change Order to, About, Current Season, Previous Season, The F1 Glossary
     # category = st.sidebar.selectbox('Select', ['Current Season', 'Previous Seasons', 'About', 'The F1 Glossary'])
 
-    dashboard_type = st.sidebar.selectbox('Who are you?', ['Home Page','A Fan!', 'A Sponsor'],key='dashboard-type')
-    st.sidebar.info('*This decides how the dashboard is organised with the results. A Fan can see all the session level details, sponsor will be able to get analytical reports summarising the performance of a team for them to take decisions on whether to sponsor or pass.*')
+    # dashboard_type = st.sidebar.selectbox('Who are you?', ['Home Page','Real-Time', 'Historic Summary','The Machinery!','Fun Trivia','Testing Zone'],key='dashboard-type')
+    dashboard_type = st.sidebar.selectbox('Who are you?', ['Home Page','Real-Time', 'Historic Summary','The Machinery!','Fun Trivia'],key='dashboard-type')
+    # st.sidebar.info('*This decides how the dashboard is organised with the results. A Fan can see all the session level details, sponsor will be able to get analytical reports summarising the performance of a team for them to take decisions on whether to sponsor or pass.*')
     st.sidebar.markdown('***')
 
-    if dashboard_type == 'A Fan!':
+    if dashboard_type == 'Real-Time':
 
         category = st.sidebar.selectbox('Select Timeline', ['Current Season', 'Previous Seasons'])
         
@@ -1763,9 +1814,11 @@ if __name__ == '__main__':
             # st.sidebar.markdown('***')
 
             # YEAR -- input
+
+            
             
             st.sidebar.markdown(f'''<p style='font-weight:bold;'><u>Parameters</u></p>''',unsafe_allow_html=True)
-            year = st.sidebar.slider('Select Year', min_value=2006, max_value=2021,value=2021)
+            year = st.sidebar.slider('Select Year', min_value=2006, max_value=datetime.now().year - 1, value=datetime.now().year - 1)
 
             # fetch circuits
             circuits_cdf, circuits_rdf = fetch_circuits_data(year)
@@ -1822,7 +1875,12 @@ if __name__ == '__main__':
                         st.markdown('***')
 
                         # Grand Prix Title
-                        st.markdown(f'''<p style="font-size:30px; font-weight:800; font-family:syne;"> <img src="https://countryflagsapi.com/png/{package["Country"]}" width="50">  <u>{package["EventName"]}</u>  |  <span style="font-size:23px;">{date_modifier(package["EventDate"])}</span></p>''',unsafe_allow_html=True)
+                        try:
+                            flag = pycountry.countries.search_fuzzy(package["Country"].lower())[0].flag
+                        except:
+                            flag = pycountry.countries.search_fuzzy(missing_endpoints[package["Country"]])[0].flag
+
+                        st.markdown(f'''<p style="font-size:30px; font-weight:800; font-family:syne;"> {flag} <u>{package["EventName"]}</u>  |  <span style="font-size:23px;">{date_modifier(package["EventDate"])}</span></p>''',unsafe_allow_html=True)
                     
                     
                         # Race Type
@@ -1843,7 +1901,12 @@ if __name__ == '__main__':
                         st.markdown('***')
 
                         # Grand Prix Title
-                        st.markdown(f'''<p style="font-size:28px; font-weight:800; font-family:formula1, syne;"> <img src="https://countryflagsapi.com/png/{package["Country"]}" width="50">  <u>{package["EventName"]}</u>  |  <span style="font-size:23px;">{date_modifier(package["EventDate"])}</span></p>''',unsafe_allow_html=True)
+                        try:
+                            flag = pycountry.countries.search_fuzzy(package["Country"].lower())[0].flag
+                        except:
+                            flag = pycountry.countries.search_fuzzy(missing_endpoints[package["Country"]])[0].flag
+
+                        st.markdown(f'''<p style="font-size:28px; font-weight:800; font-family:formula1, syne;"> {flag} <u>{package["EventName"]}</u>  |  <span style="font-size:23px;">{date_modifier(package["EventDate"])}</span></p>''',unsafe_allow_html=True)
                     
 
 
@@ -2110,7 +2173,12 @@ if __name__ == '__main__':
                     st.markdown('***')
 
                     # Grand Prix Title
-                    st.markdown(f'''<p style="font-size:30px; font-weight:bold; font-family:formula1, syne;"> <img src="https://countryflagsapi.com/png/{package["Country"]}" width="50">  <u>{package["EventName"]}</u>  |  <span style="font-size:23px;">{date_modifier(package["EventDate"])} <br><span style='font-family:syne; '>{circuit}, {locality}</span> </span> </p>''',unsafe_allow_html=True)
+                    try:
+                        flag = pycountry.countries.search_fuzzy(package["Country"].lower())[0].flag
+                    except:
+                        flag = pycountry.countries.search_fuzzy(missing_endpoints[package["Country"]])[0].flag
+
+                    st.markdown(f'''<p style="font-size:30px; font-weight:bold; font-family:formula1, syne;"> {flag}  <u>{package["EventName"]}</u>  |  <span style="font-size:23px;">{date_modifier(package["EventDate"])} <br><span style='font-family:syne; '>{circuit}, {locality}</span> </span> </p>''',unsafe_allow_html=True)
                     # st.markdown(f'''<p style="font-size:28px; font-weight:bold; font-family:formula1, syne;"> <img src="https://countryflagsapi.com/png/{package["Country"]}" width="50">  <u>{package["EventName"]}</u>  |  <span style="font-size:23px;">{date_modifier(package["EventDate"])}</span></p>''',unsafe_allow_html=True)
                     st.markdown(f'<p style="font-size:15px;font-family:formula1, syne; font-weight:bold;">Race Format - {package["EventFormat"].capitalize()}</p>',unsafe_allow_html=True)
 
@@ -2316,7 +2384,7 @@ if __name__ == '__main__':
                             
 
                 
-    elif dashboard_type == 'A Sponsor':    
+    elif dashboard_type == 'Historic Summary':    
 
 
         era = st.sidebar.selectbox('Select a Formual One Era to begin Analysis',['Turbo Hybrid Era','Turbo Era'],key='eras')
@@ -2324,6 +2392,8 @@ if __name__ == '__main__':
        
 
         if era == 'Turbo Hybrid Era':
+
+
             expander = st.sidebar.expander('Info', expanded=True)
             info = '''The turbo-hybrid era, which is where Formula 1 has gone, has been dubbed since 2014. And it's appropriate since this is the first time in the history of the sport that internal combustion engine and hybrid technology have been combined (ICE).'''
             expander.markdown(f'_{info}_')        
@@ -2562,13 +2632,64 @@ if __name__ == '__main__':
                 pass
 
         else:
-            st.markdown(f'''<center><h2 style="font-family:formula1, syne; font-weight:800">Turbo Era 2006-2013</h2></center>''',unsafe_allow_html=True)
+            st.markdown(f'''<center><h2 style="font-family:formula1, syne; font-weight:800">Pre-Turbo Hybrid Era (2006 to 2013)</h2></center>''',unsafe_allow_html=True)
+            st.markdown('***')
             st.warning('In Development ⌛')
+    
 
 
+    elif dashboard_type == "The Machinery!":
+        st.markdown(f'''<center><h2 style="font-family:formula1, syne; font-weight:800">The Evolution of Formula 1 Machinery</h2></center>''',unsafe_allow_html=True)
+        st.markdown('***')
+
+        cimg_df = load_carimage_data()
+        cspecs_df = load_carspecs()
+        # st.write(cspecs_df)
+
+        year = st.number_input('Control the Timeline', 2012,2021,key='year-slider')
+
+        car, link, team = cimg_df[cimg_df['Unnamed: 0']==year]['Car'], cimg_df[cimg_df['Unnamed: 0']==year]['Image-Link'], cimg_df[cimg_df['Unnamed: 0']==year]['team']
+        y_dict = cspecs_df[year]
+        st.markdown(f'''<center><h2 style="font-family:formula1, syne; font-weight:800">{year}</h2></center>''',unsafe_allow_html=True)
+        st.markdown('***')
+        # st.markdown(f'''<center><h4 style="font-family:formula1, syne; font-weight:800">Gallery</h24></center>''',unsafe_allow_html=True)
+        for c, l, t in zip(car, link, team):
+            st.image(l)
+            st.markdown(f'<center><b>{c}, {t}</b><c/enter>',unsafe_allow_html=True)
+            st.markdown('')
+            for char in y_dict[c].keys():
+                exp = st.expander(char)
+                t_dict = fabricate_dict(y_dict[c][char])
+                if type(t_dict) == str:
+                    exp.markdown(f'**{t_dict}**')
+                else:
+                    for key, value in zip(t_dict.keys(),t_dict.values()):
+                        exp.markdown(f'<span style="font-weight:800;font-family:menlo;">{key}</span>: <span style="font-family:menlo;">{value}</span>',unsafe_allow_html=True)
+            st.markdown('***')
+                
+
+    elif dashboard_type == "Fun Trivia":
+        st.markdown(f'''<center><h2 style="font-family:formula1, syne; font-weight:800">Fun Trivia!</h2></center>''',unsafe_allow_html=True)
+        st.markdown('***')
+        cols = st.columns([7,3])
+        cols[0].markdown(f'''<center><h4 style="font-family:formula1, syne; font-weight:800">Who won the Year you were born?</h4></center>''',unsafe_allow_html=True)
+        cols[1].number_input('Year of Birth?',1950,datetime.now().year,key='year-of-birth')
+
+        st.markdown("***")
+        st.warning('In Development ⌛')
 
     elif dashboard_type == 'Home Page':
         about_cs()
+        attribute()
+    
+    # elif dashboard_type == 'Testing Zone':
+    #     rounds = load_rounds()
+    #     aggregate = fetch_constructorStandings([2012, 2023], roundwise=True, rounds=rounds)
+
+    #     st.write(aggregate)
+    #     aggregate.to_csv('ForCarPERC.csv')
+
+
 
             
 
