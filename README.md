@@ -14,7 +14,7 @@
   - Understanding the relation between Tyre Degradation and Lap Times 
   - Plotting Distance ahead. 
 - Investigating: What is the perfect tyre life to attain max speed?.
-- Car Images for Turbo Hybrid Era.
+- [x] Car Images for Turbo Hybrid Era. - Update V3
 
 ... *brainstorming ideas to be included in the future.*
 
