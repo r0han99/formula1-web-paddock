@@ -1881,6 +1881,7 @@ if __name__ == '__main__':
                             flag = pycountry.countries.search_fuzzy(missing_endpoints[package["Country"]])[0].flag
 
                         st.markdown(f'''<p style="font-size:30px; font-weight:800; font-family:syne;"> {flag} <u>{package["EventName"]}</u>  |  <span style="font-size:23px;">{date_modifier(package["EventDate"])}</span></p>''',unsafe_allow_html=True)
+                        
                     
                     
                         # Race Type
@@ -1893,6 +1894,7 @@ if __name__ == '__main__':
                             cols[i].markdown('> <p style="font-size:13px; font-weight:bold; font-family:formula1, syne;">{}<p>'.format(date_modifier(package['Session'+str(i+1)+"Date"])),unsafe_allow_html=True)
                         
                         st.markdown('***')
+                        st.warning('In Development ⌛')
 
 
                     else:
@@ -2421,7 +2423,7 @@ if __name__ == '__main__':
             car_names = dict(cars_names[['Team','Car Name']].values)
             rounds = load_rounds()
 
-            perf_category = st.selectbox('Select Summary Type', ['Choose','Entire Timeline','Yearly'], key='datetype-standings')
+            perf_category = st.selectbox('Select Summary Type', ['Choose','Yearly','Entire Timeline'], key='datetype-standings')
 
             if not perf_category == 'Choose':
 
@@ -2646,26 +2648,34 @@ if __name__ == '__main__':
         cspecs_df = load_carspecs()
         # st.write(cspecs_df)
 
-        year = st.number_input('Control the Timeline', 2012,2021,key='year-slider')
+        tab0, tab1 = st.tabs(['Mechanics','Performance'])
 
-        car, link, team = cimg_df[cimg_df['Unnamed: 0']==year]['Car'], cimg_df[cimg_df['Unnamed: 0']==year]['Image-Link'], cimg_df[cimg_df['Unnamed: 0']==year]['team']
-        y_dict = cspecs_df[year]
-        st.markdown(f'''<center><h2 style="font-family:formula1, syne; font-weight:800">{year}</h2></center>''',unsafe_allow_html=True)
-        st.markdown('***')
-        # st.markdown(f'''<center><h4 style="font-family:formula1, syne; font-weight:800">Gallery</h24></center>''',unsafe_allow_html=True)
-        for c, l, t in zip(car, link, team):
-            st.image(l)
-            st.markdown(f'<center><b>{c}, {t}</b><c/enter>',unsafe_allow_html=True)
-            st.markdown('')
-            for char in y_dict[c].keys():
-                exp = st.expander(char)
-                t_dict = fabricate_dict(y_dict[c][char])
-                if type(t_dict) == str:
-                    exp.markdown(f'**{t_dict}**')
-                else:
-                    for key, value in zip(t_dict.keys(),t_dict.values()):
-                        exp.markdown(f'<span style="font-weight:800;font-family:menlo;">{key}</span>: <span style="font-family:menlo;">{value}</span>',unsafe_allow_html=True)
+        with tab0:
+            year = st.number_input('Control the Timeline', 2012,2021,key='year-slider-tab0')
+
+            car, link, team = cimg_df[cimg_df['Unnamed: 0']==year]['Car'], cimg_df[cimg_df['Unnamed: 0']==year]['Image-Link'], cimg_df[cimg_df['Unnamed: 0']==year]['team']
+            y_dict = cspecs_df[year]
+            st.markdown(f'''<center><h2 style="font-family:formula1, syne; font-weight:800">{year}</h2></center>''',unsafe_allow_html=True)
             st.markdown('***')
+            # st.markdown(f'''<center><h4 style="font-family:formula1, syne; font-weight:800">Gallery</h24></center>''',unsafe_allow_html=True)
+            for c, l, t in zip(car, link, team):
+                st.image(l)
+                st.markdown(f'<center><b>{c}, {t}</b><c/enter>',unsafe_allow_html=True)
+                st.markdown('')
+                for char in y_dict[c].keys():
+                    exp = st.expander(char)
+                    t_dict = fabricate_dict(y_dict[c][char])
+                    if type(t_dict) == str:
+                        exp.markdown(f'**{t_dict}**')
+                    else:
+                        for key, value in zip(t_dict.keys(),t_dict.values()):
+                            exp.markdown(f'<span style="font-weight:800;font-family:menlo;">{key}</span>: <span style="font-family:menlo;">{value}</span>',unsafe_allow_html=True)
+                st.markdown('***')
+        
+        with tab1:
+            st.subheader('Quantified Performance of the Car')
+            year = st.number_input('Control the Timeline', 2012,2021,key='year-slider-tab1')
+            st.warning('In Development ⌛')
                 
 
     elif dashboard_type == "Fun Trivia":
@@ -2680,7 +2690,7 @@ if __name__ == '__main__':
 
     elif dashboard_type == 'Home Page':
         about_cs()
-        attribute()
+        # attribute()
     
     # elif dashboard_type == 'Testing Zone':
     #     rounds = load_rounds()
