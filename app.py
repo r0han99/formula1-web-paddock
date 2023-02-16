@@ -373,7 +373,7 @@ def summarised_session(session,data,mode=None,round_number=None):
         
         pass
 
-@st.experimental_singleton
+@st.cache_resource 
 def load_session_data(year, event, session_select):
     
     session_obj = fastf1.get_session(year, event, session_select)
@@ -381,7 +381,7 @@ def load_session_data(year, event, session_select):
         session_results = session_obj.results.reset_index(drop=True)
         return session_results, session_obj
     
-@st.experimental_singleton
+@st.cache_resource 
 def return_session_object(year,event, session_select):
 
     session = fastf1.get_session(year, event, session_select)
@@ -390,7 +390,7 @@ def return_session_object(year,event, session_select):
 
     return session
 
-@st.experimental_singleton(show_spinner=True)
+@st.cache_resource (show_spinner=True)
 def fetch_event_schedule(year):
 
     event_schedule = fastf1.get_event_schedule(year)
@@ -484,7 +484,7 @@ def delta_variation(driver_time, fastest_time):
     else:
         return '000'
 
-@st.experimental_singleton(show_spinner=True)
+@st.cache_resource (show_spinner=True)
 def fetch_circuits_data(year):
 
     url = f'http://ergast.com/api/f1/{year}.json'
@@ -1778,7 +1778,7 @@ if __name__ == '__main__':
     st.markdown(style,unsafe_allow_html=True)
 
     # title 
-    st.markdown(f'''<center><h1 style="font-family:syne; font-size:50px; font-weight:800;text-shadow: 4px 2px white; background-color: #e00400; border-radius: 10px;">The <img src='data:image/png;base64,{img_to_bytes('./assets/f1.png')}' class='img-fluid' width=120>   Web-Paddock </h1></center>''',unsafe_allow_html=True)
+    st.markdown(f'''<center><h1 style="font-family:syne; font-size:50px; font-weight:800;text-shadow: 4px 2px black; background-color: #e00400; border-radius: 10px;color:#303442;">The <img src='data:image/png;base64,{img_to_bytes('./assets/f1.png')}' class='img-fluid' width=120>   Web-Paddock </h1></center>''',unsafe_allow_html=True)
     st.markdown('***')
 
     # Sidebar title 
