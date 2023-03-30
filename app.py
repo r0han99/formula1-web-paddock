@@ -42,7 +42,7 @@ def img_to_bytes(img_path):
     encoded = base64.b64encode(img_bytes).decode()
     return encoded
 
-@st.cache(persist=True)
+@st.cache_data
 def load_carspecs():
     with open('./data/CAR_SPECIFICATIONS_v3.pickle', 'rb') as f:
         return pickle.load(f)
@@ -86,7 +86,7 @@ def load_miscellaneous_data():
     return rounds
 
 
-@st.cache(persist=True,suppress_st_warning=True)
+@st.cache_data
 def load_rounds():
     rounds = pd.read_csv('./data/year_wise_rounds.csv')
     rounds.columns = ['year','rounds']  
@@ -153,7 +153,7 @@ def date_modifier(date_obj, type=1):
 
 
 
-@st.cache(persist=True, show_spinner=True)
+@st.cache_data
 def fetch_constructorStandings(range_list=[2014,2023], roundwise=False,rounds=None,verbose=False):
     
     if roundwise == False:
@@ -213,7 +213,7 @@ def fetch_constructorStandings(range_list=[2014,2023], roundwise=False,rounds=No
         return const
         
         
-@st.cache(persist=True, show_spinner=True)
+@st.cache_data
 def fetch_driverstandings(range_list=[2014,2023], rounds=None, roundwise=False,verbose=False):
     
     
@@ -292,7 +292,7 @@ def fetch_driverstandings(range_list=[2014,2023], rounds=None, roundwise=False,v
 
 
 
-@st.cache(persist=True, suppress_st_warning=True, allow_output_mutation=True)
+@st.cache_data
 def summarised_session(session,data,mode=None,round_number=None):
 
     
@@ -484,7 +484,7 @@ def delta_variation(driver_time, fastest_time):
     else:
         return '000'
 
-@st.cache_resource (show_spinner=True)
+@st.cache_resource
 def fetch_circuits_data(year):
 
     url = f'http://ergast.com/api/f1/{year}.json'
@@ -719,9 +719,9 @@ def qualifying_comparison(driver1, driver2, joined, driver_dict, delta_required,
             cols[i].markdown(f'''<h6 style="font-family:formula1, syne;">Wind Direction - {driver_data['WindDirection']}°</h6>''',unsafe_allow_html=True)
             cols[i].markdown(f'''<h6 style="font-family:formula1, syne;">Wind Speed - {driver_data['WindSpeed']} Kmph</h6>''',unsafe_allow_html=True)
             if driver_data['Rainfall']:
-                cols[i].markdown(f'''<h6 style="font-family:formula1, syne;"> Rainfall - <img src='data:image/png;base64, {img_to_bytes('./assets/rain.png')}' class='img-fluid', width=35> </h6>''',unsafe_allow_html=True)
+                cols[i].markdown(f'''<h6 style="font-family:formula1, syne;"> Climate - <img src='data:image/png;base64, {img_to_bytes('./assets/rain.gif')}' class='img-fluid', width=35> </h6>''',unsafe_allow_html=True)
             else:
-                cols[i].markdown(f'''<h6 style="font-family:formula1, syne;"> Rainfall - <img src='data:image/png;base64, {img_to_bytes('./assets/no-rain.png')}' class='img-fluid', width=35> </h6>''',unsafe_allow_html=True)
+                cols[i].markdown(f'''<h6 style="font-family:formula1, syne;"> Climate - <img src='data:image/png;base64, {img_to_bytes('./assets/no-rain.gif')}' class='img-fluid', width=35> </h6>''',unsafe_allow_html=True)
             
             cols[i].markdown('***') 
             
@@ -998,9 +998,9 @@ def qualifying(summarised_results, year, session_obj):
                         st.markdown(f'''<h6 style="font-family:formula1, syne;">Wind Direction - {driver_data['WindDirection']}°</h6>''',unsafe_allow_html=True)
                         st.markdown(f'''<h6 style="font-family:formula1, syne;">Wind Speed - {driver_data['WindSpeed']} Kmph</h6>''',unsafe_allow_html=True)
                         if driver_data['Rainfall']:
-                            st.markdown(f'''<h6 style="font-family:formula1, syne;"> Rainfall - <img src='data:image/png;base64, {img_to_bytes('./assets/rain.png')}' class='img-fluid', width=35> </h6>''',unsafe_allow_html=True)
+                            st.markdown(f'''<h6 style="font-family:formula1, syne;"> Climate - <img src='data:image/png;base64, {img_to_bytes('./assets/rain.gif')}' class='img-fluid', width=35> </h6>''',unsafe_allow_html=True)
                         else:
-                            st.markdown(f'''<h6 style="font-family:formula1, syne;"> Rainfall - <img src='data:image/png;base64, {img_to_bytes('./assets/no-rain.png')}' class='img-fluid', width=35> </h6>''',unsafe_allow_html=True)
+                            st.markdown(f'''<h6 style="font-family:formula1, syne;"> Climate - <img src='data:image/png;base64, {img_to_bytes('./assets/no-rain.gif')}' class='img-fluid', width=35> </h6>''',unsafe_allow_html=True)
 
                         
                         st.markdown('***')
@@ -1437,7 +1437,7 @@ def display_strategy(presets, mode='previous', team=False):
             disclaimer.info(disclaimer_info)
             st.markdown('***')
         
-@st.cache(persist=True)
+@st.cache_data
 def get_race_lap_data(_driverlaps, driver_AB):
 
     laps_data = driverlaps.copy(deep=True)
@@ -1451,7 +1451,7 @@ def get_race_lap_data(_driverlaps, driver_AB):
 
     return joined, driver_data
 
-@st.cache(persist=True)
+@st.cache_data
 def parse_race_points(year):
 
     driver_url = f'http://ergast.com/api/f1/{year}/driverStandings.json'
@@ -1638,9 +1638,9 @@ def driver_race_analysis(year, event, driverlaps, driver_AB, driver_data, total_
                 expander.markdown(f'''<h6 style="font-family:formula1, syne;">Wind Direction - {selector['WindDirection'].values[0]}°</h6>''',unsafe_allow_html=True)
                 expander.markdown(f'''<h6 style="font-family:formula1, syne;">Wind Speed - {selector['WindSpeed'].values[0]} Kmph</h6>''',unsafe_allow_html=True)
                 if selector['Rainfall'].values[0]:
-                    expander.markdown(f'''<h6 style="font-family:formula1, syne;"> Rainfall - <img src='data:image/png;base64, {img_to_bytes('./assets/rain.png')}' class='img-fluid', width=35> </h6>''',unsafe_allow_html=True)
+                    expander.markdown(f'''<h6 style="font-family:formula1, syne;"> Climate - <img src='data:image/png;base64, {img_to_bytes('./assets/rain.gif')}' class='img-fluid', width=35> </h6>''',unsafe_allow_html=True)
                 else:
-                    expander.markdown(f'''<h6 style="font-family:formula1, syne;"> Rainfall - <img src='data:image/png;base64, {img_to_bytes('./assets/no-rain.png')}' class='img-fluid', width=35> </h6>''',unsafe_allow_html=True)
+                    expander.markdown(f'''<h6 style="font-family:formula1, syne;"> Climate - <img src='data:image/png;base64, {img_to_bytes('./assets/no-rain.gif')}' class='img-fluid', width=35> </h6>''',unsafe_allow_html=True)
 
     
     
