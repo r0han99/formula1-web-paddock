@@ -9,7 +9,7 @@ import fastf1
 import fastf1.plotting
 import matplotlib.pyplot as plt
 from src.about import about_cs
-from src.carimages import fetch_carimgs
+#from src.carimages import fetch_carimgs
 from pathlib import Path
 import base64
 from dateutil import parser
@@ -125,6 +125,9 @@ def fetch_position_rank(const=None, driver=None,team=None,year=2022, individual=
         for dr in pos[pos['Constructors'] == team].values:
             pos, name, _, code, team, points, wins = dr
             dr_standings[name] = [(pos, code, points, wins)]
+
+        
+
         return dr_standings
 
 
@@ -244,6 +247,9 @@ def fetch_driverstandings(range_list=[2014,2023], rounds=None, roundwise=False,v
             ds = ds.set_index('position',drop=True)
             col_order = ['fullname','permanentNumber','code','Constructors','points','wins']
             dfs.append(ds[col_order])
+
+        pd.concat(dfs,keys=years).to_csv('driver_standings_2014_2023.csv',index=False)
+        
         return pd.concat(dfs,keys=years)
     
     elif roundwise==True and rounds != None:
@@ -284,6 +290,8 @@ def fetch_driverstandings(range_list=[2014,2023], rounds=None, roundwise=False,v
             year_wise_data.append(pd.concat(dfs_y[key[0]], keys=range(1,rounds[year]+1)))
 
         drivers = pd.concat(year_wise_data, keys=range(*range_list))
+
+        drivers.to_csv('driver_standings_2014_2023_roundwise.csv',index=False)
 
         return drivers
 
@@ -2418,7 +2426,7 @@ if __name__ == '__main__':
                 year = st.number_input('Select Year:',max_value=2022, min_value=2014)
                 slot.markdown(f'''<center><h3 style="font-family:formula1, syne;">{year}</h3></center>''',unsafe_allow_html=True)
 
-            cars_dict = fetch_carimgs()
+            #cars_dict = fetch_carimgs()
             cars_names = pd.read_html('https://racingnews365.com/f1-2022-car-names')[0]
             car_names = dict(cars_names[['Team','Car Name']].values)
             rounds = load_rounds()
@@ -2557,7 +2565,10 @@ if __name__ == '__main__':
                         if year == 2022:
                             cols = st.columns([5,5])
                             cols[0].markdown(f'''<h2 style="font-family:formula1, syne; font-weight:800; color:{team_colors[team.lower()]}">{team}</h2>''',unsafe_allow_html=True)
-                            cols[0].image(cars_dict[team],caption=f'{team} - {car_names[team]}')
+                            
+                            # FIX THIS 
+                            # cols[0].image(cars_dict[team],caption=f'{team} - {car_names[team]}')
+                            cols[0].error('car image not found')
                             
                             pos, points = pos, points = fetch_position_rank(constructor_standings, team=team, year=year)
                             cols[1].markdown(f'''> <h2><span style='font-family:syne; font-size:70px; font-weight:800;'>Position {pos} </span> <b></b> <sub style='color:#{team_colors[team.lower()]}'></sub> Points {points}</b></p></h2>''',unsafe_allow_html=True)
