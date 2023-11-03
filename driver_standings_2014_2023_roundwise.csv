@@ -1,0 +1,3890 @@
+fullname,permanentNumber,code,Constructors,points,wins
+Nico Rosberg,6,ROS,Mercedes,25,1
+Kevin Magnussen,20,MAG,McLaren,18,0
+Jenson Button,22,BUT,McLaren,15,0
+Fernando Alonso,14,ALO,Ferrari,12,0
+Valtteri Bottas,77,BOT,Williams,10,0
+Nico Hülkenberg,27,HUL,Force India,8,0
+Kimi Räikkönen,7,RAI,Ferrari,6,0
+Jean-Éric Vergne,25,VER,Toro Rosso,4,0
+Daniil Kvyat,26,KVY,Toro Rosso,2,0
+Sergio Pérez,11,PER,Force India,1,0
+Adrian Sutil,99,SUT,Sauber,0,0
+Esteban Gutiérrez,21,GUT,Sauber,0,0
+Max Chilton,4,CHI,Marussia,0,0
+Jules Bianchi,17,BIA,Marussia,0,0
+Romain Grosjean,8,GRO,Lotus F1,0,0
+Pastor Maldonado,13,MAL,Lotus F1,0,0
+Marcus Ericsson,9,ERI,Caterham,0,0
+Sebastian Vettel,5,VET,Red Bull,0,0
+Lewis Hamilton,44,HAM,Mercedes,0,0
+Felipe Massa,19,MAS,Williams,0,0
+Kamui Kobayashi,10,KOB,Caterham,0,0
+Daniel Ricciardo,3,RIC,Red Bull,0,0
+Nico Rosberg,6,ROS,Mercedes,43,1
+Lewis Hamilton,44,HAM,Mercedes,25,1
+Fernando Alonso,14,ALO,Ferrari,24,0
+Jenson Button,22,BUT,McLaren,23,0
+Kevin Magnussen,20,MAG,McLaren,20,0
+Nico Hülkenberg,27,HUL,Force India,18,0
+Sebastian Vettel,5,VET,Red Bull,15,0
+Valtteri Bottas,77,BOT,Williams,14,0
+Kimi Räikkönen,7,RAI,Ferrari,6,0
+Felipe Massa,19,MAS,Williams,6,0
+Jean-Éric Vergne,25,VER,Toro Rosso,4,0
+Daniil Kvyat,26,KVY,Toro Rosso,3,0
+Sergio Pérez,11,PER,Force India,1,0
+Romain Grosjean,8,GRO,Lotus F1,0,0
+Adrian Sutil,99,SUT,Sauber,0,0
+Esteban Gutiérrez,21,GUT,Sauber,0,0
+Max Chilton,4,CHI,Marussia,0,0
+Kamui Kobayashi,10,KOB,Caterham,0,0
+Marcus Ericsson,9,ERI,Caterham,0,0
+Jules Bianchi,17,BIA,Marussia,0,0
+Pastor Maldonado,13,MAL,Lotus F1,0,0
+Daniel Ricciardo,3,RIC,Red Bull,0,0
+Nico Rosberg,6,ROS,Mercedes,61,1
+Lewis Hamilton,44,HAM,Mercedes,50,2
+Nico Hülkenberg,27,HUL,Force India,28,0
+Fernando Alonso,14,ALO,Ferrari,26,0
+Jenson Button,22,BUT,McLaren,23,0
+Sebastian Vettel,5,VET,Red Bull,23,0
+Kevin Magnussen,20,MAG,McLaren,20,0
+Valtteri Bottas,77,BOT,Williams,18,0
+Sergio Pérez,11,PER,Force India,16,0
+Daniel Ricciardo,3,RIC,Red Bull,12,0
+Felipe Massa,19,MAS,Williams,12,0
+Kimi Räikkönen,7,RAI,Ferrari,7,0
+Jean-Éric Vergne,25,VER,Toro Rosso,4,0
+Daniil Kvyat,26,KVY,Toro Rosso,3,0
+Romain Grosjean,8,GRO,Lotus F1,0,0
+Adrian Sutil,99,SUT,Sauber,0,0
+Esteban Gutiérrez,21,GUT,Sauber,0,0
+Max Chilton,4,CHI,Marussia,0,0
+Kamui Kobayashi,10,KOB,Caterham,0,0
+Pastor Maldonado,13,MAL,Lotus F1,0,0
+Marcus Ericsson,9,ERI,Caterham,0,0
+Jules Bianchi,17,BIA,Marussia,0,0
+Nico Rosberg,6,ROS,Mercedes,79,1
+Lewis Hamilton,44,HAM,Mercedes,75,3
+Fernando Alonso,14,ALO,Ferrari,41,0
+Nico Hülkenberg,27,HUL,Force India,36,0
+Sebastian Vettel,5,VET,Red Bull,33,0
+Daniel Ricciardo,3,RIC,Red Bull,24,0
+Valtteri Bottas,77,BOT,Williams,24,0
+Jenson Button,22,BUT,McLaren,23,0
+Kevin Magnussen,20,MAG,McLaren,20,0
+Sergio Pérez,11,PER,Force India,18,0
+Felipe Massa,19,MAS,Williams,12,0
+Kimi Räikkönen,7,RAI,Ferrari,11,0
+Jean-Éric Vergne,25,VER,Toro Rosso,4,0
+Daniil Kvyat,26,KVY,Toro Rosso,4,0
+Romain Grosjean,8,GRO,Lotus F1,0,0
+Adrian Sutil,99,SUT,Sauber,0,0
+Esteban Gutiérrez,21,GUT,Sauber,0,0
+Max Chilton,4,CHI,Marussia,0,0
+Kamui Kobayashi,10,KOB,Caterham,0,0
+Pastor Maldonado,13,MAL,Lotus F1,0,0
+Marcus Ericsson,9,ERI,Caterham,0,0
+Jules Bianchi,17,BIA,Marussia,0,0
+Lewis Hamilton,44,HAM,Mercedes,100,4
+Nico Rosberg,6,ROS,Mercedes,97,1
+Fernando Alonso,14,ALO,Ferrari,49,0
+Sebastian Vettel,5,VET,Red Bull,45,0
+Daniel Ricciardo,3,RIC,Red Bull,39,0
+Nico Hülkenberg,27,HUL,Force India,37,0
+Valtteri Bottas,77,BOT,Williams,34,0
+Jenson Button,22,BUT,McLaren,23,0
+Kevin Magnussen,20,MAG,McLaren,20,0
+Sergio Pérez,11,PER,Force India,20,0
+Kimi Räikkönen,7,RAI,Ferrari,17,0
+Felipe Massa,19,MAS,Williams,12,0
+Romain Grosjean,8,GRO,Lotus F1,4,0
+Jean-Éric Vergne,25,VER,Toro Rosso,4,0
+Daniil Kvyat,26,KVY,Toro Rosso,4,0
+Adrian Sutil,99,SUT,Sauber,0,0
+Esteban Gutiérrez,21,GUT,Sauber,0,0
+Max Chilton,4,CHI,Marussia,0,0
+Kamui Kobayashi,10,KOB,Caterham,0,0
+Pastor Maldonado,13,MAL,Lotus F1,0,0
+Marcus Ericsson,9,ERI,Caterham,0,0
+Jules Bianchi,17,BIA,Marussia,0,0
+Nico Rosberg,6,ROS,Mercedes,122,2
+Lewis Hamilton,44,HAM,Mercedes,118,4
+Fernando Alonso,14,ALO,Ferrari,61,0
+Daniel Ricciardo,3,RIC,Red Bull,54,0
+Nico Hülkenberg,27,HUL,Force India,47,0
+Sebastian Vettel,5,VET,Red Bull,45,0
+Valtteri Bottas,77,BOT,Williams,34,0
+Jenson Button,22,BUT,McLaren,31,0
+Kevin Magnussen,20,MAG,McLaren,21,0
+Sergio Pérez,11,PER,Force India,20,0
+Felipe Massa,19,MAS,Williams,18,0
+Kimi Räikkönen,7,RAI,Ferrari,17,0
+Romain Grosjean,8,GRO,Lotus F1,8,0
+Jean-Éric Vergne,25,VER,Toro Rosso,4,0
+Daniil Kvyat,26,KVY,Toro Rosso,4,0
+Jules Bianchi,17,BIA,Marussia,2,0
+Marcus Ericsson,9,ERI,Caterham,0,0
+Adrian Sutil,99,SUT,Sauber,0,0
+Esteban Gutiérrez,21,GUT,Sauber,0,0
+Max Chilton,4,CHI,Marussia,0,0
+Kamui Kobayashi,10,KOB,Caterham,0,0
+Pastor Maldonado,13,MAL,Lotus F1,0,0
+Nico Rosberg,6,ROS,Mercedes,140,2
+Lewis Hamilton,44,HAM,Mercedes,118,4
+Daniel Ricciardo,3,RIC,Red Bull,79,1
+Fernando Alonso,14,ALO,Ferrari,69,0
+Sebastian Vettel,5,VET,Red Bull,60,0
+Nico Hülkenberg,27,HUL,Force India,57,0
+Jenson Button,22,BUT,McLaren,43,0
+Valtteri Bottas,77,BOT,Williams,40,0
+Kevin Magnussen,20,MAG,McLaren,23,0
+Sergio Pérez,11,PER,Force India,20,0
+Felipe Massa,19,MAS,Williams,18,0
+Kimi Räikkönen,7,RAI,Ferrari,18,0
+Romain Grosjean,8,GRO,Lotus F1,8,0
+Jean-Éric Vergne,25,VER,Toro Rosso,8,0
+Daniil Kvyat,26,KVY,Toro Rosso,4,0
+Jules Bianchi,17,BIA,Marussia,2,0
+Adrian Sutil,99,SUT,Sauber,0,0
+Marcus Ericsson,9,ERI,Caterham,0,0
+Esteban Gutiérrez,21,GUT,Sauber,0,0
+Max Chilton,4,CHI,Marussia,0,0
+Kamui Kobayashi,10,KOB,Caterham,0,0
+Pastor Maldonado,13,MAL,Lotus F1,0,0
+Nico Rosberg,6,ROS,Mercedes,165,3
+Lewis Hamilton,44,HAM,Mercedes,136,4
+Daniel Ricciardo,3,RIC,Red Bull,83,1
+Fernando Alonso,14,ALO,Ferrari,79,0
+Sebastian Vettel,5,VET,Red Bull,60,0
+Nico Hülkenberg,27,HUL,Force India,59,0
+Valtteri Bottas,77,BOT,Williams,55,0
+Jenson Button,22,BUT,McLaren,43,0
+Felipe Massa,19,MAS,Williams,30,0
+Kevin Magnussen,20,MAG,McLaren,29,0
+Sergio Pérez,11,PER,Force India,28,0
+Kimi Räikkönen,7,RAI,Ferrari,19,0
+Romain Grosjean,8,GRO,Lotus F1,8,0
+Jean-Éric Vergne,25,VER,Toro Rosso,8,0
+Daniil Kvyat,26,KVY,Toro Rosso,4,0
+Jules Bianchi,17,BIA,Marussia,2,0
+Adrian Sutil,99,SUT,Sauber,0,0
+Marcus Ericsson,9,ERI,Caterham,0,0
+Pastor Maldonado,13,MAL,Lotus F1,0,0
+Esteban Gutiérrez,21,GUT,Sauber,0,0
+Max Chilton,4,CHI,Marussia,0,0
+Kamui Kobayashi,10,KOB,Caterham,0,0
+Nico Rosberg,6,ROS,Mercedes,165,3
+Lewis Hamilton,44,HAM,Mercedes,161,5
+Daniel Ricciardo,3,RIC,Red Bull,98,1
+Fernando Alonso,14,ALO,Ferrari,87,0
+Valtteri Bottas,77,BOT,Williams,73,0
+Sebastian Vettel,5,VET,Red Bull,70,0
+Nico Hülkenberg,27,HUL,Force India,63,0
+Jenson Button,22,BUT,McLaren,55,0
+Kevin Magnussen,20,MAG,McLaren,35,0
+Felipe Massa,19,MAS,Williams,30,0
+Sergio Pérez,11,PER,Force India,28,0
+Kimi Räikkönen,7,RAI,Ferrari,19,0
+Jean-Éric Vergne,25,VER,Toro Rosso,9,0
+Romain Grosjean,8,GRO,Lotus F1,8,0
+Daniil Kvyat,26,KVY,Toro Rosso,6,0
+Jules Bianchi,17,BIA,Marussia,2,0
+Adrian Sutil,99,SUT,Sauber,0,0
+Marcus Ericsson,9,ERI,Caterham,0,0
+Pastor Maldonado,13,MAL,Lotus F1,0,0
+Esteban Gutiérrez,21,GUT,Sauber,0,0
+Max Chilton,4,CHI,Marussia,0,0
+Kamui Kobayashi,10,KOB,Caterham,0,0
+Nico Rosberg,6,ROS,Mercedes,190,4
+Lewis Hamilton,44,HAM,Mercedes,176,5
+Daniel Ricciardo,3,RIC,Red Bull,106,1
+Fernando Alonso,14,ALO,Ferrari,97,0
+Valtteri Bottas,77,BOT,Williams,91,0
+Sebastian Vettel,5,VET,Red Bull,82,0
+Nico Hülkenberg,27,HUL,Force India,69,0
+Jenson Button,22,BUT,McLaren,59,0
+Kevin Magnussen,20,MAG,McLaren,37,0
+Felipe Massa,19,MAS,Williams,30,0
+Sergio Pérez,11,PER,Force India,29,0
+Kimi Räikkönen,7,RAI,Ferrari,19,0
+Jean-Éric Vergne,25,VER,Toro Rosso,9,0
+Romain Grosjean,8,GRO,Lotus F1,8,0
+Daniil Kvyat,26,KVY,Toro Rosso,6,0
+Jules Bianchi,17,BIA,Marussia,2,0
+Adrian Sutil,99,SUT,Sauber,0,0
+Marcus Ericsson,9,ERI,Caterham,0,0
+Pastor Maldonado,13,MAL,Lotus F1,0,0
+Esteban Gutiérrez,21,GUT,Sauber,0,0
+Max Chilton,4,CHI,Marussia,0,0
+Kamui Kobayashi,10,KOB,Caterham,0,0
+Nico Rosberg,6,ROS,Mercedes,202,4
+Lewis Hamilton,44,HAM,Mercedes,191,5
+Daniel Ricciardo,3,RIC,Red Bull,131,2
+Fernando Alonso,14,ALO,Ferrari,115,0
+Valtteri Bottas,77,BOT,Williams,95,0
+Sebastian Vettel,5,VET,Red Bull,88,0
+Nico Hülkenberg,27,HUL,Force India,69,0
+Jenson Button,22,BUT,McLaren,60,0
+Felipe Massa,19,MAS,Williams,40,0
+Kevin Magnussen,20,MAG,McLaren,37,0
+Sergio Pérez,11,PER,Force India,29,0
+Kimi Räikkönen,7,RAI,Ferrari,27,0
+Jean-Éric Vergne,25,VER,Toro Rosso,11,0
+Romain Grosjean,8,GRO,Lotus F1,8,0
+Daniil Kvyat,26,KVY,Toro Rosso,6,0
+Jules Bianchi,17,BIA,Marussia,2,0
+Adrian Sutil,99,SUT,Sauber,0,0
+Marcus Ericsson,9,ERI,Caterham,0,0
+Pastor Maldonado,13,MAL,Lotus F1,0,0
+Esteban Gutiérrez,21,GUT,Sauber,0,0
+Max Chilton,4,CHI,Marussia,0,0
+Kamui Kobayashi,10,KOB,Caterham,0,0
+Nico Rosberg,6,ROS,Mercedes,220,4
+Lewis Hamilton,44,HAM,Mercedes,191,5
+Daniel Ricciardo,3,RIC,Red Bull,156,3
+Fernando Alonso,14,ALO,Ferrari,121,0
+Valtteri Bottas,77,BOT,Williams,110,0
+Sebastian Vettel,5,VET,Red Bull,98,0
+Nico Hülkenberg,27,HUL,Force India,70,0
+Jenson Button,22,BUT,McLaren,68,0
+Felipe Massa,19,MAS,Williams,40,0
+Kimi Räikkönen,7,RAI,Ferrari,39,0
+Kevin Magnussen,20,MAG,McLaren,37,0
+Sergio Pérez,11,PER,Force India,33,0
+Jean-Éric Vergne,25,VER,Toro Rosso,11,0
+Romain Grosjean,8,GRO,Lotus F1,8,0
+Daniil Kvyat,26,KVY,Toro Rosso,8,0
+Jules Bianchi,17,BIA,Marussia,2,0
+Adrian Sutil,99,SUT,Sauber,0,0
+Marcus Ericsson,9,ERI,Caterham,0,0
+Pastor Maldonado,13,MAL,Lotus F1,0,0
+Esteban Gutiérrez,21,GUT,Sauber,0,0
+Max Chilton,4,CHI,Marussia,0,0
+Kamui Kobayashi,10,KOB,Caterham,0,0
+André Lotterer,45,LOT,Caterham,0,0
+Nico Rosberg,6,ROS,Mercedes,238,4
+Lewis Hamilton,44,HAM,Mercedes,216,6
+Daniel Ricciardo,3,RIC,Red Bull,166,3
+Valtteri Bottas,77,BOT,Williams,122,0
+Fernando Alonso,14,ALO,Ferrari,121,0
+Sebastian Vettel,5,VET,Red Bull,106,0
+Jenson Button,22,BUT,McLaren,72,0
+Nico Hülkenberg,27,HUL,Force India,70,0
+Felipe Massa,19,MAS,Williams,55,0
+Kimi Räikkönen,7,RAI,Ferrari,41,0
+Sergio Pérez,11,PER,Force India,39,0
+Kevin Magnussen,20,MAG,McLaren,38,0
+Jean-Éric Vergne,25,VER,Toro Rosso,11,0
+Romain Grosjean,8,GRO,Lotus F1,8,0
+Daniil Kvyat,26,KVY,Toro Rosso,8,0
+Jules Bianchi,17,BIA,Marussia,2,0
+Adrian Sutil,99,SUT,Sauber,0,0
+Marcus Ericsson,9,ERI,Caterham,0,0
+Pastor Maldonado,13,MAL,Lotus F1,0,0
+Esteban Gutiérrez,21,GUT,Sauber,0,0
+Max Chilton,4,CHI,Marussia,0,0
+Kamui Kobayashi,10,KOB,Caterham,0,0
+André Lotterer,45,LOT,Caterham,0,0
+Lewis Hamilton,44,HAM,Mercedes,241,7
+Nico Rosberg,6,ROS,Mercedes,238,4
+Daniel Ricciardo,3,RIC,Red Bull,181,3
+Fernando Alonso,14,ALO,Ferrari,133,0
+Sebastian Vettel,5,VET,Red Bull,124,0
+Valtteri Bottas,77,BOT,Williams,122,0
+Jenson Button,22,BUT,McLaren,72,0
+Nico Hülkenberg,27,HUL,Force India,72,0
+Felipe Massa,19,MAS,Williams,65,0
+Sergio Pérez,11,PER,Force India,45,0
+Kimi Räikkönen,7,RAI,Ferrari,45,0
+Kevin Magnussen,20,MAG,McLaren,39,0
+Jean-Éric Vergne,25,VER,Toro Rosso,19,0
+Romain Grosjean,8,GRO,Lotus F1,8,0
+Daniil Kvyat,26,KVY,Toro Rosso,8,0
+Jules Bianchi,17,BIA,Marussia,2,0
+Adrian Sutil,99,SUT,Sauber,0,0
+Marcus Ericsson,9,ERI,Caterham,0,0
+Pastor Maldonado,13,MAL,Lotus F1,0,0
+Esteban Gutiérrez,21,GUT,Sauber,0,0
+Max Chilton,4,CHI,Marussia,0,0
+Kamui Kobayashi,10,KOB,Caterham,0,0
+André Lotterer,45,LOT,Caterham,0,0
+Lewis Hamilton,44,HAM,Mercedes,266,8
+Nico Rosberg,6,ROS,Mercedes,256,4
+Daniel Ricciardo,3,RIC,Red Bull,193,3
+Sebastian Vettel,5,VET,Red Bull,139,0
+Fernando Alonso,14,ALO,Ferrari,133,0
+Valtteri Bottas,77,BOT,Williams,130,0
+Jenson Button,22,BUT,McLaren,82,0
+Nico Hülkenberg,27,HUL,Force India,76,0
+Felipe Massa,19,MAS,Williams,71,0
+Sergio Pérez,11,PER,Force India,46,0
+Kimi Räikkönen,7,RAI,Ferrari,45,0
+Kevin Magnussen,20,MAG,McLaren,39,0
+Jean-Éric Vergne,25,VER,Toro Rosso,21,0
+Romain Grosjean,8,GRO,Lotus F1,8,0
+Daniil Kvyat,26,KVY,Toro Rosso,8,0
+Jules Bianchi,17,BIA,Marussia,2,0
+Adrian Sutil,99,SUT,Sauber,0,0
+Marcus Ericsson,9,ERI,Caterham,0,0
+Pastor Maldonado,13,MAL,Lotus F1,0,0
+Esteban Gutiérrez,21,GUT,Sauber,0,0
+Max Chilton,4,CHI,Marussia,0,0
+Kamui Kobayashi,10,KOB,Caterham,0,0
+André Lotterer,45,LOT,Caterham,0,0
+Lewis Hamilton,44,HAM,Mercedes,291,9
+Nico Rosberg,6,ROS,Mercedes,274,4
+Daniel Ricciardo,3,RIC,Red Bull,199,3
+Valtteri Bottas,77,BOT,Williams,145,0
+Sebastian Vettel,5,VET,Red Bull,143,0
+Fernando Alonso,14,ALO,Ferrari,141,0
+Jenson Button,22,BUT,McLaren,94,0
+Nico Hülkenberg,27,HUL,Force India,76,0
+Felipe Massa,19,MAS,Williams,71,0
+Kevin Magnussen,20,MAG,McLaren,49,0
+Sergio Pérez,11,PER,Force India,47,0
+Kimi Räikkönen,7,RAI,Ferrari,47,0
+Jean-Éric Vergne,25,VER,Toro Rosso,21,0
+Romain Grosjean,8,GRO,Lotus F1,8,0
+Daniil Kvyat,26,KVY,Toro Rosso,8,0
+Jules Bianchi,17,BIA,Marussia,2,0
+Adrian Sutil,99,SUT,Sauber,0,0
+Marcus Ericsson,9,ERI,Caterham,0,0
+Pastor Maldonado,13,MAL,Lotus F1,0,0
+Esteban Gutiérrez,21,GUT,Sauber,0,0
+Max Chilton,4,CHI,Marussia,0,0
+Kamui Kobayashi,10,KOB,Caterham,0,0
+André Lotterer,45,LOT,Caterham,0,0
+Lewis Hamilton,44,HAM,Mercedes,316,10
+Nico Rosberg,6,ROS,Mercedes,292,4
+Daniel Ricciardo,3,RIC,Red Bull,214,3
+Valtteri Bottas,77,BOT,Williams,155,0
+Sebastian Vettel,5,VET,Red Bull,149,0
+Fernando Alonso,14,ALO,Ferrari,149,0
+Jenson Button,22,BUT,McLaren,94,0
+Felipe Massa,19,MAS,Williams,83,0
+Nico Hülkenberg,27,HUL,Force India,76,0
+Kevin Magnussen,20,MAG,McLaren,53,0
+Sergio Pérez,11,PER,Force India,47,0
+Kimi Räikkönen,7,RAI,Ferrari,47,0
+Jean-Éric Vergne,25,VER,Toro Rosso,22,0
+Romain Grosjean,8,GRO,Lotus F1,8,0
+Daniil Kvyat,26,KVY,Toro Rosso,8,0
+Pastor Maldonado,13,MAL,Lotus F1,2,0
+Jules Bianchi,17,BIA,Marussia,2,0
+Adrian Sutil,99,SUT,Sauber,0,0
+Marcus Ericsson,9,ERI,Caterham,0,0
+Esteban Gutiérrez,21,GUT,Sauber,0,0
+Max Chilton,4,CHI,Marussia,0,0
+Kamui Kobayashi,10,KOB,Caterham,0,0
+André Lotterer,45,LOT,Caterham,0,0
+Lewis Hamilton,44,HAM,Mercedes,334,10
+Nico Rosberg,6,ROS,Mercedes,317,5
+Daniel Ricciardo,3,RIC,Red Bull,214,3
+Sebastian Vettel,5,VET,Red Bull,159,0
+Fernando Alonso,14,ALO,Ferrari,157,0
+Valtteri Bottas,77,BOT,Williams,156,0
+Jenson Button,22,BUT,McLaren,106,0
+Felipe Massa,19,MAS,Williams,98,0
+Nico Hülkenberg,27,HUL,Force India,80,0
+Kevin Magnussen,20,MAG,McLaren,55,0
+Kimi Räikkönen,7,RAI,Ferrari,53,0
+Sergio Pérez,11,PER,Force India,47,0
+Jean-Éric Vergne,25,VER,Toro Rosso,22,0
+Romain Grosjean,8,GRO,Lotus F1,8,0
+Daniil Kvyat,26,KVY,Toro Rosso,8,0
+Pastor Maldonado,13,MAL,Lotus F1,2,0
+Jules Bianchi,17,BIA,Marussia,2,0
+Adrian Sutil,99,SUT,Sauber,0,0
+Marcus Ericsson,9,ERI,Caterham,0,0
+Esteban Gutiérrez,21,GUT,Sauber,0,0
+Max Chilton,4,CHI,Marussia,0,0
+Kamui Kobayashi,10,KOB,Caterham,0,0
+André Lotterer,45,LOT,Caterham,0,0
+Lewis Hamilton,44,HAM,Mercedes,384,11
+Nico Rosberg,6,ROS,Mercedes,317,5
+Daniel Ricciardo,3,RIC,Red Bull,238,3
+Valtteri Bottas,77,BOT,Williams,186,0
+Sebastian Vettel,5,VET,Red Bull,167,0
+Fernando Alonso,14,ALO,Ferrari,161,0
+Felipe Massa,19,MAS,Williams,134,0
+Jenson Button,22,BUT,McLaren,126,0
+Nico Hülkenberg,27,HUL,Force India,96,0
+Sergio Pérez,11,PER,Force India,59,0
+Kevin Magnussen,20,MAG,McLaren,55,0
+Kimi Räikkönen,7,RAI,Ferrari,55,0
+Jean-Éric Vergne,25,VER,Toro Rosso,22,0
+Romain Grosjean,8,GRO,Lotus F1,8,0
+Daniil Kvyat,26,KVY,Toro Rosso,8,0
+Pastor Maldonado,13,MAL,Lotus F1,2,0
+Jules Bianchi,17,BIA,Marussia,2,0
+Adrian Sutil,99,SUT,Sauber,0,0
+Marcus Ericsson,9,ERI,Caterham,0,0
+Esteban Gutiérrez,21,GUT,Sauber,0,0
+Max Chilton,4,CHI,Marussia,0,0
+Kamui Kobayashi,10,KOB,Caterham,0,0
+Will Stevens,28,STE,Caterham,0,0
+André Lotterer,45,LOT,Caterham,0,0
+Lewis Hamilton,44,HAM,Mercedes,25,1
+Nico Rosberg,6,ROS,Mercedes,18,0
+Sebastian Vettel,5,VET,Ferrari,15,0
+Felipe Massa,19,MAS,Williams,12,0
+Felipe Nasr,12,NAS,Sauber,10,0
+Daniel Ricciardo,3,RIC,Red Bull,8,0
+Nico Hülkenberg,27,HUL,Force India,6,0
+Marcus Ericsson,9,ERI,Sauber,4,0
+Carlos Sainz,55,SAI,Toro Rosso,2,0
+Sergio Pérez,11,PER,Force India,1,0
+Jenson Button,22,BUT,McLaren,0,0
+Kimi Räikkönen,7,RAI,Ferrari,0,0
+Max Verstappen,33,VER,Toro Rosso,0,0
+Romain Grosjean,8,GRO,Lotus F1,0,0
+Pastor Maldonado,13,MAL,Lotus F1,0,0
+Daniil Kvyat,26,KVY,Red Bull,0,0
+Kevin Magnussen,20,MAG,McLaren,0,0
+Valtteri Bottas,77,BOT,Williams,0,0
+Lewis Hamilton,44,HAM,Mercedes,43,1
+Sebastian Vettel,5,VET,Ferrari,40,1
+Nico Rosberg,6,ROS,Mercedes,33,0
+Felipe Massa,19,MAS,Williams,20,0
+Kimi Räikkönen,7,RAI,Ferrari,12,0
+Felipe Nasr,12,NAS,Sauber,10,0
+Valtteri Bottas,77,BOT,Williams,10,0
+Daniel Ricciardo,3,RIC,Red Bull,9,0
+Nico Hülkenberg,27,HUL,Force India,6,0
+Max Verstappen,33,VER,Toro Rosso,6,0
+Carlos Sainz,55,SAI,Toro Rosso,6,0
+Marcus Ericsson,9,ERI,Sauber,4,0
+Daniil Kvyat,26,KVY,Red Bull,2,0
+Sergio Pérez,11,PER,Force India,1,0
+Romain Grosjean,8,GRO,Lotus F1,0,0
+Jenson Button,22,BUT,McLaren,0,0
+Roberto Merhi,98,MER,Manor Marussia,0,0
+Pastor Maldonado,13,MAL,Lotus F1,0,0
+Kevin Magnussen,20,MAG,McLaren,0,0
+Fernando Alonso,14,ALO,McLaren,0,0
+Will Stevens,28,STE,Manor Marussia,0,0
+Lewis Hamilton,44,HAM,Mercedes,68,2
+Sebastian Vettel,5,VET,Ferrari,55,1
+Nico Rosberg,6,ROS,Mercedes,51,0
+Felipe Massa,19,MAS,Williams,30,0
+Kimi Räikkönen,7,RAI,Ferrari,24,0
+Valtteri Bottas,77,BOT,Williams,18,0
+Felipe Nasr,12,NAS,Sauber,14,0
+Daniel Ricciardo,3,RIC,Red Bull,11,0
+Romain Grosjean,8,GRO,Lotus F1,6,0
+Nico Hülkenberg,27,HUL,Force India,6,0
+Max Verstappen,33,VER,Toro Rosso,6,0
+Carlos Sainz,55,SAI,Toro Rosso,6,0
+Marcus Ericsson,9,ERI,Sauber,5,0
+Daniil Kvyat,26,KVY,Red Bull,2,0
+Sergio Pérez,11,PER,Force India,1,0
+Jenson Button,22,BUT,McLaren,0,0
+Fernando Alonso,14,ALO,McLaren,0,0
+Roberto Merhi,98,MER,Manor Marussia,0,0
+Will Stevens,28,STE,Manor Marussia,0,0
+Pastor Maldonado,13,MAL,Lotus F1,0,0
+Kevin Magnussen,20,MAG,McLaren,0,0
+Lewis Hamilton,44,HAM,Mercedes,93,3
+Nico Rosberg,6,ROS,Mercedes,66,0
+Sebastian Vettel,5,VET,Ferrari,65,1
+Kimi Räikkönen,7,RAI,Ferrari,42,0
+Felipe Massa,19,MAS,Williams,31,0
+Valtteri Bottas,77,BOT,Williams,30,0
+Daniel Ricciardo,3,RIC,Red Bull,19,0
+Felipe Nasr,12,NAS,Sauber,14,0
+Romain Grosjean,8,GRO,Lotus F1,12,0
+Nico Hülkenberg,27,HUL,Force India,6,0
+Max Verstappen,33,VER,Toro Rosso,6,0
+Carlos Sainz,55,SAI,Toro Rosso,6,0
+Sergio Pérez,11,PER,Force India,5,0
+Marcus Ericsson,9,ERI,Sauber,5,0
+Daniil Kvyat,26,KVY,Red Bull,4,0
+Fernando Alonso,14,ALO,McLaren,0,0
+Jenson Button,22,BUT,McLaren,0,0
+Roberto Merhi,98,MER,Manor Marussia,0,0
+Will Stevens,28,STE,Manor Marussia,0,0
+Pastor Maldonado,13,MAL,Lotus F1,0,0
+Kevin Magnussen,20,MAG,McLaren,0,0
+Lewis Hamilton,44,HAM,Mercedes,111,3
+Nico Rosberg,6,ROS,Mercedes,91,1
+Sebastian Vettel,5,VET,Ferrari,80,1
+Kimi Räikkönen,7,RAI,Ferrari,52,0
+Valtteri Bottas,77,BOT,Williams,42,0
+Felipe Massa,19,MAS,Williams,39,0
+Daniel Ricciardo,3,RIC,Red Bull,25,0
+Romain Grosjean,8,GRO,Lotus F1,16,0
+Felipe Nasr,12,NAS,Sauber,14,0
+Carlos Sainz,55,SAI,Toro Rosso,8,0
+Max Verstappen,33,VER,Toro Rosso,6,0
+Nico Hülkenberg,27,HUL,Force India,6,0
+Sergio Pérez,11,PER,Force India,5,0
+Marcus Ericsson,9,ERI,Sauber,5,0
+Daniil Kvyat,26,KVY,Red Bull,5,0
+Fernando Alonso,14,ALO,McLaren,0,0
+Jenson Button,22,BUT,McLaren,0,0
+Roberto Merhi,98,MER,Manor Marussia,0,0
+Will Stevens,28,STE,Manor Marussia,0,0
+Pastor Maldonado,13,MAL,Lotus F1,0,0
+Kevin Magnussen,20,MAG,McLaren,0,0
+Lewis Hamilton,44,HAM,Mercedes,126,3
+Nico Rosberg,6,ROS,Mercedes,116,2
+Sebastian Vettel,5,VET,Ferrari,98,1
+Kimi Räikkönen,7,RAI,Ferrari,60,0
+Valtteri Bottas,77,BOT,Williams,42,0
+Felipe Massa,19,MAS,Williams,39,0
+Daniel Ricciardo,3,RIC,Red Bull,35,0
+Daniil Kvyat,26,KVY,Red Bull,17,0
+Felipe Nasr,12,NAS,Sauber,16,0
+Romain Grosjean,8,GRO,Lotus F1,16,0
+Sergio Pérez,11,PER,Force India,11,0
+Carlos Sainz,55,SAI,Toro Rosso,9,0
+Nico Hülkenberg,27,HUL,Force India,6,0
+Max Verstappen,33,VER,Toro Rosso,6,0
+Marcus Ericsson,9,ERI,Sauber,5,0
+Jenson Button,22,BUT,McLaren,4,0
+Fernando Alonso,14,ALO,McLaren,0,0
+Roberto Merhi,98,MER,Manor Marussia,0,0
+Will Stevens,28,STE,Manor Marussia,0,0
+Pastor Maldonado,13,MAL,Lotus F1,0,0
+Kevin Magnussen,20,MAG,McLaren,0,0
+Lewis Hamilton,44,HAM,Mercedes,151,4
+Nico Rosberg,6,ROS,Mercedes,134,2
+Sebastian Vettel,5,VET,Ferrari,108,1
+Kimi Räikkönen,7,RAI,Ferrari,72,0
+Valtteri Bottas,77,BOT,Williams,57,0
+Felipe Massa,19,MAS,Williams,47,0
+Daniel Ricciardo,3,RIC,Red Bull,35,0
+Daniil Kvyat,26,KVY,Red Bull,19,0
+Romain Grosjean,8,GRO,Lotus F1,17,0
+Felipe Nasr,12,NAS,Sauber,16,0
+Sergio Pérez,11,PER,Force India,11,0
+Nico Hülkenberg,27,HUL,Force India,10,0
+Carlos Sainz,55,SAI,Toro Rosso,9,0
+Max Verstappen,33,VER,Toro Rosso,6,0
+Pastor Maldonado,13,MAL,Lotus F1,6,0
+Marcus Ericsson,9,ERI,Sauber,5,0
+Jenson Button,22,BUT,McLaren,4,0
+Fernando Alonso,14,ALO,McLaren,0,0
+Roberto Merhi,98,MER,Manor Marussia,0,0
+Will Stevens,28,STE,Manor Marussia,0,0
+Kevin Magnussen,20,MAG,McLaren,0,0
+Lewis Hamilton,44,HAM,Mercedes,169,4
+Nico Rosberg,6,ROS,Mercedes,159,3
+Sebastian Vettel,5,VET,Ferrari,120,1
+Kimi Räikkönen,7,RAI,Ferrari,72,0
+Valtteri Bottas,77,BOT,Williams,67,0
+Felipe Massa,19,MAS,Williams,62,0
+Daniel Ricciardo,3,RIC,Red Bull,36,0
+Daniil Kvyat,26,KVY,Red Bull,19,0
+Nico Hülkenberg,27,HUL,Force India,18,0
+Romain Grosjean,8,GRO,Lotus F1,17,0
+Felipe Nasr,12,NAS,Sauber,16,0
+Sergio Pérez,11,PER,Force India,13,0
+Pastor Maldonado,13,MAL,Lotus F1,12,0
+Max Verstappen,33,VER,Toro Rosso,10,0
+Carlos Sainz,55,SAI,Toro Rosso,9,0
+Marcus Ericsson,9,ERI,Sauber,5,0
+Jenson Button,22,BUT,McLaren,4,0
+Fernando Alonso,14,ALO,McLaren,0,0
+Roberto Merhi,98,MER,Manor Marussia,0,0
+Will Stevens,28,STE,Manor Marussia,0,0
+Kevin Magnussen,20,MAG,McLaren,0,0
+Lewis Hamilton,44,HAM,Mercedes,194,5
+Nico Rosberg,6,ROS,Mercedes,177,3
+Sebastian Vettel,5,VET,Ferrari,135,1
+Valtteri Bottas,77,BOT,Williams,77,0
+Kimi Räikkönen,7,RAI,Ferrari,76,0
+Felipe Massa,19,MAS,Williams,74,0
+Daniel Ricciardo,3,RIC,Red Bull,36,0
+Daniil Kvyat,26,KVY,Red Bull,27,0
+Nico Hülkenberg,27,HUL,Force India,24,0
+Romain Grosjean,8,GRO,Lotus F1,17,0
+Felipe Nasr,12,NAS,Sauber,16,0
+Sergio Pérez,11,PER,Force India,15,0
+Pastor Maldonado,13,MAL,Lotus F1,12,0
+Max Verstappen,33,VER,Toro Rosso,10,0
+Carlos Sainz,55,SAI,Toro Rosso,9,0
+Marcus Ericsson,9,ERI,Sauber,5,0
+Jenson Button,22,BUT,McLaren,4,0
+Fernando Alonso,14,ALO,McLaren,1,0
+Roberto Merhi,98,MER,Manor Marussia,0,0
+Will Stevens,28,STE,Manor Marussia,0,0
+Kevin Magnussen,20,MAG,McLaren,0,0
+Lewis Hamilton,44,HAM,Mercedes,202,5
+Nico Rosberg,6,ROS,Mercedes,181,3
+Sebastian Vettel,5,VET,Ferrari,160,2
+Valtteri Bottas,77,BOT,Williams,77,0
+Kimi Räikkönen,7,RAI,Ferrari,76,0
+Felipe Massa,19,MAS,Williams,74,0
+Daniel Ricciardo,3,RIC,Red Bull,51,0
+Daniil Kvyat,26,KVY,Red Bull,45,0
+Nico Hülkenberg,27,HUL,Force India,24,0
+Romain Grosjean,8,GRO,Lotus F1,23,0
+Max Verstappen,33,VER,Toro Rosso,22,0
+Felipe Nasr,12,NAS,Sauber,16,0
+Sergio Pérez,11,PER,Force India,15,0
+Pastor Maldonado,13,MAL,Lotus F1,12,0
+Fernando Alonso,14,ALO,McLaren,11,0
+Carlos Sainz,55,SAI,Toro Rosso,9,0
+Jenson Button,22,BUT,McLaren,6,0
+Marcus Ericsson,9,ERI,Sauber,6,0
+Roberto Merhi,98,MER,Manor Marussia,0,0
+Will Stevens,28,STE,Manor Marussia,0,0
+Kevin Magnussen,20,MAG,McLaren,0,0
+Lewis Hamilton,44,HAM,Mercedes,227,6
+Nico Rosberg,6,ROS,Mercedes,199,3
+Sebastian Vettel,5,VET,Ferrari,160,2
+Kimi Räikkönen,7,RAI,Ferrari,82,0
+Felipe Massa,19,MAS,Williams,82,0
+Valtteri Bottas,77,BOT,Williams,79,0
+Daniil Kvyat,26,KVY,Red Bull,57,0
+Daniel Ricciardo,3,RIC,Red Bull,51,0
+Romain Grosjean,8,GRO,Lotus F1,38,0
+Max Verstappen,33,VER,Toro Rosso,26,0
+Sergio Pérez,11,PER,Force India,25,0
+Nico Hülkenberg,27,HUL,Force India,24,0
+Felipe Nasr,12,NAS,Sauber,16,0
+Pastor Maldonado,13,MAL,Lotus F1,12,0
+Fernando Alonso,14,ALO,McLaren,11,0
+Carlos Sainz,55,SAI,Toro Rosso,9,0
+Marcus Ericsson,9,ERI,Sauber,7,0
+Jenson Button,22,BUT,McLaren,6,0
+Roberto Merhi,98,MER,Manor Marussia,0,0
+Will Stevens,28,STE,Manor Marussia,0,0
+Kevin Magnussen,20,MAG,McLaren,0,0
+Lewis Hamilton,44,HAM,Mercedes,252,7
+Nico Rosberg,6,ROS,Mercedes,199,3
+Sebastian Vettel,5,VET,Ferrari,178,2
+Felipe Massa,19,MAS,Williams,97,0
+Kimi Räikkönen,7,RAI,Ferrari,92,0
+Valtteri Bottas,77,BOT,Williams,91,0
+Daniil Kvyat,26,KVY,Red Bull,58,0
+Daniel Ricciardo,3,RIC,Red Bull,55,0
+Romain Grosjean,8,GRO,Lotus F1,38,0
+Sergio Pérez,11,PER,Force India,33,0
+Nico Hülkenberg,27,HUL,Force India,30,0
+Max Verstappen,33,VER,Toro Rosso,26,0
+Felipe Nasr,12,NAS,Sauber,16,0
+Pastor Maldonado,13,MAL,Lotus F1,12,0
+Fernando Alonso,14,ALO,McLaren,11,0
+Carlos Sainz,55,SAI,Toro Rosso,9,0
+Marcus Ericsson,9,ERI,Sauber,9,0
+Jenson Button,22,BUT,McLaren,6,0
+Roberto Merhi,98,MER,Manor Marussia,0,0
+Will Stevens,28,STE,Manor Marussia,0,0
+Kevin Magnussen,20,MAG,McLaren,0,0
+Lewis Hamilton,44,HAM,Mercedes,252,7
+Nico Rosberg,6,ROS,Mercedes,211,3
+Sebastian Vettel,5,VET,Ferrari,203,3
+Kimi Räikkönen,7,RAI,Ferrari,107,0
+Valtteri Bottas,77,BOT,Williams,101,0
+Felipe Massa,19,MAS,Williams,97,0
+Daniel Ricciardo,3,RIC,Red Bull,73,0
+Daniil Kvyat,26,KVY,Red Bull,66,0
+Sergio Pérez,11,PER,Force India,39,0
+Romain Grosjean,8,GRO,Lotus F1,38,0
+Max Verstappen,33,VER,Toro Rosso,30,0
+Nico Hülkenberg,27,HUL,Force India,30,0
+Felipe Nasr,12,NAS,Sauber,17,0
+Pastor Maldonado,13,MAL,Lotus F1,12,0
+Fernando Alonso,14,ALO,McLaren,11,0
+Carlos Sainz,55,SAI,Toro Rosso,11,0
+Marcus Ericsson,9,ERI,Sauber,9,0
+Jenson Button,22,BUT,McLaren,6,0
+Roberto Merhi,98,MER,Manor Marussia,0,0
+Will Stevens,28,STE,Manor Marussia,0,0
+Alexander Rossi,53,RSS,Manor Marussia,0,0
+Kevin Magnussen,20,MAG,McLaren,0,0
+Lewis Hamilton,44,HAM,Mercedes,277,8
+Nico Rosberg,6,ROS,Mercedes,229,3
+Sebastian Vettel,5,VET,Ferrari,218,3
+Kimi Räikkönen,7,RAI,Ferrari,119,0
+Valtteri Bottas,77,BOT,Williams,111,0
+Felipe Massa,19,MAS,Williams,97,0
+Daniel Ricciardo,3,RIC,Red Bull,73,0
+Daniil Kvyat,26,KVY,Red Bull,66,0
+Romain Grosjean,8,GRO,Lotus F1,44,0
+Sergio Pérez,11,PER,Force India,39,0
+Nico Hülkenberg,27,HUL,Force India,38,0
+Max Verstappen,33,VER,Toro Rosso,32,0
+Felipe Nasr,12,NAS,Sauber,17,0
+Pastor Maldonado,13,MAL,Lotus F1,16,0
+Carlos Sainz,55,SAI,Toro Rosso,12,0
+Fernando Alonso,14,ALO,McLaren,11,0
+Marcus Ericsson,9,ERI,Sauber,9,0
+Jenson Button,22,BUT,McLaren,6,0
+Roberto Merhi,98,MER,Manor Marussia,0,0
+Will Stevens,28,STE,Manor Marussia,0,0
+Alexander Rossi,53,RSS,Manor Marussia,0,0
+Kevin Magnussen,20,MAG,McLaren,0,0
+Lewis Hamilton,44,HAM,Mercedes,302,9
+Sebastian Vettel,5,VET,Ferrari,236,3
+Nico Rosberg,6,ROS,Mercedes,229,3
+Kimi Räikkönen,7,RAI,Ferrari,123,0
+Valtteri Bottas,77,BOT,Williams,111,0
+Felipe Massa,19,MAS,Williams,109,0
+Daniil Kvyat,26,KVY,Red Bull,76,0
+Daniel Ricciardo,3,RIC,Red Bull,73,0
+Sergio Pérez,11,PER,Force India,54,0
+Romain Grosjean,8,GRO,Lotus F1,44,0
+Nico Hülkenberg,27,HUL,Force India,38,0
+Max Verstappen,33,VER,Toro Rosso,33,0
+Felipe Nasr,12,NAS,Sauber,25,0
+Pastor Maldonado,13,MAL,Lotus F1,22,0
+Carlos Sainz,55,SAI,Toro Rosso,12,0
+Fernando Alonso,14,ALO,McLaren,11,0
+Marcus Ericsson,9,ERI,Sauber,9,0
+Jenson Button,22,BUT,McLaren,8,0
+Roberto Merhi,98,MER,Manor Marussia,0,0
+Will Stevens,28,STE,Manor Marussia,0,0
+Alexander Rossi,53,RSS,Manor Marussia,0,0
+Kevin Magnussen,20,MAG,McLaren,0,0
+Lewis Hamilton,44,HAM,Mercedes,327,10
+Sebastian Vettel,5,VET,Ferrari,251,3
+Nico Rosberg,6,ROS,Mercedes,247,3
+Kimi Räikkönen,7,RAI,Ferrari,123,0
+Valtteri Bottas,77,BOT,Williams,111,0
+Felipe Massa,19,MAS,Williams,109,0
+Daniil Kvyat,26,KVY,Red Bull,76,0
+Daniel Ricciardo,3,RIC,Red Bull,74,0
+Sergio Pérez,11,PER,Force India,64,0
+Max Verstappen,33,VER,Toro Rosso,45,0
+Romain Grosjean,8,GRO,Lotus F1,44,0
+Nico Hülkenberg,27,HUL,Force India,38,0
+Felipe Nasr,12,NAS,Sauber,27,0
+Pastor Maldonado,13,MAL,Lotus F1,26,0
+Carlos Sainz,55,SAI,Toro Rosso,18,0
+Jenson Button,22,BUT,McLaren,16,0
+Fernando Alonso,14,ALO,McLaren,11,0
+Marcus Ericsson,9,ERI,Sauber,9,0
+Roberto Merhi,98,MER,Manor Marussia,0,0
+Alexander Rossi,53,RSS,Manor Marussia,0,0
+Will Stevens,28,STE,Manor Marussia,0,0
+Kevin Magnussen,20,MAG,McLaren,0,0
+Lewis Hamilton,44,HAM,Mercedes,345,10
+Nico Rosberg,6,ROS,Mercedes,272,4
+Sebastian Vettel,5,VET,Ferrari,251,3
+Valtteri Bottas,77,BOT,Williams,126,0
+Kimi Räikkönen,7,RAI,Ferrari,123,0
+Felipe Massa,19,MAS,Williams,117,0
+Daniil Kvyat,26,KVY,Red Bull,88,0
+Daniel Ricciardo,3,RIC,Red Bull,84,0
+Sergio Pérez,11,PER,Force India,68,0
+Max Verstappen,33,VER,Toro Rosso,47,0
+Romain Grosjean,8,GRO,Lotus F1,45,0
+Nico Hülkenberg,27,HUL,Force India,44,0
+Felipe Nasr,12,NAS,Sauber,27,0
+Pastor Maldonado,13,MAL,Lotus F1,26,0
+Carlos Sainz,55,SAI,Toro Rosso,18,0
+Jenson Button,22,BUT,McLaren,16,0
+Fernando Alonso,14,ALO,McLaren,11,0
+Marcus Ericsson,9,ERI,Sauber,9,0
+Roberto Merhi,98,MER,Manor Marussia,0,0
+Alexander Rossi,53,RSS,Manor Marussia,0,0
+Will Stevens,28,STE,Manor Marussia,0,0
+Kevin Magnussen,20,MAG,McLaren,0,0
+Lewis Hamilton,44,HAM,Mercedes,363,10
+Nico Rosberg,6,ROS,Mercedes,297,5
+Sebastian Vettel,5,VET,Ferrari,266,3
+Valtteri Bottas,77,BOT,Williams,136,0
+Kimi Räikkönen,7,RAI,Ferrari,135,0
+Felipe Massa,19,MAS,Williams,117,0
+Daniil Kvyat,26,KVY,Red Bull,94,0
+Daniel Ricciardo,3,RIC,Red Bull,84,0
+Sergio Pérez,11,PER,Force India,68,0
+Nico Hülkenberg,27,HUL,Force India,52,0
+Romain Grosjean,8,GRO,Lotus F1,49,0
+Max Verstappen,33,VER,Toro Rosso,49,0
+Felipe Nasr,12,NAS,Sauber,27,0
+Pastor Maldonado,13,MAL,Lotus F1,27,0
+Carlos Sainz,55,SAI,Toro Rosso,18,0
+Jenson Button,22,BUT,McLaren,16,0
+Fernando Alonso,14,ALO,McLaren,11,0
+Marcus Ericsson,9,ERI,Sauber,9,0
+Roberto Merhi,98,MER,Manor Marussia,0,0
+Alexander Rossi,53,RSS,Manor Marussia,0,0
+Will Stevens,28,STE,Manor Marussia,0,0
+Kevin Magnussen,20,MAG,McLaren,0,0
+Lewis Hamilton,44,HAM,Mercedes,381,10
+Nico Rosberg,6,ROS,Mercedes,322,6
+Sebastian Vettel,5,VET,Ferrari,278,3
+Kimi Räikkönen,7,RAI,Ferrari,150,0
+Valtteri Bottas,77,BOT,Williams,136,0
+Felipe Massa,19,MAS,Williams,121,0
+Daniil Kvyat,26,KVY,Red Bull,95,0
+Daniel Ricciardo,3,RIC,Red Bull,92,0
+Sergio Pérez,11,PER,Force India,78,0
+Nico Hülkenberg,27,HUL,Force India,58,0
+Romain Grosjean,8,GRO,Lotus F1,51,0
+Max Verstappen,33,VER,Toro Rosso,49,0
+Felipe Nasr,12,NAS,Sauber,27,0
+Pastor Maldonado,13,MAL,Lotus F1,27,0
+Carlos Sainz,55,SAI,Toro Rosso,18,0
+Jenson Button,22,BUT,McLaren,16,0
+Fernando Alonso,14,ALO,McLaren,11,0
+Marcus Ericsson,9,ERI,Sauber,9,0
+Roberto Merhi,98,MER,Manor Marussia,0,0
+Alexander Rossi,53,RSS,Manor Marussia,0,0
+Will Stevens,28,STE,Manor Marussia,0,0
+Kevin Magnussen,20,MAG,McLaren,0,0
+Nico Rosberg,6,ROS,Mercedes,25,1
+Lewis Hamilton,44,HAM,Mercedes,18,0
+Sebastian Vettel,5,VET,Ferrari,15,0
+Daniel Ricciardo,3,RIC,Red Bull,12,0
+Felipe Massa,19,MAS,Williams,10,0
+Romain Grosjean,8,GRO,Haas F1 Team,8,0
+Nico Hülkenberg,27,HUL,Force India,6,0
+Valtteri Bottas,77,BOT,Williams,4,0
+Carlos Sainz,55,SAI,Toro Rosso,2,0
+Max Verstappen,33,VER,Toro Rosso,1,0
+Jolyon Palmer,30,PAL,Renault,0,0
+Kevin Magnussen,20,MAG,Renault,0,0
+Sergio Pérez,11,PER,Force India,0,0
+Jenson Button,22,BUT,McLaren,0,0
+Felipe Nasr,12,NAS,Sauber,0,0
+Pascal Wehrlein,94,WEH,Manor Marussia,0,0
+Marcus Ericsson,9,ERI,Sauber,0,0
+Kimi Räikkönen,7,RAI,Ferrari,0,0
+Rio Haryanto,88,HAR,Manor Marussia,0,0
+Esteban Gutiérrez,21,GUT,Haas F1 Team,0,0
+Fernando Alonso,14,ALO,McLaren,0,0
+Daniil Kvyat,26,KVY,Red Bull,0,0
+Nico Rosberg,6,ROS,Mercedes,50,2
+Lewis Hamilton,44,HAM,Mercedes,33,0
+Daniel Ricciardo,3,RIC,Red Bull,24,0
+Kimi Räikkönen,7,RAI,Ferrari,18,0
+Romain Grosjean,8,GRO,Haas F1 Team,18,0
+Sebastian Vettel,5,VET,Ferrari,15,0
+Felipe Massa,19,MAS,Williams,14,0
+Max Verstappen,33,VER,Toro Rosso,9,0
+Nico Hülkenberg,27,HUL,Force India,6,0
+Daniil Kvyat,26,KVY,Red Bull,6,0
+Valtteri Bottas,77,BOT,Williams,6,0
+Carlos Sainz,55,SAI,Toro Rosso,2,0
+Stoffel Vandoorne,2,VAN,McLaren,1,0
+Kevin Magnussen,20,MAG,Renault,0,0
+Jolyon Palmer,30,PAL,Renault,0,0
+Marcus Ericsson,9,ERI,Sauber,0,0
+Sergio Pérez,11,PER,Force India,0,0
+Pascal Wehrlein,94,WEH,Manor Marussia,0,0
+Felipe Nasr,12,NAS,Sauber,0,0
+Jenson Button,22,BUT,McLaren,0,0
+Rio Haryanto,88,HAR,Manor Marussia,0,0
+Esteban Gutiérrez,21,GUT,Haas F1 Team,0,0
+Fernando Alonso,14,ALO,McLaren,0,0
+Nico Rosberg,6,ROS,Mercedes,75,3
+Lewis Hamilton,44,HAM,Mercedes,39,0
+Daniel Ricciardo,3,RIC,Red Bull,36,0
+Sebastian Vettel,5,VET,Ferrari,33,0
+Kimi Räikkönen,7,RAI,Ferrari,28,0
+Felipe Massa,19,MAS,Williams,22,0
+Daniil Kvyat,26,KVY,Red Bull,21,0
+Romain Grosjean,8,GRO,Haas F1 Team,18,0
+Max Verstappen,33,VER,Toro Rosso,13,0
+Valtteri Bottas,77,BOT,Williams,7,0
+Nico Hülkenberg,27,HUL,Force India,6,0
+Carlos Sainz,55,SAI,Toro Rosso,4,0
+Stoffel Vandoorne,2,VAN,McLaren,1,0
+Kevin Magnussen,20,MAG,Renault,0,0
+Sergio Pérez,11,PER,Force India,0,0
+Jolyon Palmer,30,PAL,Renault,0,0
+Marcus Ericsson,9,ERI,Sauber,0,0
+Fernando Alonso,14,ALO,McLaren,0,0
+Jenson Button,22,BUT,McLaren,0,0
+Pascal Wehrlein,94,WEH,Manor Marussia,0,0
+Felipe Nasr,12,NAS,Sauber,0,0
+Esteban Gutiérrez,21,GUT,Haas F1 Team,0,0
+Rio Haryanto,88,HAR,Manor Marussia,0,0
+Nico Rosberg,6,ROS,Mercedes,100,4
+Lewis Hamilton,44,HAM,Mercedes,57,0
+Kimi Räikkönen,7,RAI,Ferrari,43,0
+Daniel Ricciardo,3,RIC,Red Bull,36,0
+Sebastian Vettel,5,VET,Ferrari,33,0
+Felipe Massa,19,MAS,Williams,32,0
+Romain Grosjean,8,GRO,Haas F1 Team,22,0
+Daniil Kvyat,26,KVY,Red Bull,21,0
+Valtteri Bottas,77,BOT,Williams,19,0
+Max Verstappen,33,VER,Toro Rosso,13,0
+Fernando Alonso,14,ALO,McLaren,8,0
+Kevin Magnussen,20,MAG,Renault,6,0
+Nico Hülkenberg,27,HUL,Force India,6,0
+Carlos Sainz,55,SAI,Toro Rosso,4,0
+Sergio Pérez,11,PER,Force India,2,0
+Jenson Button,22,BUT,McLaren,1,0
+Stoffel Vandoorne,2,VAN,McLaren,1,0
+Jolyon Palmer,30,PAL,Renault,0,0
+Marcus Ericsson,9,ERI,Sauber,0,0
+Pascal Wehrlein,94,WEH,Manor Marussia,0,0
+Felipe Nasr,12,NAS,Sauber,0,0
+Esteban Gutiérrez,21,GUT,Haas F1 Team,0,0
+Rio Haryanto,88,HAR,Manor Marussia,0,0
+Nico Rosberg,6,ROS,Mercedes,100,4
+Kimi Räikkönen,7,RAI,Ferrari,61,0
+Lewis Hamilton,44,HAM,Mercedes,57,0
+Sebastian Vettel,5,VET,Ferrari,48,0
+Daniel Ricciardo,3,RIC,Red Bull,48,0
+Max Verstappen,33,VER,Toro Rosso,38,1
+Felipe Massa,19,MAS,Williams,36,0
+Valtteri Bottas,77,BOT,Williams,29,0
+Daniil Kvyat,26,KVY,Red Bull,22,0
+Romain Grosjean,8,GRO,Haas F1 Team,22,0
+Carlos Sainz,55,SAI,Toro Rosso,12,0
+Fernando Alonso,14,ALO,McLaren,8,0
+Sergio Pérez,11,PER,Force India,8,0
+Kevin Magnussen,20,MAG,Renault,6,0
+Nico Hülkenberg,27,HUL,Force India,6,0
+Jenson Button,22,BUT,McLaren,3,0
+Stoffel Vandoorne,2,VAN,McLaren,1,0
+Jolyon Palmer,30,PAL,Renault,0,0
+Esteban Gutiérrez,21,GUT,Haas F1 Team,0,0
+Marcus Ericsson,9,ERI,Sauber,0,0
+Pascal Wehrlein,94,WEH,Manor Marussia,0,0
+Felipe Nasr,12,NAS,Sauber,0,0
+Rio Haryanto,88,HAR,Manor Marussia,0,0
+Nico Rosberg,6,ROS,Mercedes,106,4
+Lewis Hamilton,44,HAM,Mercedes,82,1
+Daniel Ricciardo,3,RIC,Red Bull,66,0
+Kimi Räikkönen,7,RAI,Ferrari,61,0
+Sebastian Vettel,5,VET,Ferrari,60,0
+Max Verstappen,33,VER,Toro Rosso,38,1
+Felipe Massa,19,MAS,Williams,37,0
+Valtteri Bottas,77,BOT,Williams,29,0
+Sergio Pérez,11,PER,Force India,23,0
+Daniil Kvyat,26,KVY,Red Bull,22,0
+Romain Grosjean,8,GRO,Haas F1 Team,22,0
+Fernando Alonso,14,ALO,McLaren,18,0
+Carlos Sainz,55,SAI,Toro Rosso,16,0
+Nico Hülkenberg,27,HUL,Force India,14,0
+Kevin Magnussen,20,MAG,Renault,6,0
+Jenson Button,22,BUT,McLaren,5,0
+Stoffel Vandoorne,2,VAN,McLaren,1,0
+Esteban Gutiérrez,21,GUT,Haas F1 Team,0,0
+Jolyon Palmer,30,PAL,Renault,0,0
+Marcus Ericsson,9,ERI,Sauber,0,0
+Pascal Wehrlein,94,WEH,Manor Marussia,0,0
+Felipe Nasr,12,NAS,Sauber,0,0
+Rio Haryanto,88,HAR,Manor Marussia,0,0
+Nico Rosberg,6,ROS,Mercedes,116,4
+Lewis Hamilton,44,HAM,Mercedes,107,2
+Sebastian Vettel,5,VET,Ferrari,78,0
+Daniel Ricciardo,3,RIC,Red Bull,72,0
+Kimi Räikkönen,7,RAI,Ferrari,69,0
+Max Verstappen,33,VER,Toro Rosso,50,1
+Valtteri Bottas,77,BOT,Williams,44,0
+Felipe Massa,19,MAS,Williams,37,0
+Sergio Pérez,11,PER,Force India,24,0
+Daniil Kvyat,26,KVY,Red Bull,22,0
+Romain Grosjean,8,GRO,Haas F1 Team,22,0
+Fernando Alonso,14,ALO,McLaren,18,0
+Nico Hülkenberg,27,HUL,Force India,18,0
+Carlos Sainz,55,SAI,Toro Rosso,18,0
+Kevin Magnussen,20,MAG,Renault,6,0
+Jenson Button,22,BUT,McLaren,5,0
+Stoffel Vandoorne,2,VAN,McLaren,1,0
+Esteban Gutiérrez,21,GUT,Haas F1 Team,0,0
+Jolyon Palmer,30,PAL,Renault,0,0
+Marcus Ericsson,9,ERI,Sauber,0,0
+Pascal Wehrlein,94,WEH,Manor Marussia,0,0
+Felipe Nasr,12,NAS,Sauber,0,0
+Rio Haryanto,88,HAR,Manor Marussia,0,0
+Nico Rosberg,6,ROS,Mercedes,141,5
+Lewis Hamilton,44,HAM,Mercedes,117,2
+Sebastian Vettel,5,VET,Ferrari,96,0
+Kimi Räikkönen,7,RAI,Ferrari,81,0
+Daniel Ricciardo,3,RIC,Red Bull,78,0
+Max Verstappen,33,VER,Toro Rosso,54,1
+Valtteri Bottas,77,BOT,Williams,52,0
+Sergio Pérez,11,PER,Force India,39,0
+Felipe Massa,19,MAS,Williams,38,0
+Daniil Kvyat,26,KVY,Red Bull,22,0
+Romain Grosjean,8,GRO,Haas F1 Team,22,0
+Nico Hülkenberg,27,HUL,Force India,20,0
+Fernando Alonso,14,ALO,McLaren,18,0
+Carlos Sainz,55,SAI,Toro Rosso,18,0
+Kevin Magnussen,20,MAG,Renault,6,0
+Jenson Button,22,BUT,McLaren,5,0
+Stoffel Vandoorne,2,VAN,McLaren,1,0
+Esteban Gutiérrez,21,GUT,Haas F1 Team,0,0
+Jolyon Palmer,30,PAL,Renault,0,0
+Marcus Ericsson,9,ERI,Sauber,0,0
+Felipe Nasr,12,NAS,Sauber,0,0
+Pascal Wehrlein,94,WEH,Manor Marussia,0,0
+Rio Haryanto,88,HAR,Manor Marussia,0,0
+Nico Rosberg,6,ROS,Mercedes,153,5
+Lewis Hamilton,44,HAM,Mercedes,142,3
+Sebastian Vettel,5,VET,Ferrari,96,0
+Kimi Räikkönen,7,RAI,Ferrari,96,0
+Daniel Ricciardo,3,RIC,Red Bull,88,0
+Max Verstappen,33,VER,Toro Rosso,72,1
+Valtteri Bottas,77,BOT,Williams,54,0
+Sergio Pérez,11,PER,Force India,39,0
+Felipe Massa,19,MAS,Williams,38,0
+Romain Grosjean,8,GRO,Haas F1 Team,28,0
+Daniil Kvyat,26,KVY,Red Bull,22,0
+Carlos Sainz,55,SAI,Toro Rosso,22,0
+Nico Hülkenberg,27,HUL,Force India,20,0
+Fernando Alonso,14,ALO,McLaren,18,0
+Jenson Button,22,BUT,McLaren,13,0
+Kevin Magnussen,20,MAG,Renault,6,0
+Pascal Wehrlein,94,WEH,Manor Marussia,1,0
+Stoffel Vandoorne,2,VAN,McLaren,1,0
+Esteban Gutiérrez,21,GUT,Haas F1 Team,0,0
+Jolyon Palmer,30,PAL,Renault,0,0
+Marcus Ericsson,9,ERI,Sauber,0,0
+Felipe Nasr,12,NAS,Sauber,0,0
+Rio Haryanto,88,HAR,Manor Marussia,0,0
+Nico Rosberg,6,ROS,Mercedes,168,5
+Lewis Hamilton,44,HAM,Mercedes,167,4
+Kimi Räikkönen,7,RAI,Ferrari,106,0
+Daniel Ricciardo,3,RIC,Red Bull,100,0
+Sebastian Vettel,5,VET,Ferrari,98,0
+Max Verstappen,33,VER,Toro Rosso,90,1
+Valtteri Bottas,77,BOT,Williams,54,0
+Sergio Pérez,11,PER,Force India,47,0
+Felipe Massa,19,MAS,Williams,38,0
+Romain Grosjean,8,GRO,Haas F1 Team,28,0
+Nico Hülkenberg,27,HUL,Force India,26,0
+Carlos Sainz,55,SAI,Toro Rosso,26,0
+Daniil Kvyat,26,KVY,Red Bull,23,0
+Fernando Alonso,14,ALO,McLaren,18,0
+Jenson Button,22,BUT,McLaren,13,0
+Kevin Magnussen,20,MAG,Renault,6,0
+Pascal Wehrlein,94,WEH,Manor Marussia,1,0
+Stoffel Vandoorne,2,VAN,McLaren,1,0
+Esteban Gutiérrez,21,GUT,Haas F1 Team,0,0
+Jolyon Palmer,30,PAL,Renault,0,0
+Marcus Ericsson,9,ERI,Sauber,0,0
+Felipe Nasr,12,NAS,Sauber,0,0
+Rio Haryanto,88,HAR,Manor Marussia,0,0
+Lewis Hamilton,44,HAM,Mercedes,192,5
+Nico Rosberg,6,ROS,Mercedes,186,5
+Daniel Ricciardo,3,RIC,Red Bull,115,0
+Kimi Räikkönen,7,RAI,Ferrari,114,0
+Sebastian Vettel,5,VET,Ferrari,110,0
+Max Verstappen,33,VER,Toro Rosso,100,1
+Valtteri Bottas,77,BOT,Williams,56,0
+Sergio Pérez,11,PER,Force India,47,0
+Felipe Massa,19,MAS,Williams,38,0
+Carlos Sainz,55,SAI,Toro Rosso,30,0
+Romain Grosjean,8,GRO,Haas F1 Team,28,0
+Nico Hülkenberg,27,HUL,Force India,27,0
+Fernando Alonso,14,ALO,McLaren,24,0
+Daniil Kvyat,26,KVY,Red Bull,23,0
+Jenson Button,22,BUT,McLaren,13,0
+Kevin Magnussen,20,MAG,Renault,6,0
+Pascal Wehrlein,94,WEH,Manor Marussia,1,0
+Stoffel Vandoorne,2,VAN,McLaren,1,0
+Esteban Gutiérrez,21,GUT,Haas F1 Team,0,0
+Jolyon Palmer,30,PAL,Renault,0,0
+Marcus Ericsson,9,ERI,Sauber,0,0
+Felipe Nasr,12,NAS,Sauber,0,0
+Rio Haryanto,88,HAR,Manor Marussia,0,0
+Lewis Hamilton,44,HAM,Mercedes,217,6
+Nico Rosberg,6,ROS,Mercedes,198,5
+Daniel Ricciardo,3,RIC,Red Bull,133,0
+Kimi Räikkönen,7,RAI,Ferrari,122,0
+Sebastian Vettel,5,VET,Ferrari,120,0
+Max Verstappen,33,VER,Toro Rosso,115,1
+Valtteri Bottas,77,BOT,Williams,58,0
+Sergio Pérez,11,PER,Force India,48,0
+Felipe Massa,19,MAS,Williams,38,0
+Nico Hülkenberg,27,HUL,Force India,33,0
+Carlos Sainz,55,SAI,Toro Rosso,30,0
+Romain Grosjean,8,GRO,Haas F1 Team,28,0
+Fernando Alonso,14,ALO,McLaren,24,0
+Daniil Kvyat,26,KVY,Red Bull,23,0
+Jenson Button,22,BUT,McLaren,17,0
+Kevin Magnussen,20,MAG,Renault,6,0
+Pascal Wehrlein,94,WEH,Manor Marussia,1,0
+Stoffel Vandoorne,2,VAN,McLaren,1,0
+Esteban Gutiérrez,21,GUT,Haas F1 Team,0,0
+Jolyon Palmer,30,PAL,Renault,0,0
+Marcus Ericsson,9,ERI,Sauber,0,0
+Felipe Nasr,12,NAS,Sauber,0,0
+Rio Haryanto,88,HAR,Manor Marussia,0,0
+Lewis Hamilton,44,HAM,Mercedes,232,6
+Nico Rosberg,6,ROS,Mercedes,223,6
+Daniel Ricciardo,3,RIC,Red Bull,151,0
+Sebastian Vettel,5,VET,Ferrari,128,0
+Kimi Räikkönen,7,RAI,Ferrari,124,0
+Max Verstappen,33,VER,Toro Rosso,115,1
+Valtteri Bottas,77,BOT,Williams,62,0
+Sergio Pérez,11,PER,Force India,58,0
+Nico Hülkenberg,27,HUL,Force India,45,0
+Felipe Massa,19,MAS,Williams,39,0
+Fernando Alonso,14,ALO,McLaren,30,0
+Carlos Sainz,55,SAI,Toro Rosso,30,0
+Romain Grosjean,8,GRO,Haas F1 Team,28,0
+Daniil Kvyat,26,KVY,Red Bull,23,0
+Jenson Button,22,BUT,McLaren,17,0
+Kevin Magnussen,20,MAG,Renault,6,0
+Pascal Wehrlein,94,WEH,Manor Marussia,1,0
+Stoffel Vandoorne,2,VAN,McLaren,1,0
+Esteban Gutiérrez,21,GUT,Haas F1 Team,0,0
+Jolyon Palmer,30,PAL,Renault,0,0
+Marcus Ericsson,9,ERI,Sauber,0,0
+Felipe Nasr,12,NAS,Sauber,0,0
+Rio Haryanto,88,HAR,Manor Marussia,0,0
+Esteban Ocon,31,OCO,Manor Marussia,0,0
+Lewis Hamilton,44,HAM,Mercedes,250,6
+Nico Rosberg,6,ROS,Mercedes,248,7
+Daniel Ricciardo,3,RIC,Red Bull,161,0
+Sebastian Vettel,5,VET,Ferrari,143,0
+Kimi Räikkönen,7,RAI,Ferrari,136,0
+Max Verstappen,33,VER,Toro Rosso,121,1
+Valtteri Bottas,77,BOT,Williams,70,0
+Sergio Pérez,11,PER,Force India,62,0
+Nico Hülkenberg,27,HUL,Force India,46,0
+Felipe Massa,19,MAS,Williams,41,0
+Fernando Alonso,14,ALO,McLaren,30,0
+Carlos Sainz,55,SAI,Toro Rosso,30,0
+Romain Grosjean,8,GRO,Haas F1 Team,28,0
+Daniil Kvyat,26,KVY,Red Bull,23,0
+Jenson Button,22,BUT,McLaren,17,0
+Kevin Magnussen,20,MAG,Renault,6,0
+Pascal Wehrlein,94,WEH,Manor Marussia,1,0
+Stoffel Vandoorne,2,VAN,McLaren,1,0
+Esteban Gutiérrez,21,GUT,Haas F1 Team,0,0
+Jolyon Palmer,30,PAL,Renault,0,0
+Marcus Ericsson,9,ERI,Sauber,0,0
+Felipe Nasr,12,NAS,Sauber,0,0
+Rio Haryanto,88,HAR,Manor Marussia,0,0
+Esteban Ocon,31,OCO,Manor Marussia,0,0
+Nico Rosberg,6,ROS,Mercedes,273,8
+Lewis Hamilton,44,HAM,Mercedes,265,6
+Daniel Ricciardo,3,RIC,Red Bull,179,0
+Sebastian Vettel,5,VET,Ferrari,153,0
+Kimi Räikkönen,7,RAI,Ferrari,148,0
+Max Verstappen,33,VER,Toro Rosso,129,1
+Valtteri Bottas,77,BOT,Williams,70,0
+Sergio Pérez,11,PER,Force India,66,0
+Nico Hülkenberg,27,HUL,Force India,46,0
+Felipe Massa,19,MAS,Williams,41,0
+Fernando Alonso,14,ALO,McLaren,36,0
+Carlos Sainz,55,SAI,Toro Rosso,30,0
+Romain Grosjean,8,GRO,Haas F1 Team,28,0
+Daniil Kvyat,26,KVY,Red Bull,25,0
+Jenson Button,22,BUT,McLaren,17,0
+Kevin Magnussen,20,MAG,Renault,7,0
+Pascal Wehrlein,94,WEH,Manor Marussia,1,0
+Stoffel Vandoorne,2,VAN,McLaren,1,0
+Esteban Gutiérrez,21,GUT,Haas F1 Team,0,0
+Jolyon Palmer,30,PAL,Renault,0,0
+Marcus Ericsson,9,ERI,Sauber,0,0
+Felipe Nasr,12,NAS,Sauber,0,0
+Rio Haryanto,88,HAR,Manor Marussia,0,0
+Esteban Ocon,31,OCO,Manor Marussia,0,0
+Nico Rosberg,6,ROS,Mercedes,288,8
+Lewis Hamilton,44,HAM,Mercedes,265,6
+Daniel Ricciardo,3,RIC,Red Bull,204,1
+Kimi Räikkönen,7,RAI,Ferrari,160,0
+Sebastian Vettel,5,VET,Ferrari,153,0
+Max Verstappen,33,VER,Toro Rosso,147,1
+Valtteri Bottas,77,BOT,Williams,80,0
+Sergio Pérez,11,PER,Force India,74,0
+Nico Hülkenberg,27,HUL,Force India,50,0
+Fernando Alonso,14,ALO,McLaren,42,0
+Felipe Massa,19,MAS,Williams,41,0
+Carlos Sainz,55,SAI,Toro Rosso,30,0
+Romain Grosjean,8,GRO,Haas F1 Team,28,0
+Daniil Kvyat,26,KVY,Red Bull,25,0
+Jenson Button,22,BUT,McLaren,19,0
+Kevin Magnussen,20,MAG,Renault,7,0
+Jolyon Palmer,30,PAL,Renault,1,0
+Pascal Wehrlein,94,WEH,Manor Marussia,1,0
+Stoffel Vandoorne,2,VAN,McLaren,1,0
+Esteban Gutiérrez,21,GUT,Haas F1 Team,0,0
+Marcus Ericsson,9,ERI,Sauber,0,0
+Felipe Nasr,12,NAS,Sauber,0,0
+Rio Haryanto,88,HAR,Manor Marussia,0,0
+Esteban Ocon,31,OCO,Manor Marussia,0,0
+Nico Rosberg,6,ROS,Mercedes,313,9
+Lewis Hamilton,44,HAM,Mercedes,280,6
+Daniel Ricciardo,3,RIC,Red Bull,212,1
+Kimi Räikkönen,7,RAI,Ferrari,170,0
+Max Verstappen,33,VER,Toro Rosso,165,1
+Sebastian Vettel,5,VET,Ferrari,165,0
+Valtteri Bottas,77,BOT,Williams,81,0
+Sergio Pérez,11,PER,Force India,80,0
+Nico Hülkenberg,27,HUL,Force India,54,0
+Felipe Massa,19,MAS,Williams,43,0
+Fernando Alonso,14,ALO,McLaren,42,0
+Carlos Sainz,55,SAI,Toro Rosso,30,0
+Romain Grosjean,8,GRO,Haas F1 Team,28,0
+Daniil Kvyat,26,KVY,Red Bull,25,0
+Jenson Button,22,BUT,McLaren,19,0
+Kevin Magnussen,20,MAG,Renault,7,0
+Jolyon Palmer,30,PAL,Renault,1,0
+Pascal Wehrlein,94,WEH,Manor Marussia,1,0
+Stoffel Vandoorne,2,VAN,McLaren,1,0
+Esteban Gutiérrez,21,GUT,Haas F1 Team,0,0
+Marcus Ericsson,9,ERI,Sauber,0,0
+Felipe Nasr,12,NAS,Sauber,0,0
+Rio Haryanto,88,HAR,Manor Marussia,0,0
+Esteban Ocon,31,OCO,Manor Marussia,0,0
+Nico Rosberg,6,ROS,Mercedes,331,9
+Lewis Hamilton,44,HAM,Mercedes,305,7
+Daniel Ricciardo,3,RIC,Red Bull,227,1
+Sebastian Vettel,5,VET,Ferrari,177,0
+Kimi Räikkönen,7,RAI,Ferrari,170,0
+Max Verstappen,33,VER,Toro Rosso,165,1
+Sergio Pérez,11,PER,Force India,84,0
+Valtteri Bottas,77,BOT,Williams,81,0
+Nico Hülkenberg,27,HUL,Force India,54,0
+Fernando Alonso,14,ALO,McLaren,52,0
+Felipe Massa,19,MAS,Williams,49,0
+Carlos Sainz,55,SAI,Toro Rosso,38,0
+Romain Grosjean,8,GRO,Haas F1 Team,29,0
+Daniil Kvyat,26,KVY,Red Bull,25,0
+Jenson Button,22,BUT,McLaren,21,0
+Kevin Magnussen,20,MAG,Renault,7,0
+Jolyon Palmer,30,PAL,Renault,1,0
+Pascal Wehrlein,94,WEH,Manor Marussia,1,0
+Stoffel Vandoorne,2,VAN,McLaren,1,0
+Esteban Gutiérrez,21,GUT,Haas F1 Team,0,0
+Marcus Ericsson,9,ERI,Sauber,0,0
+Felipe Nasr,12,NAS,Sauber,0,0
+Rio Haryanto,88,HAR,Manor Marussia,0,0
+Esteban Ocon,31,OCO,Manor Marussia,0,0
+Nico Rosberg,6,ROS,Mercedes,349,9
+Lewis Hamilton,44,HAM,Mercedes,330,8
+Daniel Ricciardo,3,RIC,Red Bull,242,1
+Sebastian Vettel,5,VET,Ferrari,187,0
+Kimi Räikkönen,7,RAI,Ferrari,178,0
+Max Verstappen,33,VER,Toro Rosso,177,1
+Sergio Pérez,11,PER,Force India,85,0
+Valtteri Bottas,77,BOT,Williams,85,0
+Nico Hülkenberg,27,HUL,Force India,60,0
+Fernando Alonso,14,ALO,McLaren,52,0
+Felipe Massa,19,MAS,Williams,51,0
+Carlos Sainz,55,SAI,Toro Rosso,38,0
+Romain Grosjean,8,GRO,Haas F1 Team,29,0
+Daniil Kvyat,26,KVY,Red Bull,25,0
+Jenson Button,22,BUT,McLaren,21,0
+Kevin Magnussen,20,MAG,Renault,7,0
+Jolyon Palmer,30,PAL,Renault,1,0
+Pascal Wehrlein,94,WEH,Manor Marussia,1,0
+Stoffel Vandoorne,2,VAN,McLaren,1,0
+Esteban Gutiérrez,21,GUT,Haas F1 Team,0,0
+Marcus Ericsson,9,ERI,Sauber,0,0
+Felipe Nasr,12,NAS,Sauber,0,0
+Rio Haryanto,88,HAR,Manor Marussia,0,0
+Esteban Ocon,31,OCO,Manor Marussia,0,0
+Nico Rosberg,6,ROS,Mercedes,367,9
+Lewis Hamilton,44,HAM,Mercedes,355,9
+Daniel Ricciardo,3,RIC,Red Bull,246,1
+Sebastian Vettel,5,VET,Ferrari,197,0
+Max Verstappen,33,VER,Toro Rosso,192,1
+Kimi Räikkönen,7,RAI,Ferrari,178,0
+Sergio Pérez,11,PER,Force India,97,0
+Valtteri Bottas,77,BOT,Williams,85,0
+Nico Hülkenberg,27,HUL,Force India,66,0
+Fernando Alonso,14,ALO,McLaren,53,0
+Felipe Massa,19,MAS,Williams,51,0
+Carlos Sainz,55,SAI,Toro Rosso,46,0
+Romain Grosjean,8,GRO,Haas F1 Team,29,0
+Daniil Kvyat,26,KVY,Red Bull,25,0
+Jenson Button,22,BUT,McLaren,21,0
+Kevin Magnussen,20,MAG,Renault,7,0
+Felipe Nasr,12,NAS,Sauber,2,0
+Jolyon Palmer,30,PAL,Renault,1,0
+Pascal Wehrlein,94,WEH,Manor Marussia,1,0
+Stoffel Vandoorne,2,VAN,McLaren,1,0
+Esteban Gutiérrez,21,GUT,Haas F1 Team,0,0
+Marcus Ericsson,9,ERI,Sauber,0,0
+Esteban Ocon,31,OCO,Manor Marussia,0,0
+Rio Haryanto,88,HAR,Manor Marussia,0,0
+Nico Rosberg,6,ROS,Mercedes,385,9
+Lewis Hamilton,44,HAM,Mercedes,380,10
+Daniel Ricciardo,3,RIC,Red Bull,256,1
+Sebastian Vettel,5,VET,Ferrari,212,0
+Max Verstappen,33,VER,Toro Rosso,204,1
+Kimi Räikkönen,7,RAI,Ferrari,186,0
+Sergio Pérez,11,PER,Force India,101,0
+Valtteri Bottas,77,BOT,Williams,85,0
+Nico Hülkenberg,27,HUL,Force India,72,0
+Fernando Alonso,14,ALO,McLaren,54,0
+Felipe Massa,19,MAS,Williams,53,0
+Carlos Sainz,55,SAI,Toro Rosso,46,0
+Romain Grosjean,8,GRO,Haas F1 Team,29,0
+Daniil Kvyat,26,KVY,Red Bull,25,0
+Jenson Button,22,BUT,McLaren,21,0
+Kevin Magnussen,20,MAG,Renault,7,0
+Felipe Nasr,12,NAS,Sauber,2,0
+Jolyon Palmer,30,PAL,Renault,1,0
+Pascal Wehrlein,94,WEH,Manor Marussia,1,0
+Stoffel Vandoorne,2,VAN,McLaren,1,0
+Esteban Gutiérrez,21,GUT,Haas F1 Team,0,0
+Marcus Ericsson,9,ERI,Sauber,0,0
+Esteban Ocon,31,OCO,Manor Marussia,0,0
+Rio Haryanto,88,HAR,Manor Marussia,0,0
+Sebastian Vettel,5,VET,Ferrari,25,1
+Lewis Hamilton,44,HAM,Mercedes,18,0
+Valtteri Bottas,77,BOT,Mercedes,15,0
+Kimi Räikkönen,7,RAI,Ferrari,12,0
+Max Verstappen,33,VER,Red Bull,10,0
+Felipe Massa,19,MAS,Williams,8,0
+Sergio Pérez,11,PER,Force India,6,0
+Carlos Sainz,55,SAI,Toro Rosso,4,0
+Daniil Kvyat,26,KVY,Toro Rosso,2,0
+Esteban Ocon,31,OCO,Force India,1,0
+Nico Hülkenberg,27,HUL,Renault,0,0
+Antonio Giovinazzi,99,GIO,Sauber,0,0
+Stoffel Vandoorne,2,VAN,McLaren,0,0
+Fernando Alonso,14,ALO,McLaren,0,0
+Kevin Magnussen,20,MAG,Haas F1 Team,0,0
+Lance Stroll,18,STR,Williams,0,0
+Daniel Ricciardo,3,RIC,Red Bull,0,0
+Marcus Ericsson,9,ERI,Sauber,0,0
+Jolyon Palmer,30,PAL,Renault,0,0
+Romain Grosjean,8,GRO,Haas F1 Team,0,0
+Sebastian Vettel,5,VET,Ferrari,43,1
+Lewis Hamilton,44,HAM,Mercedes,43,1
+Max Verstappen,33,VER,Red Bull,25,0
+Valtteri Bottas,77,BOT,Mercedes,23,0
+Kimi Räikkönen,7,RAI,Ferrari,22,0
+Daniel Ricciardo,3,RIC,Red Bull,12,0
+Carlos Sainz,55,SAI,Toro Rosso,10,0
+Felipe Massa,19,MAS,Williams,8,0
+Sergio Pérez,11,PER,Force India,8,0
+Kevin Magnussen,20,MAG,Haas F1 Team,4,0
+Daniil Kvyat,26,KVY,Toro Rosso,2,0
+Esteban Ocon,31,OCO,Force India,2,0
+Nico Hülkenberg,27,HUL,Renault,0,0
+Romain Grosjean,8,GRO,Haas F1 Team,0,0
+Antonio Giovinazzi,99,GIO,Sauber,0,0
+Stoffel Vandoorne,2,VAN,McLaren,0,0
+Jolyon Palmer,30,PAL,Renault,0,0
+Marcus Ericsson,9,ERI,Sauber,0,0
+Fernando Alonso,14,ALO,McLaren,0,0
+Lance Stroll,18,STR,Williams,0,0
+Sebastian Vettel,5,VET,Ferrari,68,2
+Lewis Hamilton,44,HAM,Mercedes,61,1
+Valtteri Bottas,77,BOT,Mercedes,38,0
+Kimi Räikkönen,7,RAI,Ferrari,34,0
+Max Verstappen,33,VER,Red Bull,25,0
+Daniel Ricciardo,3,RIC,Red Bull,22,0
+Felipe Massa,19,MAS,Williams,16,0
+Sergio Pérez,11,PER,Force India,14,0
+Carlos Sainz,55,SAI,Toro Rosso,10,0
+Romain Grosjean,8,GRO,Haas F1 Team,4,0
+Kevin Magnussen,20,MAG,Haas F1 Team,4,0
+Esteban Ocon,31,OCO,Force India,3,0
+Nico Hülkenberg,27,HUL,Renault,2,0
+Daniil Kvyat,26,KVY,Toro Rosso,2,0
+Pascal Wehrlein,94,WEH,Sauber,0,0
+Antonio Giovinazzi,99,GIO,Sauber,0,0
+Jolyon Palmer,30,PAL,Renault,0,0
+Stoffel Vandoorne,2,VAN,McLaren,0,0
+Fernando Alonso,14,ALO,McLaren,0,0
+Marcus Ericsson,9,ERI,Sauber,0,0
+Lance Stroll,18,STR,Williams,0,0
+Sebastian Vettel,5,VET,Ferrari,86,2
+Lewis Hamilton,44,HAM,Mercedes,73,1
+Valtteri Bottas,77,BOT,Mercedes,63,1
+Kimi Räikkönen,7,RAI,Ferrari,49,0
+Max Verstappen,33,VER,Red Bull,35,0
+Daniel Ricciardo,3,RIC,Red Bull,22,0
+Sergio Pérez,11,PER,Force India,22,0
+Felipe Massa,19,MAS,Williams,18,0
+Carlos Sainz,55,SAI,Toro Rosso,11,0
+Esteban Ocon,31,OCO,Force India,9,0
+Nico Hülkenberg,27,HUL,Renault,6,0
+Romain Grosjean,8,GRO,Haas F1 Team,4,0
+Kevin Magnussen,20,MAG,Haas F1 Team,4,0
+Daniil Kvyat,26,KVY,Toro Rosso,2,0
+Pascal Wehrlein,94,WEH,Sauber,0,0
+Lance Stroll,18,STR,Williams,0,0
+Antonio Giovinazzi,99,GIO,Sauber,0,0
+Jolyon Palmer,30,PAL,Renault,0,0
+Stoffel Vandoorne,2,VAN,McLaren,0,0
+Fernando Alonso,14,ALO,McLaren,0,0
+Marcus Ericsson,9,ERI,Sauber,0,0
+Sebastian Vettel,5,VET,Ferrari,104,2
+Lewis Hamilton,44,HAM,Mercedes,98,2
+Valtteri Bottas,77,BOT,Mercedes,63,1
+Kimi Räikkönen,7,RAI,Ferrari,49,0
+Daniel Ricciardo,3,RIC,Red Bull,37,0
+Max Verstappen,33,VER,Red Bull,35,0
+Sergio Pérez,11,PER,Force India,34,0
+Esteban Ocon,31,OCO,Force India,19,0
+Felipe Massa,19,MAS,Williams,18,0
+Carlos Sainz,55,SAI,Toro Rosso,17,0
+Nico Hülkenberg,27,HUL,Renault,14,0
+Romain Grosjean,8,GRO,Haas F1 Team,5,0
+Pascal Wehrlein,94,WEH,Sauber,4,0
+Kevin Magnussen,20,MAG,Haas F1 Team,4,0
+Daniil Kvyat,26,KVY,Toro Rosso,4,0
+Marcus Ericsson,9,ERI,Sauber,0,0
+Lance Stroll,18,STR,Williams,0,0
+Fernando Alonso,14,ALO,McLaren,0,0
+Antonio Giovinazzi,99,GIO,Sauber,0,0
+Jolyon Palmer,30,PAL,Renault,0,0
+Stoffel Vandoorne,2,VAN,McLaren,0,0
+Sebastian Vettel,5,VET,Ferrari,129,3
+Lewis Hamilton,44,HAM,Mercedes,104,2
+Valtteri Bottas,77,BOT,Mercedes,75,1
+Kimi Räikkönen,7,RAI,Ferrari,67,0
+Daniel Ricciardo,3,RIC,Red Bull,52,0
+Max Verstappen,33,VER,Red Bull,45,0
+Sergio Pérez,11,PER,Force India,34,0
+Carlos Sainz,55,SAI,Toro Rosso,25,0
+Felipe Massa,19,MAS,Williams,20,0
+Esteban Ocon,31,OCO,Force India,19,0
+Nico Hülkenberg,27,HUL,Renault,14,0
+Romain Grosjean,8,GRO,Haas F1 Team,9,0
+Kevin Magnussen,20,MAG,Haas F1 Team,5,0
+Pascal Wehrlein,94,WEH,Sauber,4,0
+Daniil Kvyat,26,KVY,Toro Rosso,4,0
+Jolyon Palmer,30,PAL,Renault,0,0
+Marcus Ericsson,9,ERI,Sauber,0,0
+Lance Stroll,18,STR,Williams,0,0
+Fernando Alonso,14,ALO,McLaren,0,0
+Antonio Giovinazzi,99,GIO,Sauber,0,0
+Stoffel Vandoorne,2,VAN,McLaren,0,0
+Jenson Button,22,BUT,McLaren,0,0
+Sebastian Vettel,5,VET,Ferrari,141,3
+Lewis Hamilton,44,HAM,Mercedes,129,3
+Valtteri Bottas,77,BOT,Mercedes,93,1
+Kimi Räikkönen,7,RAI,Ferrari,73,0
+Daniel Ricciardo,3,RIC,Red Bull,67,0
+Max Verstappen,33,VER,Red Bull,45,0
+Sergio Pérez,11,PER,Force India,44,0
+Esteban Ocon,31,OCO,Force India,27,0
+Carlos Sainz,55,SAI,Toro Rosso,25,0
+Felipe Massa,19,MAS,Williams,20,0
+Nico Hülkenberg,27,HUL,Renault,18,0
+Romain Grosjean,8,GRO,Haas F1 Team,10,0
+Kevin Magnussen,20,MAG,Haas F1 Team,5,0
+Pascal Wehrlein,94,WEH,Sauber,4,0
+Daniil Kvyat,26,KVY,Toro Rosso,4,0
+Lance Stroll,18,STR,Williams,2,0
+Jolyon Palmer,30,PAL,Renault,0,0
+Marcus Ericsson,9,ERI,Sauber,0,0
+Fernando Alonso,14,ALO,McLaren,0,0
+Antonio Giovinazzi,99,GIO,Sauber,0,0
+Stoffel Vandoorne,2,VAN,McLaren,0,0
+Jenson Button,22,BUT,McLaren,0,0
+Sebastian Vettel,5,VET,Ferrari,153,3
+Lewis Hamilton,44,HAM,Mercedes,139,3
+Valtteri Bottas,77,BOT,Mercedes,111,1
+Daniel Ricciardo,3,RIC,Red Bull,92,1
+Kimi Räikkönen,7,RAI,Ferrari,73,0
+Max Verstappen,33,VER,Red Bull,45,0
+Sergio Pérez,11,PER,Force India,44,0
+Esteban Ocon,31,OCO,Force India,35,0
+Carlos Sainz,55,SAI,Toro Rosso,29,0
+Felipe Massa,19,MAS,Williams,20,0
+Nico Hülkenberg,27,HUL,Renault,18,0
+Lance Stroll,18,STR,Williams,17,0
+Kevin Magnussen,20,MAG,Haas F1 Team,11,0
+Romain Grosjean,8,GRO,Haas F1 Team,10,0
+Pascal Wehrlein,94,WEH,Sauber,5,0
+Daniil Kvyat,26,KVY,Toro Rosso,4,0
+Fernando Alonso,14,ALO,McLaren,2,0
+Jolyon Palmer,30,PAL,Renault,0,0
+Marcus Ericsson,9,ERI,Sauber,0,0
+Stoffel Vandoorne,2,VAN,McLaren,0,0
+Antonio Giovinazzi,99,GIO,Sauber,0,0
+Jenson Button,22,BUT,McLaren,0,0
+Sebastian Vettel,5,VET,Ferrari,171,3
+Lewis Hamilton,44,HAM,Mercedes,151,3
+Valtteri Bottas,77,BOT,Mercedes,136,2
+Daniel Ricciardo,3,RIC,Red Bull,107,1
+Kimi Räikkönen,7,RAI,Ferrari,83,0
+Sergio Pérez,11,PER,Force India,50,0
+Max Verstappen,33,VER,Red Bull,45,0
+Esteban Ocon,31,OCO,Force India,39,0
+Carlos Sainz,55,SAI,Toro Rosso,29,0
+Felipe Massa,19,MAS,Williams,22,0
+Lance Stroll,18,STR,Williams,18,0
+Nico Hülkenberg,27,HUL,Renault,18,0
+Romain Grosjean,8,GRO,Haas F1 Team,18,0
+Kevin Magnussen,20,MAG,Haas F1 Team,11,0
+Pascal Wehrlein,94,WEH,Sauber,5,0
+Daniil Kvyat,26,KVY,Toro Rosso,4,0
+Fernando Alonso,14,ALO,McLaren,2,0
+Jolyon Palmer,30,PAL,Renault,0,0
+Marcus Ericsson,9,ERI,Sauber,0,0
+Stoffel Vandoorne,2,VAN,McLaren,0,0
+Antonio Giovinazzi,99,GIO,Sauber,0,0
+Jenson Button,22,BUT,McLaren,0,0
+Sebastian Vettel,5,VET,Ferrari,177,3
+Lewis Hamilton,44,HAM,Mercedes,176,4
+Valtteri Bottas,77,BOT,Mercedes,154,2
+Daniel Ricciardo,3,RIC,Red Bull,117,1
+Kimi Räikkönen,7,RAI,Ferrari,98,0
+Max Verstappen,33,VER,Red Bull,57,0
+Sergio Pérez,11,PER,Force India,52,0
+Esteban Ocon,31,OCO,Force India,43,0
+Carlos Sainz,55,SAI,Toro Rosso,29,0
+Nico Hülkenberg,27,HUL,Renault,26,0
+Felipe Massa,19,MAS,Williams,23,0
+Lance Stroll,18,STR,Williams,18,0
+Romain Grosjean,8,GRO,Haas F1 Team,18,0
+Kevin Magnussen,20,MAG,Haas F1 Team,11,0
+Pascal Wehrlein,94,WEH,Sauber,5,0
+Daniil Kvyat,26,KVY,Toro Rosso,4,0
+Fernando Alonso,14,ALO,McLaren,2,0
+Jolyon Palmer,30,PAL,Renault,0,0
+Marcus Ericsson,9,ERI,Sauber,0,0
+Stoffel Vandoorne,2,VAN,McLaren,0,0
+Antonio Giovinazzi,99,GIO,Sauber,0,0
+Jenson Button,22,BUT,McLaren,0,0
+Sebastian Vettel,5,VET,Ferrari,202,4
+Lewis Hamilton,44,HAM,Mercedes,188,4
+Valtteri Bottas,77,BOT,Mercedes,169,2
+Daniel Ricciardo,3,RIC,Red Bull,117,1
+Kimi Räikkönen,7,RAI,Ferrari,116,0
+Max Verstappen,33,VER,Red Bull,67,0
+Sergio Pérez,11,PER,Force India,56,0
+Esteban Ocon,31,OCO,Force India,45,0
+Carlos Sainz,55,SAI,Toro Rosso,35,0
+Nico Hülkenberg,27,HUL,Renault,26,0
+Felipe Massa,19,MAS,Williams,23,0
+Lance Stroll,18,STR,Williams,18,0
+Romain Grosjean,8,GRO,Haas F1 Team,18,0
+Kevin Magnussen,20,MAG,Haas F1 Team,11,0
+Fernando Alonso,14,ALO,McLaren,10,0
+Pascal Wehrlein,94,WEH,Sauber,5,0
+Daniil Kvyat,26,KVY,Toro Rosso,4,0
+Stoffel Vandoorne,2,VAN,McLaren,1,0
+Jolyon Palmer,30,PAL,Renault,0,0
+Marcus Ericsson,9,ERI,Sauber,0,0
+Antonio Giovinazzi,99,GIO,Sauber,0,0
+Jenson Button,22,BUT,McLaren,0,0
+Paul di Resta,40,DIR,Williams,0,0
+Sebastian Vettel,5,VET,Ferrari,220,4
+Lewis Hamilton,44,HAM,Mercedes,213,5
+Valtteri Bottas,77,BOT,Mercedes,179,2
+Daniel Ricciardo,3,RIC,Red Bull,132,1
+Kimi Räikkönen,7,RAI,Ferrari,128,0
+Max Verstappen,33,VER,Red Bull,67,0
+Sergio Pérez,11,PER,Force India,56,0
+Esteban Ocon,31,OCO,Force India,47,0
+Carlos Sainz,55,SAI,Toro Rosso,36,0
+Nico Hülkenberg,27,HUL,Renault,34,0
+Felipe Massa,19,MAS,Williams,27,0
+Romain Grosjean,8,GRO,Haas F1 Team,24,0
+Lance Stroll,18,STR,Williams,18,0
+Kevin Magnussen,20,MAG,Haas F1 Team,11,0
+Fernando Alonso,14,ALO,McLaren,10,0
+Pascal Wehrlein,94,WEH,Sauber,5,0
+Daniil Kvyat,26,KVY,Toro Rosso,4,0
+Stoffel Vandoorne,2,VAN,McLaren,1,0
+Jolyon Palmer,30,PAL,Renault,0,0
+Marcus Ericsson,9,ERI,Sauber,0,0
+Antonio Giovinazzi,99,GIO,Sauber,0,0
+Jenson Button,22,BUT,McLaren,0,0
+Paul di Resta,40,DIR,Williams,0,0
+Lewis Hamilton,44,HAM,Mercedes,238,6
+Sebastian Vettel,5,VET,Ferrari,235,4
+Valtteri Bottas,77,BOT,Mercedes,197,2
+Daniel Ricciardo,3,RIC,Red Bull,144,1
+Kimi Räikkönen,7,RAI,Ferrari,138,0
+Max Verstappen,33,VER,Red Bull,68,0
+Sergio Pérez,11,PER,Force India,58,0
+Esteban Ocon,31,OCO,Force India,55,0
+Carlos Sainz,55,SAI,Toro Rosso,36,0
+Nico Hülkenberg,27,HUL,Renault,34,0
+Felipe Massa,19,MAS,Williams,31,0
+Lance Stroll,18,STR,Williams,24,0
+Romain Grosjean,8,GRO,Haas F1 Team,24,0
+Kevin Magnussen,20,MAG,Haas F1 Team,11,0
+Fernando Alonso,14,ALO,McLaren,10,0
+Pascal Wehrlein,94,WEH,Sauber,5,0
+Daniil Kvyat,26,KVY,Toro Rosso,4,0
+Stoffel Vandoorne,2,VAN,McLaren,1,0
+Jolyon Palmer,30,PAL,Renault,0,0
+Marcus Ericsson,9,ERI,Sauber,0,0
+Antonio Giovinazzi,99,GIO,Sauber,0,0
+Jenson Button,22,BUT,McLaren,0,0
+Paul di Resta,40,DIR,Williams,0,0
+Lewis Hamilton,44,HAM,Mercedes,263,7
+Sebastian Vettel,5,VET,Ferrari,235,4
+Valtteri Bottas,77,BOT,Mercedes,212,2
+Daniel Ricciardo,3,RIC,Red Bull,162,1
+Kimi Räikkönen,7,RAI,Ferrari,138,0
+Max Verstappen,33,VER,Red Bull,68,0
+Sergio Pérez,11,PER,Force India,68,0
+Esteban Ocon,31,OCO,Force India,56,0
+Carlos Sainz,55,SAI,Toro Rosso,48,0
+Nico Hülkenberg,27,HUL,Renault,34,0
+Felipe Massa,19,MAS,Williams,31,0
+Lance Stroll,18,STR,Williams,28,0
+Romain Grosjean,8,GRO,Haas F1 Team,26,0
+Kevin Magnussen,20,MAG,Haas F1 Team,11,0
+Fernando Alonso,14,ALO,McLaren,10,0
+Jolyon Palmer,30,PAL,Renault,8,0
+Stoffel Vandoorne,2,VAN,McLaren,7,0
+Pascal Wehrlein,94,WEH,Sauber,5,0
+Daniil Kvyat,26,KVY,Toro Rosso,4,0
+Marcus Ericsson,9,ERI,Sauber,0,0
+Antonio Giovinazzi,99,GIO,Sauber,0,0
+Jenson Button,22,BUT,McLaren,0,0
+Paul di Resta,40,DIR,Williams,0,0
+Lewis Hamilton,44,HAM,Mercedes,281,7
+Sebastian Vettel,5,VET,Ferrari,247,4
+Valtteri Bottas,77,BOT,Mercedes,222,2
+Daniel Ricciardo,3,RIC,Red Bull,177,1
+Kimi Räikkönen,7,RAI,Ferrari,138,0
+Max Verstappen,33,VER,Red Bull,93,1
+Sergio Pérez,11,PER,Force India,76,0
+Esteban Ocon,31,OCO,Force India,57,0
+Carlos Sainz,55,SAI,Toro Rosso,48,0
+Nico Hülkenberg,27,HUL,Renault,34,0
+Felipe Massa,19,MAS,Williams,33,0
+Lance Stroll,18,STR,Williams,32,0
+Romain Grosjean,8,GRO,Haas F1 Team,26,0
+Stoffel Vandoorne,2,VAN,McLaren,13,0
+Kevin Magnussen,20,MAG,Haas F1 Team,11,0
+Fernando Alonso,14,ALO,McLaren,10,0
+Jolyon Palmer,30,PAL,Renault,8,0
+Pascal Wehrlein,94,WEH,Sauber,5,0
+Daniil Kvyat,26,KVY,Toro Rosso,4,0
+Marcus Ericsson,9,ERI,Sauber,0,0
+Antonio Giovinazzi,99,GIO,Sauber,0,0
+Pierre Gasly,10,GAS,Toro Rosso,0,0
+Jenson Button,22,BUT,McLaren,0,0
+Paul di Resta,40,DIR,Williams,0,0
+Lewis Hamilton,44,HAM,Mercedes,306,8
+Sebastian Vettel,5,VET,Ferrari,247,4
+Valtteri Bottas,77,BOT,Mercedes,234,2
+Daniel Ricciardo,3,RIC,Red Bull,192,1
+Kimi Räikkönen,7,RAI,Ferrari,148,0
+Max Verstappen,33,VER,Red Bull,111,1
+Sergio Pérez,11,PER,Force India,82,0
+Esteban Ocon,31,OCO,Force India,65,0
+Carlos Sainz,55,SAI,Toro Rosso,48,0
+Nico Hülkenberg,27,HUL,Renault,34,0
+Felipe Massa,19,MAS,Williams,34,0
+Lance Stroll,18,STR,Williams,32,0
+Romain Grosjean,8,GRO,Haas F1 Team,28,0
+Kevin Magnussen,20,MAG,Haas F1 Team,15,0
+Stoffel Vandoorne,2,VAN,McLaren,13,0
+Fernando Alonso,14,ALO,McLaren,10,0
+Jolyon Palmer,30,PAL,Renault,8,0
+Pascal Wehrlein,94,WEH,Sauber,5,0
+Daniil Kvyat,26,KVY,Toro Rosso,4,0
+Marcus Ericsson,9,ERI,Sauber,0,0
+Antonio Giovinazzi,99,GIO,Sauber,0,0
+Pierre Gasly,10,GAS,Toro Rosso,0,0
+Jenson Button,22,BUT,McLaren,0,0
+Paul di Resta,40,DIR,Williams,0,0
+Lewis Hamilton,44,HAM,Mercedes,331,9
+Sebastian Vettel,5,VET,Ferrari,265,4
+Valtteri Bottas,77,BOT,Mercedes,244,2
+Daniel Ricciardo,3,RIC,Red Bull,192,1
+Kimi Räikkönen,7,RAI,Ferrari,163,0
+Max Verstappen,33,VER,Red Bull,123,1
+Sergio Pérez,11,PER,Force India,86,0
+Esteban Ocon,31,OCO,Force India,73,0
+Carlos Sainz,55,SAI,Toro Rosso,54,0
+Felipe Massa,19,MAS,Williams,36,0
+Nico Hülkenberg,27,HUL,Renault,34,0
+Lance Stroll,18,STR,Williams,32,0
+Romain Grosjean,8,GRO,Haas F1 Team,28,0
+Kevin Magnussen,20,MAG,Haas F1 Team,15,0
+Stoffel Vandoorne,2,VAN,McLaren,13,0
+Fernando Alonso,14,ALO,McLaren,10,0
+Jolyon Palmer,30,PAL,Renault,8,0
+Pascal Wehrlein,94,WEH,Sauber,5,0
+Daniil Kvyat,26,KVY,Toro Rosso,5,0
+Marcus Ericsson,9,ERI,Sauber,0,0
+Antonio Giovinazzi,99,GIO,Sauber,0,0
+Pierre Gasly,10,GAS,Toro Rosso,0,0
+Brendon Hartley,28,HAR,Toro Rosso,0,0
+Jenson Button,22,BUT,McLaren,0,0
+Paul di Resta,40,DIR,Williams,0,0
+Lewis Hamilton,44,HAM,Mercedes,333,9
+Sebastian Vettel,5,VET,Ferrari,277,4
+Valtteri Bottas,77,BOT,Mercedes,262,2
+Daniel Ricciardo,3,RIC,Red Bull,192,1
+Kimi Räikkönen,7,RAI,Ferrari,178,0
+Max Verstappen,33,VER,Red Bull,148,2
+Sergio Pérez,11,PER,Force India,92,0
+Esteban Ocon,31,OCO,Force India,83,0
+Carlos Sainz,55,SAI,Toro Rosso,54,0
+Lance Stroll,18,STR,Williams,40,0
+Felipe Massa,19,MAS,Williams,36,0
+Nico Hülkenberg,27,HUL,Renault,34,0
+Romain Grosjean,8,GRO,Haas F1 Team,28,0
+Kevin Magnussen,20,MAG,Haas F1 Team,19,0
+Stoffel Vandoorne,2,VAN,McLaren,13,0
+Fernando Alonso,14,ALO,McLaren,11,0
+Jolyon Palmer,30,PAL,Renault,8,0
+Pascal Wehrlein,94,WEH,Sauber,5,0
+Daniil Kvyat,26,KVY,Toro Rosso,5,0
+Marcus Ericsson,9,ERI,Sauber,0,0
+Antonio Giovinazzi,99,GIO,Sauber,0,0
+Pierre Gasly,10,GAS,Toro Rosso,0,0
+Brendon Hartley,28,HAR,Toro Rosso,0,0
+Jenson Button,22,BUT,McLaren,0,0
+Paul di Resta,40,DIR,Williams,0,0
+Lewis Hamilton,44,HAM,Mercedes,345,9
+Sebastian Vettel,5,VET,Ferrari,302,5
+Valtteri Bottas,77,BOT,Mercedes,280,2
+Daniel Ricciardo,3,RIC,Red Bull,200,1
+Kimi Räikkönen,7,RAI,Ferrari,193,0
+Max Verstappen,33,VER,Red Bull,158,2
+Sergio Pérez,11,PER,Force India,94,0
+Esteban Ocon,31,OCO,Force India,83,0
+Carlos Sainz,55,SAI,Toro Rosso,54,0
+Felipe Massa,19,MAS,Williams,42,0
+Lance Stroll,18,STR,Williams,40,0
+Nico Hülkenberg,27,HUL,Renault,35,0
+Romain Grosjean,8,GRO,Haas F1 Team,28,0
+Kevin Magnussen,20,MAG,Haas F1 Team,19,0
+Fernando Alonso,14,ALO,McLaren,15,0
+Stoffel Vandoorne,2,VAN,McLaren,13,0
+Jolyon Palmer,30,PAL,Renault,8,0
+Pascal Wehrlein,94,WEH,Sauber,5,0
+Daniil Kvyat,26,KVY,Toro Rosso,5,0
+Marcus Ericsson,9,ERI,Sauber,0,0
+Pierre Gasly,10,GAS,Toro Rosso,0,0
+Antonio Giovinazzi,99,GIO,Sauber,0,0
+Brendon Hartley,28,HAR,Toro Rosso,0,0
+Jenson Button,22,BUT,McLaren,0,0
+Paul di Resta,40,DIR,Williams,0,0
+Lewis Hamilton,44,HAM,Mercedes,363,9
+Sebastian Vettel,5,VET,Ferrari,317,5
+Valtteri Bottas,77,BOT,Mercedes,305,3
+Kimi Räikkönen,7,RAI,Ferrari,205,0
+Daniel Ricciardo,3,RIC,Red Bull,200,1
+Max Verstappen,33,VER,Red Bull,168,2
+Sergio Pérez,11,PER,Force India,100,0
+Esteban Ocon,31,OCO,Force India,87,0
+Carlos Sainz,55,SAI,Toro Rosso,54,0
+Nico Hülkenberg,27,HUL,Renault,43,0
+Felipe Massa,19,MAS,Williams,43,0
+Lance Stroll,18,STR,Williams,40,0
+Romain Grosjean,8,GRO,Haas F1 Team,28,0
+Kevin Magnussen,20,MAG,Haas F1 Team,19,0
+Fernando Alonso,14,ALO,McLaren,17,0
+Stoffel Vandoorne,2,VAN,McLaren,13,0
+Jolyon Palmer,30,PAL,Renault,8,0
+Pascal Wehrlein,94,WEH,Sauber,5,0
+Daniil Kvyat,26,KVY,Toro Rosso,5,0
+Marcus Ericsson,9,ERI,Sauber,0,0
+Pierre Gasly,10,GAS,Toro Rosso,0,0
+Antonio Giovinazzi,99,GIO,Sauber,0,0
+Brendon Hartley,28,HAR,Toro Rosso,0,0
+Jenson Button,22,BUT,McLaren,0,0
+Paul di Resta,40,DIR,Williams,0,0
+Sebastian Vettel,5,VET,Ferrari,25,1
+Lewis Hamilton,44,HAM,Mercedes,18,0
+Kimi Räikkönen,7,RAI,Ferrari,15,0
+Daniel Ricciardo,3,RIC,Red Bull,12,0
+Fernando Alonso,14,ALO,McLaren,10,0
+Max Verstappen,33,VER,Red Bull,8,0
+Nico Hülkenberg,27,HUL,Renault,6,0
+Valtteri Bottas,77,BOT,Mercedes,4,0
+Stoffel Vandoorne,2,VAN,McLaren,2,0
+Carlos Sainz,55,SAI,Renault,1,0
+Sergio Pérez,11,PER,Force India,0,0
+Esteban Ocon,31,OCO,Force India,0,0
+Charles Leclerc,16,LEC,Sauber,0,0
+Lance Stroll,18,STR,Williams,0,0
+Brendon Hartley,28,HAR,Toro Rosso,0,0
+Romain Grosjean,8,GRO,Haas F1 Team,0,0
+Kevin Magnussen,20,MAG,Haas F1 Team,0,0
+Pierre Gasly,10,GAS,Toro Rosso,0,0
+Marcus Ericsson,9,ERI,Sauber,0,0
+Sergey Sirotkin,35,SIR,Williams,0,0
+Sebastian Vettel,5,VET,Ferrari,50,2
+Lewis Hamilton,44,HAM,Mercedes,33,0
+Valtteri Bottas,77,BOT,Mercedes,22,0
+Fernando Alonso,14,ALO,McLaren,16,0
+Kimi Räikkönen,7,RAI,Ferrari,15,0
+Nico Hülkenberg,27,HUL,Renault,14,0
+Pierre Gasly,10,GAS,Toro Rosso,12,0
+Daniel Ricciardo,3,RIC,Red Bull,12,0
+Kevin Magnussen,20,MAG,Haas F1 Team,10,0
+Max Verstappen,33,VER,Red Bull,8,0
+Stoffel Vandoorne,2,VAN,McLaren,6,0
+Marcus Ericsson,9,ERI,Sauber,2,0
+Carlos Sainz,55,SAI,Renault,1,0
+Esteban Ocon,31,OCO,Force India,1,0
+Sergio Pérez,11,PER,Force India,0,0
+Charles Leclerc,16,LEC,Sauber,0,0
+Romain Grosjean,8,GRO,Haas F1 Team,0,0
+Lance Stroll,18,STR,Williams,0,0
+Brendon Hartley,28,HAR,Toro Rosso,0,0
+Sergey Sirotkin,35,SIR,Williams,0,0
+Sebastian Vettel,5,VET,Ferrari,54,2
+Lewis Hamilton,44,HAM,Mercedes,45,0
+Valtteri Bottas,77,BOT,Mercedes,40,0
+Daniel Ricciardo,3,RIC,Red Bull,37,1
+Kimi Räikkönen,7,RAI,Ferrari,30,0
+Fernando Alonso,14,ALO,McLaren,22,0
+Nico Hülkenberg,27,HUL,Renault,22,0
+Max Verstappen,33,VER,Red Bull,18,0
+Pierre Gasly,10,GAS,Toro Rosso,12,0
+Kevin Magnussen,20,MAG,Haas F1 Team,11,0
+Stoffel Vandoorne,2,VAN,McLaren,6,0
+Carlos Sainz,55,SAI,Renault,3,0
+Marcus Ericsson,9,ERI,Sauber,2,0
+Esteban Ocon,31,OCO,Force India,1,0
+Sergio Pérez,11,PER,Force India,0,0
+Charles Leclerc,16,LEC,Sauber,0,0
+Romain Grosjean,8,GRO,Haas F1 Team,0,0
+Lance Stroll,18,STR,Williams,0,0
+Sergey Sirotkin,35,SIR,Williams,0,0
+Brendon Hartley,28,HAR,Toro Rosso,0,0
+Lewis Hamilton,44,HAM,Mercedes,70,1
+Sebastian Vettel,5,VET,Ferrari,66,2
+Kimi Räikkönen,7,RAI,Ferrari,48,0
+Valtteri Bottas,77,BOT,Mercedes,40,0
+Daniel Ricciardo,3,RIC,Red Bull,37,1
+Fernando Alonso,14,ALO,McLaren,28,0
+Nico Hülkenberg,27,HUL,Renault,22,0
+Max Verstappen,33,VER,Red Bull,18,0
+Sergio Pérez,11,PER,Force India,15,0
+Carlos Sainz,55,SAI,Renault,13,0
+Pierre Gasly,10,GAS,Toro Rosso,12,0
+Kevin Magnussen,20,MAG,Haas F1 Team,11,0
+Charles Leclerc,16,LEC,Sauber,8,0
+Stoffel Vandoorne,2,VAN,McLaren,8,0
+Lance Stroll,18,STR,Williams,4,0
+Marcus Ericsson,9,ERI,Sauber,2,0
+Esteban Ocon,31,OCO,Force India,1,0
+Brendon Hartley,28,HAR,Toro Rosso,1,0
+Romain Grosjean,8,GRO,Haas F1 Team,0,0
+Sergey Sirotkin,35,SIR,Williams,0,0
+Lewis Hamilton,44,HAM,Mercedes,95,2
+Sebastian Vettel,5,VET,Ferrari,78,2
+Valtteri Bottas,77,BOT,Mercedes,58,0
+Kimi Räikkönen,7,RAI,Ferrari,48,0
+Daniel Ricciardo,3,RIC,Red Bull,47,1
+Max Verstappen,33,VER,Red Bull,33,0
+Fernando Alonso,14,ALO,McLaren,32,0
+Nico Hülkenberg,27,HUL,Renault,22,0
+Kevin Magnussen,20,MAG,Haas F1 Team,19,0
+Carlos Sainz,55,SAI,Renault,19,0
+Sergio Pérez,11,PER,Force India,17,0
+Pierre Gasly,10,GAS,Toro Rosso,12,0
+Charles Leclerc,16,LEC,Sauber,9,0
+Stoffel Vandoorne,2,VAN,McLaren,8,0
+Lance Stroll,18,STR,Williams,4,0
+Marcus Ericsson,9,ERI,Sauber,2,0
+Esteban Ocon,31,OCO,Force India,1,0
+Brendon Hartley,28,HAR,Toro Rosso,1,0
+Romain Grosjean,8,GRO,Haas F1 Team,0,0
+Sergey Sirotkin,35,SIR,Williams,0,0
+Lewis Hamilton,44,HAM,Mercedes,110,2
+Sebastian Vettel,5,VET,Ferrari,96,2
+Daniel Ricciardo,3,RIC,Red Bull,72,2
+Valtteri Bottas,77,BOT,Mercedes,68,0
+Kimi Räikkönen,7,RAI,Ferrari,60,0
+Max Verstappen,33,VER,Red Bull,35,0
+Fernando Alonso,14,ALO,McLaren,32,0
+Nico Hülkenberg,27,HUL,Renault,26,0
+Carlos Sainz,55,SAI,Renault,20,0
+Kevin Magnussen,20,MAG,Haas F1 Team,19,0
+Pierre Gasly,10,GAS,Toro Rosso,18,0
+Sergio Pérez,11,PER,Force India,17,0
+Esteban Ocon,31,OCO,Force India,9,0
+Charles Leclerc,16,LEC,Sauber,9,0
+Stoffel Vandoorne,2,VAN,McLaren,8,0
+Lance Stroll,18,STR,Williams,4,0
+Marcus Ericsson,9,ERI,Sauber,2,0
+Brendon Hartley,28,HAR,Toro Rosso,1,0
+Romain Grosjean,8,GRO,Haas F1 Team,0,0
+Sergey Sirotkin,35,SIR,Williams,0,0
+Sebastian Vettel,5,VET,Ferrari,121,3
+Lewis Hamilton,44,HAM,Mercedes,120,2
+Valtteri Bottas,77,BOT,Mercedes,86,0
+Daniel Ricciardo,3,RIC,Red Bull,84,2
+Kimi Räikkönen,7,RAI,Ferrari,68,0
+Max Verstappen,33,VER,Red Bull,50,0
+Fernando Alonso,14,ALO,McLaren,32,0
+Nico Hülkenberg,27,HUL,Renault,32,0
+Carlos Sainz,55,SAI,Renault,24,0
+Kevin Magnussen,20,MAG,Haas F1 Team,19,0
+Pierre Gasly,10,GAS,Toro Rosso,18,0
+Sergio Pérez,11,PER,Force India,17,0
+Esteban Ocon,31,OCO,Force India,11,0
+Charles Leclerc,16,LEC,Sauber,10,0
+Stoffel Vandoorne,2,VAN,McLaren,8,0
+Lance Stroll,18,STR,Williams,4,0
+Marcus Ericsson,9,ERI,Sauber,2,0
+Brendon Hartley,28,HAR,Toro Rosso,1,0
+Romain Grosjean,8,GRO,Haas F1 Team,0,0
+Sergey Sirotkin,35,SIR,Williams,0,0
+Lewis Hamilton,44,HAM,Mercedes,145,3
+Sebastian Vettel,5,VET,Ferrari,131,3
+Daniel Ricciardo,3,RIC,Red Bull,96,2
+Valtteri Bottas,77,BOT,Mercedes,92,0
+Kimi Räikkönen,7,RAI,Ferrari,83,0
+Max Verstappen,33,VER,Red Bull,68,0
+Nico Hülkenberg,27,HUL,Renault,34,0
+Fernando Alonso,14,ALO,McLaren,32,0
+Carlos Sainz,55,SAI,Renault,28,0
+Kevin Magnussen,20,MAG,Haas F1 Team,27,0
+Pierre Gasly,10,GAS,Toro Rosso,18,0
+Sergio Pérez,11,PER,Force India,17,0
+Esteban Ocon,31,OCO,Force India,11,0
+Charles Leclerc,16,LEC,Sauber,11,0
+Stoffel Vandoorne,2,VAN,McLaren,8,0
+Lance Stroll,18,STR,Williams,4,0
+Marcus Ericsson,9,ERI,Sauber,2,0
+Brendon Hartley,28,HAR,Toro Rosso,1,0
+Romain Grosjean,8,GRO,Haas F1 Team,0,0
+Sergey Sirotkin,35,SIR,Williams,0,0
+Sebastian Vettel,5,VET,Ferrari,146,3
+Lewis Hamilton,44,HAM,Mercedes,145,3
+Kimi Räikkönen,7,RAI,Ferrari,101,0
+Daniel Ricciardo,3,RIC,Red Bull,96,2
+Max Verstappen,33,VER,Red Bull,93,1
+Valtteri Bottas,77,BOT,Mercedes,92,0
+Kevin Magnussen,20,MAG,Haas F1 Team,37,0
+Fernando Alonso,14,ALO,McLaren,36,0
+Nico Hülkenberg,27,HUL,Renault,34,0
+Carlos Sainz,55,SAI,Renault,28,0
+Sergio Pérez,11,PER,Force India,23,0
+Esteban Ocon,31,OCO,Force India,19,0
+Pierre Gasly,10,GAS,Toro Rosso,18,0
+Charles Leclerc,16,LEC,Sauber,13,0
+Romain Grosjean,8,GRO,Haas F1 Team,12,0
+Stoffel Vandoorne,2,VAN,McLaren,8,0
+Lance Stroll,18,STR,Williams,4,0
+Marcus Ericsson,9,ERI,Sauber,3,0
+Brendon Hartley,28,HAR,Toro Rosso,1,0
+Sergey Sirotkin,35,SIR,Williams,0,0
+Sebastian Vettel,5,VET,Ferrari,171,4
+Lewis Hamilton,44,HAM,Mercedes,163,3
+Kimi Räikkönen,7,RAI,Ferrari,116,0
+Daniel Ricciardo,3,RIC,Red Bull,106,2
+Valtteri Bottas,77,BOT,Mercedes,104,0
+Max Verstappen,33,VER,Red Bull,93,1
+Nico Hülkenberg,27,HUL,Renault,42,0
+Fernando Alonso,14,ALO,McLaren,40,0
+Kevin Magnussen,20,MAG,Haas F1 Team,39,0
+Carlos Sainz,55,SAI,Renault,28,0
+Esteban Ocon,31,OCO,Force India,25,0
+Sergio Pérez,11,PER,Force India,24,0
+Pierre Gasly,10,GAS,Toro Rosso,18,0
+Charles Leclerc,16,LEC,Sauber,13,0
+Romain Grosjean,8,GRO,Haas F1 Team,12,0
+Stoffel Vandoorne,2,VAN,McLaren,8,0
+Lance Stroll,18,STR,Williams,4,0
+Marcus Ericsson,9,ERI,Sauber,3,0
+Brendon Hartley,28,HAR,Toro Rosso,1,0
+Sergey Sirotkin,35,SIR,Williams,0,0
+Lewis Hamilton,44,HAM,Mercedes,188,4
+Sebastian Vettel,5,VET,Ferrari,171,4
+Kimi Räikkönen,7,RAI,Ferrari,131,0
+Valtteri Bottas,77,BOT,Mercedes,122,0
+Daniel Ricciardo,3,RIC,Red Bull,106,2
+Max Verstappen,33,VER,Red Bull,105,1
+Nico Hülkenberg,27,HUL,Renault,52,0
+Fernando Alonso,14,ALO,McLaren,40,0
+Kevin Magnussen,20,MAG,Haas F1 Team,39,0
+Sergio Pérez,11,PER,Force India,30,0
+Esteban Ocon,31,OCO,Force India,29,0
+Carlos Sainz,55,SAI,Renault,28,0
+Romain Grosjean,8,GRO,Haas F1 Team,20,0
+Pierre Gasly,10,GAS,Toro Rosso,18,0
+Charles Leclerc,16,LEC,Sauber,13,0
+Stoffel Vandoorne,2,VAN,McLaren,8,0
+Marcus Ericsson,9,ERI,Sauber,5,0
+Lance Stroll,18,STR,Williams,4,0
+Brendon Hartley,28,HAR,Toro Rosso,2,0
+Sergey Sirotkin,35,SIR,Williams,0,0
+Lewis Hamilton,44,HAM,Mercedes,213,5
+Sebastian Vettel,5,VET,Ferrari,189,4
+Kimi Räikkönen,7,RAI,Ferrari,146,0
+Valtteri Bottas,77,BOT,Mercedes,132,0
+Daniel Ricciardo,3,RIC,Red Bull,118,2
+Max Verstappen,33,VER,Red Bull,105,1
+Nico Hülkenberg,27,HUL,Renault,52,0
+Kevin Magnussen,20,MAG,Haas F1 Team,45,0
+Fernando Alonso,14,ALO,McLaren,44,0
+Sergio Pérez,11,PER,Force India,30,0
+Carlos Sainz,55,SAI,Renault,30,0
+Esteban Ocon,31,OCO,Force India,29,0
+Pierre Gasly,10,GAS,Toro Rosso,26,0
+Romain Grosjean,8,GRO,Haas F1 Team,21,0
+Charles Leclerc,16,LEC,Sauber,13,0
+Stoffel Vandoorne,2,VAN,McLaren,8,0
+Marcus Ericsson,9,ERI,Sauber,5,0
+Lance Stroll,18,STR,Williams,4,0
+Brendon Hartley,28,HAR,Toro Rosso,2,0
+Sergey Sirotkin,35,SIR,Williams,0,0
+Lewis Hamilton,44,HAM,Mercedes,231,5
+Sebastian Vettel,5,VET,Ferrari,214,5
+Kimi Räikkönen,7,RAI,Ferrari,146,0
+Valtteri Bottas,77,BOT,Mercedes,144,0
+Max Verstappen,33,VER,Red Bull,120,1
+Daniel Ricciardo,3,RIC,Red Bull,118,2
+Nico Hülkenberg,27,HUL,Renault,52,0
+Kevin Magnussen,20,MAG,Haas F1 Team,49,0
+Fernando Alonso,14,ALO,McLaren,44,0
+Sergio Pérez,11,PER,Force India,40,0
+Esteban Ocon,31,OCO,Force India,37,0
+Carlos Sainz,55,SAI,Renault,30,0
+Pierre Gasly,10,GAS,Toro Rosso,28,0
+Romain Grosjean,8,GRO,Haas F1 Team,27,0
+Charles Leclerc,16,LEC,Sauber,13,0
+Stoffel Vandoorne,2,VAN,McLaren,8,0
+Marcus Ericsson,9,ERI,Sauber,6,0
+Lance Stroll,18,STR,Williams,4,0
+Brendon Hartley,28,HAR,Toro Rosso,2,0
+Sergey Sirotkin,35,SIR,Williams,0,0
+Lewis Hamilton,44,HAM,Mercedes,256,6
+Sebastian Vettel,5,VET,Ferrari,226,5
+Kimi Räikkönen,7,RAI,Ferrari,164,0
+Valtteri Bottas,77,BOT,Mercedes,159,0
+Max Verstappen,33,VER,Red Bull,130,1
+Daniel Ricciardo,3,RIC,Red Bull,118,2
+Nico Hülkenberg,27,HUL,Renault,52,0
+Kevin Magnussen,20,MAG,Haas F1 Team,49,0
+Sergio Pérez,11,PER,Force India,46,0
+Esteban Ocon,31,OCO,Force India,45,0
+Fernando Alonso,14,ALO,McLaren,44,0
+Carlos Sainz,55,SAI,Renault,34,0
+Pierre Gasly,10,GAS,Toro Rosso,28,0
+Romain Grosjean,8,GRO,Haas F1 Team,27,0
+Charles Leclerc,16,LEC,Sauber,13,0
+Stoffel Vandoorne,2,VAN,McLaren,8,0
+Lance Stroll,18,STR,Williams,6,0
+Marcus Ericsson,9,ERI,Sauber,6,0
+Brendon Hartley,28,HAR,Toro Rosso,2,0
+Sergey Sirotkin,35,SIR,Williams,1,0
+Lewis Hamilton,44,HAM,Mercedes,281,7
+Sebastian Vettel,5,VET,Ferrari,241,5
+Kimi Räikkönen,7,RAI,Ferrari,174,0
+Valtteri Bottas,77,BOT,Mercedes,171,0
+Max Verstappen,33,VER,Red Bull,148,1
+Daniel Ricciardo,3,RIC,Red Bull,126,2
+Nico Hülkenberg,27,HUL,Renault,53,0
+Fernando Alonso,14,ALO,McLaren,50,0
+Kevin Magnussen,20,MAG,Haas F1 Team,49,0
+Sergio Pérez,11,PER,Force India,46,0
+Esteban Ocon,31,OCO,Force India,45,0
+Carlos Sainz,55,SAI,Renault,38,0
+Pierre Gasly,10,GAS,Toro Rosso,28,0
+Romain Grosjean,8,GRO,Haas F1 Team,27,0
+Charles Leclerc,16,LEC,Sauber,15,0
+Stoffel Vandoorne,2,VAN,McLaren,8,0
+Lance Stroll,18,STR,Williams,6,0
+Marcus Ericsson,9,ERI,Sauber,6,0
+Brendon Hartley,28,HAR,Toro Rosso,2,0
+Sergey Sirotkin,35,SIR,Williams,1,0
+Lewis Hamilton,44,HAM,Mercedes,306,8
+Sebastian Vettel,5,VET,Ferrari,256,5
+Valtteri Bottas,77,BOT,Mercedes,189,0
+Kimi Räikkönen,7,RAI,Ferrari,186,0
+Max Verstappen,33,VER,Red Bull,158,1
+Daniel Ricciardo,3,RIC,Red Bull,134,2
+Kevin Magnussen,20,MAG,Haas F1 Team,53,0
+Nico Hülkenberg,27,HUL,Renault,53,0
+Fernando Alonso,14,ALO,McLaren,50,0
+Sergio Pérez,11,PER,Force India,47,0
+Esteban Ocon,31,OCO,Force India,47,0
+Carlos Sainz,55,SAI,Renault,38,0
+Pierre Gasly,10,GAS,Toro Rosso,28,0
+Romain Grosjean,8,GRO,Haas F1 Team,27,0
+Charles Leclerc,16,LEC,Sauber,21,0
+Stoffel Vandoorne,2,VAN,McLaren,8,0
+Lance Stroll,18,STR,Williams,6,0
+Marcus Ericsson,9,ERI,Sauber,6,0
+Brendon Hartley,28,HAR,Toro Rosso,2,0
+Sergey Sirotkin,35,SIR,Williams,1,0
+Lewis Hamilton,44,HAM,Mercedes,331,9
+Sebastian Vettel,5,VET,Ferrari,264,5
+Valtteri Bottas,77,BOT,Mercedes,207,0
+Kimi Räikkönen,7,RAI,Ferrari,196,0
+Max Verstappen,33,VER,Red Bull,173,1
+Daniel Ricciardo,3,RIC,Red Bull,146,2
+Sergio Pérez,11,PER,Force India,53,0
+Kevin Magnussen,20,MAG,Haas F1 Team,53,0
+Nico Hülkenberg,27,HUL,Renault,53,0
+Fernando Alonso,14,ALO,McLaren,50,0
+Esteban Ocon,31,OCO,Force India,49,0
+Carlos Sainz,55,SAI,Renault,39,0
+Romain Grosjean,8,GRO,Haas F1 Team,31,0
+Pierre Gasly,10,GAS,Toro Rosso,28,0
+Charles Leclerc,16,LEC,Sauber,21,0
+Stoffel Vandoorne,2,VAN,McLaren,8,0
+Lance Stroll,18,STR,Williams,6,0
+Marcus Ericsson,9,ERI,Sauber,6,0
+Brendon Hartley,28,HAR,Toro Rosso,2,0
+Sergey Sirotkin,35,SIR,Williams,1,0
+Lewis Hamilton,44,HAM,Mercedes,346,9
+Sebastian Vettel,5,VET,Ferrari,276,5
+Kimi Räikkönen,7,RAI,Ferrari,221,1
+Valtteri Bottas,77,BOT,Mercedes,217,0
+Max Verstappen,33,VER,Red Bull,191,1
+Daniel Ricciardo,3,RIC,Red Bull,146,2
+Nico Hülkenberg,27,HUL,Renault,61,0
+Sergio Pérez,11,PER,Force India,57,0
+Kevin Magnussen,20,MAG,Haas F1 Team,53,0
+Fernando Alonso,14,ALO,McLaren,50,0
+Esteban Ocon,31,OCO,Force India,49,0
+Carlos Sainz,55,SAI,Renault,45,0
+Romain Grosjean,8,GRO,Haas F1 Team,31,0
+Pierre Gasly,10,GAS,Toro Rosso,28,0
+Charles Leclerc,16,LEC,Sauber,21,0
+Stoffel Vandoorne,2,VAN,McLaren,8,0
+Marcus Ericsson,9,ERI,Sauber,7,0
+Lance Stroll,18,STR,Williams,6,0
+Brendon Hartley,28,HAR,Toro Rosso,4,0
+Sergey Sirotkin,35,SIR,Williams,1,0
+Lewis Hamilton,44,HAM,Mercedes,358,9
+Sebastian Vettel,5,VET,Ferrari,294,5
+Kimi Räikkönen,7,RAI,Ferrari,236,1
+Valtteri Bottas,77,BOT,Mercedes,227,0
+Max Verstappen,33,VER,Red Bull,216,2
+Daniel Ricciardo,3,RIC,Red Bull,146,2
+Nico Hülkenberg,27,HUL,Renault,69,0
+Sergio Pérez,11,PER,Force India,57,0
+Kevin Magnussen,20,MAG,Haas F1 Team,53,0
+Fernando Alonso,14,ALO,McLaren,50,0
+Esteban Ocon,31,OCO,Force India,49,0
+Carlos Sainz,55,SAI,Renault,45,0
+Romain Grosjean,8,GRO,Haas F1 Team,31,0
+Pierre Gasly,10,GAS,Toro Rosso,29,0
+Charles Leclerc,16,LEC,Sauber,27,0
+Stoffel Vandoorne,2,VAN,McLaren,12,0
+Marcus Ericsson,9,ERI,Sauber,9,0
+Lance Stroll,18,STR,Williams,6,0
+Brendon Hartley,28,HAR,Toro Rosso,4,0
+Sergey Sirotkin,35,SIR,Williams,1,0
+Lewis Hamilton,44,HAM,Mercedes,383,10
+Sebastian Vettel,5,VET,Ferrari,302,5
+Kimi Räikkönen,7,RAI,Ferrari,251,1
+Valtteri Bottas,77,BOT,Mercedes,237,0
+Max Verstappen,33,VER,Red Bull,234,2
+Daniel Ricciardo,3,RIC,Red Bull,158,2
+Nico Hülkenberg,27,HUL,Renault,69,0
+Sergio Pérez,11,PER,Force India,58,0
+Kevin Magnussen,20,MAG,Haas F1 Team,55,0
+Fernando Alonso,14,ALO,McLaren,50,0
+Esteban Ocon,31,OCO,Force India,49,0
+Carlos Sainz,55,SAI,Renault,45,0
+Romain Grosjean,8,GRO,Haas F1 Team,35,0
+Charles Leclerc,16,LEC,Sauber,33,0
+Pierre Gasly,10,GAS,Toro Rosso,29,0
+Stoffel Vandoorne,2,VAN,McLaren,12,0
+Marcus Ericsson,9,ERI,Sauber,9,0
+Lance Stroll,18,STR,Williams,6,0
+Brendon Hartley,28,HAR,Toro Rosso,4,0
+Sergey Sirotkin,35,SIR,Williams,1,0
+Lewis Hamilton,44,HAM,Mercedes,408,11
+Sebastian Vettel,5,VET,Ferrari,320,5
+Kimi Räikkönen,7,RAI,Ferrari,251,1
+Max Verstappen,33,VER,Red Bull,249,2
+Valtteri Bottas,77,BOT,Mercedes,247,0
+Daniel Ricciardo,3,RIC,Red Bull,170,2
+Nico Hülkenberg,27,HUL,Renault,69,0
+Sergio Pérez,11,PER,Force India,62,0
+Kevin Magnussen,20,MAG,Haas F1 Team,56,0
+Carlos Sainz,55,SAI,Renault,53,0
+Fernando Alonso,14,ALO,McLaren,50,0
+Esteban Ocon,31,OCO,Force India,49,0
+Charles Leclerc,16,LEC,Sauber,39,0
+Romain Grosjean,8,GRO,Haas F1 Team,37,0
+Pierre Gasly,10,GAS,Toro Rosso,29,0
+Stoffel Vandoorne,2,VAN,McLaren,12,0
+Marcus Ericsson,9,ERI,Sauber,9,0
+Lance Stroll,18,STR,Williams,6,0
+Brendon Hartley,28,HAR,Toro Rosso,4,0
+Sergey Sirotkin,35,SIR,Williams,1,0
+Valtteri Bottas,77,BOT,Mercedes,26,1
+Lewis Hamilton,44,HAM,Mercedes,18,0
+Max Verstappen,33,VER,Red Bull,15,0
+Sebastian Vettel,5,VET,Ferrari,12,0
+Charles Leclerc,16,LEC,Ferrari,10,0
+Kevin Magnussen,20,MAG,Haas F1 Team,8,0
+Nico Hülkenberg,27,HUL,Renault,6,0
+Kimi Räikkönen,7,RAI,Alfa Romeo,4,0
+Lance Stroll,18,STR,Racing Point,2,0
+Daniil Kvyat,26,KVY,Toro Rosso,1,0
+Pierre Gasly,10,GAS,Red Bull,0,0
+Lando Norris,4,NOR,McLaren,0,0
+Sergio Pérez,11,PER,Racing Point,0,0
+Alexander Albon,23,ALB,Toro Rosso,0,0
+Antonio Giovinazzi,99,GIO,Alfa Romeo,0,0
+George Russell,63,RUS,Williams,0,0
+Robert Kubica,88,KUB,Williams,0,0
+Romain Grosjean,8,GRO,Haas F1 Team,0,0
+Daniel Ricciardo,3,RIC,Renault,0,0
+Carlos Sainz,55,SAI,McLaren,0,0
+Valtteri Bottas,77,BOT,Mercedes,44,1
+Lewis Hamilton,44,HAM,Mercedes,43,1
+Max Verstappen,33,VER,Red Bull,27,0
+Charles Leclerc,16,LEC,Ferrari,26,0
+Sebastian Vettel,5,VET,Ferrari,22,0
+Kimi Räikkönen,7,RAI,Alfa Romeo,10,0
+Lando Norris,4,NOR,McLaren,8,0
+Kevin Magnussen,20,MAG,Haas F1 Team,8,0
+Nico Hülkenberg,27,HUL,Renault,6,0
+Pierre Gasly,10,GAS,Red Bull,4,0
+Alexander Albon,23,ALB,Toro Rosso,2,0
+Lance Stroll,18,STR,Racing Point,2,0
+Daniil Kvyat,26,KVY,Toro Rosso,1,0
+Sergio Pérez,11,PER,Racing Point,1,0
+Antonio Giovinazzi,99,GIO,Alfa Romeo,0,0
+George Russell,63,RUS,Williams,0,0
+Robert Kubica,88,KUB,Williams,0,0
+Daniel Ricciardo,3,RIC,Renault,0,0
+Romain Grosjean,8,GRO,Haas F1 Team,0,0
+Carlos Sainz,55,SAI,McLaren,0,0
+Lewis Hamilton,44,HAM,Mercedes,68,2
+Valtteri Bottas,77,BOT,Mercedes,62,1
+Max Verstappen,33,VER,Red Bull,39,0
+Sebastian Vettel,5,VET,Ferrari,37,0
+Charles Leclerc,16,LEC,Ferrari,36,0
+Pierre Gasly,10,GAS,Red Bull,13,0
+Kimi Räikkönen,7,RAI,Alfa Romeo,12,0
+Lando Norris,4,NOR,McLaren,8,0
+Kevin Magnussen,20,MAG,Haas F1 Team,8,0
+Nico Hülkenberg,27,HUL,Renault,6,0
+Daniel Ricciardo,3,RIC,Renault,6,0
+Sergio Pérez,11,PER,Racing Point,5,0
+Alexander Albon,23,ALB,Toro Rosso,3,0
+Lance Stroll,18,STR,Racing Point,2,0
+Daniil Kvyat,26,KVY,Toro Rosso,1,0
+Antonio Giovinazzi,99,GIO,Alfa Romeo,0,0
+Romain Grosjean,8,GRO,Haas F1 Team,0,0
+Carlos Sainz,55,SAI,McLaren,0,0
+George Russell,63,RUS,Williams,0,0
+Robert Kubica,88,KUB,Williams,0,0
+Valtteri Bottas,77,BOT,Mercedes,87,2
+Lewis Hamilton,44,HAM,Mercedes,86,2
+Sebastian Vettel,5,VET,Ferrari,52,0
+Max Verstappen,33,VER,Red Bull,51,0
+Charles Leclerc,16,LEC,Ferrari,47,0
+Sergio Pérez,11,PER,Racing Point,13,0
+Pierre Gasly,10,GAS,Red Bull,13,0
+Kimi Räikkönen,7,RAI,Alfa Romeo,13,0
+Lando Norris,4,NOR,McLaren,12,0
+Kevin Magnussen,20,MAG,Haas F1 Team,8,0
+Nico Hülkenberg,27,HUL,Renault,6,0
+Carlos Sainz,55,SAI,McLaren,6,0
+Daniel Ricciardo,3,RIC,Renault,6,0
+Lance Stroll,18,STR,Racing Point,4,0
+Alexander Albon,23,ALB,Toro Rosso,3,0
+Daniil Kvyat,26,KVY,Toro Rosso,1,0
+Antonio Giovinazzi,99,GIO,Alfa Romeo,0,0
+Romain Grosjean,8,GRO,Haas F1 Team,0,0
+George Russell,63,RUS,Williams,0,0
+Robert Kubica,88,KUB,Williams,0,0
+Lewis Hamilton,44,HAM,Mercedes,112,3
+Valtteri Bottas,77,BOT,Mercedes,105,2
+Max Verstappen,33,VER,Red Bull,66,0
+Sebastian Vettel,5,VET,Ferrari,64,0
+Charles Leclerc,16,LEC,Ferrari,57,0
+Pierre Gasly,10,GAS,Red Bull,21,0
+Kevin Magnussen,20,MAG,Haas F1 Team,14,0
+Sergio Pérez,11,PER,Racing Point,13,0
+Kimi Räikkönen,7,RAI,Alfa Romeo,13,0
+Lando Norris,4,NOR,McLaren,12,0
+Carlos Sainz,55,SAI,McLaren,10,0
+Daniel Ricciardo,3,RIC,Renault,6,0
+Nico Hülkenberg,27,HUL,Renault,6,0
+Lance Stroll,18,STR,Racing Point,4,0
+Alexander Albon,23,ALB,Toro Rosso,3,0
+Daniil Kvyat,26,KVY,Toro Rosso,3,0
+Romain Grosjean,8,GRO,Haas F1 Team,1,0
+Antonio Giovinazzi,99,GIO,Alfa Romeo,0,0
+George Russell,63,RUS,Williams,0,0
+Robert Kubica,88,KUB,Williams,0,0
+Lewis Hamilton,44,HAM,Mercedes,137,4
+Valtteri Bottas,77,BOT,Mercedes,120,2
+Sebastian Vettel,5,VET,Ferrari,82,0
+Max Verstappen,33,VER,Red Bull,78,0
+Charles Leclerc,16,LEC,Ferrari,57,0
+Pierre Gasly,10,GAS,Red Bull,32,0
+Carlos Sainz,55,SAI,McLaren,18,0
+Kevin Magnussen,20,MAG,Haas F1 Team,14,0
+Sergio Pérez,11,PER,Racing Point,13,0
+Kimi Räikkönen,7,RAI,Alfa Romeo,13,0
+Lando Norris,4,NOR,McLaren,12,0
+Daniil Kvyat,26,KVY,Toro Rosso,9,0
+Daniel Ricciardo,3,RIC,Renault,8,0
+Alexander Albon,23,ALB,Toro Rosso,7,0
+Nico Hülkenberg,27,HUL,Renault,6,0
+Lance Stroll,18,STR,Racing Point,4,0
+Romain Grosjean,8,GRO,Haas F1 Team,2,0
+Antonio Giovinazzi,99,GIO,Alfa Romeo,0,0
+George Russell,63,RUS,Williams,0,0
+Robert Kubica,88,KUB,Williams,0,0
+Lewis Hamilton,44,HAM,Mercedes,162,5
+Valtteri Bottas,77,BOT,Mercedes,133,2
+Sebastian Vettel,5,VET,Ferrari,100,0
+Max Verstappen,33,VER,Red Bull,88,0
+Charles Leclerc,16,LEC,Ferrari,72,0
+Pierre Gasly,10,GAS,Red Bull,36,0
+Carlos Sainz,55,SAI,McLaren,18,0
+Daniel Ricciardo,3,RIC,Renault,16,0
+Kevin Magnussen,20,MAG,Haas F1 Team,14,0
+Sergio Pérez,11,PER,Racing Point,13,0
+Kimi Räikkönen,7,RAI,Alfa Romeo,13,0
+Lando Norris,4,NOR,McLaren,12,0
+Nico Hülkenberg,27,HUL,Renault,12,0
+Daniil Kvyat,26,KVY,Toro Rosso,10,0
+Alexander Albon,23,ALB,Toro Rosso,7,0
+Lance Stroll,18,STR,Racing Point,6,0
+Romain Grosjean,8,GRO,Haas F1 Team,2,0
+Antonio Giovinazzi,99,GIO,Alfa Romeo,0,0
+George Russell,63,RUS,Williams,0,0
+Robert Kubica,88,KUB,Williams,0,0
+Lewis Hamilton,44,HAM,Mercedes,187,6
+Valtteri Bottas,77,BOT,Mercedes,151,2
+Sebastian Vettel,5,VET,Ferrari,111,0
+Max Verstappen,33,VER,Red Bull,100,0
+Charles Leclerc,16,LEC,Ferrari,87,0
+Pierre Gasly,10,GAS,Red Bull,37,0
+Carlos Sainz,55,SAI,McLaren,26,0
+Kimi Räikkönen,7,RAI,Alfa Romeo,19,0
+Daniel Ricciardo,3,RIC,Renault,16,0
+Nico Hülkenberg,27,HUL,Renault,16,0
+Kevin Magnussen,20,MAG,Haas F1 Team,14,0
+Lando Norris,4,NOR,McLaren,14,0
+Sergio Pérez,11,PER,Racing Point,13,0
+Daniil Kvyat,26,KVY,Toro Rosso,10,0
+Alexander Albon,23,ALB,Toro Rosso,7,0
+Lance Stroll,18,STR,Racing Point,6,0
+Romain Grosjean,8,GRO,Haas F1 Team,2,0
+Antonio Giovinazzi,99,GIO,Alfa Romeo,0,0
+George Russell,63,RUS,Williams,0,0
+Robert Kubica,88,KUB,Williams,0,0
+Lewis Hamilton,44,HAM,Mercedes,197,6
+Valtteri Bottas,77,BOT,Mercedes,166,2
+Max Verstappen,33,VER,Red Bull,126,1
+Sebastian Vettel,5,VET,Ferrari,123,0
+Charles Leclerc,16,LEC,Ferrari,105,0
+Pierre Gasly,10,GAS,Red Bull,43,0
+Carlos Sainz,55,SAI,McLaren,30,0
+Lando Norris,4,NOR,McLaren,22,0
+Kimi Räikkönen,7,RAI,Alfa Romeo,21,0
+Daniel Ricciardo,3,RIC,Renault,16,0
+Nico Hülkenberg,27,HUL,Renault,16,0
+Kevin Magnussen,20,MAG,Haas F1 Team,14,0
+Sergio Pérez,11,PER,Racing Point,13,0
+Daniil Kvyat,26,KVY,Toro Rosso,10,0
+Alexander Albon,23,ALB,Toro Rosso,7,0
+Lance Stroll,18,STR,Racing Point,6,0
+Romain Grosjean,8,GRO,Haas F1 Team,2,0
+Antonio Giovinazzi,99,GIO,Alfa Romeo,1,0
+George Russell,63,RUS,Williams,0,0
+Robert Kubica,88,KUB,Williams,0,0
+Lewis Hamilton,44,HAM,Mercedes,223,7
+Valtteri Bottas,77,BOT,Mercedes,184,2
+Max Verstappen,33,VER,Red Bull,136,1
+Sebastian Vettel,5,VET,Ferrari,123,0
+Charles Leclerc,16,LEC,Ferrari,120,0
+Pierre Gasly,10,GAS,Red Bull,55,0
+Carlos Sainz,55,SAI,McLaren,38,0
+Kimi Räikkönen,7,RAI,Alfa Romeo,25,0
+Lando Norris,4,NOR,McLaren,22,0
+Daniel Ricciardo,3,RIC,Renault,22,0
+Nico Hülkenberg,27,HUL,Renault,17,0
+Kevin Magnussen,20,MAG,Haas F1 Team,14,0
+Sergio Pérez,11,PER,Racing Point,13,0
+Daniil Kvyat,26,KVY,Toro Rosso,12,0
+Alexander Albon,23,ALB,Toro Rosso,7,0
+Lance Stroll,18,STR,Racing Point,6,0
+Romain Grosjean,8,GRO,Haas F1 Team,2,0
+Antonio Giovinazzi,99,GIO,Alfa Romeo,1,0
+George Russell,63,RUS,Williams,0,0
+Robert Kubica,88,KUB,Williams,0,0
+Lewis Hamilton,44,HAM,Mercedes,225,7
+Valtteri Bottas,77,BOT,Mercedes,184,2
+Max Verstappen,33,VER,Red Bull,162,2
+Sebastian Vettel,5,VET,Ferrari,141,0
+Charles Leclerc,16,LEC,Ferrari,120,0
+Pierre Gasly,10,GAS,Red Bull,55,0
+Carlos Sainz,55,SAI,McLaren,48,0
+Daniil Kvyat,26,KVY,Toro Rosso,27,0
+Kimi Räikkönen,7,RAI,Alfa Romeo,25,0
+Lando Norris,4,NOR,McLaren,22,0
+Daniel Ricciardo,3,RIC,Renault,22,0
+Lance Stroll,18,STR,Racing Point,18,0
+Kevin Magnussen,20,MAG,Haas F1 Team,18,0
+Nico Hülkenberg,27,HUL,Renault,17,0
+Alexander Albon,23,ALB,Toro Rosso,15,0
+Sergio Pérez,11,PER,Racing Point,13,0
+Romain Grosjean,8,GRO,Haas F1 Team,8,0
+Antonio Giovinazzi,99,GIO,Alfa Romeo,1,0
+Robert Kubica,88,KUB,Williams,1,0
+George Russell,63,RUS,Williams,0,0
+Lewis Hamilton,44,HAM,Mercedes,250,8
+Valtteri Bottas,77,BOT,Mercedes,188,2
+Max Verstappen,33,VER,Red Bull,181,2
+Sebastian Vettel,5,VET,Ferrari,156,0
+Charles Leclerc,16,LEC,Ferrari,132,0
+Pierre Gasly,10,GAS,Red Bull,63,0
+Carlos Sainz,55,SAI,McLaren,58,0
+Kimi Räikkönen,7,RAI,Alfa Romeo,31,0
+Daniil Kvyat,26,KVY,Toro Rosso,27,0
+Lando Norris,4,NOR,McLaren,24,0
+Daniel Ricciardo,3,RIC,Renault,22,0
+Lance Stroll,18,STR,Racing Point,18,0
+Kevin Magnussen,20,MAG,Haas F1 Team,18,0
+Nico Hülkenberg,27,HUL,Renault,17,0
+Alexander Albon,23,ALB,Toro Rosso,16,0
+Sergio Pérez,11,PER,Racing Point,13,0
+Romain Grosjean,8,GRO,Haas F1 Team,8,0
+Antonio Giovinazzi,99,GIO,Alfa Romeo,1,0
+Robert Kubica,88,KUB,Williams,1,0
+George Russell,63,RUS,Williams,0,0
+Lewis Hamilton,44,HAM,Mercedes,268,8
+Valtteri Bottas,77,BOT,Mercedes,203,2
+Max Verstappen,33,VER,Red Bull,181,2
+Sebastian Vettel,5,VET,Ferrari,169,0
+Charles Leclerc,16,LEC,Ferrari,157,1
+Pierre Gasly,10,GAS,Red Bull,65,0
+Carlos Sainz,55,SAI,McLaren,58,0
+Daniil Kvyat,26,KVY,Toro Rosso,33,0
+Kimi Räikkönen,7,RAI,Alfa Romeo,31,0
+Alexander Albon,23,ALB,Toro Rosso,26,0
+Lando Norris,4,NOR,McLaren,24,0
+Daniel Ricciardo,3,RIC,Renault,22,0
+Sergio Pérez,11,PER,Racing Point,21,0
+Nico Hülkenberg,27,HUL,Renault,21,0
+Lance Stroll,18,STR,Racing Point,19,0
+Kevin Magnussen,20,MAG,Haas F1 Team,18,0
+Romain Grosjean,8,GRO,Haas F1 Team,8,0
+Antonio Giovinazzi,99,GIO,Alfa Romeo,1,0
+Robert Kubica,88,KUB,Williams,1,0
+George Russell,63,RUS,Williams,0,0
+Lewis Hamilton,44,HAM,Mercedes,284,8
+Valtteri Bottas,77,BOT,Mercedes,221,2
+Max Verstappen,33,VER,Red Bull,185,2
+Charles Leclerc,16,LEC,Ferrari,182,2
+Sebastian Vettel,5,VET,Ferrari,169,0
+Pierre Gasly,10,GAS,Red Bull,65,0
+Carlos Sainz,55,SAI,McLaren,58,0
+Daniel Ricciardo,3,RIC,Renault,34,0
+Alexander Albon,23,ALB,Toro Rosso,34,0
+Daniil Kvyat,26,KVY,Toro Rosso,33,0
+Nico Hülkenberg,27,HUL,Renault,31,0
+Kimi Räikkönen,7,RAI,Alfa Romeo,31,0
+Sergio Pérez,11,PER,Racing Point,27,0
+Lando Norris,4,NOR,McLaren,25,0
+Lance Stroll,18,STR,Racing Point,19,0
+Kevin Magnussen,20,MAG,Haas F1 Team,18,0
+Romain Grosjean,8,GRO,Haas F1 Team,8,0
+Antonio Giovinazzi,99,GIO,Alfa Romeo,3,0
+Robert Kubica,88,KUB,Williams,1,0
+George Russell,63,RUS,Williams,0,0
+Lewis Hamilton,44,HAM,Mercedes,296,8
+Valtteri Bottas,77,BOT,Mercedes,231,2
+Charles Leclerc,16,LEC,Ferrari,200,2
+Max Verstappen,33,VER,Red Bull,200,2
+Sebastian Vettel,5,VET,Ferrari,194,1
+Pierre Gasly,10,GAS,Red Bull,69,0
+Carlos Sainz,55,SAI,McLaren,58,0
+Alexander Albon,23,ALB,Toro Rosso,42,0
+Daniel Ricciardo,3,RIC,Renault,34,0
+Daniil Kvyat,26,KVY,Toro Rosso,33,0
+Nico Hülkenberg,27,HUL,Renault,33,0
+Lando Norris,4,NOR,McLaren,31,0
+Kimi Räikkönen,7,RAI,Alfa Romeo,31,0
+Sergio Pérez,11,PER,Racing Point,27,0
+Lance Stroll,18,STR,Racing Point,19,0
+Kevin Magnussen,20,MAG,Haas F1 Team,18,0
+Romain Grosjean,8,GRO,Haas F1 Team,8,0
+Antonio Giovinazzi,99,GIO,Alfa Romeo,4,0
+Robert Kubica,88,KUB,Williams,1,0
+George Russell,63,RUS,Williams,0,0
+Lewis Hamilton,44,HAM,Mercedes,322,9
+Valtteri Bottas,77,BOT,Mercedes,249,2
+Charles Leclerc,16,LEC,Ferrari,215,2
+Max Verstappen,33,VER,Red Bull,212,2
+Sebastian Vettel,5,VET,Ferrari,194,1
+Pierre Gasly,10,GAS,Red Bull,69,0
+Carlos Sainz,55,SAI,McLaren,66,0
+Alexander Albon,23,ALB,Toro Rosso,52,0
+Lando Norris,4,NOR,McLaren,35,0
+Daniel Ricciardo,3,RIC,Renault,34,0
+Nico Hülkenberg,27,HUL,Renault,34,0
+Daniil Kvyat,26,KVY,Toro Rosso,33,0
+Sergio Pérez,11,PER,Racing Point,33,0
+Kimi Räikkönen,7,RAI,Alfa Romeo,31,0
+Kevin Magnussen,20,MAG,Haas F1 Team,20,0
+Lance Stroll,18,STR,Racing Point,19,0
+Romain Grosjean,8,GRO,Haas F1 Team,8,0
+Antonio Giovinazzi,99,GIO,Alfa Romeo,4,0
+Robert Kubica,88,KUB,Williams,1,0
+George Russell,63,RUS,Williams,0,0
+Lewis Hamilton,44,HAM,Mercedes,338,9
+Valtteri Bottas,77,BOT,Mercedes,274,3
+Charles Leclerc,16,LEC,Ferrari,223,2
+Max Verstappen,33,VER,Red Bull,212,2
+Sebastian Vettel,5,VET,Ferrari,212,1
+Carlos Sainz,55,SAI,McLaren,76,0
+Pierre Gasly,10,GAS,Red Bull,75,0
+Alexander Albon,23,ALB,Toro Rosso,64,0
+Sergio Pérez,11,PER,Racing Point,37,0
+Lando Norris,4,NOR,McLaren,35,0
+Daniil Kvyat,26,KVY,Toro Rosso,34,0
+Daniel Ricciardo,3,RIC,Renault,34,0
+Nico Hülkenberg,27,HUL,Renault,34,0
+Kimi Räikkönen,7,RAI,Alfa Romeo,31,0
+Lance Stroll,18,STR,Racing Point,21,0
+Kevin Magnussen,20,MAG,Haas F1 Team,20,0
+Romain Grosjean,8,GRO,Haas F1 Team,8,0
+Antonio Giovinazzi,99,GIO,Alfa Romeo,4,0
+Robert Kubica,88,KUB,Williams,1,0
+George Russell,63,RUS,Williams,0,0
+Lewis Hamilton,44,HAM,Mercedes,363,10
+Valtteri Bottas,77,BOT,Mercedes,289,3
+Charles Leclerc,16,LEC,Ferrari,236,2
+Sebastian Vettel,5,VET,Ferrari,230,1
+Max Verstappen,33,VER,Red Bull,220,2
+Pierre Gasly,10,GAS,Red Bull,77,0
+Carlos Sainz,55,SAI,McLaren,76,0
+Alexander Albon,23,ALB,Toro Rosso,74,0
+Sergio Pérez,11,PER,Racing Point,43,0
+Daniel Ricciardo,3,RIC,Renault,38,0
+Nico Hülkenberg,27,HUL,Renault,35,0
+Lando Norris,4,NOR,McLaren,35,0
+Daniil Kvyat,26,KVY,Toro Rosso,34,0
+Kimi Räikkönen,7,RAI,Alfa Romeo,31,0
+Lance Stroll,18,STR,Racing Point,21,0
+Kevin Magnussen,20,MAG,Haas F1 Team,20,0
+Romain Grosjean,8,GRO,Haas F1 Team,8,0
+Antonio Giovinazzi,99,GIO,Alfa Romeo,4,0
+Robert Kubica,88,KUB,Williams,1,0
+George Russell,63,RUS,Williams,0,0
+Lewis Hamilton,44,HAM,Mercedes,381,10
+Valtteri Bottas,77,BOT,Mercedes,314,4
+Charles Leclerc,16,LEC,Ferrari,249,2
+Max Verstappen,33,VER,Red Bull,235,2
+Sebastian Vettel,5,VET,Ferrari,230,1
+Alexander Albon,23,ALB,Toro Rosso,84,0
+Carlos Sainz,55,SAI,McLaren,80,0
+Pierre Gasly,10,GAS,Red Bull,77,0
+Daniel Ricciardo,3,RIC,Renault,46,0
+Sergio Pérez,11,PER,Racing Point,44,0
+Lando Norris,4,NOR,McLaren,41,0
+Nico Hülkenberg,27,HUL,Renault,37,0
+Daniil Kvyat,26,KVY,Toro Rosso,34,0
+Kimi Räikkönen,7,RAI,Alfa Romeo,31,0
+Lance Stroll,18,STR,Racing Point,21,0
+Kevin Magnussen,20,MAG,Haas F1 Team,20,0
+Romain Grosjean,8,GRO,Haas F1 Team,8,0
+Antonio Giovinazzi,99,GIO,Alfa Romeo,4,0
+Robert Kubica,88,KUB,Williams,1,0
+George Russell,63,RUS,Williams,0,0
+Lewis Hamilton,44,HAM,Mercedes,387,10
+Valtteri Bottas,77,BOT,Mercedes,314,4
+Max Verstappen,33,VER,Red Bull,260,3
+Charles Leclerc,16,LEC,Ferrari,249,2
+Sebastian Vettel,5,VET,Ferrari,230,1
+Pierre Gasly,10,GAS,Red Bull,95,0
+Carlos Sainz,55,SAI,McLaren,95,0
+Alexander Albon,23,ALB,Toro Rosso,84,0
+Daniel Ricciardo,3,RIC,Renault,54,0
+Sergio Pérez,11,PER,Racing Point,46,0
+Lando Norris,4,NOR,McLaren,45,0
+Kimi Räikkönen,7,RAI,Alfa Romeo,43,0
+Nico Hülkenberg,27,HUL,Renault,37,0
+Daniil Kvyat,26,KVY,Toro Rosso,35,0
+Lance Stroll,18,STR,Racing Point,21,0
+Kevin Magnussen,20,MAG,Haas F1 Team,20,0
+Antonio Giovinazzi,99,GIO,Alfa Romeo,14,0
+Romain Grosjean,8,GRO,Haas F1 Team,8,0
+Robert Kubica,88,KUB,Williams,1,0
+George Russell,63,RUS,Williams,0,0
+Lewis Hamilton,44,HAM,Mercedes,413,11
+Valtteri Bottas,77,BOT,Mercedes,326,4
+Max Verstappen,33,VER,Red Bull,278,3
+Charles Leclerc,16,LEC,Ferrari,264,2
+Sebastian Vettel,5,VET,Ferrari,240,1
+Carlos Sainz,55,SAI,McLaren,96,0
+Pierre Gasly,10,GAS,Red Bull,95,0
+Alexander Albon,23,ALB,Toro Rosso,92,0
+Daniel Ricciardo,3,RIC,Renault,54,0
+Sergio Pérez,11,PER,Racing Point,52,0
+Lando Norris,4,NOR,McLaren,49,0
+Kimi Räikkönen,7,RAI,Alfa Romeo,43,0
+Daniil Kvyat,26,KVY,Toro Rosso,37,0
+Nico Hülkenberg,27,HUL,Renault,37,0
+Lance Stroll,18,STR,Racing Point,21,0
+Kevin Magnussen,20,MAG,Haas F1 Team,20,0
+Antonio Giovinazzi,99,GIO,Alfa Romeo,14,0
+Romain Grosjean,8,GRO,Haas F1 Team,8,0
+Robert Kubica,88,KUB,Williams,1,0
+George Russell,63,RUS,Williams,0,0
+Valtteri Bottas,77,BOT,Mercedes,25,1
+Charles Leclerc,16,LEC,Ferrari,18,0
+Lando Norris,4,NOR,McLaren,16,0
+Lewis Hamilton,44,HAM,Mercedes,12,0
+Carlos Sainz,55,SAI,McLaren,10,0
+Sergio Pérez,11,PER,Racing Point,8,0
+Pierre Gasly,10,GAS,AlphaTauri,6,0
+Esteban Ocon,31,OCO,Renault,4,0
+Antonio Giovinazzi,99,GIO,Alfa Romeo,2,0
+Sebastian Vettel,5,VET,Ferrari,1,0
+Nicholas Latifi,6,LAT,Williams,0,0
+Daniil Kvyat,26,KVY,AlphaTauri,0,0
+Alexander Albon,23,ALB,Red Bull,0,0
+Kimi Räikkönen,7,RAI,Alfa Romeo,0,0
+George Russell,63,RUS,Williams,0,0
+Romain Grosjean,8,GRO,Haas F1 Team,0,0
+Kevin Magnussen,20,MAG,Haas F1 Team,0,0
+Lance Stroll,18,STR,Racing Point,0,0
+Daniel Ricciardo,3,RIC,Renault,0,0
+Max Verstappen,33,VER,Red Bull,0,0
+Valtteri Bottas,77,BOT,Mercedes,43,1
+Lewis Hamilton,44,HAM,Mercedes,37,1
+Lando Norris,4,NOR,McLaren,26,0
+Charles Leclerc,16,LEC,Ferrari,18,0
+Sergio Pérez,11,PER,Racing Point,16,0
+Max Verstappen,33,VER,Red Bull,15,0
+Carlos Sainz,55,SAI,McLaren,13,0
+Alexander Albon,23,ALB,Red Bull,12,0
+Pierre Gasly,10,GAS,AlphaTauri,6,0
+Lance Stroll,18,STR,Racing Point,6,0
+Esteban Ocon,31,OCO,Renault,4,0
+Daniel Ricciardo,3,RIC,Renault,4,0
+Antonio Giovinazzi,99,GIO,Alfa Romeo,2,0
+Daniil Kvyat,26,KVY,AlphaTauri,1,0
+Sebastian Vettel,5,VET,Ferrari,1,0
+Nicholas Latifi,6,LAT,Williams,0,0
+Kimi Räikkönen,7,RAI,Alfa Romeo,0,0
+Kevin Magnussen,20,MAG,Haas F1 Team,0,0
+Romain Grosjean,8,GRO,Haas F1 Team,0,0
+George Russell,63,RUS,Williams,0,0
+Lewis Hamilton,44,HAM,Mercedes,63,2
+Valtteri Bottas,77,BOT,Mercedes,58,1
+Max Verstappen,33,VER,Red Bull,33,0
+Lando Norris,4,NOR,McLaren,26,0
+Alexander Albon,23,ALB,Red Bull,22,0
+Sergio Pérez,11,PER,Racing Point,22,0
+Charles Leclerc,16,LEC,Ferrari,18,0
+Lance Stroll,18,STR,Racing Point,18,0
+Carlos Sainz,55,SAI,McLaren,15,0
+Sebastian Vettel,5,VET,Ferrari,9,0
+Daniel Ricciardo,3,RIC,Renault,8,0
+Pierre Gasly,10,GAS,AlphaTauri,6,0
+Esteban Ocon,31,OCO,Renault,4,0
+Antonio Giovinazzi,99,GIO,Alfa Romeo,2,0
+Daniil Kvyat,26,KVY,AlphaTauri,1,0
+Kevin Magnussen,20,MAG,Haas F1 Team,1,0
+Kimi Räikkönen,7,RAI,Alfa Romeo,0,0
+Nicholas Latifi,6,LAT,Williams,0,0
+Romain Grosjean,8,GRO,Haas F1 Team,0,0
+George Russell,63,RUS,Williams,0,0
+Lewis Hamilton,44,HAM,Mercedes,88,3
+Valtteri Bottas,77,BOT,Mercedes,58,1
+Max Verstappen,33,VER,Red Bull,52,0
+Lando Norris,4,NOR,McLaren,36,0
+Charles Leclerc,16,LEC,Ferrari,33,0
+Alexander Albon,23,ALB,Red Bull,26,0
+Sergio Pérez,11,PER,Racing Point,22,0
+Lance Stroll,18,STR,Racing Point,20,0
+Daniel Ricciardo,3,RIC,Renault,20,0
+Carlos Sainz,55,SAI,McLaren,15,0
+Esteban Ocon,31,OCO,Renault,12,0
+Pierre Gasly,10,GAS,AlphaTauri,12,0
+Sebastian Vettel,5,VET,Ferrari,10,0
+Antonio Giovinazzi,99,GIO,Alfa Romeo,2,0
+Daniil Kvyat,26,KVY,AlphaTauri,1,0
+Kevin Magnussen,20,MAG,Haas F1 Team,1,0
+Nicholas Latifi,6,LAT,Williams,0,0
+Kimi Räikkönen,7,RAI,Alfa Romeo,0,0
+George Russell,63,RUS,Williams,0,0
+Romain Grosjean,8,GRO,Haas F1 Team,0,0
+Nico Hülkenberg,27,HUL,Racing Point,0,0
+Lewis Hamilton,44,HAM,Mercedes,107,3
+Max Verstappen,33,VER,Red Bull,77,1
+Valtteri Bottas,77,BOT,Mercedes,73,1
+Charles Leclerc,16,LEC,Ferrari,45,0
+Lando Norris,4,NOR,McLaren,38,0
+Alexander Albon,23,ALB,Red Bull,36,0
+Lance Stroll,18,STR,Racing Point,28,0
+Sergio Pérez,11,PER,Racing Point,22,0
+Daniel Ricciardo,3,RIC,Renault,20,0
+Esteban Ocon,31,OCO,Renault,16,0
+Carlos Sainz,55,SAI,McLaren,15,0
+Pierre Gasly,10,GAS,AlphaTauri,12,0
+Sebastian Vettel,5,VET,Ferrari,10,0
+Nico Hülkenberg,27,HUL,Racing Point,6,0
+Antonio Giovinazzi,99,GIO,Alfa Romeo,2,0
+Daniil Kvyat,26,KVY,AlphaTauri,2,0
+Kevin Magnussen,20,MAG,Haas F1 Team,1,0
+Kimi Räikkönen,7,RAI,Alfa Romeo,0,0
+Nicholas Latifi,6,LAT,Williams,0,0
+George Russell,63,RUS,Williams,0,0
+Romain Grosjean,8,GRO,Haas F1 Team,0,0
+Lewis Hamilton,44,HAM,Mercedes,132,4
+Max Verstappen,33,VER,Red Bull,95,1
+Valtteri Bottas,77,BOT,Mercedes,89,1
+Charles Leclerc,16,LEC,Ferrari,45,0
+Lance Stroll,18,STR,Racing Point,40,0
+Alexander Albon,23,ALB,Red Bull,40,0
+Lando Norris,4,NOR,McLaren,39,0
+Sergio Pérez,11,PER,Racing Point,32,0
+Carlos Sainz,55,SAI,McLaren,23,0
+Daniel Ricciardo,3,RIC,Renault,20,0
+Sebastian Vettel,5,VET,Ferrari,16,0
+Esteban Ocon,31,OCO,Renault,16,0
+Pierre Gasly,10,GAS,AlphaTauri,14,0
+Nico Hülkenberg,27,HUL,Racing Point,6,0
+Antonio Giovinazzi,99,GIO,Alfa Romeo,2,0
+Daniil Kvyat,26,KVY,AlphaTauri,2,0
+Kevin Magnussen,20,MAG,Haas F1 Team,1,0
+Kimi Räikkönen,7,RAI,Alfa Romeo,0,0
+Nicholas Latifi,6,LAT,Williams,0,0
+George Russell,63,RUS,Williams,0,0
+Romain Grosjean,8,GRO,Haas F1 Team,0,0
+Lewis Hamilton,44,HAM,Mercedes,157,5
+Max Verstappen,33,VER,Red Bull,110,1
+Valtteri Bottas,77,BOT,Mercedes,107,1
+Alexander Albon,23,ALB,Red Bull,48,0
+Charles Leclerc,16,LEC,Ferrari,45,0
+Lando Norris,4,NOR,McLaren,45,0
+Lance Stroll,18,STR,Racing Point,42,0
+Daniel Ricciardo,3,RIC,Renault,33,0
+Sergio Pérez,11,PER,Racing Point,33,0
+Esteban Ocon,31,OCO,Renault,26,0
+Carlos Sainz,55,SAI,McLaren,23,0
+Pierre Gasly,10,GAS,AlphaTauri,18,0
+Sebastian Vettel,5,VET,Ferrari,16,0
+Nico Hülkenberg,27,HUL,Racing Point,6,0
+Antonio Giovinazzi,99,GIO,Alfa Romeo,2,0
+Daniil Kvyat,26,KVY,AlphaTauri,2,0
+Kevin Magnussen,20,MAG,Haas F1 Team,1,0
+Kimi Räikkönen,7,RAI,Alfa Romeo,0,0
+Nicholas Latifi,6,LAT,Williams,0,0
+George Russell,63,RUS,Williams,0,0
+Romain Grosjean,8,GRO,Haas F1 Team,0,0
+Lewis Hamilton,44,HAM,Mercedes,164,5
+Valtteri Bottas,77,BOT,Mercedes,117,1
+Max Verstappen,33,VER,Red Bull,110,1
+Lance Stroll,18,STR,Racing Point,57,0
+Lando Norris,4,NOR,McLaren,57,0
+Alexander Albon,23,ALB,Red Bull,48,0
+Charles Leclerc,16,LEC,Ferrari,45,0
+Pierre Gasly,10,GAS,AlphaTauri,43,1
+Carlos Sainz,55,SAI,McLaren,41,0
+Daniel Ricciardo,3,RIC,Renault,41,0
+Sergio Pérez,11,PER,Racing Point,34,0
+Esteban Ocon,31,OCO,Renault,30,0
+Sebastian Vettel,5,VET,Ferrari,16,0
+Nico Hülkenberg,27,HUL,Racing Point,6,0
+Daniil Kvyat,26,KVY,AlphaTauri,4,0
+Antonio Giovinazzi,99,GIO,Alfa Romeo,2,0
+Kevin Magnussen,20,MAG,Haas F1 Team,1,0
+Nicholas Latifi,6,LAT,Williams,0,0
+Kimi Räikkönen,7,RAI,Alfa Romeo,0,0
+Romain Grosjean,8,GRO,Haas F1 Team,0,0
+George Russell,63,RUS,Williams,0,0
+Lewis Hamilton,44,HAM,Mercedes,190,6
+Valtteri Bottas,77,BOT,Mercedes,135,1
+Max Verstappen,33,VER,Red Bull,110,1
+Lando Norris,4,NOR,McLaren,65,0
+Alexander Albon,23,ALB,Red Bull,63,0
+Lance Stroll,18,STR,Racing Point,57,0
+Daniel Ricciardo,3,RIC,Renault,53,0
+Charles Leclerc,16,LEC,Ferrari,49,0
+Sergio Pérez,11,PER,Racing Point,44,0
+Pierre Gasly,10,GAS,AlphaTauri,43,1
+Carlos Sainz,55,SAI,McLaren,41,0
+Esteban Ocon,31,OCO,Renault,30,0
+Sebastian Vettel,5,VET,Ferrari,17,0
+Daniil Kvyat,26,KVY,AlphaTauri,10,0
+Nico Hülkenberg,27,HUL,Racing Point,6,0
+Kimi Räikkönen,7,RAI,Alfa Romeo,2,0
+Antonio Giovinazzi,99,GIO,Alfa Romeo,2,0
+Kevin Magnussen,20,MAG,Haas F1 Team,1,0
+Nicholas Latifi,6,LAT,Williams,0,0
+George Russell,63,RUS,Williams,0,0
+Romain Grosjean,8,GRO,Haas F1 Team,0,0
+Lewis Hamilton,44,HAM,Mercedes,205,6
+Valtteri Bottas,77,BOT,Mercedes,161,2
+Max Verstappen,33,VER,Red Bull,128,1
+Lando Norris,4,NOR,McLaren,65,0
+Alexander Albon,23,ALB,Red Bull,64,0
+Daniel Ricciardo,3,RIC,Renault,63,0
+Charles Leclerc,16,LEC,Ferrari,57,0
+Lance Stroll,18,STR,Racing Point,57,0
+Sergio Pérez,11,PER,Racing Point,56,0
+Pierre Gasly,10,GAS,AlphaTauri,45,1
+Carlos Sainz,55,SAI,McLaren,41,0
+Esteban Ocon,31,OCO,Renault,36,0
+Sebastian Vettel,5,VET,Ferrari,17,0
+Daniil Kvyat,26,KVY,AlphaTauri,14,0
+Nico Hülkenberg,27,HUL,Racing Point,6,0
+Kimi Räikkönen,7,RAI,Alfa Romeo,2,0
+Antonio Giovinazzi,99,GIO,Alfa Romeo,2,0
+Kevin Magnussen,20,MAG,Haas F1 Team,1,0
+Nicholas Latifi,6,LAT,Williams,0,0
+George Russell,63,RUS,Williams,0,0
+Romain Grosjean,8,GRO,Haas F1 Team,0,0
+Lewis Hamilton,44,HAM,Mercedes,230,7
+Valtteri Bottas,77,BOT,Mercedes,161,2
+Max Verstappen,33,VER,Red Bull,147,1
+Daniel Ricciardo,3,RIC,Renault,78,0
+Sergio Pérez,11,PER,Racing Point,68,0
+Lando Norris,4,NOR,McLaren,65,0
+Alexander Albon,23,ALB,Red Bull,64,0
+Charles Leclerc,16,LEC,Ferrari,63,0
+Lance Stroll,18,STR,Racing Point,57,0
+Pierre Gasly,10,GAS,AlphaTauri,53,1
+Carlos Sainz,55,SAI,McLaren,51,0
+Esteban Ocon,31,OCO,Renault,36,0
+Sebastian Vettel,5,VET,Ferrari,17,0
+Daniil Kvyat,26,KVY,AlphaTauri,14,0
+Nico Hülkenberg,27,HUL,Racing Point,10,0
+Antonio Giovinazzi,99,GIO,Alfa Romeo,3,0
+Kimi Räikkönen,7,RAI,Alfa Romeo,2,0
+Romain Grosjean,8,GRO,Haas F1 Team,2,0
+Kevin Magnussen,20,MAG,Haas F1 Team,1,0
+Nicholas Latifi,6,LAT,Williams,0,0
+George Russell,63,RUS,Williams,0,0
+Lewis Hamilton,44,HAM,Mercedes,256,8
+Valtteri Bottas,77,BOT,Mercedes,179,2
+Max Verstappen,33,VER,Red Bull,162,1
+Daniel Ricciardo,3,RIC,Renault,80,0
+Charles Leclerc,16,LEC,Ferrari,75,0
+Sergio Pérez,11,PER,Racing Point,74,0
+Lando Norris,4,NOR,McLaren,65,0
+Alexander Albon,23,ALB,Red Bull,64,0
+Pierre Gasly,10,GAS,AlphaTauri,63,1
+Carlos Sainz,55,SAI,McLaren,59,0
+Lance Stroll,18,STR,Racing Point,57,0
+Esteban Ocon,31,OCO,Renault,40,0
+Sebastian Vettel,5,VET,Ferrari,18,0
+Daniil Kvyat,26,KVY,AlphaTauri,14,0
+Nico Hülkenberg,27,HUL,Racing Point,10,0
+Antonio Giovinazzi,99,GIO,Alfa Romeo,3,0
+Kimi Räikkönen,7,RAI,Alfa Romeo,2,0
+Romain Grosjean,8,GRO,Haas F1 Team,2,0
+Kevin Magnussen,20,MAG,Haas F1 Team,1,0
+Nicholas Latifi,6,LAT,Williams,0,0
+George Russell,63,RUS,Williams,0,0
+Lewis Hamilton,44,HAM,Mercedes,282,9
+Valtteri Bottas,77,BOT,Mercedes,197,2
+Max Verstappen,33,VER,Red Bull,162,1
+Daniel Ricciardo,3,RIC,Renault,95,0
+Charles Leclerc,16,LEC,Ferrari,85,0
+Sergio Pérez,11,PER,Racing Point,82,0
+Lando Norris,4,NOR,McLaren,69,0
+Carlos Sainz,55,SAI,McLaren,65,0
+Alexander Albon,23,ALB,Red Bull,64,0
+Pierre Gasly,10,GAS,AlphaTauri,63,1
+Lance Stroll,18,STR,Racing Point,57,0
+Esteban Ocon,31,OCO,Renault,40,0
+Daniil Kvyat,26,KVY,AlphaTauri,26,0
+Sebastian Vettel,5,VET,Ferrari,18,0
+Nico Hülkenberg,27,HUL,Racing Point,10,0
+Kimi Räikkönen,7,RAI,Alfa Romeo,4,0
+Antonio Giovinazzi,99,GIO,Alfa Romeo,4,0
+Romain Grosjean,8,GRO,Haas F1 Team,2,0
+Kevin Magnussen,20,MAG,Haas F1 Team,1,0
+Nicholas Latifi,6,LAT,Williams,0,0
+George Russell,63,RUS,Williams,0,0
+Lewis Hamilton,44,HAM,Mercedes,307,10
+Valtteri Bottas,77,BOT,Mercedes,197,2
+Max Verstappen,33,VER,Red Bull,170,1
+Sergio Pérez,11,PER,Racing Point,100,0
+Charles Leclerc,16,LEC,Ferrari,97,0
+Daniel Ricciardo,3,RIC,Renault,96,0
+Carlos Sainz,55,SAI,McLaren,75,0
+Lando Norris,4,NOR,McLaren,74,0
+Alexander Albon,23,ALB,Red Bull,70,0
+Pierre Gasly,10,GAS,AlphaTauri,63,1
+Lance Stroll,18,STR,Racing Point,59,0
+Esteban Ocon,31,OCO,Renault,40,0
+Sebastian Vettel,5,VET,Ferrari,33,0
+Daniil Kvyat,26,KVY,AlphaTauri,26,0
+Nico Hülkenberg,27,HUL,Racing Point,10,0
+Kimi Räikkönen,7,RAI,Alfa Romeo,4,0
+Antonio Giovinazzi,99,GIO,Alfa Romeo,4,0
+Romain Grosjean,8,GRO,Haas F1 Team,2,0
+Kevin Magnussen,20,MAG,Haas F1 Team,1,0
+Nicholas Latifi,6,LAT,Williams,0,0
+George Russell,63,RUS,Williams,0,0
+Lewis Hamilton,44,HAM,Mercedes,332,11
+Valtteri Bottas,77,BOT,Mercedes,201,2
+Max Verstappen,33,VER,Red Bull,189,1
+Daniel Ricciardo,3,RIC,Renault,102,0
+Sergio Pérez,11,PER,Racing Point,100,0
+Charles Leclerc,16,LEC,Ferrari,98,0
+Lando Norris,4,NOR,McLaren,86,0
+Carlos Sainz,55,SAI,McLaren,85,0
+Alexander Albon,23,ALB,Red Bull,85,0
+Pierre Gasly,10,GAS,AlphaTauri,71,1
+Lance Stroll,18,STR,Racing Point,59,0
+Esteban Ocon,31,OCO,Renault,42,0
+Sebastian Vettel,5,VET,Ferrari,33,0
+Daniil Kvyat,26,KVY,AlphaTauri,26,0
+Nico Hülkenberg,27,HUL,Racing Point,10,0
+Kimi Räikkönen,7,RAI,Alfa Romeo,4,0
+Antonio Giovinazzi,99,GIO,Alfa Romeo,4,0
+Romain Grosjean,8,GRO,Haas F1 Team,2,0
+Kevin Magnussen,20,MAG,Haas F1 Team,1,0
+Nicholas Latifi,6,LAT,Williams,0,0
+George Russell,63,RUS,Williams,0,0
+Lewis Hamilton,44,HAM,Mercedes,332,11
+Valtteri Bottas,77,BOT,Mercedes,205,2
+Max Verstappen,33,VER,Red Bull,189,1
+Sergio Pérez,11,PER,Racing Point,125,1
+Daniel Ricciardo,3,RIC,Renault,112,0
+Charles Leclerc,16,LEC,Ferrari,98,0
+Carlos Sainz,55,SAI,McLaren,97,0
+Alexander Albon,23,ALB,Red Bull,93,0
+Lando Norris,4,NOR,McLaren,87,0
+Lance Stroll,18,STR,Racing Point,74,0
+Pierre Gasly,10,GAS,AlphaTauri,71,1
+Esteban Ocon,31,OCO,Renault,60,0
+Sebastian Vettel,5,VET,Ferrari,33,0
+Daniil Kvyat,26,KVY,AlphaTauri,32,0
+Nico Hülkenberg,27,HUL,Racing Point,10,0
+Kimi Räikkönen,7,RAI,Alfa Romeo,4,0
+Antonio Giovinazzi,99,GIO,Alfa Romeo,4,0
+George Russell,63,RUS,Williams,3,0
+Romain Grosjean,8,GRO,Haas F1 Team,2,0
+Kevin Magnussen,20,MAG,Haas F1 Team,1,0
+Nicholas Latifi,6,LAT,Williams,0,0
+Jack Aitken,89,AIT,Williams,0,0
+Pietro Fittipaldi,51,FIT,Haas F1 Team,0,0
+Lewis Hamilton,44,HAM,Mercedes,347,11
+Valtteri Bottas,77,BOT,Mercedes,223,2
+Max Verstappen,33,VER,Red Bull,214,2
+Sergio Pérez,11,PER,Racing Point,125,1
+Daniel Ricciardo,3,RIC,Renault,119,0
+Carlos Sainz,55,SAI,McLaren,105,0
+Alexander Albon,23,ALB,Red Bull,105,0
+Charles Leclerc,16,LEC,Ferrari,98,0
+Lando Norris,4,NOR,McLaren,97,0
+Pierre Gasly,10,GAS,AlphaTauri,75,1
+Lance Stroll,18,STR,Racing Point,75,0
+Esteban Ocon,31,OCO,Renault,62,0
+Sebastian Vettel,5,VET,Ferrari,33,0
+Daniil Kvyat,26,KVY,AlphaTauri,32,0
+Nico Hülkenberg,27,HUL,Racing Point,10,0
+Kimi Räikkönen,7,RAI,Alfa Romeo,4,0
+Antonio Giovinazzi,99,GIO,Alfa Romeo,4,0
+George Russell,63,RUS,Williams,3,0
+Romain Grosjean,8,GRO,Haas F1 Team,2,0
+Kevin Magnussen,20,MAG,Haas F1 Team,1,0
+Nicholas Latifi,6,LAT,Williams,0,0
+Jack Aitken,89,AIT,Williams,0,0
+Pietro Fittipaldi,51,FIT,Haas F1 Team,0,0
+Lewis Hamilton,44,HAM,Mercedes,25,1
+Max Verstappen,33,VER,Red Bull,18,0
+Valtteri Bottas,77,BOT,Mercedes,16,0
+Lando Norris,4,NOR,McLaren,12,0
+Sergio Pérez,11,PER,Red Bull,10,0
+Charles Leclerc,16,LEC,Ferrari,8,0
+Daniel Ricciardo,3,RIC,McLaren,6,0
+Carlos Sainz,55,SAI,Ferrari,4,0
+Yuki Tsunoda,22,TSU,AlphaTauri,2,0
+Lance Stroll,18,STR,Aston Martin,1,0
+Kimi Räikkönen,7,RAI,Alfa Romeo,0,0
+Antonio Giovinazzi,99,GIO,Alfa Romeo,0,0
+Esteban Ocon,31,OCO,Alpine F1 Team,0,0
+George Russell,63,RUS,Williams,0,0
+Sebastian Vettel,5,VET,Aston Martin,0,0
+Mick Schumacher,47,MSC,Haas F1 Team,0,0
+Pierre Gasly,10,GAS,AlphaTauri,0,0
+Nicholas Latifi,6,LAT,Williams,0,0
+Fernando Alonso,14,ALO,Alpine F1 Team,0,0
+Nikita Mazepin,9,MAZ,Haas F1 Team,0,0
+Lewis Hamilton,44,HAM,Mercedes,44,1
+Max Verstappen,33,VER,Red Bull,43,1
+Lando Norris,4,NOR,McLaren,27,0
+Charles Leclerc,16,LEC,Ferrari,20,0
+Valtteri Bottas,77,BOT,Mercedes,16,0
+Carlos Sainz,55,SAI,Ferrari,14,0
+Daniel Ricciardo,3,RIC,McLaren,14,0
+Sergio Pérez,11,PER,Red Bull,10,0
+Pierre Gasly,10,GAS,AlphaTauri,6,0
+Lance Stroll,18,STR,Aston Martin,5,0
+Yuki Tsunoda,22,TSU,AlphaTauri,2,0
+Esteban Ocon,31,OCO,Alpine F1 Team,2,0
+Fernando Alonso,14,ALO,Alpine F1 Team,1,0
+Kimi Räikkönen,7,RAI,Alfa Romeo,0,0
+Antonio Giovinazzi,99,GIO,Alfa Romeo,0,0
+George Russell,63,RUS,Williams,0,0
+Sebastian Vettel,5,VET,Aston Martin,0,0
+Mick Schumacher,47,MSC,Haas F1 Team,0,0
+Nikita Mazepin,9,MAZ,Haas F1 Team,0,0
+Nicholas Latifi,6,LAT,Williams,0,0
+Lewis Hamilton,44,HAM,Mercedes,69,2
+Max Verstappen,33,VER,Red Bull,61,1
+Lando Norris,4,NOR,McLaren,37,0
+Valtteri Bottas,77,BOT,Mercedes,32,0
+Charles Leclerc,16,LEC,Ferrari,28,0
+Sergio Pérez,11,PER,Red Bull,22,0
+Daniel Ricciardo,3,RIC,McLaren,16,0
+Carlos Sainz,55,SAI,Ferrari,14,0
+Esteban Ocon,31,OCO,Alpine F1 Team,8,0
+Pierre Gasly,10,GAS,AlphaTauri,7,0
+Lance Stroll,18,STR,Aston Martin,5,0
+Fernando Alonso,14,ALO,Alpine F1 Team,5,0
+Yuki Tsunoda,22,TSU,AlphaTauri,2,0
+Kimi Räikkönen,7,RAI,Alfa Romeo,0,0
+Antonio Giovinazzi,99,GIO,Alfa Romeo,0,0
+Sebastian Vettel,5,VET,Aston Martin,0,0
+George Russell,63,RUS,Williams,0,0
+Mick Schumacher,47,MSC,Haas F1 Team,0,0
+Nikita Mazepin,9,MAZ,Haas F1 Team,0,0
+Nicholas Latifi,6,LAT,Williams,0,0
+Lewis Hamilton,44,HAM,Mercedes,94,3
+Max Verstappen,33,VER,Red Bull,80,1
+Valtteri Bottas,77,BOT,Mercedes,47,0
+Lando Norris,4,NOR,McLaren,41,0
+Charles Leclerc,16,LEC,Ferrari,40,0
+Sergio Pérez,11,PER,Red Bull,32,0
+Daniel Ricciardo,3,RIC,McLaren,24,0
+Carlos Sainz,55,SAI,Ferrari,20,0
+Esteban Ocon,31,OCO,Alpine F1 Team,10,0
+Pierre Gasly,10,GAS,AlphaTauri,8,0
+Lance Stroll,18,STR,Aston Martin,5,0
+Fernando Alonso,14,ALO,Alpine F1 Team,5,0
+Yuki Tsunoda,22,TSU,AlphaTauri,2,0
+Kimi Räikkönen,7,RAI,Alfa Romeo,0,0
+Antonio Giovinazzi,99,GIO,Alfa Romeo,0,0
+Sebastian Vettel,5,VET,Aston Martin,0,0
+George Russell,63,RUS,Williams,0,0
+Mick Schumacher,47,MSC,Haas F1 Team,0,0
+Nicholas Latifi,6,LAT,Williams,0,0
+Nikita Mazepin,9,MAZ,Haas F1 Team,0,0
+Max Verstappen,33,VER,Red Bull,105,2
+Lewis Hamilton,44,HAM,Mercedes,101,3
+Lando Norris,4,NOR,McLaren,56,0
+Valtteri Bottas,77,BOT,Mercedes,47,0
+Sergio Pérez,11,PER,Red Bull,44,0
+Charles Leclerc,16,LEC,Ferrari,40,0
+Carlos Sainz,55,SAI,Ferrari,38,0
+Daniel Ricciardo,3,RIC,McLaren,24,0
+Pierre Gasly,10,GAS,AlphaTauri,16,0
+Esteban Ocon,31,OCO,Alpine F1 Team,12,0
+Sebastian Vettel,5,VET,Aston Martin,10,0
+Lance Stroll,18,STR,Aston Martin,9,0
+Fernando Alonso,14,ALO,Alpine F1 Team,5,0
+Yuki Tsunoda,22,TSU,AlphaTauri,2,0
+Antonio Giovinazzi,99,GIO,Alfa Romeo,1,0
+Kimi Räikkönen,7,RAI,Alfa Romeo,0,0
+George Russell,63,RUS,Williams,0,0
+Nicholas Latifi,6,LAT,Williams,0,0
+Mick Schumacher,47,MSC,Haas F1 Team,0,0
+Nikita Mazepin,9,MAZ,Haas F1 Team,0,0
+Max Verstappen,33,VER,Red Bull,105,2
+Lewis Hamilton,44,HAM,Mercedes,101,3
+Sergio Pérez,11,PER,Red Bull,69,1
+Lando Norris,4,NOR,McLaren,66,0
+Charles Leclerc,16,LEC,Ferrari,52,0
+Valtteri Bottas,77,BOT,Mercedes,47,0
+Carlos Sainz,55,SAI,Ferrari,42,0
+Pierre Gasly,10,GAS,AlphaTauri,31,0
+Sebastian Vettel,5,VET,Aston Martin,28,0
+Daniel Ricciardo,3,RIC,McLaren,26,0
+Fernando Alonso,14,ALO,Alpine F1 Team,13,0
+Esteban Ocon,31,OCO,Alpine F1 Team,12,0
+Lance Stroll,18,STR,Aston Martin,9,0
+Yuki Tsunoda,22,TSU,AlphaTauri,8,0
+Kimi Räikkönen,7,RAI,Alfa Romeo,1,0
+Antonio Giovinazzi,99,GIO,Alfa Romeo,1,0
+Mick Schumacher,47,MSC,Haas F1 Team,0,0
+George Russell,63,RUS,Williams,0,0
+Nikita Mazepin,9,MAZ,Haas F1 Team,0,0
+Nicholas Latifi,6,LAT,Williams,0,0
+Max Verstappen,33,VER,Red Bull,131,3
+Lewis Hamilton,44,HAM,Mercedes,119,3
+Sergio Pérez,11,PER,Red Bull,84,1
+Lando Norris,4,NOR,McLaren,76,0
+Valtteri Bottas,77,BOT,Mercedes,59,0
+Charles Leclerc,16,LEC,Ferrari,52,0
+Carlos Sainz,55,SAI,Ferrari,42,0
+Pierre Gasly,10,GAS,AlphaTauri,37,0
+Daniel Ricciardo,3,RIC,McLaren,34,0
+Sebastian Vettel,5,VET,Aston Martin,30,0
+Fernando Alonso,14,ALO,Alpine F1 Team,17,0
+Esteban Ocon,31,OCO,Alpine F1 Team,12,0
+Lance Stroll,18,STR,Aston Martin,10,0
+Yuki Tsunoda,22,TSU,AlphaTauri,8,0
+Kimi Räikkönen,7,RAI,Alfa Romeo,1,0
+Antonio Giovinazzi,99,GIO,Alfa Romeo,1,0
+George Russell,63,RUS,Williams,0,0
+Mick Schumacher,47,MSC,Haas F1 Team,0,0
+Nikita Mazepin,9,MAZ,Haas F1 Team,0,0
+Nicholas Latifi,6,LAT,Williams,0,0
+Max Verstappen,33,VER,Red Bull,156,4
+Lewis Hamilton,44,HAM,Mercedes,138,3
+Sergio Pérez,11,PER,Red Bull,96,1
+Lando Norris,4,NOR,McLaren,86,0
+Valtteri Bottas,77,BOT,Mercedes,74,0
+Charles Leclerc,16,LEC,Ferrari,58,0
+Carlos Sainz,55,SAI,Ferrari,50,0
+Pierre Gasly,10,GAS,AlphaTauri,37,0
+Daniel Ricciardo,3,RIC,McLaren,34,0
+Sebastian Vettel,5,VET,Aston Martin,30,0
+Fernando Alonso,14,ALO,Alpine F1 Team,19,0
+Lance Stroll,18,STR,Aston Martin,14,0
+Esteban Ocon,31,OCO,Alpine F1 Team,12,0
+Yuki Tsunoda,22,TSU,AlphaTauri,9,0
+Kimi Räikkönen,7,RAI,Alfa Romeo,1,0
+Antonio Giovinazzi,99,GIO,Alfa Romeo,1,0
+George Russell,63,RUS,Williams,0,0
+Mick Schumacher,47,MSC,Haas F1 Team,0,0
+Nikita Mazepin,9,MAZ,Haas F1 Team,0,0
+Nicholas Latifi,6,LAT,Williams,0,0
+Max Verstappen,33,VER,Red Bull,182,5
+Lewis Hamilton,44,HAM,Mercedes,150,3
+Sergio Pérez,11,PER,Red Bull,104,1
+Lando Norris,4,NOR,McLaren,101,0
+Valtteri Bottas,77,BOT,Mercedes,92,0
+Charles Leclerc,16,LEC,Ferrari,62,0
+Carlos Sainz,55,SAI,Ferrari,60,0
+Daniel Ricciardo,3,RIC,McLaren,40,0
+Pierre Gasly,10,GAS,AlphaTauri,39,0
+Sebastian Vettel,5,VET,Aston Martin,30,0
+Fernando Alonso,14,ALO,Alpine F1 Team,20,0
+Lance Stroll,18,STR,Aston Martin,14,0
+Esteban Ocon,31,OCO,Alpine F1 Team,12,0
+Yuki Tsunoda,22,TSU,AlphaTauri,9,0
+Kimi Räikkönen,7,RAI,Alfa Romeo,1,0
+Antonio Giovinazzi,99,GIO,Alfa Romeo,1,0
+George Russell,63,RUS,Williams,0,0
+Mick Schumacher,47,MSC,Haas F1 Team,0,0
+Nikita Mazepin,9,MAZ,Haas F1 Team,0,0
+Nicholas Latifi,6,LAT,Williams,0,0
+Max Verstappen,33,VER,Red Bull,185,5
+Lewis Hamilton,44,HAM,Mercedes,177,4
+Lando Norris,4,NOR,McLaren,113,0
+Valtteri Bottas,77,BOT,Mercedes,108,0
+Sergio Pérez,11,PER,Red Bull,104,1
+Charles Leclerc,16,LEC,Ferrari,80,0
+Carlos Sainz,55,SAI,Ferrari,68,0
+Daniel Ricciardo,3,RIC,McLaren,50,0
+Pierre Gasly,10,GAS,AlphaTauri,39,0
+Sebastian Vettel,5,VET,Aston Martin,30,0
+Fernando Alonso,14,ALO,Alpine F1 Team,26,0
+Lance Stroll,18,STR,Aston Martin,18,0
+Esteban Ocon,31,OCO,Alpine F1 Team,14,0
+Yuki Tsunoda,22,TSU,AlphaTauri,10,0
+Kimi Räikkönen,7,RAI,Alfa Romeo,1,0
+Antonio Giovinazzi,99,GIO,Alfa Romeo,1,0
+George Russell,63,RUS,Williams,0,0
+Mick Schumacher,47,MSC,Haas F1 Team,0,0
+Nicholas Latifi,6,LAT,Williams,0,0
+Nikita Mazepin,9,MAZ,Haas F1 Team,0,0
+Lewis Hamilton,44,HAM,Mercedes,195,4
+Max Verstappen,33,VER,Red Bull,187,5
+Lando Norris,4,NOR,McLaren,113,0
+Valtteri Bottas,77,BOT,Mercedes,108,0
+Sergio Pérez,11,PER,Red Bull,104,1
+Carlos Sainz,55,SAI,Ferrari,83,0
+Charles Leclerc,16,LEC,Ferrari,80,0
+Pierre Gasly,10,GAS,AlphaTauri,50,0
+Daniel Ricciardo,3,RIC,McLaren,50,0
+Esteban Ocon,31,OCO,Alpine F1 Team,39,1
+Fernando Alonso,14,ALO,Alpine F1 Team,38,0
+Sebastian Vettel,5,VET,Aston Martin,30,0
+Yuki Tsunoda,22,TSU,AlphaTauri,18,0
+Lance Stroll,18,STR,Aston Martin,18,0
+Nicholas Latifi,6,LAT,Williams,6,0
+George Russell,63,RUS,Williams,4,0
+Kimi Räikkönen,7,RAI,Alfa Romeo,2,0
+Antonio Giovinazzi,99,GIO,Alfa Romeo,1,0
+Mick Schumacher,47,MSC,Haas F1 Team,0,0
+Nikita Mazepin,9,MAZ,Haas F1 Team,0,0
+Lewis Hamilton,44,HAM,Mercedes,202.5,4
+Max Verstappen,33,VER,Red Bull,199.5,6
+Lando Norris,4,NOR,McLaren,113,0
+Valtteri Bottas,77,BOT,Mercedes,108,0
+Sergio Pérez,11,PER,Red Bull,104,1
+Carlos Sainz,55,SAI,Ferrari,83.5,0
+Charles Leclerc,16,LEC,Ferrari,82,0
+Daniel Ricciardo,3,RIC,McLaren,56,0
+Pierre Gasly,10,GAS,AlphaTauri,54,0
+Esteban Ocon,31,OCO,Alpine F1 Team,42,1
+Fernando Alonso,14,ALO,Alpine F1 Team,38,0
+Sebastian Vettel,5,VET,Aston Martin,35,0
+Yuki Tsunoda,22,TSU,AlphaTauri,18,0
+Lance Stroll,18,STR,Aston Martin,18,0
+George Russell,63,RUS,Williams,13,0
+Nicholas Latifi,6,LAT,Williams,7,0
+Kimi Räikkönen,7,RAI,Alfa Romeo,2,0
+Antonio Giovinazzi,99,GIO,Alfa Romeo,1,0
+Mick Schumacher,47,MSC,Haas F1 Team,0,0
+Nikita Mazepin,9,MAZ,Haas F1 Team,0,0
+Max Verstappen,33,VER,Red Bull,224.5,7
+Lewis Hamilton,44,HAM,Mercedes,221.5,4
+Valtteri Bottas,77,BOT,Mercedes,123,0
+Lando Norris,4,NOR,McLaren,114,0
+Sergio Pérez,11,PER,Red Bull,108,1
+Charles Leclerc,16,LEC,Ferrari,92,0
+Carlos Sainz,55,SAI,Ferrari,89.5,0
+Pierre Gasly,10,GAS,AlphaTauri,66,0
+Daniel Ricciardo,3,RIC,McLaren,56,0
+Fernando Alonso,14,ALO,Alpine F1 Team,46,0
+Esteban Ocon,31,OCO,Alpine F1 Team,44,1
+Sebastian Vettel,5,VET,Aston Martin,35,0
+Yuki Tsunoda,22,TSU,AlphaTauri,18,0
+Lance Stroll,18,STR,Aston Martin,18,0
+George Russell,63,RUS,Williams,13,0
+Nicholas Latifi,6,LAT,Williams,7,0
+Kimi Räikkönen,7,RAI,Alfa Romeo,2,0
+Antonio Giovinazzi,99,GIO,Alfa Romeo,1,0
+Mick Schumacher,47,MSC,Haas F1 Team,0,0
+Nikita Mazepin,9,MAZ,Haas F1 Team,0,0
+Robert Kubica,88,KUB,Alfa Romeo,0,0
+Max Verstappen,33,VER,Red Bull,226.5,7
+Lewis Hamilton,44,HAM,Mercedes,221.5,4
+Valtteri Bottas,77,BOT,Mercedes,141,0
+Lando Norris,4,NOR,McLaren,132,0
+Sergio Pérez,11,PER,Red Bull,118,1
+Charles Leclerc,16,LEC,Ferrari,104,0
+Carlos Sainz,55,SAI,Ferrari,97.5,0
+Daniel Ricciardo,3,RIC,McLaren,83,1
+Pierre Gasly,10,GAS,AlphaTauri,66,0
+Fernando Alonso,14,ALO,Alpine F1 Team,50,0
+Esteban Ocon,31,OCO,Alpine F1 Team,45,1
+Sebastian Vettel,5,VET,Aston Martin,35,0
+Lance Stroll,18,STR,Aston Martin,24,0
+Yuki Tsunoda,22,TSU,AlphaTauri,18,0
+George Russell,63,RUS,Williams,15,0
+Nicholas Latifi,6,LAT,Williams,7,0
+Kimi Räikkönen,7,RAI,Alfa Romeo,2,0
+Antonio Giovinazzi,99,GIO,Alfa Romeo,1,0
+Mick Schumacher,47,MSC,Haas F1 Team,0,0
+Robert Kubica,88,KUB,Alfa Romeo,0,0
+Nikita Mazepin,9,MAZ,Haas F1 Team,0,0
+Lewis Hamilton,44,HAM,Mercedes,246.5,5
+Max Verstappen,33,VER,Red Bull,244.5,7
+Valtteri Bottas,77,BOT,Mercedes,151,0
+Lando Norris,4,NOR,McLaren,139,0
+Sergio Pérez,11,PER,Red Bull,120,1
+Carlos Sainz,55,SAI,Ferrari,112.5,0
+Charles Leclerc,16,LEC,Ferrari,104,0
+Daniel Ricciardo,3,RIC,McLaren,95,1
+Pierre Gasly,10,GAS,AlphaTauri,66,0
+Fernando Alonso,14,ALO,Alpine F1 Team,58,0
+Esteban Ocon,31,OCO,Alpine F1 Team,45,1
+Sebastian Vettel,5,VET,Aston Martin,35,0
+Lance Stroll,18,STR,Aston Martin,24,0
+Yuki Tsunoda,22,TSU,AlphaTauri,18,0
+George Russell,63,RUS,Williams,16,0
+Nicholas Latifi,6,LAT,Williams,7,0
+Kimi Räikkönen,7,RAI,Alfa Romeo,6,0
+Antonio Giovinazzi,99,GIO,Alfa Romeo,1,0
+Mick Schumacher,47,MSC,Haas F1 Team,0,0
+Robert Kubica,88,KUB,Alfa Romeo,0,0
+Nikita Mazepin,9,MAZ,Haas F1 Team,0,0
+Max Verstappen,33,VER,Red Bull,262.5,7
+Lewis Hamilton,44,HAM,Mercedes,256.5,5
+Valtteri Bottas,77,BOT,Mercedes,177,1
+Lando Norris,4,NOR,McLaren,145,0
+Sergio Pérez,11,PER,Red Bull,135,1
+Carlos Sainz,55,SAI,Ferrari,116.5,0
+Charles Leclerc,16,LEC,Ferrari,116,0
+Daniel Ricciardo,3,RIC,McLaren,95,1
+Pierre Gasly,10,GAS,AlphaTauri,74,0
+Fernando Alonso,14,ALO,Alpine F1 Team,58,0
+Esteban Ocon,31,OCO,Alpine F1 Team,46,1
+Sebastian Vettel,5,VET,Aston Martin,35,0
+Lance Stroll,18,STR,Aston Martin,26,0
+Yuki Tsunoda,22,TSU,AlphaTauri,18,0
+George Russell,63,RUS,Williams,16,0
+Nicholas Latifi,6,LAT,Williams,7,0
+Kimi Räikkönen,7,RAI,Alfa Romeo,6,0
+Antonio Giovinazzi,99,GIO,Alfa Romeo,1,0
+Mick Schumacher,47,MSC,Haas F1 Team,0,0
+Robert Kubica,88,KUB,Alfa Romeo,0,0
+Nikita Mazepin,9,MAZ,Haas F1 Team,0,0
+Max Verstappen,33,VER,Red Bull,287.5,8
+Lewis Hamilton,44,HAM,Mercedes,275.5,5
+Valtteri Bottas,77,BOT,Mercedes,185,1
+Sergio Pérez,11,PER,Red Bull,150,1
+Lando Norris,4,NOR,McLaren,149,0
+Charles Leclerc,16,LEC,Ferrari,128,0
+Carlos Sainz,55,SAI,Ferrari,122.5,0
+Daniel Ricciardo,3,RIC,McLaren,105,1
+Pierre Gasly,10,GAS,AlphaTauri,74,0
+Fernando Alonso,14,ALO,Alpine F1 Team,58,0
+Esteban Ocon,31,OCO,Alpine F1 Team,46,1
+Sebastian Vettel,5,VET,Aston Martin,36,0
+Lance Stroll,18,STR,Aston Martin,26,0
+Yuki Tsunoda,22,TSU,AlphaTauri,20,0
+George Russell,63,RUS,Williams,16,0
+Nicholas Latifi,6,LAT,Williams,7,0
+Kimi Räikkönen,7,RAI,Alfa Romeo,6,0
+Antonio Giovinazzi,99,GIO,Alfa Romeo,1,0
+Mick Schumacher,47,MSC,Haas F1 Team,0,0
+Robert Kubica,88,KUB,Alfa Romeo,0,0
+Nikita Mazepin,9,MAZ,Haas F1 Team,0,0
+Max Verstappen,33,VER,Red Bull,312.5,9
+Lewis Hamilton,44,HAM,Mercedes,293.5,5
+Valtteri Bottas,77,BOT,Mercedes,185,1
+Sergio Pérez,11,PER,Red Bull,165,1
+Lando Norris,4,NOR,McLaren,150,0
+Charles Leclerc,16,LEC,Ferrari,138,0
+Carlos Sainz,55,SAI,Ferrari,130.5,0
+Daniel Ricciardo,3,RIC,McLaren,105,1
+Pierre Gasly,10,GAS,AlphaTauri,86,0
+Fernando Alonso,14,ALO,Alpine F1 Team,60,0
+Esteban Ocon,31,OCO,Alpine F1 Team,46,1
+Sebastian Vettel,5,VET,Aston Martin,42,0
+Lance Stroll,18,STR,Aston Martin,26,0
+Yuki Tsunoda,22,TSU,AlphaTauri,20,0
+George Russell,63,RUS,Williams,16,0
+Kimi Räikkönen,7,RAI,Alfa Romeo,10,0
+Nicholas Latifi,6,LAT,Williams,7,0
+Antonio Giovinazzi,99,GIO,Alfa Romeo,1,0
+Mick Schumacher,47,MSC,Haas F1 Team,0,0
+Robert Kubica,88,KUB,Alfa Romeo,0,0
+Nikita Mazepin,9,MAZ,Haas F1 Team,0,0
+Max Verstappen,33,VER,Red Bull,332.5,9
+Lewis Hamilton,44,HAM,Mercedes,318.5,6
+Valtteri Bottas,77,BOT,Mercedes,203,1
+Sergio Pérez,11,PER,Red Bull,178,1
+Lando Norris,4,NOR,McLaren,151,0
+Charles Leclerc,16,LEC,Ferrari,148,0
+Carlos Sainz,55,SAI,Ferrari,139.5,0
+Daniel Ricciardo,3,RIC,McLaren,105,1
+Pierre Gasly,10,GAS,AlphaTauri,92,0
+Fernando Alonso,14,ALO,Alpine F1 Team,62,0
+Esteban Ocon,31,OCO,Alpine F1 Team,50,1
+Sebastian Vettel,5,VET,Aston Martin,42,0
+Lance Stroll,18,STR,Aston Martin,26,0
+Yuki Tsunoda,22,TSU,AlphaTauri,20,0
+George Russell,63,RUS,Williams,16,0
+Kimi Räikkönen,7,RAI,Alfa Romeo,10,0
+Nicholas Latifi,6,LAT,Williams,7,0
+Antonio Giovinazzi,99,GIO,Alfa Romeo,1,0
+Mick Schumacher,47,MSC,Haas F1 Team,0,0
+Robert Kubica,88,KUB,Alfa Romeo,0,0
+Nikita Mazepin,9,MAZ,Haas F1 Team,0,0
+Max Verstappen,33,VER,Red Bull,351.5,9
+Lewis Hamilton,44,HAM,Mercedes,343.5,7
+Valtteri Bottas,77,BOT,Mercedes,203,1
+Sergio Pérez,11,PER,Red Bull,190,1
+Lando Norris,4,NOR,McLaren,153,0
+Charles Leclerc,16,LEC,Ferrari,152,0
+Carlos Sainz,55,SAI,Ferrari,145.5,0
+Daniel Ricciardo,3,RIC,McLaren,105,1
+Pierre Gasly,10,GAS,AlphaTauri,92,0
+Fernando Alonso,14,ALO,Alpine F1 Team,77,0
+Esteban Ocon,31,OCO,Alpine F1 Team,60,1
+Sebastian Vettel,5,VET,Aston Martin,43,0
+Lance Stroll,18,STR,Aston Martin,34,0
+Yuki Tsunoda,22,TSU,AlphaTauri,20,0
+George Russell,63,RUS,Williams,16,0
+Kimi Räikkönen,7,RAI,Alfa Romeo,10,0
+Nicholas Latifi,6,LAT,Williams,7,0
+Antonio Giovinazzi,99,GIO,Alfa Romeo,1,0
+Mick Schumacher,47,MSC,Haas F1 Team,0,0
+Robert Kubica,88,KUB,Alfa Romeo,0,0
+Nikita Mazepin,9,MAZ,Haas F1 Team,0,0
+Max Verstappen,33,VER,Red Bull,369.5,9
+Lewis Hamilton,44,HAM,Mercedes,369.5,8
+Valtteri Bottas,77,BOT,Mercedes,218,1
+Sergio Pérez,11,PER,Red Bull,190,1
+Charles Leclerc,16,LEC,Ferrari,158,0
+Lando Norris,4,NOR,McLaren,154,0
+Carlos Sainz,55,SAI,Ferrari,149.5,0
+Daniel Ricciardo,3,RIC,McLaren,115,1
+Pierre Gasly,10,GAS,AlphaTauri,100,0
+Fernando Alonso,14,ALO,Alpine F1 Team,77,0
+Esteban Ocon,31,OCO,Alpine F1 Team,72,1
+Sebastian Vettel,5,VET,Aston Martin,43,0
+Lance Stroll,18,STR,Aston Martin,34,0
+Yuki Tsunoda,22,TSU,AlphaTauri,20,0
+George Russell,63,RUS,Williams,16,0
+Kimi Räikkönen,7,RAI,Alfa Romeo,10,0
+Nicholas Latifi,6,LAT,Williams,7,0
+Antonio Giovinazzi,99,GIO,Alfa Romeo,3,0
+Mick Schumacher,47,MSC,Haas F1 Team,0,0
+Robert Kubica,88,KUB,Alfa Romeo,0,0
+Nikita Mazepin,9,MAZ,Haas F1 Team,0,0
+Max Verstappen,33,VER,Red Bull,395.5,10
+Lewis Hamilton,44,HAM,Mercedes,387.5,8
+Valtteri Bottas,77,BOT,Mercedes,226,1
+Sergio Pérez,11,PER,Red Bull,190,1
+Carlos Sainz,55,SAI,Ferrari,164.5,0
+Lando Norris,4,NOR,McLaren,160,0
+Charles Leclerc,16,LEC,Ferrari,159,0
+Daniel Ricciardo,3,RIC,McLaren,115,1
+Pierre Gasly,10,GAS,AlphaTauri,110,0
+Fernando Alonso,14,ALO,Alpine F1 Team,81,0
+Esteban Ocon,31,OCO,Alpine F1 Team,74,1
+Sebastian Vettel,5,VET,Aston Martin,43,0
+Lance Stroll,18,STR,Aston Martin,34,0
+Yuki Tsunoda,22,TSU,AlphaTauri,32,0
+George Russell,63,RUS,Williams,16,0
+Kimi Räikkönen,7,RAI,Alfa Romeo,10,0
+Nicholas Latifi,6,LAT,Williams,7,0
+Antonio Giovinazzi,99,GIO,Alfa Romeo,3,0
+Mick Schumacher,47,MSC,Haas F1 Team,0,0
+Robert Kubica,88,KUB,Alfa Romeo,0,0
+Nikita Mazepin,9,MAZ,Haas F1 Team,0,0
+Charles Leclerc,16,LEC,Ferrari,26,1
+Carlos Sainz,55,SAI,Ferrari,18,0
+Lewis Hamilton,44,HAM,Mercedes,15,0
+George Russell,63,RUS,Mercedes,12,0
+Kevin Magnussen,20,MAG,Haas F1 Team,10,0
+Valtteri Bottas,77,BOT,Alfa Romeo,8,0
+Esteban Ocon,31,OCO,Alpine F1 Team,6,0
+Yuki Tsunoda,22,TSU,AlphaTauri,4,0
+Fernando Alonso,14,ALO,Alpine F1 Team,2,0
+Guanyu Zhou,24,ZHO,Alfa Romeo,1,0
+Mick Schumacher,47,MSC,Haas F1 Team,0,0
+Lance Stroll,18,STR,Aston Martin,0,0
+Alexander Albon,23,ALB,Williams,0,0
+Daniel Ricciardo,3,RIC,McLaren,0,0
+Lando Norris,4,NOR,McLaren,0,0
+Nicholas Latifi,6,LAT,Williams,0,0
+Nico Hülkenberg,27,HUL,Aston Martin,0,0
+Sergio Pérez,11,PER,Red Bull,0,0
+Max Verstappen,33,VER,Red Bull,0,0
+Pierre Gasly,10,GAS,AlphaTauri,0,0
+Charles Leclerc,16,LEC,Ferrari,45,1
+Carlos Sainz,55,SAI,Ferrari,33,0
+Max Verstappen,33,VER,Red Bull,25,1
+George Russell,63,RUS,Mercedes,22,0
+Lewis Hamilton,44,HAM,Mercedes,16,0
+Esteban Ocon,31,OCO,Alpine F1 Team,14,0
+Sergio Pérez,11,PER,Red Bull,12,0
+Kevin Magnussen,20,MAG,Haas F1 Team,12,0
+Valtteri Bottas,77,BOT,Alfa Romeo,8,0
+Lando Norris,4,NOR,McLaren,6,0
+Yuki Tsunoda,22,TSU,AlphaTauri,4,0
+Pierre Gasly,10,GAS,AlphaTauri,4,0
+Fernando Alonso,14,ALO,Alpine F1 Team,2,0
+Guanyu Zhou,24,ZHO,Alfa Romeo,1,0
+Mick Schumacher,47,MSC,Haas F1 Team,0,0
+Lance Stroll,18,STR,Aston Martin,0,0
+Nico Hülkenberg,27,HUL,Aston Martin,0,0
+Alexander Albon,23,ALB,Williams,0,0
+Daniel Ricciardo,3,RIC,McLaren,0,0
+Nicholas Latifi,6,LAT,Williams,0,0
+Charles Leclerc,16,LEC,Ferrari,71,2
+George Russell,63,RUS,Mercedes,37,0
+Carlos Sainz,55,SAI,Ferrari,33,0
+Sergio Pérez,11,PER,Red Bull,30,0
+Lewis Hamilton,44,HAM,Mercedes,28,0
+Max Verstappen,33,VER,Red Bull,25,1
+Esteban Ocon,31,OCO,Alpine F1 Team,20,0
+Lando Norris,4,NOR,McLaren,16,0
+Kevin Magnussen,20,MAG,Haas F1 Team,12,0
+Valtteri Bottas,77,BOT,Alfa Romeo,12,0
+Daniel Ricciardo,3,RIC,McLaren,8,0
+Pierre Gasly,10,GAS,AlphaTauri,6,0
+Yuki Tsunoda,22,TSU,AlphaTauri,4,0
+Fernando Alonso,14,ALO,Alpine F1 Team,2,0
+Guanyu Zhou,24,ZHO,Alfa Romeo,1,0
+Alexander Albon,23,ALB,Williams,1,0
+Mick Schumacher,47,MSC,Haas F1 Team,0,0
+Lance Stroll,18,STR,Aston Martin,0,0
+Nico Hülkenberg,27,HUL,Aston Martin,0,0
+Nicholas Latifi,6,LAT,Williams,0,0
+Sebastian Vettel,5,VET,Aston Martin,0,0
+Charles Leclerc,16,LEC,Ferrari,86,2
+Max Verstappen,33,VER,Red Bull,59,2
+Sergio Pérez,11,PER,Red Bull,54,0
+George Russell,63,RUS,Mercedes,49,0
+Carlos Sainz,55,SAI,Ferrari,38,0
+Lando Norris,4,NOR,McLaren,35,0
+Lewis Hamilton,44,HAM,Mercedes,28,0
+Valtteri Bottas,77,BOT,Alfa Romeo,24,0
+Esteban Ocon,31,OCO,Alpine F1 Team,20,0
+Kevin Magnussen,20,MAG,Haas F1 Team,15,0
+Daniel Ricciardo,3,RIC,McLaren,11,0
+Yuki Tsunoda,22,TSU,AlphaTauri,10,0
+Pierre Gasly,10,GAS,AlphaTauri,6,0
+Sebastian Vettel,5,VET,Aston Martin,4,0
+Fernando Alonso,14,ALO,Alpine F1 Team,2,0
+Guanyu Zhou,24,ZHO,Alfa Romeo,1,0
+Alexander Albon,23,ALB,Williams,1,0
+Lance Stroll,18,STR,Aston Martin,1,0
+Mick Schumacher,47,MSC,Haas F1 Team,0,0
+Nico Hülkenberg,27,HUL,Aston Martin,0,0
+Nicholas Latifi,6,LAT,Williams,0,0
+Charles Leclerc,16,LEC,Ferrari,104,2
+Max Verstappen,33,VER,Red Bull,85,3
+Sergio Pérez,11,PER,Red Bull,66,0
+George Russell,63,RUS,Mercedes,59,0
+Carlos Sainz,55,SAI,Ferrari,53,0
+Lewis Hamilton,44,HAM,Mercedes,36,0
+Lando Norris,4,NOR,McLaren,35,0
+Valtteri Bottas,77,BOT,Alfa Romeo,30,0
+Esteban Ocon,31,OCO,Alpine F1 Team,24,0
+Kevin Magnussen,20,MAG,Haas F1 Team,15,0
+Daniel Ricciardo,3,RIC,McLaren,11,0
+Yuki Tsunoda,22,TSU,AlphaTauri,10,0
+Pierre Gasly,10,GAS,AlphaTauri,6,0
+Sebastian Vettel,5,VET,Aston Martin,4,0
+Alexander Albon,23,ALB,Williams,3,0
+Fernando Alonso,14,ALO,Alpine F1 Team,2,0
+Lance Stroll,18,STR,Aston Martin,2,0
+Guanyu Zhou,24,ZHO,Alfa Romeo,1,0
+Mick Schumacher,47,MSC,Haas F1 Team,0,0
+Nico Hülkenberg,27,HUL,Aston Martin,0,0
+Nicholas Latifi,6,LAT,Williams,0,0
+Max Verstappen,33,VER,Red Bull,110,4
+Charles Leclerc,16,LEC,Ferrari,104,2
+Sergio Pérez,11,PER,Red Bull,85,0
+George Russell,63,RUS,Mercedes,74,0
+Carlos Sainz,55,SAI,Ferrari,65,0
+Lewis Hamilton,44,HAM,Mercedes,46,0
+Lando Norris,4,NOR,McLaren,39,0
+Valtteri Bottas,77,BOT,Alfa Romeo,38,0
+Esteban Ocon,31,OCO,Alpine F1 Team,30,0
+Kevin Magnussen,20,MAG,Haas F1 Team,15,0
+Yuki Tsunoda,22,TSU,AlphaTauri,11,0
+Daniel Ricciardo,3,RIC,McLaren,11,0
+Pierre Gasly,10,GAS,AlphaTauri,6,0
+Sebastian Vettel,5,VET,Aston Martin,4,0
+Fernando Alonso,14,ALO,Alpine F1 Team,4,0
+Alexander Albon,23,ALB,Williams,3,0
+Lance Stroll,18,STR,Aston Martin,2,0
+Guanyu Zhou,24,ZHO,Alfa Romeo,1,0
+Mick Schumacher,47,MSC,Haas F1 Team,0,0
+Nico Hülkenberg,27,HUL,Aston Martin,0,0
+Nicholas Latifi,6,LAT,Williams,0,0
+Max Verstappen,33,VER,Red Bull,125,4
+Charles Leclerc,16,LEC,Ferrari,116,2
+Sergio Pérez,11,PER,Red Bull,110,1
+George Russell,63,RUS,Mercedes,84,0
+Carlos Sainz,55,SAI,Ferrari,83,0
+Lewis Hamilton,44,HAM,Mercedes,50,0
+Lando Norris,4,NOR,McLaren,48,0
+Valtteri Bottas,77,BOT,Alfa Romeo,40,0
+Esteban Ocon,31,OCO,Alpine F1 Team,30,0
+Kevin Magnussen,20,MAG,Haas F1 Team,15,0
+Daniel Ricciardo,3,RIC,McLaren,11,0
+Yuki Tsunoda,22,TSU,AlphaTauri,11,0
+Fernando Alonso,14,ALO,Alpine F1 Team,10,0
+Pierre Gasly,10,GAS,AlphaTauri,6,0
+Sebastian Vettel,5,VET,Aston Martin,5,0
+Alexander Albon,23,ALB,Williams,3,0
+Lance Stroll,18,STR,Aston Martin,2,0
+Guanyu Zhou,24,ZHO,Alfa Romeo,1,0
+Mick Schumacher,47,MSC,Haas F1 Team,0,0
+Nico Hülkenberg,27,HUL,Aston Martin,0,0
+Nicholas Latifi,6,LAT,Williams,0,0
+Max Verstappen,33,VER,Red Bull,150,5
+Sergio Pérez,11,PER,Red Bull,129,1
+Charles Leclerc,16,LEC,Ferrari,116,2
+George Russell,63,RUS,Mercedes,99,0
+Carlos Sainz,55,SAI,Ferrari,83,0
+Lewis Hamilton,44,HAM,Mercedes,62,0
+Lando Norris,4,NOR,McLaren,50,0
+Valtteri Bottas,77,BOT,Alfa Romeo,40,0
+Esteban Ocon,31,OCO,Alpine F1 Team,31,0
+Pierre Gasly,10,GAS,AlphaTauri,16,0
+Fernando Alonso,14,ALO,Alpine F1 Team,16,0
+Kevin Magnussen,20,MAG,Haas F1 Team,15,0
+Daniel Ricciardo,3,RIC,McLaren,15,0
+Sebastian Vettel,5,VET,Aston Martin,13,0
+Yuki Tsunoda,22,TSU,AlphaTauri,11,0
+Alexander Albon,23,ALB,Williams,3,0
+Lance Stroll,18,STR,Aston Martin,2,0
+Guanyu Zhou,24,ZHO,Alfa Romeo,1,0
+Mick Schumacher,47,MSC,Haas F1 Team,0,0
+Nico Hülkenberg,27,HUL,Aston Martin,0,0
+Nicholas Latifi,6,LAT,Williams,0,0
+Max Verstappen,33,VER,Red Bull,175,6
+Sergio Pérez,11,PER,Red Bull,129,1
+Charles Leclerc,16,LEC,Ferrari,126,2
+George Russell,63,RUS,Mercedes,111,0
+Carlos Sainz,55,SAI,Ferrari,102,0
+Lewis Hamilton,44,HAM,Mercedes,77,0
+Lando Norris,4,NOR,McLaren,50,0
+Valtteri Bottas,77,BOT,Alfa Romeo,46,0
+Esteban Ocon,31,OCO,Alpine F1 Team,39,0
+Fernando Alonso,14,ALO,Alpine F1 Team,18,0
+Pierre Gasly,10,GAS,AlphaTauri,16,0
+Kevin Magnussen,20,MAG,Haas F1 Team,15,0
+Daniel Ricciardo,3,RIC,McLaren,15,0
+Sebastian Vettel,5,VET,Aston Martin,13,0
+Yuki Tsunoda,22,TSU,AlphaTauri,11,0
+Guanyu Zhou,24,ZHO,Alfa Romeo,5,0
+Alexander Albon,23,ALB,Williams,3,0
+Lance Stroll,18,STR,Aston Martin,3,0
+Mick Schumacher,47,MSC,Haas F1 Team,0,0
+Nico Hülkenberg,27,HUL,Aston Martin,0,0
+Nicholas Latifi,6,LAT,Williams,0,0
+Max Verstappen,33,VER,Red Bull,181,6
+Sergio Pérez,11,PER,Red Bull,147,1
+Charles Leclerc,16,LEC,Ferrari,138,2
+Carlos Sainz,55,SAI,Ferrari,127,1
+George Russell,63,RUS,Mercedes,111,0
+Lewis Hamilton,44,HAM,Mercedes,93,0
+Lando Norris,4,NOR,McLaren,58,0
+Valtteri Bottas,77,BOT,Alfa Romeo,46,0
+Esteban Ocon,31,OCO,Alpine F1 Team,39,0
+Fernando Alonso,14,ALO,Alpine F1 Team,28,0
+Pierre Gasly,10,GAS,AlphaTauri,16,0
+Kevin Magnussen,20,MAG,Haas F1 Team,16,0
+Sebastian Vettel,5,VET,Aston Martin,15,0
+Daniel Ricciardo,3,RIC,McLaren,15,0
+Yuki Tsunoda,22,TSU,AlphaTauri,11,0
+Guanyu Zhou,24,ZHO,Alfa Romeo,5,0
+Mick Schumacher,47,MSC,Haas F1 Team,4,0
+Alexander Albon,23,ALB,Williams,3,0
+Lance Stroll,18,STR,Aston Martin,3,0
+Nicholas Latifi,6,LAT,Williams,0,0
+Nico Hülkenberg,27,HUL,Aston Martin,0,0
+Max Verstappen,33,VER,Red Bull,208,6
+Charles Leclerc,16,LEC,Ferrari,170,3
+Sergio Pérez,11,PER,Red Bull,151,1
+Carlos Sainz,55,SAI,Ferrari,133,1
+George Russell,63,RUS,Mercedes,128,0
+Lewis Hamilton,44,HAM,Mercedes,109,0
+Lando Norris,4,NOR,McLaren,64,0
+Esteban Ocon,31,OCO,Alpine F1 Team,52,0
+Valtteri Bottas,77,BOT,Alfa Romeo,46,0
+Fernando Alonso,14,ALO,Alpine F1 Team,29,0
+Kevin Magnussen,20,MAG,Haas F1 Team,22,0
+Daniel Ricciardo,3,RIC,McLaren,17,0
+Pierre Gasly,10,GAS,AlphaTauri,16,0
+Sebastian Vettel,5,VET,Aston Martin,15,0
+Mick Schumacher,47,MSC,Haas F1 Team,12,0
+Yuki Tsunoda,22,TSU,AlphaTauri,11,0
+Guanyu Zhou,24,ZHO,Alfa Romeo,5,0
+Alexander Albon,23,ALB,Williams,3,0
+Lance Stroll,18,STR,Aston Martin,3,0
+Nicholas Latifi,6,LAT,Williams,0,0
+Nico Hülkenberg,27,HUL,Aston Martin,0,0
+Max Verstappen,33,VER,Red Bull,233,7
+Charles Leclerc,16,LEC,Ferrari,170,3
+Sergio Pérez,11,PER,Red Bull,163,1
+Carlos Sainz,55,SAI,Ferrari,144,1
+George Russell,63,RUS,Mercedes,143,0
+Lewis Hamilton,44,HAM,Mercedes,127,0
+Lando Norris,4,NOR,McLaren,70,0
+Esteban Ocon,31,OCO,Alpine F1 Team,56,0
+Valtteri Bottas,77,BOT,Alfa Romeo,46,0
+Fernando Alonso,14,ALO,Alpine F1 Team,37,0
+Kevin Magnussen,20,MAG,Haas F1 Team,22,0
+Daniel Ricciardo,3,RIC,McLaren,19,0
+Pierre Gasly,10,GAS,AlphaTauri,16,0
+Sebastian Vettel,5,VET,Aston Martin,15,0
+Mick Schumacher,47,MSC,Haas F1 Team,12,0
+Yuki Tsunoda,22,TSU,AlphaTauri,11,0
+Guanyu Zhou,24,ZHO,Alfa Romeo,5,0
+Lance Stroll,18,STR,Aston Martin,4,0
+Alexander Albon,23,ALB,Williams,3,0
+Nicholas Latifi,6,LAT,Williams,0,0
+Nico Hülkenberg,27,HUL,Aston Martin,0,0
+Max Verstappen,33,VER,Red Bull,258,8
+Charles Leclerc,16,LEC,Ferrari,178,3
+Sergio Pérez,11,PER,Red Bull,173,1
+George Russell,63,RUS,Mercedes,158,0
+Carlos Sainz,55,SAI,Ferrari,156,1
+Lewis Hamilton,44,HAM,Mercedes,146,0
+Lando Norris,4,NOR,McLaren,76,0
+Esteban Ocon,31,OCO,Alpine F1 Team,58,0
+Valtteri Bottas,77,BOT,Alfa Romeo,46,0
+Fernando Alonso,14,ALO,Alpine F1 Team,41,0
+Kevin Magnussen,20,MAG,Haas F1 Team,22,0
+Daniel Ricciardo,3,RIC,McLaren,19,0
+Pierre Gasly,10,GAS,AlphaTauri,16,0
+Sebastian Vettel,5,VET,Aston Martin,16,0
+Mick Schumacher,47,MSC,Haas F1 Team,12,0
+Yuki Tsunoda,22,TSU,AlphaTauri,11,0
+Guanyu Zhou,24,ZHO,Alfa Romeo,5,0
+Lance Stroll,18,STR,Aston Martin,4,0
+Alexander Albon,23,ALB,Williams,3,0
+Nicholas Latifi,6,LAT,Williams,0,0
+Nico Hülkenberg,27,HUL,Aston Martin,0,0
+Max Verstappen,33,VER,Red Bull,284,9
+Sergio Pérez,11,PER,Red Bull,191,1
+Charles Leclerc,16,LEC,Ferrari,186,3
+Carlos Sainz,55,SAI,Ferrari,171,1
+George Russell,63,RUS,Mercedes,170,0
+Lewis Hamilton,44,HAM,Mercedes,146,0
+Lando Norris,4,NOR,McLaren,76,0
+Esteban Ocon,31,OCO,Alpine F1 Team,64,0
+Fernando Alonso,14,ALO,Alpine F1 Team,51,0
+Valtteri Bottas,77,BOT,Alfa Romeo,46,0
+Kevin Magnussen,20,MAG,Haas F1 Team,22,0
+Sebastian Vettel,5,VET,Aston Martin,20,0
+Daniel Ricciardo,3,RIC,McLaren,19,0
+Pierre Gasly,10,GAS,AlphaTauri,18,0
+Mick Schumacher,47,MSC,Haas F1 Team,12,0
+Yuki Tsunoda,22,TSU,AlphaTauri,11,0
+Guanyu Zhou,24,ZHO,Alfa Romeo,5,0
+Alexander Albon,23,ALB,Williams,4,0
+Lance Stroll,18,STR,Aston Martin,4,0
+Nicholas Latifi,6,LAT,Williams,0,0
+Nico Hülkenberg,27,HUL,Aston Martin,0,0
+Max Verstappen,33,VER,Red Bull,310,10
+Charles Leclerc,16,LEC,Ferrari,201,3
+Sergio Pérez,11,PER,Red Bull,201,1
+George Russell,63,RUS,Mercedes,188,0
+Carlos Sainz,55,SAI,Ferrari,175,1
+Lewis Hamilton,44,HAM,Mercedes,158,0
+Lando Norris,4,NOR,McLaren,82,0
+Esteban Ocon,31,OCO,Alpine F1 Team,66,0
+Fernando Alonso,14,ALO,Alpine F1 Team,59,0
+Valtteri Bottas,77,BOT,Alfa Romeo,46,0
+Kevin Magnussen,20,MAG,Haas F1 Team,22,0
+Sebastian Vettel,5,VET,Aston Martin,20,0
+Daniel Ricciardo,3,RIC,McLaren,19,0
+Pierre Gasly,10,GAS,AlphaTauri,18,0
+Mick Schumacher,47,MSC,Haas F1 Team,12,0
+Yuki Tsunoda,22,TSU,AlphaTauri,11,0
+Guanyu Zhou,24,ZHO,Alfa Romeo,5,0
+Lance Stroll,18,STR,Aston Martin,5,0
+Alexander Albon,23,ALB,Williams,4,0
+Nicholas Latifi,6,LAT,Williams,0,0
+Nico Hülkenberg,27,HUL,Aston Martin,0,0
+Max Verstappen,33,VER,Red Bull,335,11
+Charles Leclerc,16,LEC,Ferrari,219,3
+Sergio Pérez,11,PER,Red Bull,210,1
+George Russell,63,RUS,Mercedes,203,0
+Carlos Sainz,55,SAI,Ferrari,187,1
+Lewis Hamilton,44,HAM,Mercedes,168,0
+Lando Norris,4,NOR,McLaren,88,0
+Esteban Ocon,31,OCO,Alpine F1 Team,66,0
+Fernando Alonso,14,ALO,Alpine F1 Team,59,0
+Valtteri Bottas,77,BOT,Alfa Romeo,46,0
+Pierre Gasly,10,GAS,AlphaTauri,22,0
+Kevin Magnussen,20,MAG,Haas F1 Team,22,0
+Sebastian Vettel,5,VET,Aston Martin,20,0
+Daniel Ricciardo,3,RIC,McLaren,19,0
+Mick Schumacher,47,MSC,Haas F1 Team,12,0
+Yuki Tsunoda,22,TSU,AlphaTauri,11,0
+Guanyu Zhou,24,ZHO,Alfa Romeo,6,0
+Lance Stroll,18,STR,Aston Martin,5,0
+Alexander Albon,23,ALB,Williams,4,0
+Nyck de Vries,21,DEV,Williams,2,0
+Nicholas Latifi,6,LAT,Williams,0,0
+Nico Hülkenberg,27,HUL,Aston Martin,0,0
+Max Verstappen,33,VER,Red Bull,341,11
+Charles Leclerc,16,LEC,Ferrari,237,3
+Sergio Pérez,11,PER,Red Bull,235,2
+George Russell,63,RUS,Mercedes,203,0
+Carlos Sainz,55,SAI,Ferrari,202,1
+Lewis Hamilton,44,HAM,Mercedes,170,0
+Lando Norris,4,NOR,McLaren,100,0
+Esteban Ocon,31,OCO,Alpine F1 Team,66,0
+Fernando Alonso,14,ALO,Alpine F1 Team,59,0
+Valtteri Bottas,77,BOT,Alfa Romeo,46,0
+Daniel Ricciardo,3,RIC,McLaren,29,0
+Sebastian Vettel,5,VET,Aston Martin,24,0
+Pierre Gasly,10,GAS,AlphaTauri,23,0
+Kevin Magnussen,20,MAG,Haas F1 Team,22,0
+Lance Stroll,18,STR,Aston Martin,13,0
+Mick Schumacher,47,MSC,Haas F1 Team,12,0
+Yuki Tsunoda,22,TSU,AlphaTauri,11,0
+Guanyu Zhou,24,ZHO,Alfa Romeo,6,0
+Alexander Albon,23,ALB,Williams,4,0
+Nyck de Vries,21,DEV,Williams,2,0
+Nicholas Latifi,6,LAT,Williams,0,0
+Nico Hülkenberg,27,HUL,Aston Martin,0,0
+Max Verstappen,33,VER,Red Bull,366,12
+Sergio Pérez,11,PER,Red Bull,253,2
+Charles Leclerc,16,LEC,Ferrari,252,3
+George Russell,63,RUS,Mercedes,207,0
+Carlos Sainz,55,SAI,Ferrari,202,1
+Lewis Hamilton,44,HAM,Mercedes,180,0
+Lando Norris,4,NOR,McLaren,101,0
+Esteban Ocon,31,OCO,Alpine F1 Team,78,0
+Fernando Alonso,14,ALO,Alpine F1 Team,65,0
+Valtteri Bottas,77,BOT,Alfa Romeo,46,0
+Sebastian Vettel,5,VET,Aston Martin,32,0
+Daniel Ricciardo,3,RIC,McLaren,29,0
+Pierre Gasly,10,GAS,AlphaTauri,23,0
+Kevin Magnussen,20,MAG,Haas F1 Team,22,0
+Lance Stroll,18,STR,Aston Martin,13,0
+Mick Schumacher,47,MSC,Haas F1 Team,12,0
+Yuki Tsunoda,22,TSU,AlphaTauri,11,0
+Guanyu Zhou,24,ZHO,Alfa Romeo,6,0
+Alexander Albon,23,ALB,Williams,4,0
+Nicholas Latifi,6,LAT,Williams,2,0
+Nyck de Vries,21,DEV,Williams,2,0
+Nico Hülkenberg,27,HUL,Aston Martin,0,0
+Max Verstappen,33,VER,Red Bull,391,13
+Charles Leclerc,16,LEC,Ferrari,267,3
+Sergio Pérez,11,PER,Red Bull,265,2
+George Russell,63,RUS,Mercedes,218,0
+Carlos Sainz,55,SAI,Ferrari,202,1
+Lewis Hamilton,44,HAM,Mercedes,198,0
+Lando Norris,4,NOR,McLaren,109,0
+Esteban Ocon,31,OCO,Alpine F1 Team,78,0
+Fernando Alonso,14,ALO,Alpine F1 Team,71,0
+Valtteri Bottas,77,BOT,Alfa Romeo,46,0
+Sebastian Vettel,5,VET,Aston Martin,36,0
+Daniel Ricciardo,3,RIC,McLaren,29,0
+Kevin Magnussen,20,MAG,Haas F1 Team,24,0
+Pierre Gasly,10,GAS,AlphaTauri,23,0
+Lance Stroll,18,STR,Aston Martin,13,0
+Mick Schumacher,47,MSC,Haas F1 Team,12,0
+Yuki Tsunoda,22,TSU,AlphaTauri,12,0
+Guanyu Zhou,24,ZHO,Alfa Romeo,6,0
+Alexander Albon,23,ALB,Williams,4,0
+Nicholas Latifi,6,LAT,Williams,2,0
+Nyck de Vries,21,DEV,Williams,2,0
+Nico Hülkenberg,27,HUL,Aston Martin,0,0
+Max Verstappen,33,VER,Red Bull,416,14
+Sergio Pérez,11,PER,Red Bull,280,2
+Charles Leclerc,16,LEC,Ferrari,275,3
+George Russell,63,RUS,Mercedes,231,0
+Lewis Hamilton,44,HAM,Mercedes,216,0
+Carlos Sainz,55,SAI,Ferrari,212,1
+Lando Norris,4,NOR,McLaren,111,0
+Esteban Ocon,31,OCO,Alpine F1 Team,82,0
+Fernando Alonso,14,ALO,Alpine F1 Team,71,0
+Valtteri Bottas,77,BOT,Alfa Romeo,47,0
+Sebastian Vettel,5,VET,Aston Martin,36,0
+Daniel Ricciardo,3,RIC,McLaren,35,0
+Kevin Magnussen,20,MAG,Haas F1 Team,24,0
+Pierre Gasly,10,GAS,AlphaTauri,23,0
+Lance Stroll,18,STR,Aston Martin,13,0
+Mick Schumacher,47,MSC,Haas F1 Team,12,0
+Yuki Tsunoda,22,TSU,AlphaTauri,12,0
+Guanyu Zhou,24,ZHO,Alfa Romeo,6,0
+Alexander Albon,23,ALB,Williams,4,0
+Nicholas Latifi,6,LAT,Williams,2,0
+Nyck de Vries,21,DEV,Williams,2,0
+Nico Hülkenberg,27,HUL,Aston Martin,0,0
+Max Verstappen,33,VER,Red Bull,429,14
+Charles Leclerc,16,LEC,Ferrari,290,3
+Sergio Pérez,11,PER,Red Bull,290,2
+George Russell,63,RUS,Mercedes,265,1
+Lewis Hamilton,44,HAM,Mercedes,240,0
+Carlos Sainz,55,SAI,Ferrari,234,1
+Lando Norris,4,NOR,McLaren,113,0
+Esteban Ocon,31,OCO,Alpine F1 Team,86,0
+Fernando Alonso,14,ALO,Alpine F1 Team,81,0
+Valtteri Bottas,77,BOT,Alfa Romeo,49,0
+Sebastian Vettel,5,VET,Aston Martin,36,0
+Daniel Ricciardo,3,RIC,McLaren,35,0
+Kevin Magnussen,20,MAG,Haas F1 Team,25,0
+Pierre Gasly,10,GAS,AlphaTauri,23,0
+Lance Stroll,18,STR,Aston Martin,14,0
+Mick Schumacher,47,MSC,Haas F1 Team,12,0
+Yuki Tsunoda,22,TSU,AlphaTauri,12,0
+Guanyu Zhou,24,ZHO,Alfa Romeo,6,0
+Alexander Albon,23,ALB,Williams,4,0
+Nicholas Latifi,6,LAT,Williams,2,0
+Nyck de Vries,21,DEV,Williams,2,0
+Nico Hülkenberg,27,HUL,Aston Martin,0,0
+Max Verstappen,33,VER,Red Bull,454,15
+Charles Leclerc,16,LEC,Ferrari,308,3
+Sergio Pérez,11,PER,Red Bull,305,2
+George Russell,63,RUS,Mercedes,275,1
+Carlos Sainz,55,SAI,Ferrari,246,1
+Lewis Hamilton,44,HAM,Mercedes,240,0
+Lando Norris,4,NOR,McLaren,122,0
+Esteban Ocon,31,OCO,Alpine F1 Team,92,0
+Fernando Alonso,14,ALO,Alpine F1 Team,81,0
+Valtteri Bottas,77,BOT,Alfa Romeo,49,0
+Daniel Ricciardo,3,RIC,McLaren,37,0
+Sebastian Vettel,5,VET,Aston Martin,37,0
+Kevin Magnussen,20,MAG,Haas F1 Team,25,0
+Pierre Gasly,10,GAS,AlphaTauri,23,0
+Lance Stroll,18,STR,Aston Martin,18,0
+Mick Schumacher,47,MSC,Haas F1 Team,12,0
+Yuki Tsunoda,22,TSU,AlphaTauri,12,0
+Guanyu Zhou,24,ZHO,Alfa Romeo,6,0
+Alexander Albon,23,ALB,Williams,4,0
+Nicholas Latifi,6,LAT,Williams,2,0
+Nyck de Vries,21,DEV,Williams,2,0
+Nico Hülkenberg,27,HUL,Aston Martin,0,0
