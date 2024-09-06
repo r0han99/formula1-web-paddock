@@ -1733,7 +1733,7 @@ def display_race_standings(results, top3):
 if __name__ == '__main__':
 
     # page configuration
-    st.set_option('deprecation.showPyplotGlobalUse', False)
+    #st.set_option('deprecation.showPyplotGlobalUse', False)
     st.set_page_config(page_title="F1 Web Paddock",layout="wide",initial_sidebar_state="expanded",page_icon='./assets/tab-logo.png')
     
 
